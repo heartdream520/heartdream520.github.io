@@ -22,17 +22,32 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"manual"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="heart_dream">
+  <meta name="description" content="lua实现热更新用lua主要是为了代码的热更新，因为C#是编译形语言，在打包的时候会直接进行编译成各平台可识别的代码，然后在程序启动的时候同时加载，在加载之后就无法更改了，所以C#本身是不具备代码更新的能力的，lua属于解释性语言，解释性语言的特性是只有使用到的时候才会进行加载，这样的话就可以做到没加载之前替换掉，达到代码的热更新">
 <meta property="og:type" content="article">
 <meta property="og:title" content="unity10-23">
 <meta property="og:url" content="http://example.com/2022/10/23/unity10-23/index.html">
 <meta property="og:site_name" content="心梦">
-<meta property="og:description" content="heart_dream">
+<meta property="og:description" content="lua实现热更新用lua主要是为了代码的热更新，因为C#是编译形语言，在打包的时候会直接进行编译成各平台可识别的代码，然后在程序启动的时候同时加载，在加载之后就无法更改了，所以C#本身是不具备代码更新的能力的，lua属于解释性语言，解释性语言的特性是只有使用到的时候才会进行加载，这样的话就可以做到没加载之前替换掉，达到代码的热更新">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/images/image-20221023094056456.png">
+<meta property="og:image" content="http://example.com/images/image-20221023094247823.png">
+<meta property="og:image" content="http://example.com/images/image-20221023094504272.png">
+<meta property="og:image" content="http://example.com/images/image-20221023094813897.png">
+<meta property="og:image" content="http://example.com/images/image-20221023095228440.png">
+<meta property="og:image" content="http://example.com/images/image-20221023095701065.png">
+<meta property="og:image" content="http://example.com/images/image-20221023100321038.png">
+<meta property="og:image" content="http://example.com/images/image-20221023101843919.png">
+<meta property="og:image" content="http://example.com/images/image-20221023101909109.png">
+<meta property="og:image" content="http://example.com/images/image-20221023102114138.png">
+<meta property="og:image" content="http://example.com/images/image-20221023102145049.png">
+<meta property="og:image" content="http://example.com/images/image-20221023102217630.png">
+<meta property="og:image" content="http://example.com/images/image-20221023102235742.png">
 <meta property="article:published_time" content="2022-10-23T01:26:01.536Z">
-<meta property="article:modified_time" content="2022-10-23T01:26:52.771Z">
+<meta property="article:modified_time" content="2022-10-23T02:24:11.032Z">
 <meta property="article:author" content="心梦">
+<meta property="article:tag" content="lua">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/image-20221023094056456.png">
 
 <link rel="canonical" href="http://example.com/2022/10/23/unity10-23/">
 
@@ -195,7 +210,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2022-10-23 09:26:01 / 修改时间：09:26:52" itemprop="dateCreated datePublished" datetime="2022-10-23T09:26:01+08:00">2022-10-23</time>
+              <time title="创建时间：2022-10-23 09:26:01 / 修改时间：10:24:11" itemprop="dateCreated datePublished" datetime="2022-10-23T09:26:01+08:00">2022-10-23</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -213,7 +228,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>0</span>
+              <span>542</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -232,7 +247,35 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        
+        <h1 id="lua实现热更新"><a href="#lua实现热更新" class="headerlink" title="lua实现热更新"></a><code>lua</code>实现热更新</h1><p>用<code>lua</code>主要是为了代码的热更新，因为C#是编译形语言，在打包的时候会直接进行编译成各平台可识别的代码，然后在程序启动的时候同时加载，在加载之后就无法更改了，所以C#本身是不具备代码更新的能力的，<code>lua</code>属于解释性语言，解释性语言的特性是只有使用到的时候才会进行加载，这样的话就可以做到没加载之前替换掉，达到代码的热更新</p>
+<p><img src="/../images/image-20221023094056456.png" alt="image-20221023094056456"></p>
+<span id="more"></span>
+
+<p>普通更新流程提交审核时间比较长，开发商不能承受</p>
+<p>玩家需要在应用商店重新进行下载，比较繁琐</p>
+<p><img src="/../images/image-20221023094247823.png" alt="image-20221023094247823"></p>
+<p>开发商打包更新资源，上传服务器时间比较快</p>
+<p>玩家更新在游戏中可以更新</p>
+<p><img src="/../images/image-20221023094504272.png" alt="image-20221023094504272"></p>
+<p>c#可以通过脚本打包成动态库<code>Dll</code>在安卓上实现更新,但是不支持苹果，并且只能更新游戏资源如材质预制体等，不能更新代码</p>
+<p><code>lua</code>脚本可以对安卓和苹果进行更新，更新范围更广泛</p>
+<h1 id="常见u3D的lua热更新框架"><a href="#常见u3D的lua热更新框架" class="headerlink" title="常见u3D的lua热更新框架"></a>常见<code>u3D</code>的<code>lua</code>热更新框架</h1><p><img src="/../images/image-20221023094813897.png" alt="image-20221023094813897"></p>
+<p><code>xlua</code>为后起之秀，为腾讯研发，比较稳定，有人维护</p>
+<p><code>xLua</code>支持在发布前临时加入热更新功能，但是比较完备的框架一般不使用此功能，bug可能会比较多</p>
+<p><code>tolua</code>的前身为<code>ulua</code>在市场上存在一定的保有量</p>
+<h1 id="xlua如何使用"><a href="#xlua如何使用" class="headerlink" title="xlua如何使用"></a><code>xlua</code>如何使用</h1><p><img src="/../images/image-20221023095228440.png" alt="image-20221023095228440"></p>
+<p><code>xlua</code>只是一个插件，功能比较简单，需要框架师进行二次架构与开发，次才能投入使用中</p>
+<p><img src="/../images/image-20221023095701065.png" alt="image-20221023095701065"></p>
+<p>判断框架是否成熟，是否有使用这个框架的稳步运营的游戏</p>
+<p>游戏需求类型比较多，架构不可能很完美</p>
+<h1 id="xlua课程怎么学习"><a href="#xlua课程怎么学习" class="headerlink" title="xlua课程怎么学习"></a><code>xlua</code>课程怎么学习</h1><p><img src="/../images/image-20221023100321038.png" alt="image-20221023100321038"></p>
+<h2 id="学习过程"><a href="#学习过程" class="headerlink" title="学习过程"></a>学习过程</h2><p><img src="/../images/image-20221023101843919.png" alt="image-20221023101843919"></p>
+<p><img src="/../images/image-20221023101909109.png" alt="image-20221023101909109"></p>
+<p><img src="/../images/image-20221023102114138.png" alt="image-20221023102114138"></p>
+<p><img src="/../images/image-20221023102145049.png" alt="image-20221023102145049"></p>
+<p><img src="/../images/image-20221023102217630.png" alt="image-20221023102217630"></p>
+<p><img src="/../images/image-20221023102235742.png" alt="image-20221023102235742"></p>
+
     </div>
 
     
@@ -240,6 +283,9 @@
     
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/lua/" rel="tag"># lua</a>
+          </div>
 
         
 
@@ -309,6 +355,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#lua%E5%AE%9E%E7%8E%B0%E7%83%AD%E6%9B%B4%E6%96%B0"><span class="nav-number">1.</span> <span class="nav-text">lua实现热更新</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81u3D%E7%9A%84lua%E7%83%AD%E6%9B%B4%E6%96%B0%E6%A1%86%E6%9E%B6"><span class="nav-number">2.</span> <span class="nav-text">常见u3D的lua热更新框架</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#xlua%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8"><span class="nav-number">3.</span> <span class="nav-text">xlua如何使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#xlua%E8%AF%BE%E7%A8%8B%E6%80%8E%E4%B9%88%E5%AD%A6%E4%B9%A0"><span class="nav-number">4.</span> <span class="nav-text">xlua课程怎么学习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%A6%E4%B9%A0%E8%BF%87%E7%A8%8B"><span class="nav-number">4.1.</span> <span class="nav-text">学习过程</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -333,6 +380,12 @@
           
         <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
@@ -387,7 +440,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">36 分钟</span>
+    <span title="站点阅读时长">37 分钟</span>
 </div>
 
 
