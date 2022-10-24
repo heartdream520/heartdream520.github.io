@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-10-24T09:02:03.140Z</updated>
+  <updated>2022-10-24T15:51:14.987Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,8 +21,17 @@
     <link href="http://example.com/2022/10/24/unity10-24/"/>
     <id>http://example.com/2022/10/24/unity10-24/</id>
     <published>2022-10-24T09:00:36.000Z</published>
-    <updated>2022-10-24T09:02:03.140Z</updated>
+    <updated>2022-10-24T15:51:14.987Z</updated>
     
+    <content type="html"><![CDATA[<h1 id="动画基础"><a href="#动画基础" class="headerlink" title="动画基础"></a>动画基础</h1><h2 id="创建动画"><a href="#创建动画" class="headerlink" title="创建动画"></a>创建动画</h2><p>选择需要设置动画的游戏对象，打开win-Animation-Animation，新建动画控制器，Animator Controller</p><p>创建动画片段Animator clip</p><p>任何属性都可以设置动画，如位置，颜色，精灵等</p><p>属性发生变化叫做动画</p><p>可以将模型拖动到动画中进行预览</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">None：不导入动画Animation Clip</span><br><span class="line">Legacy：用于早期动画设置，其不支持状态机Animator，无法对动画进行编辑，导入完后直接用Animation播放</span><br><span class="line">Generic：支持人形、非人形Model</span><br><span class="line">Humanoid：只支持人形Model，导入后用Animator播放（设置后Hirearchy模型里面自动添加Animator组件）Generic一样</span><br></pre></td></tr></table></figure><span id="more"></span><p><img src="/../images/image-20221024231718315.png" alt="image-20221024231718315"></p><h2 id="骨骼"><a href="#骨骼" class="headerlink" title="骨骼"></a>骨骼</h2><p><img src="/../images/image-20221024232840003.png" alt="image-20221024232840003"></p><p>人形骨骼，实线为必须骨骼，虚线为不必须骨骼</p><p>Muscles &amp; Settings  用测试骨骼做动作是否有问题</p>]]></content>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;动画基础&quot;&gt;&lt;a href=&quot;#动画基础&quot; class=&quot;headerlink&quot; title=&quot;动画基础&quot;&gt;&lt;/a&gt;动画基础&lt;/h1&gt;&lt;h2 id=&quot;创建动画&quot;&gt;&lt;a href=&quot;#创建动画&quot; class=&quot;headerlink&quot; title=&quot;创建动画&quot;&gt;&lt;/a&gt;创建动画&lt;/h2&gt;&lt;p&gt;选择需要设置动画的游戏对象，打开win-Animation-Animation，新建动画控制器，Animator Controller&lt;/p&gt;
+&lt;p&gt;创建动画片段Animator clip&lt;/p&gt;
+&lt;p&gt;任何属性都可以设置动画，如位置，颜色，精灵等&lt;/p&gt;
+&lt;p&gt;属性发生变化叫做动画&lt;/p&gt;
+&lt;p&gt;可以将模型拖动到动画中进行预览&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;None：不导入动画Animation Clip&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Legacy：用于早期动画设置，其不支持状态机Animator，无法对动画进行编辑，导入完后直接用Animation播放&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Generic：支持人形、非人形Model&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Humanoid：只支持人形Model，导入后用Animator播放（设置后Hirearchy模型里面自动添加Animator组件）Generic一样&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
     
     
     
