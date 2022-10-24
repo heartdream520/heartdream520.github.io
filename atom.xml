@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-10-23T13:21:38.961Z</updated>
+  <updated>2022-10-24T09:02:03.140Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,23 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>unity10-24</title>
+    <link href="http://example.com/2022/10/24/unity10-24/"/>
+    <id>http://example.com/2022/10/24/unity10-24/</id>
+    <published>2022-10-24T09:00:36.000Z</published>
+    <updated>2022-10-24T09:02:03.140Z</updated>
+    
+    
+    
+    
+    <category term="unity" scheme="http://example.com/categories/unity/"/>
+    
+    
+    <category term="动画" scheme="http://example.com/tags/%E5%8A%A8%E7%94%BB/"/>
+    
+  </entry>
   
   <entry>
     <title>思维题</title>
@@ -43,7 +60,7 @@
     <link href="http://example.com/2022/10/23/unity10-23/"/>
     <id>http://example.com/2022/10/23/unity10-23/</id>
     <published>2022-10-23T01:26:01.536Z</published>
-    <updated>2022-10-23T06:42:22.944Z</updated>
+    <updated>2022-10-23T15:51:20.146Z</updated>
     
     <content type="html"><![CDATA[<h1 id="lua实现热更新"><a href="#lua实现热更新" class="headerlink" title="lua实现热更新"></a><code>lua</code>实现热更新</h1><p>用<code>lua</code>主要是为了代码的热更新，因为C#是编译形语言，在打包的时候会直接进行编译成各平台可识别的代码，然后在程序启动的时候同时加载，在加载之后就无法更改了，所以C#本身是不具备代码更新的能力的，<code>lua</code>属于解释性语言，解释性语言的特性是只有使用到的时候才会进行加载，这样的话就可以做到没加载之前替换掉，达到代码的热更新</p><p><img src="/../images/image-20221023094056456.png" alt="image-20221023094056456"></p><span id="more"></span><p>普通更新流程提交审核时间比较长，开发商不能承受</p><p>玩家需要在应用商店重新进行下载，比较繁琐</p><p><img src="/../images/image-20221023094247823.png" alt="image-20221023094247823"></p><p>开发商打包更新资源，上传服务器时间比较快</p><p>玩家更新在游戏中可以更新</p><p><img src="/../images/image-20221023094504272.png" alt="image-20221023094504272"></p><p>c#可以通过脚本打包成动态库<code>Dll</code>在安卓上实现更新,但是不支持苹果，并且只能更新游戏资源如材质预制体等，不能更新代码</p><p><code>lua</code>脚本可以对安卓和苹果进行更新，更新范围更广泛</p><h1 id="常见u3D的lua热更新框架"><a href="#常见u3D的lua热更新框架" class="headerlink" title="常见u3D的lua热更新框架"></a>常见<code>u3D</code>的<code>lua</code>热更新框架</h1><p><img src="/../images/image-20221023094813897.png" alt="image-20221023094813897"></p><p><code>xlua</code>为后起之秀，为腾讯研发，比较稳定，有人维护</p><p><code>xLua</code>支持在发布前临时加入热更新功能，但是比较完备的框架一般不使用此功能，bug可能会比较多</p><p><code>tolua</code>的前身为<code>ulua</code>在市场上存在一定的保有量</p><h1 id="xlua如何使用"><a href="#xlua如何使用" class="headerlink" title="xlua如何使用"></a><code>xlua</code>如何使用</h1><p><img src="/../images/image-20221023095228440.png" alt="image-20221023095228440"></p><p><code>xlua</code>只是一个插件，功能比较简单，需要框架师进行二次架构与开发，次才能投入使用中</p><p><img src="/../images/image-20221023095701065.png" alt="image-20221023095701065"></p><p>判断框架是否成熟，是否有使用这个框架的稳步运营的游戏</p><p>游戏需求类型比较多，架构不可能很完美</p><h1 id="xlua课程怎么学习"><a href="#xlua课程怎么学习" class="headerlink" title="xlua课程怎么学习"></a><code>xlua</code>课程怎么学习</h1><p><img src="/../images/image-20221023100321038.png" alt="image-20221023100321038"></p><h2 id="学习过程"><a href="#学习过程" class="headerlink" title="学习过程"></a>学习过程</h2><p><img src="/../images/image-20221023101843919.png" alt="image-20221023101843919"></p><p><img src="/../images/image-20221023101909109.png" alt="image-20221023101909109"></p><p><img src="/../images/image-20221023102114138.png" alt="image-20221023102114138"></p><p><img src="/../images/image-20221023102145049.png" alt="image-20221023102145049"></p><p><img src="/../images/image-20221023102217630.png" alt="image-20221023102217630"></p><p><img src="/../images/image-20221023102235742.png" alt="image-20221023102235742"></p>]]></content>
     
