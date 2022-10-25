@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-10-24T15:51:14.987Z</updated>
+  <updated>2022-10-25T01:09:28.120Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>unity10-25</title>
+    <link href="http://example.com/2022/10/25/unity10-25/"/>
+    <id>http://example.com/2022/10/25/unity10-25/</id>
+    <published>2022-10-25T00:07:52.000Z</published>
+    <updated>2022-10-25T01:09:28.120Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="动画基础"><a href="#动画基础" class="headerlink" title="动画基础"></a>动画基础</h1><h2 id="动画面板"><a href="#动画面板" class="headerlink" title="动画面板"></a>动画面板</h2><p><img src="/../images/image-20221025081330434.png" alt="image-20221025081330434"></p><p>loop time循环时间</p><p>Loop Pose 循环姿势，使循环时更加流畅</p><p>cycle offset 偏移量，从哪来开始播放</p><span id="more"></span><p><img src="/../images/image-20221025081638244.png" alt="image-20221025081638244"></p><p>Back Into Pose 烘焙在姿势，勾选后将不在相应位置产生变化（锁定某属性）</p><p><img src="/../images/image-20221025082216295.png" alt="image-20221025082216295"></p><p>based upon 烘焙基准 </p><p>original 设置的中心， Center of Mass 质量的中心 真中心（对角线）</p><p>Feet 脚的位置</p><p><img src="/../images/image-20221025082632308.png" alt="image-20221025082632308"></p><p>mirror 镜像  动画将镜像播放</p><p><img src="/../images/image-20221025083339022.png" alt="image-20221025083339022"></p><p>Controller 动画控制器</p><p>Avatae 骨骼</p><p>Apply Root Motion 应用根文件 ，即是否应用动画的设置</p><h2 id="Animator-Controller"><a href="#Animator-Controller" class="headerlink" title="Animator Controller"></a>Animator Controller</h2><p><img src="/../images/image-20221025083821401.png" alt="image-20221025083821401"></p><p>set as Layer Default State 设置为本层默认动画</p><p><img src="/../images/image-20221025085441219.png" alt="image-20221025085441219"></p><p>Conditions 设置条件值 当条件满足时进行切换</p><p>Has Exit Time 是否等动画播放完才能进行切换</p><p>只需要执行一次的动画：设置bool触发，将bool设置为条件，设置触发的动画为有退出时间</p><h2 id="设置动画速度"><a href="#设置动画速度" class="headerlink" title="设置动画速度"></a>设置动画速度</h2><p><img src="/../images/image-20221025090800493.png" alt="image-20221025090800493"></p><p>勾选 parameter  设置参数  动画的播放速度就取决于参数的值</p>]]></content>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;动画基础&quot;&gt;&lt;a href=&quot;#动画基础&quot; class=&quot;headerlink&quot; title=&quot;动画基础&quot;&gt;&lt;/a&gt;动画基础&lt;/h1&gt;&lt;h2 id=&quot;动画面板&quot;&gt;&lt;a href=&quot;#动画面板&quot; class=&quot;headerlink&quot; title=&quot;动画面板&quot;&gt;&lt;/a&gt;动画面板&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;/../images/image-20221025081330434.png&quot; alt=&quot;image-20221025081330434&quot;&gt;&lt;/p&gt;
+&lt;p&gt;loop time循环时间&lt;/p&gt;
+&lt;p&gt;Loop Pose 循环姿势，使循环时更加流畅&lt;/p&gt;
+&lt;p&gt;cycle offset 偏移量，从哪来开始播放&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="unity" scheme="http://example.com/categories/unity/"/>
+    
+    
+    <category term="动画" scheme="http://example.com/tags/%E5%8A%A8%E7%94%BB/"/>
+    
+  </entry>
   
   <entry>
     <title>unity10-24</title>
