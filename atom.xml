@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-10-25T14:35:14.389Z</updated>
+  <updated>2022-10-26T00:29:45.490Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,12 +17,33 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>unity10-26</title>
+    <link href="http://example.com/2022/10/26/unity10-26/"/>
+    <id>http://example.com/2022/10/26/unity10-26/</id>
+    <published>2022-10-25T23:58:23.000Z</published>
+    <updated>2022-10-26T00:29:45.490Z</updated>
+    
+    
+    
+    
+    <category term="unity" scheme="http://example.com/categories/unity/"/>
+    
+    
+    <category term="小鸟案例" scheme="http://example.com/tags/%E5%B0%8F%E9%B8%9F%E6%A1%88%E4%BE%8B/"/>
+    
+  </entry>
+  
+  <entry>
     <title>圣经</title>
     <link href="http://example.com/2022/10/25/%E5%9C%A3%E7%BB%8F/"/>
     <id>http://example.com/2022/10/25/%E5%9C%A3%E7%BB%8F/</id>
     <published>2022-10-25T14:34:54.000Z</published>
-    <updated>2022-10-25T14:35:14.389Z</updated>
+    <updated>2022-10-26T00:28:46.858Z</updated>
     
+    <content type="html"><![CDATA[<h1 id="团队四种人"><a href="#团队四种人" class="headerlink" title="团队四种人"></a>团队四种人</h1><p><img src="/../images/image-20221025223641429.png" alt="image-20221025223641429"></p><span id="more"></span><p>选择环境,获取信息，有知觉，选择角度，去做（专注）</p><p>入门：关注于过程  精通：关注于结果</p><h1 id="学习方式"><a href="#学习方式" class="headerlink" title="学习方式"></a>学习方式</h1><p><img src="/../images/image-20221026081620549.png" alt="image-20221026081620549"></p><p>学习是循序渐进放到过程，要有良好的心态</p><p><img src="/../images/image-20221026082020113.png" alt="image-20221026082020113"></p><p>经历跃迁的成长</p><p>于过去的自己进行对比</p>]]></content>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;团队四种人&quot;&gt;&lt;a href=&quot;#团队四种人&quot; class=&quot;headerlink&quot; title=&quot;团队四种人&quot;&gt;&lt;/a&gt;团队四种人&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;/../images/image-20221025223641429.png&quot; alt=&quot;image-20221025223641429&quot;&gt;&lt;/p&gt;</summary>
     
     
     
