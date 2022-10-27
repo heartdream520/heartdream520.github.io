@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-10-27T02:27:38.563Z</updated>
+  <updated>2022-10-27T10:06:12.965Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,8 +21,15 @@
     <link href="http://example.com/2022/10/27/unity10-27/"/>
     <id>http://example.com/2022/10/27/unity10-27/</id>
     <published>2022-10-27T02:26:54.960Z</published>
-    <updated>2022-10-27T02:27:38.563Z</updated>
+    <updated>2022-10-27T10:06:12.965Z</updated>
     
+    <content type="html"><![CDATA[<h1 id="动画和刚体"><a href="#动画和刚体" class="headerlink" title="动画和刚体"></a>动画和刚体</h1><p><code>Animation</code> 和 <code>RigidBody </code>不能加在同一物体上，会产生冲突</p><p>一般挂载在两个物体上</p><h1 id="玩家死亡"><a href="#玩家死亡" class="headerlink" title="玩家死亡"></a>玩家死亡</h1><p>使用委托定义事件，当玩家死亡时，关心玩家是否死亡的人将向委托中添加函数，当玩家死亡时执行该委托即可</p><h1 id="分数系统"><a href="#分数系统" class="headerlink" title="分数系统"></a>分数系统</h1><p><code>using UnityEngine Events;</code></p><p><code>UntiyAction</code></p><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> UnityAction&lt;<span class="built_in">int</span>&gt;onscore;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;动画和刚体&quot;&gt;&lt;a href=&quot;#动画和刚体&quot; class=&quot;headerlink&quot; title=&quot;动画和刚体&quot;&gt;&lt;/a&gt;动画和刚体&lt;/h1&gt;&lt;p&gt;&lt;code&gt;Animation&lt;/code&gt; 和 &lt;code&gt;RigidBody &lt;/code&gt;不能加在同一物体上，</summary>
+      
     
     
     
