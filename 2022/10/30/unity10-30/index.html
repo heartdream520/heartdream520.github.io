@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"manual"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="内容12345自适应组件 Content Size Fitter文档整理思路写的差不多了感觉后边的大部分重复，先写着这些功能，遇到问题再写学习解包整出游戏所用的素材，再去资源商店找找素材，明天就可以开工了">
+<meta property="og:type" content="article">
+<meta property="og:title" content="unity10-30">
+<meta property="og:url" content="http://example.com/2022/10/30/unity10-30/index.html">
+<meta property="og:site_name" content="心梦">
+<meta property="og:description" content="内容12345自适应组件 Content Size Fitter文档整理思路写的差不多了感觉后边的大部分重复，先写着这些功能，遇到问题再写学习解包整出游戏所用的素材，再去资源商店找找素材，明天就可以开工了">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/images/e96091570dcd80e31ddb09633ae71a1.jpg">
+<meta property="og:image" content="http://example.com/images/2fab2c587d81a7526e28d5b2c77cb65.jpg">
+<meta property="og:image" content="http://example.com/images/cb11c1d396a33c3225535c02b5c654c.jpg">
+<meta property="og:image" content="http://example.com/images/26cd5e301741d94499af95fa9474af3.jpg">
+<meta property="og:image" content="http://example.com/images/16f463c6b98e5a8b84335fd7ec56ed2.jpg">
+<meta property="og:image" content="http://example.com/images/900334cb279340c994a92c6d96f6d2e-16671202709481.jpg">
+<meta property="og:image" content="http://example.com/images/5a1753b0b748a322d24f7ebbdb5082d.jpg">
+<meta property="og:image" content="http://example.com/images/782f1b79bcc2aab7396d012fc546cbc.jpg">
+<meta property="og:image" content="http://example.com/images/6b6302c105a5ab6dae691295258e5e9.jpg">
+<meta property="og:image" content="http://example.com/images/395963f14ac7f91042e24a4964ab022.jpg">
+<meta property="og:image" content="http://example.com/images/21c8c04c1c34ed17520b48b2b2065b6.jpg">
+<meta property="og:image" content="http://example.com/images/1039ff5ab70cc091204be03262a55c9.jpg">
+<meta property="og:image" content="http://example.com/images/36baaaae17d8718619721c12062ceb4.jpg">
+<meta property="og:image" content="http://example.com/images/0463301d46c829ed4876a735b56677e.jpg">
+<meta property="og:image" content="http://example.com/images/c8596eb70ca2df75d643ad31793237f.jpg">
+<meta property="og:image" content="http://example.com/images/b7552d6c0a063a984f9c17caab46dea.jpg">
+<meta property="og:image" content="http://example.com/images/b24d414466940ff2542e42ae797a440.jpg">
+<meta property="og:image" content="http://example.com/images/2503b390436e3c0a48fd8f18182333a.jpg">
+<meta property="og:image" content="http://example.com/images/29043f1e3bfe2b28173aca0eb701ce5.jpg">
+<meta property="og:image" content="http://example.com/images/49369517294bb929296ccaf0b936751.jpg">
+<meta property="og:image" content="http://example.com/images/974d66a3163e7a024fb606ed791a105.jpg">
+<meta property="og:image" content="http://example.com/images/552156f196908cf970eca4432675967.jpg">
+<meta property="og:image" content="http://example.com/images/b08f8bbe2dcf400ee1a87ca2543c005.jpg">
+<meta property="og:image" content="http://example.com/images/2bfa18276292cf26c05c6367621a008.jpg">
+<meta property="og:image" content="http://example.com/images/1c9a9db7212a605e9a8850d242679fe.jpg">
+<meta property="og:image" content="http://example.com/images/f886150c55f23f46a05311f6e0b2a50.jpg">
+<meta property="og:image" content="http://example.com/images/1ea67d2af64ef68a12b44182952231d.jpg">
+<meta property="og:image" content="http://example.com/images/d8a4d93f0558bf23fb7579289a896b1.jpg">
+<meta property="og:image" content="http://example.com/images/dc555e6d0e167cb5141791887fcca0c.jpg">
+<meta property="og:image" content="http://example.com/images/529a0a4f66758adc87b95aebcbf2f44.jpg">
+<meta property="og:image" content="http://example.com/images/647bcbb209ef9ce8734218e2d00cf1d.jpg">
+<meta property="og:image" content="http://example.com/images/eda8affbba85b33b612901f8c6e943a.jpg">
+<meta property="article:published_time" content="2022-10-30T00:36:51.000Z">
+<meta property="article:modified_time" content="2022-10-30T09:09:58.184Z">
+<meta property="article:author" content="心梦">
+<meta property="article:tag" content="美食梦物语">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/e96091570dcd80e31ddb09633ae71a1.jpg">
+
+<link rel="canonical" href="http://example.com/2022/10/30/unity10-30/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>unity10-30 | 心梦</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="心梦" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">心梦</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-resources">
+
+    <a href="/resources/" rel="section"><i class="download fa-fw"></i>资源</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+
+  <a href="https://github.com/heartdream520" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/30/unity10-30/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/ailulu.jpg">
+      <meta itemprop="name" content="心梦">
+      <meta itemprop="description" content="heart_dream">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="心梦">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          unity10-30
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-10-30 08:36:51 / 修改时间：17:09:58" itemprop="dateCreated datePublished" datetime="2022-10-30T08:36:51+08:00">2022-10-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/unity/" itemprop="url" rel="index"><span itemprop="name">unity</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>275</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">自适应组件 Content Size Fitter</span><br><span class="line"></span><br><span class="line">文档整理思路写的差不多了感觉后边的大部分重复，先写着这些功能，遇到问题再写</span><br><span class="line"></span><br><span class="line">学习解包整出游戏所用的素材，再去资源商店找找素材，明天就可以开工了</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<h1 id="玩家"><a href="#玩家" class="headerlink" title="玩家"></a>玩家</h1><h2 id="玩家信息类"><a href="#玩家信息类" class="headerlink" title="玩家信息类"></a>玩家信息类</h2><p><img src="/../images/e96091570dcd80e31ddb09633ae71a1.jpg" alt="e96091570dcd80e31ddb09633ae71a1"></p>
+<p><img src="/../images/2fab2c587d81a7526e28d5b2c77cb65.jpg" alt="2fab2c587d81a7526e28d5b2c77cb65"></p>
+<h2 id="玩家注册"><a href="#玩家注册" class="headerlink" title="玩家注册"></a>玩家注册</h2><p><img src="/../images/cb11c1d396a33c3225535c02b5c654c.jpg" alt="cb11c1d396a33c3225535c02b5c654c"></p>
+<h1 id="店员"><a href="#店员" class="headerlink" title="店员"></a>店员</h1><h2 id="店员类"><a href="#店员类" class="headerlink" title="店员类"></a>店员类</h2><p><img src="/../images/26cd5e301741d94499af95fa9474af3.jpg" alt="26cd5e301741d94499af95fa9474af3"></p>
+<h2 id="店员玩家类"><a href="#店员玩家类" class="headerlink" title="店员玩家类"></a>店员玩家类</h2><p><img src="/../images/16f463c6b98e5a8b84335fd7ec56ed2.jpg" alt="16f463c6b98e5a8b84335fd7ec56ed2"></p>
+<h2 id="店员数据"><a href="#店员数据" class="headerlink" title="店员数据"></a>店员数据</h2><p><img src="/../images/900334cb279340c994a92c6d96f6d2e-16671202709481.jpg" alt="900334cb279340c994a92c6d96f6d2e"></p>
+<h2 id="设置店员界面-上任店员界面"><a href="#设置店员界面-上任店员界面" class="headerlink" title="设置店员界面 上任店员界面"></a>设置店员界面 上任店员界面</h2><p><img src="/../images/5a1753b0b748a322d24f7ebbdb5082d.jpg" alt="5a1753b0b748a322d24f7ebbdb5082d"></p>
+<h2 id="上任店员块"><a href="#上任店员块" class="headerlink" title="上任店员块"></a>上任店员块</h2><h2 id=""><a href="#" class="headerlink" title=""></a><img src="/../images/782f1b79bcc2aab7396d012fc546cbc.jpg" alt="782f1b79bcc2aab7396d012fc546cbc"></h2><h2 id="查看属性界面"><a href="#查看属性界面" class="headerlink" title="查看属性界面"></a>查看属性界面</h2><p><img src="/../images/6b6302c105a5ab6dae691295258e5e9.jpg" alt="6b6302c105a5ab6dae691295258e5e9"></p>
+<h2 id="未上任店员界面"><a href="#未上任店员界面" class="headerlink" title="未上任店员界面"></a>未上任店员界面</h2><p><img src="/../images/395963f14ac7f91042e24a4964ab022.jpg" alt="395963f14ac7f91042e24a4964ab022"></p>
+<h2 id="未上任店员块"><a href="#未上任店员块" class="headerlink" title="未上任店员块"></a>未上任店员块</h2><p><img src="/../images/21c8c04c1c34ed17520b48b2b2065b6.jpg" alt="21c8c04c1c34ed17520b48b2b2065b6"></p>
+<h2 id="雇佣店员界面"><a href="#雇佣店员界面" class="headerlink" title="雇佣店员界面"></a>雇佣店员界面</h2><p><img src="/../images/1039ff5ab70cc091204be03262a55c9.jpg" alt="1039ff5ab70cc091204be03262a55c9"></p>
+<h2 id="雇佣店员块"><a href="#雇佣店员块" class="headerlink" title="雇佣店员块"></a>雇佣店员块</h2><p><img src="/../images/36baaaae17d8718619721c12062ceb4.jpg" alt="36baaaae17d8718619721c12062ceb4"></p>
+<h1 id="菜单"><a href="#菜单" class="headerlink" title="菜单"></a>菜单</h1><h2 id="菜单类"><a href="#菜单类" class="headerlink" title="菜单类"></a>菜单类</h2><p><img src="/../images/0463301d46c829ed4876a735b56677e.jpg" alt="0463301d46c829ed4876a735b56677e"></p>
+<h2 id="菜单玩家类"><a href="#菜单玩家类" class="headerlink" title="菜单玩家类"></a>菜单玩家类</h2><p><img src="/../images/c8596eb70ca2df75d643ad31793237f.jpg" alt="c8596eb70ca2df75d643ad31793237f"></p>
+<h2 id="菜单数据"><a href="#菜单数据" class="headerlink" title="菜单数据"></a>菜单数据</h2><p><img src="/../images/b7552d6c0a063a984f9c17caab46dea.jpg" alt="b7552d6c0a063a984f9c17caab46dea"></p>
+<h2 id="更新菜单"><a href="#更新菜单" class="headerlink" title="更新菜单"></a>更新菜单</h2><p><img src="/../images/b24d414466940ff2542e42ae797a440.jpg" alt="b24d414466940ff2542e42ae797a440"></p>
+<h2 id="店内菜单块类"><a href="#店内菜单块类" class="headerlink" title="店内菜单块类"></a>店内菜单块类</h2><p><img src="/../images/2503b390436e3c0a48fd8f18182333a.jpg" alt="2503b390436e3c0a48fd8f18182333a"></p>
+<h2 id="点击菜单显示UI-菜单列表选择管理"><a href="#点击菜单显示UI-菜单列表选择管理" class="headerlink" title="点击菜单显示UI  菜单列表选择管理"></a>点击菜单显示UI  菜单列表选择管理</h2><p><img src="/../images/29043f1e3bfe2b28173aca0eb701ce5.jpg" alt="29043f1e3bfe2b28173aca0eb701ce5"></p>
+<p><img src="/../images/49369517294bb929296ccaf0b936751.jpg" alt="49369517294bb929296ccaf0b936751"></p>
+<h2 id="选择菜单菜单块"><a href="#选择菜单菜单块" class="headerlink" title="选择菜单菜单块"></a>选择菜单菜单块</h2><p><img src="/../images/974d66a3163e7a024fb606ed791a105.jpg" alt="974d66a3163e7a024fb606ed791a105"></p>
+<h2 id="菜品开发界面"><a href="#菜品开发界面" class="headerlink" title="菜品开发界面"></a>菜品开发界面</h2><p><img src="/../images/552156f196908cf970eca4432675967.jpg" alt="552156f196908cf970eca4432675967"></p>
+<h2 id="菜品开发管理类"><a href="#菜品开发管理类" class="headerlink" title="菜品开发管理类"></a>菜品开发管理类</h2><p><img src="/../images/b08f8bbe2dcf400ee1a87ca2543c005.jpg" alt="b08f8bbe2dcf400ee1a87ca2543c005"></p>
+<h2 id="未开发菜单块"><a href="#未开发菜单块" class="headerlink" title="未开发菜单块"></a>未开发菜单块</h2><p><img src="/../images/2bfa18276292cf26c05c6367621a008.jpg" alt="2bfa18276292cf26c05c6367621a008"></p>
+<h1 id="食材"><a href="#食材" class="headerlink" title="食材"></a>食材</h1><h2 id="食材类"><a href="#食材类" class="headerlink" title="食材类"></a>食材类</h2><p><img src="/../images/1c9a9db7212a605e9a8850d242679fe.jpg" alt="1c9a9db7212a605e9a8850d242679fe"></p>
+<h2 id="食材玩家类"><a href="#食材玩家类" class="headerlink" title="食材玩家类"></a>食材玩家类</h2><p><img src="/../images/f886150c55f23f46a05311f6e0b2a50.jpg" alt="f886150c55f23f46a05311f6e0b2a50"></p>
+<h2 id="食材数据"><a href="#食材数据" class="headerlink" title="食材数据"></a>食材数据</h2><p><img src="/../images/1ea67d2af64ef68a12b44182952231d.jpg" alt="1ea67d2af64ef68a12b44182952231d"></p>
+<h2 id="背包UI"><a href="#背包UI" class="headerlink" title="背包UI"></a>背包UI</h2><p><img src="/../images/d8a4d93f0558bf23fb7579289a896b1.jpg" alt="d8a4d93f0558bf23fb7579289a896b1"></p>
+<h2 id="背包管理类"><a href="#背包管理类" class="headerlink" title="背包管理类"></a>背包管理类</h2><p><img src="/../images/dc555e6d0e167cb5141791887fcca0c.jpg" alt="dc555e6d0e167cb5141791887fcca0c"></p>
+<h2 id="背包块"><a href="#背包块" class="headerlink" title="背包块"></a>背包块</h2><p><img src="/../images/529a0a4f66758adc87b95aebcbf2f44.jpg" alt="529a0a4f66758adc87b95aebcbf2f44"></p>
+<h2 id="显示菜单页面"><a href="#显示菜单页面" class="headerlink" title="显示菜单页面"></a>显示菜单页面</h2><p><img src="/../images/647bcbb209ef9ce8734218e2d00cf1d.jpg" alt="647bcbb209ef9ce8734218e2d00cf1d"></p>
+<h2 id="菜品强化页面"><a href="#菜品强化页面" class="headerlink" title="菜品强化页面"></a>菜品强化页面</h2><h2 id="-1"><a href="#-1" class="headerlink" title=""></a><img src="/../images/eda8affbba85b33b612901f8c6e943a.jpg" alt="eda8affbba85b33b612901f8c6e943a"></h2>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%BE%8E%E9%A3%9F%E6%A2%A6%E7%89%A9%E8%AF%AD/" rel="tag"># 美食梦物语</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/10/29/unity10-29/" rel="prev" title="unity10-29">
+      <i class="fa fa-chevron-left"></i> unity10-29
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%86%85%E5%AE%B9"><span class="nav-number">1.</span> <span class="nav-text">内容</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%8E%A9%E5%AE%B6"><span class="nav-number">2.</span> <span class="nav-text">玩家</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8E%A9%E5%AE%B6%E4%BF%A1%E6%81%AF%E7%B1%BB"><span class="nav-number">2.1.</span> <span class="nav-text">玩家信息类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8E%A9%E5%AE%B6%E6%B3%A8%E5%86%8C"><span class="nav-number">2.2.</span> <span class="nav-text">玩家注册</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BA%97%E5%91%98"><span class="nav-number">3.</span> <span class="nav-text">店员</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BA%97%E5%91%98%E7%B1%BB"><span class="nav-number">3.1.</span> <span class="nav-text">店员类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BA%97%E5%91%98%E7%8E%A9%E5%AE%B6%E7%B1%BB"><span class="nav-number">3.2.</span> <span class="nav-text">店员玩家类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BA%97%E5%91%98%E6%95%B0%E6%8D%AE"><span class="nav-number">3.3.</span> <span class="nav-text">店员数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E5%BA%97%E5%91%98%E7%95%8C%E9%9D%A2-%E4%B8%8A%E4%BB%BB%E5%BA%97%E5%91%98%E7%95%8C%E9%9D%A2"><span class="nav-number">3.4.</span> <span class="nav-text">设置店员界面 上任店员界面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8A%E4%BB%BB%E5%BA%97%E5%91%98%E5%9D%97"><span class="nav-number">3.5.</span> <span class="nav-text">上任店员块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">3.6.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E5%B1%9E%E6%80%A7%E7%95%8C%E9%9D%A2"><span class="nav-number">3.7.</span> <span class="nav-text">查看属性界面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AA%E4%B8%8A%E4%BB%BB%E5%BA%97%E5%91%98%E7%95%8C%E9%9D%A2"><span class="nav-number">3.8.</span> <span class="nav-text">未上任店员界面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AA%E4%B8%8A%E4%BB%BB%E5%BA%97%E5%91%98%E5%9D%97"><span class="nav-number">3.9.</span> <span class="nav-text">未上任店员块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9B%87%E4%BD%A3%E5%BA%97%E5%91%98%E7%95%8C%E9%9D%A2"><span class="nav-number">3.10.</span> <span class="nav-text">雇佣店员界面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9B%87%E4%BD%A3%E5%BA%97%E5%91%98%E5%9D%97"><span class="nav-number">3.11.</span> <span class="nav-text">雇佣店员块</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%8F%9C%E5%8D%95"><span class="nav-number">4.</span> <span class="nav-text">菜单</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8F%9C%E5%8D%95%E7%B1%BB"><span class="nav-number">4.1.</span> <span class="nav-text">菜单类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8F%9C%E5%8D%95%E7%8E%A9%E5%AE%B6%E7%B1%BB"><span class="nav-number">4.2.</span> <span class="nav-text">菜单玩家类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8F%9C%E5%8D%95%E6%95%B0%E6%8D%AE"><span class="nav-number">4.3.</span> <span class="nav-text">菜单数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0%E8%8F%9C%E5%8D%95"><span class="nav-number">4.4.</span> <span class="nav-text">更新菜单</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BA%97%E5%86%85%E8%8F%9C%E5%8D%95%E5%9D%97%E7%B1%BB"><span class="nav-number">4.5.</span> <span class="nav-text">店内菜单块类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%82%B9%E5%87%BB%E8%8F%9C%E5%8D%95%E6%98%BE%E7%A4%BAUI-%E8%8F%9C%E5%8D%95%E5%88%97%E8%A1%A8%E9%80%89%E6%8B%A9%E7%AE%A1%E7%90%86"><span class="nav-number">4.6.</span> <span class="nav-text">点击菜单显示UI  菜单列表选择管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%89%E6%8B%A9%E8%8F%9C%E5%8D%95%E8%8F%9C%E5%8D%95%E5%9D%97"><span class="nav-number">4.7.</span> <span class="nav-text">选择菜单菜单块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8F%9C%E5%93%81%E5%BC%80%E5%8F%91%E7%95%8C%E9%9D%A2"><span class="nav-number">4.8.</span> <span class="nav-text">菜品开发界面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8F%9C%E5%93%81%E5%BC%80%E5%8F%91%E7%AE%A1%E7%90%86%E7%B1%BB"><span class="nav-number">4.9.</span> <span class="nav-text">菜品开发管理类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AA%E5%BC%80%E5%8F%91%E8%8F%9C%E5%8D%95%E5%9D%97"><span class="nav-number">4.10.</span> <span class="nav-text">未开发菜单块</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A3%9F%E6%9D%90"><span class="nav-number">5.</span> <span class="nav-text">食材</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A3%9F%E6%9D%90%E7%B1%BB"><span class="nav-number">5.1.</span> <span class="nav-text">食材类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A3%9F%E6%9D%90%E7%8E%A9%E5%AE%B6%E7%B1%BB"><span class="nav-number">5.2.</span> <span class="nav-text">食材玩家类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A3%9F%E6%9D%90%E6%95%B0%E6%8D%AE"><span class="nav-number">5.3.</span> <span class="nav-text">食材数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%83%8C%E5%8C%85UI"><span class="nav-number">5.4.</span> <span class="nav-text">背包UI</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%83%8C%E5%8C%85%E7%AE%A1%E7%90%86%E7%B1%BB"><span class="nav-number">5.5.</span> <span class="nav-text">背包管理类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%83%8C%E5%8C%85%E5%9D%97"><span class="nav-number">5.6.</span> <span class="nav-text">背包块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%98%BE%E7%A4%BA%E8%8F%9C%E5%8D%95%E9%A1%B5%E9%9D%A2"><span class="nav-number">5.7.</span> <span class="nav-text">显示菜单页面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8F%9C%E5%93%81%E5%BC%BA%E5%8C%96%E9%A1%B5%E9%9D%A2"><span class="nav-number">5.8.</span> <span class="nav-text">菜品强化页面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#-1"><span class="nav-number">5.9.</span> <span class="nav-text"></span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="心梦"
+      src="/images/ailulu.jpg">
+  <p class="site-author-name" itemprop="name">心梦</p>
+  <div class="site-description" itemprop="description">heart_dream</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">22</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/heartdream520" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;heartdream520" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.acwing.com/user/myspace/index/60784/" title="Acwing → https:&#x2F;&#x2F;www.acwing.com&#x2F;user&#x2F;myspace&#x2F;index&#x2F;60784&#x2F;" rel="noopener" target="_blank"><i class="fab fa-Acwing fa-fw"></i>Acwing</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://codeforces.com/profile/Heart_dream" title="Codeforces → https:&#x2F;&#x2F;codeforces.com&#x2F;profile&#x2F;Heart_dream" rel="noopener" target="_blank"><i class="fab fa-codeforces fa-fw"></i>Codeforces</a>
+      </span>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">心梦</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">66k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">1:01</span>
+</div>
+
+
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
