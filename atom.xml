@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-10-31T15:38:44.104Z</updated>
+  <updated>2022-10-31T23:43:09.176Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,19 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>unity11-1</title>
+    <link href="http://example.com/2022/11/01/unity11-1/"/>
+    <id>http://example.com/2022/11/01/unity11-1/</id>
+    <published>2022-10-31T23:43:09.000Z</published>
+    <updated>2022-10-31T23:43:09.176Z</updated>
+    
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>unity模板</title>
@@ -410,25 +423,6 @@
     
     
     <category term="unity" scheme="http://example.com/categories/unity/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>SKILL笔记</title>
-    <link href="http://example.com/2022/10/18/SKILL%E7%AC%94%E8%AE%B0/"/>
-    <id>http://example.com/2022/10/18/SKILL%E7%AC%94%E8%AE%B0/</id>
-    <published>2022-10-18T12:36:15.000Z</published>
-    <updated>2022-10-18T15:17:01.207Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="对技术掌握程度四个维度"><a href="#对技术掌握程度四个维度" class="headerlink" title="对技术掌握程度四个维度"></a>对技术掌握程度四个维度</h1><p><img src="/../images/image-20221018205448651.png" alt="image-20221018205448651"></p><span id="more"></span><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">一定要了解的在写到简历里</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">我的文件助手  23:10:55</span><br><span class="line">Demo要有基本功能模块的实现，比如背包，商店，道具，装备、战斗系统等</span><br><span class="line"></span><br><span class="line">我的文件助手  23:11:09</span><br><span class="line">入门阶段：</span><br><span class="line">1、C#基础语法， unity2d基础学习等 ，然后花3天左右，做一个2d小案例实战</span><br><span class="line">2、开始学习c#面向对象 IO操作和数据结构 unity3d这块 也是各一周 然后再花一周学个3d案例</span><br><span class="line">二、入行阶段：</span><br><span class="line">1、商业级MMORPG项目的基础系统模块（背包，商店，道具，装备等）熟练开发，完整策划案，美术资源，商业框架，服务器，我们直接提供，战斗，性能优化，入行之后再学习，总共两个月时间</span><br><span class="line">2、三天学习lua语言，xlua插件三天，简易xlua框架实战一周，商业级xlua框架实战，两周</span><br><span class="line">三、求职阶段：</span><br><span class="line">简历撰写，刷题，面试模拟，内推+简历投递+offer筛选</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure><h1 id="u3d-游戏开发职业发展和入行标准"><a href="#u3d-游戏开发职业发展和入行标准" class="headerlink" title="u3d 游戏开发职业发展和入行标准"></a>u3d 游戏开发职业发展和入行标准</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">入行最好角色扮演和回合制游戏，或者卡牌游戏</span><br><span class="line">不要做moba ，开始不要做三消，比较难跳槽</span><br></pre></td></tr></table></figure><p><img src="/../images/image-20221018222631599.png" alt="image-20221018222631599"></p><p><img src="/../images/image-20221018222651589.png" alt="image-20221018222651589"></p><p><img src="/../images/image-20221018222704583.png" alt="image-20221018222704583"></p><p><img src="/../images/image-20221018222717932.png" alt="image-20221018222717932"></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">不要降低薪资要求</span><br><span class="line">持久学习</span><br></pre></td></tr></table></figure><p><img src="/../images/image-20221018222730565.png" alt="image-20221018222730565"></p><h1 id="u3d游戏开发学习方法论"><a href="#u3d游戏开发学习方法论" class="headerlink" title="u3d游戏开发学习方法论"></a>u3d游戏开发学习方法论</h1><p><img src="/../images/image-20221018222742698.png" alt="image-20221018222742698"></p><p><img src="/../images/image-20221018222754480.png" alt="image-20221018222754480"></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在低谷期中不要放弃，度过低谷期不要自满</span><br></pre></td></tr></table></figure><h1 id="游戏行业解读学习过程"><a href="#游戏行业解读学习过程" class="headerlink" title="游戏行业解读学习过程"></a>游戏行业解读学习过程</h1><p><img src="/../images/mmexport1666103949038.png" alt="mmexport1666103949038"></p>]]></content>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;对技术掌握程度四个维度&quot;&gt;&lt;a href=&quot;#对技术掌握程度四个维度&quot; class=&quot;headerlink&quot; title=&quot;对技术掌握程度四个维度&quot;&gt;&lt;/a&gt;对技术掌握程度四个维度&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;/../images/image-20221018205448651.png&quot; alt=&quot;image-20221018205448651&quot;&gt;&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="SKILL" scheme="http://example.com/categories/SKILL/"/>
     
     
   </entry>
