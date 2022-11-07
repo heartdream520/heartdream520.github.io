@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-11-04T09:36:30.713Z</updated>
+  <updated>2022-11-07T13:16:18.884Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,16 +17,58 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>unity11-7</title>
+    <link href="http://example.com/2022/11/07/unity11-7/"/>
+    <id>http://example.com/2022/11/07/unity11-7/</id>
+    <published>2022-11-07T00:40:38.000Z</published>
+    <updated>2022-11-07T13:16:18.884Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">菜品属性查看</span><br><span class="line">菜品设置</span><br><span class="line">菜品开发</span><br></pre></td></tr></table></figure><span id="more"></span><h1 id="菜品属性查看"><a href="#菜品属性查看" class="headerlink" title="菜品属性查看"></a>菜品属性查看</h1><p><img src="/../images/image-20221107211545129.png" alt="image-20221107211545129"></p><h1 id="菜品设置"><a href="#菜品设置" class="headerlink" title="菜品设置"></a>菜品设置</h1><p><img src="/../images/image-20221107211605068.png" alt="image-20221107211605068"></p><h1 id="菜品开发"><a href="#菜品开发" class="headerlink" title="菜品开发"></a>菜品开发</h1><p><img src="/../images/image-20221107211617752.png" alt="image-20221107211617752"></p>]]></content>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;内容&quot;&gt;&lt;a href=&quot;#内容&quot; class=&quot;headerlink&quot; title=&quot;内容&quot;&gt;&lt;/a&gt;内容&lt;/h1&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;菜品属性查看&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;菜品设置&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;菜品开发&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    <category term="unity" scheme="http://example.com/categories/unity/"/>
+    
+    
+    <category term="美食梦物语" scheme="http://example.com/tags/%E7%BE%8E%E9%A3%9F%E6%A2%A6%E7%89%A9%E8%AF%AD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>unity11-6</title>
+    <link href="http://example.com/2022/11/06/unity11-6/"/>
+    <id>http://example.com/2022/11/06/unity11-6/</id>
+    <published>2022-11-06T00:04:25.000Z</published>
+    <updated>2022-11-07T13:14:21.687Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">店员属性显示</span><br><span class="line">上任店员，下任店员</span><br></pre></td></tr></table></figure><span id="more"></span><h1 id="店员属性显示"><a href="#店员属性显示" class="headerlink" title="店员属性显示"></a>店员属性显示</h1><p><img src="/../images/image-20221106083432634.png" alt="image-20221106083432634"></p><h1 id="下任店员"><a href="#下任店员" class="headerlink" title="下任店员"></a>下任店员</h1><p><img src="/../images/image-20221107083221728.png" alt="image-20221107083221728"></p><h1 id="上任店员"><a href="#上任店员" class="headerlink" title="上任店员"></a>上任店员</h1><p><img src="/../images/image-20221107083239152.png" alt="image-20221107083239152"></p>]]></content>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;内容&quot;&gt;&lt;a href=&quot;#内容&quot; class=&quot;headerlink&quot; title=&quot;内容&quot;&gt;&lt;/a&gt;内容&lt;/h1&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;店员属性显示&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;上任店员，下任店员&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    <category term="unity" scheme="http://example.com/categories/unity/"/>
+    
+    
+    <category term="美食梦物语" scheme="http://example.com/tags/%E7%BE%8E%E9%A3%9F%E6%A2%A6%E7%89%A9%E8%AF%AD/"/>
+    
+  </entry>
+  
+  <entry>
     <title>unity11-4</title>
     <link href="http://example.com/2022/11/04/unity11-4/"/>
     <id>http://example.com/2022/11/04/unity11-4/</id>
     <published>2022-11-04T09:34:49.000Z</published>
-    <updated>2022-11-04T09:36:30.713Z</updated>
+    <updated>2022-11-06T00:08:04.877Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">没有继承MonoBehaviour的类不能获取到继承 MonoBehaviour的脚本</span><br><span class="line"></span><br></pre></td></tr></table></figure><span id="more"></span>]]></content>
+    <content type="html"><![CDATA[<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">没有继承MonoBehaviour的类不能获取到继承 MonoBehaviour的脚本</span><br><span class="line">遍历字典的方法</span><br><span class="line">写了雇佣店员界面</span><br></pre></td></tr></table></figure><span id="more"></span><h1 id="遍历字典的方法"><a href="#遍历字典的方法" class="headerlink" title="遍历字典的方法"></a>遍历字典的方法</h1><p><strong>1、使用for遍历字典(Dictionary)</strong></p><p>注意：ElementAt()需要引入using System.Linq命名空间，Dictionary命令空间是using System.Collections.Generic;</p><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Dictionary&lt;<span class="built_in">string</span>, <span class="built_in">string</span>&gt; dic =</span><br><span class="line">            <span class="keyword">new</span> Dictionary&lt;<span class="built_in">string</span>, <span class="built_in">string</span>&gt; &#123;</span><br><span class="line">                [<span class="string">&quot;key1&quot;</span>] = <span class="string">&quot;value1&quot;</span>,</span><br><span class="line">                [<span class="string">&quot;key2&quot;</span>] = <span class="string">&quot;value2&quot;</span>,</span><br><span class="line">                [<span class="string">&quot;key3&quot;</span>] = <span class="string">&quot;value3&quot;</span></span><br><span class="line">            &#125;;</span><br><span class="line">     <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; dic.Count; i++) &#123;</span><br><span class="line">            <span class="keyword">var</span> item = dic.ElementAt (i);</span><br><span class="line">            Console.WriteLine (<span class="string">&quot;key is &quot;</span> + item.Key);</span><br><span class="line">            Console.WriteLine (<span class="string">&quot;value is &quot;</span> + item.Value);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; dic.Count; i++) &#123;</span><br><span class="line">            Console.WriteLine (<span class="string">&quot;key is &quot;</span> + dic.Keys.ElementAt (i));</span><br><span class="line">            Console.WriteLine (<span class="string">&quot;value is &quot;</span> + dic.Values.ElementAt (i));</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure><p><strong>2、使用foreach遍历字典(Dictionary)</strong></p><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">Dictionary&lt;<span class="built_in">string</span>, <span class="built_in">string</span>&gt; dic =</span><br><span class="line">            <span class="keyword">new</span> Dictionary&lt;<span class="built_in">string</span>, <span class="built_in">string</span>&gt; &#123;</span><br><span class="line">                [<span class="string">&quot;key1&quot;</span>] = <span class="string">&quot;value1&quot;</span>,</span><br><span class="line">                [<span class="string">&quot;key2&quot;</span>] = <span class="string">&quot;value2&quot;</span>,</span><br><span class="line">                [<span class="string">&quot;key3&quot;</span>] = <span class="string">&quot;value3&quot;</span></span><br><span class="line">            &#125;;</span><br><span class="line">    <span class="keyword">foreach</span> (<span class="built_in">string</span> key <span class="keyword">in</span> dic.Keys) &#123;</span><br><span class="line">            Console.WriteLine (<span class="string">&quot;key is &quot;</span> + key);</span><br><span class="line">            Console.WriteLine (<span class="string">&quot;value is &quot;</span> + dic[key]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">foreach</span> (<span class="built_in">string</span> <span class="keyword">value</span> <span class="keyword">in</span> dic.Values) &#123;</span><br><span class="line">            Console.WriteLine (<span class="string">&quot;value is &quot;</span> + <span class="keyword">value</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">foreach</span> (KeyValuePair&lt;<span class="built_in">string</span>, <span class="built_in">string</span>&gt; item <span class="keyword">in</span> dic) &#123;</span><br><span class="line">            Console.WriteLine (<span class="string">&quot;key is &quot;</span> + item.Key);</span><br><span class="line">            Console.WriteLine (<span class="string">&quot;value is &quot;</span> + item.Value);</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure><p><strong>3、使用while遍历字典(Dictionary)</strong></p><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Dictionary&lt;<span class="built_in">string</span>, <span class="built_in">string</span>&gt; dic =</span><br><span class="line">            <span class="keyword">new</span> Dictionary&lt;<span class="built_in">string</span>, <span class="built_in">string</span>&gt; &#123;</span><br><span class="line">                [<span class="string">&quot;key1&quot;</span>] = <span class="string">&quot;value1&quot;</span>,</span><br><span class="line">                [<span class="string">&quot;key2&quot;</span>] = <span class="string">&quot;value2&quot;</span>,</span><br><span class="line">                [<span class="string">&quot;key3&quot;</span>] = <span class="string">&quot;value3&quot;</span></span><br><span class="line">            &#125;;</span><br><span class="line">     <span class="keyword">var</span> enumerator = dic.GetEnumerator ();</span><br><span class="line">        <span class="keyword">while</span> (enumerator.MoveNext ()) &#123;</span><br><span class="line">            Console.WriteLine (<span class="string">&quot;key is &quot;</span> + enumerator.Current.Key);</span><br><span class="line">            Console.WriteLine (<span class="string">&quot;value is &quot;</span> + enumerator.Current.Value);</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure><h1 id="雇佣店员界面"><a href="#雇佣店员界面" class="headerlink" title="雇佣店员界面"></a>雇佣店员界面</h1><p><img src="/../images/image-20221106080800777.png" alt="image-20221106080800777"></p>]]></content>
     
     
-    <summary type="html">&lt;h1 id=&quot;内容&quot;&gt;&lt;a href=&quot;#内容&quot; class=&quot;headerlink&quot; title=&quot;内容&quot;&gt;&lt;/a&gt;内容&lt;/h1&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;没有继承MonoBehaviour的类不能获取到继承 MonoBehaviour的脚本&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    <summary type="html">&lt;h1 id=&quot;内容&quot;&gt;&lt;a href=&quot;#内容&quot; class=&quot;headerlink&quot; title=&quot;内容&quot;&gt;&lt;/a&gt;内容&lt;/h1&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;没有继承MonoBehaviour的类不能获取到继承 MonoBehaviour的脚本&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;遍历字典的方法&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;写了雇佣店员界面&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
     
     
     
@@ -390,46 +432,6 @@
     
     
     <summary type="html">&lt;h1 id=&quot;待补充ing…&quot;&gt;&lt;a href=&quot;#待补充ing…&quot; class=&quot;headerlink&quot; title=&quot;待补充ing….&quot;&gt;&lt;/a&gt;待补充ing….&lt;/h1&gt;</summary>
-    
-    
-    
-    <category term="SKILL" scheme="http://example.com/categories/SKILL/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>nuity10-21</title>
-    <link href="http://example.com/2022/10/21/nuity10-21/"/>
-    <id>http://example.com/2022/10/21/nuity10-21/</id>
-    <published>2022-10-21T07:24:45.000Z</published>
-    <updated>2022-10-22T14:16:45.524Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="实现撞上去会死跳上面没事"><a href="#实现撞上去会死跳上面没事" class="headerlink" title="实现撞上去会死跳上面没事"></a>实现撞上去会死跳上面没事</h1><p>思路：设置两个<code>collider</code> 一个用于放上面，用于检测上方碰撞，一个设为触发器，用于检测侧面碰撞死亡</p><p><img src="/../images/image-20221021152727237.png" alt="image-20221021152727237"></p><p><img src="/../images/image-20221021152740527.png" alt="image-20221021152740527"></p><span id="more"></span><h1 id="设计关卡"><a href="#设计关卡" class="headerlink" title="设计关卡"></a>设计关卡</h1><p>设计关卡，设置预制体</p><p><img src="/../images/image-20221021225817898.png" alt="image-20221021225817898"></p><p><img src="/../images/image-20221021225837035.png" alt="image-20221021225837035"></p><p>游戏基本成型</p>]]></content>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;实现撞上去会死跳上面没事&quot;&gt;&lt;a href=&quot;#实现撞上去会死跳上面没事&quot; class=&quot;headerlink&quot; title=&quot;实现撞上去会死跳上面没事&quot;&gt;&lt;/a&gt;实现撞上去会死跳上面没事&lt;/h1&gt;&lt;p&gt;思路：设置两个&lt;code&gt;collider&lt;/code&gt; 一个用于放上面，用于检测上方碰撞，一个设为触发器，用于检测侧面碰撞死亡&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/../images/image-20221021152727237.png&quot; alt=&quot;image-20221021152727237&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/../images/image-20221021152740527.png&quot; alt=&quot;image-20221021152740527&quot;&gt;&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="unity" scheme="http://example.com/categories/unity/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>SKILL笔记2</title>
-    <link href="http://example.com/2022/10/20/SKILL%E7%AC%94%E8%AE%B02/"/>
-    <id>http://example.com/2022/10/20/SKILL%E7%AC%94%E8%AE%B02/</id>
-    <published>2022-10-20T12:03:48.000Z</published>
-    <updated>2022-10-20T13:50:48.907Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="第三天"><a href="#第三天" class="headerlink" title="第三天"></a>第三天</h1><p><img src="/../images/image-20221020200611380.png" alt="image-20221020200611380"></p><span id="more"></span><h1 id="攻击"><a href="#攻击" class="headerlink" title="攻击"></a>攻击</h1><p>在前方放置一个小球，当进行攻击时，检测小球范围内的物体</p><p>使用动画帧事件控制是否可以攻击</p><p>设置列表，表示本次攻击已经攻击到的敌人，不可以在一次攻击中命中同一敌人两次，当停止攻击时清空列表</p><p>设置可以攻击的敌人的标签，判断当前可以攻击的敌人的标签</p><p>创建树被攻击的动画，当被攻击时触发，并播放动画</p><h1 id="掉落物品"><a href="#掉落物品" class="headerlink" title="掉落物品"></a>掉落物品</h1><p>当dead的时候生成掉落物</p><p><code>instantate</code> 并设置一定范围内的随机生成位置</p><p>最好给掉落物品设置脚本</p><h1 id="野猪AI"><a href="#野猪AI" class="headerlink" title="野猪AI"></a>野猪AI</h1><p>添加动画，导航组件 <code>Nav Mesh Agent</code></p><p>判断当前动画状态</p><p>烘焙导航  将地面设置为静态</p><p>为树设置导航遮挡组件<code> Nav Mesh Obstacle</code></p><p><img src="/../images/image-20221020210953925.png" alt="image-20221020210953925"></p><p>为猪设置攻击球体，设置碰撞器</p><p>待机：待机一段时间后进行巡逻</p><p>攻击：设置攻击，转向攻击目标，关闭移动</p><p>攻击结束：进行状态切换，结束攻击判断是否已经死亡，</p><p>死亡：导入死亡事件，当死亡话画面播放完毕才能销毁，掉落物品</p><h1 id="角色被攻击"><a href="#角色被攻击" class="headerlink" title="角色被攻击"></a>角色被攻击</h1><p>角色被攻击时会播放受击动画</p><p>设置变量受伤中禁止移动</p>]]></content>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;第三天&quot;&gt;&lt;a href=&quot;#第三天&quot; class=&quot;headerlink&quot; title=&quot;第三天&quot;&gt;&lt;/a&gt;第三天&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;/../images/image-20221020200611380.png&quot; alt=&quot;image-20221020200611380&quot;&gt;&lt;/p&gt;</summary>
     
     
     
