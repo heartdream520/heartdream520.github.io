@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-11-19T08:53:25.502Z</updated>
+  <updated>2022-11-19T09:46:08.422Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,12 +21,12 @@
     <link href="http://example.com/2022/11/19/%E6%9E%81%E4%B8%96%E7%95%8C01/"/>
     <id>http://example.com/2022/11/19/%E6%9E%81%E4%B8%96%E7%95%8C01/</id>
     <published>2022-11-19T08:52:38.000Z</published>
-    <updated>2022-11-19T08:53:25.502Z</updated>
+    <updated>2022-11-19T09:46:08.422Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure><span id="more"></span>]]></content>
+    <content type="html"><![CDATA[<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">项目准备</span><br></pre></td></tr></table></figure><span id="more"></span><h1 id="项目准备"><a href="#项目准备" class="headerlink" title="项目准备"></a>项目准备</h1><h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p><img src="/../images/image-20221119165947100.png" alt="image-20221119165947100"></p><p>使用谷歌的协议工具<code>GooGle Protobuf</code></p><h2 id="框架客户端"><a href="#框架客户端" class="headerlink" title="框架客户端"></a>框架客户端</h2><p><img src="/../images/image-20221119170242452.png" alt="image-20221119170242452"></p><h2 id="协议"><a href="#协议" class="headerlink" title="协议"></a>协议</h2><p><img src="/../images/image-20221119170624554.png" alt="image-20221119170624554"></p><h2 id="两种单例"><a href="#两种单例" class="headerlink" title="两种单例"></a>两种单例</h2><h3 id="普通类单例"><a href="#普通类单例" class="headerlink" title="普通类单例"></a>普通类单例</h3><p><img src="/../images/image-20221119174528835.png" alt="image-20221119174528835"></p><h3 id="游戏对象单例"><a href="#游戏对象单例" class="headerlink" title="游戏对象单例"></a>游戏对象单例</h3><p><img src="/../images/image-20221119174607124.png" alt="image-20221119174607124"></p>]]></content>
     
     
-    <summary type="html">&lt;h1 id=&quot;内容&quot;&gt;&lt;a href=&quot;#内容&quot; class=&quot;headerlink&quot; title=&quot;内容&quot;&gt;&lt;/a&gt;内容&lt;/h1&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    <summary type="html">&lt;h1 id=&quot;内容&quot;&gt;&lt;a href=&quot;#内容&quot; class=&quot;headerlink&quot; title=&quot;内容&quot;&gt;&lt;/a&gt;内容&lt;/h1&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;项目准备&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
     
     
     
@@ -42,7 +42,7 @@
     <link href="http://example.com/2022/11/19/unity11-19/"/>
     <id>http://example.com/2022/11/19/unity11-19/</id>
     <published>2022-11-19T05:01:51.000Z</published>
-    <updated>2022-11-19T05:05:18.243Z</updated>
+    <updated>2022-11-19T09:01:34.135Z</updated>
     
     <content type="html"><![CDATA[<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">偷偷把项目做完了</span><br><span class="line">哔哩哔哩展示</span><br><span class="line">https://www.bilibili.com/video/BV1gd4y187rd</span><br><span class="line">还有晚上发工资的功能因为时长原因没有展示</span><br></pre></td></tr></table></figure><span id="more"></span>]]></content>
     
