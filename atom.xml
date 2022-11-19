@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-11-07T15:05:41.079Z</updated>
+  <updated>2022-11-19T08:53:25.502Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,48 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>极世界01</title>
+    <link href="http://example.com/2022/11/19/%E6%9E%81%E4%B8%96%E7%95%8C01/"/>
+    <id>http://example.com/2022/11/19/%E6%9E%81%E4%B8%96%E7%95%8C01/</id>
+    <published>2022-11-19T08:52:38.000Z</published>
+    <updated>2022-11-19T08:53:25.502Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure><span id="more"></span>]]></content>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;内容&quot;&gt;&lt;a href=&quot;#内容&quot; class=&quot;headerlink&quot; title=&quot;内容&quot;&gt;&lt;/a&gt;内容&lt;/h1&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    <category term="unity" scheme="http://example.com/categories/unity/"/>
+    
+    
+    <category term="极世界" scheme="http://example.com/tags/%E6%9E%81%E4%B8%96%E7%95%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>unity11-19</title>
+    <link href="http://example.com/2022/11/19/unity11-19/"/>
+    <id>http://example.com/2022/11/19/unity11-19/</id>
+    <published>2022-11-19T05:01:51.000Z</published>
+    <updated>2022-11-19T05:05:18.243Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">偷偷把项目做完了</span><br><span class="line">哔哩哔哩展示</span><br><span class="line">https://www.bilibili.com/video/BV1gd4y187rd</span><br><span class="line">还有晚上发工资的功能因为时长原因没有展示</span><br></pre></td></tr></table></figure><span id="more"></span>]]></content>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;内容&quot;&gt;&lt;a href=&quot;#内容&quot; class=&quot;headerlink&quot; title=&quot;内容&quot;&gt;&lt;/a&gt;内容&lt;/h1&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;偷偷把项目做完了&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;哔哩哔哩展示&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;https://www.bilibili.com/video/BV1gd4y187rd&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;还有晚上发工资的功能因为时长原因没有展示&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    <category term="unity" scheme="http://example.com/categories/unity/"/>
+    
+    
+    <category term="美食梦物语" scheme="http://example.com/tags/%E7%BE%8E%E9%A3%9F%E6%A2%A6%E7%89%A9%E8%AF%AD/"/>
+    
+  </entry>
   
   <entry>
     <title>unity11-7</title>
@@ -399,44 +441,6 @@
     
     
     <category term="lua" scheme="http://example.com/tags/lua/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SKILL笔记4</title>
-    <link href="http://example.com/2022/10/22/SKILL%E7%AC%94%E8%AE%B04/"/>
-    <id>http://example.com/2022/10/22/SKILL%E7%AC%94%E8%AE%B04/</id>
-    <published>2022-10-22T12:06:34.085Z</published>
-    <updated>2022-10-22T14:17:35.192Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="求职流程"><a href="#求职流程" class="headerlink" title="求职流程"></a>求职流程</h1><p><img src="/../images/image-20221022200702949.png" alt="image-20221022200702949"></p><span id="more"></span><p><img src="/../images/image-20221022201359576.png" alt="image-20221022201359576"></p><p>中大厂希望你是一张白纸</p><p>实习去大厂，最佳实习时间是大三暑假，</p><p>项目经验：一个商业项目，两个小案例项目，一个热更新项目</p><p>不要都准备独立游戏，做一些服务端游戏，网络游戏</p><p>比赛经验：最好为游戏相关，大厂举办的比赛，表示你有竞争意识和团队协助能力</p><p>名气大的公司看重基础知识的考查，计算机组成原理，网络，语言，数据结构与算法</p><p>数学用到比较少，图形和渲染要用到</p><p>图像学：概念性的题目，除TA可以不用深入血</p><p>网络：状态同步，帧同步</p><p>设计模式：项目中使用的比较多</p><p>应届生热更新为加分项，转行为必须项</p><p>性能优化一般为UI层面</p><p>基础知识很重要，掌握知识必须需要应用</p><p>学习动机很重要，学习不要急，地基要打好</p><p>记笔记方法：需要产生联想</p><p>精力曲线：在自己精力比较好的时候学习一些比较难的</p><p><img src="/../images/image-20221022203752318.png" alt="image-20221022203752318"></p><p>前三年最多跳槽一次，主动性跳槽不要太频繁</p><p>避免长时间搬砖做重复性工作，没有成长</p><p>要学会做一些难度系数比较高的工作</p><p>进入一家公司要考虑是否有导师有人带</p><p>前几年最好不要过多做小游戏棋牌类游戏</p><p>小游戏公司：羊了个🐏</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">第一阶段（10天）：独立开发一款小游戏</span><br><span class="line"></span><br><span class="line">第二阶段（3个月）：中大型网络项目实战：MMORPG，SLG，FPS，联机卡牌，MOBA</span><br><span class="line"></span><br><span class="line">   实现常规的业务系统，背包，装备，商店，聊天，好友</span><br><span class="line"></span><br><span class="line">第三阶段（7天）：Lua+xlua </span><br><span class="line"></span><br><span class="line">第四阶段（15天）：以xlua插件为中心，学习热更新流程 </span><br><span class="line"></span><br><span class="line">第五阶段（30天）：准备就业，撰写简历，小游戏和lua，网络项目，技术复习</span><br><span class="line">   搜集面试题</span><br><span class="line">       可以去牛客</span><br><span class="line">​</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure><p>系统学习：不要试图在这儿阶段设立把绝大部分基础都搞懂的目标</p><p>​搞清知识的概念，优缺点，应用场景，大概是做什么的</p><p><img src="/../images/image-20221022212113266.png" alt="image-20221022212113266"></p><p><img src="/../images/image-20221022212611659.png" alt="image-20221022212611659"></p><h1 id="简历"><a href="#简历" class="headerlink" title="简历"></a>简历</h1><h2 id="技术相关面试"><a href="#技术相关面试" class="headerlink" title="技术相关面试"></a>技术相关面试</h2><p><img src="/../images/image-20221022212809955.png" alt="image-20221022212809955"></p><p><img src="/../images/image-20221022213000737.png" alt="image-20221022213000737"></p><p>掌握不牢固的不要写</p><p>杂七杂八的经历不要写，跟行业有关的再写</p><p>项目经历不要多，要求精</p><p><img src="/../images/image-20221022213617233.png" alt="image-20221022213617233"></p><p><img src="/../images/image-20221022213744461.png" alt="image-20221022213744461"></p><p>做项目过程中不要刷题，不要并行</p><h2 id="非技术相关面试"><a href="#非技术相关面试" class="headerlink" title="非技术相关面试"></a>非技术相关面试</h2><p>规划：目标+规划的路径</p><p>规划不要超出自己的认知</p><p>刚入行规划以后的三年</p><p><img src="/../images/image-20221022214357672.png" alt="image-20221022214357672"></p><p><img src="/../images/image-20221022215224282.png" alt="image-20221022215224282"></p><p>公司希望有超前的认知</p><p><img src="/../images/image-20221022215752665.png" alt="image-20221022215752665"></p><p>项目阶段别挑选已经完成的，最好刚开始的</p><p>看公司背景，有没有实例资金，</p><p>问项目主程之前做过的项目</p><p>问项目阶段，项目人员的组成，客户端多少人，服务端多少人</p><p>不要压低自己的心理预期，要符合自己的心理预期，尽量追求自己的天花板</p><p>给自己正向激励，会激励自己更加努力</p>]]></content>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;求职流程&quot;&gt;&lt;a href=&quot;#求职流程&quot; class=&quot;headerlink&quot; title=&quot;求职流程&quot;&gt;&lt;/a&gt;求职流程&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;/../images/image-20221022200702949.png&quot; alt=&quot;image-20221022200702949&quot;&gt;&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="SKILL" scheme="http://example.com/categories/SKILL/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>SKILL笔记3</title>
-    <link href="http://example.com/2022/10/21/SKILL%E7%AC%94%E8%AE%B03/"/>
-    <id>http://example.com/2022/10/21/SKILL%E7%AC%94%E8%AE%B03/</id>
-    <published>2022-10-21T15:00:05.133Z</published>
-    <updated>2022-10-21T15:13:38.728Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="待补充ing…"><a href="#待补充ing…" class="headerlink" title="待补充ing…."></a>待补充ing….</h1><span id="more"></span>]]></content>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;待补充ing…&quot;&gt;&lt;a href=&quot;#待补充ing…&quot; class=&quot;headerlink&quot; title=&quot;待补充ing….&quot;&gt;&lt;/a&gt;待补充ing….&lt;/h1&gt;</summary>
-    
-    
-    
-    <category term="SKILL" scheme="http://example.com/categories/SKILL/"/>
-    
     
   </entry>
   
