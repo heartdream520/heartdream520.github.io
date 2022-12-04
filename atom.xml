@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-12-03T14:44:49.109Z</updated>
+  <updated>2022-12-04T03:43:59.584Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,16 +17,61 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>极世界-基础场景与UI</title>
+    <link href="http://example.com/2022/12/04/%E6%9E%81%E4%B8%96%E7%95%8C-%E5%9F%BA%E7%A1%80%E5%9C%BA%E6%99%AF%E4%B8%8EUI/"/>
+    <id>http://example.com/2022/12/04/%E6%9E%81%E4%B8%96%E7%95%8C-%E5%9F%BA%E7%A1%80%E5%9C%BA%E6%99%AF%E4%B8%8EUI/</id>
+    <published>2022-12-04T03:43:08.000Z</published>
+    <updated>2022-12-04T03:43:59.584Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure><span id="more"></span>]]></content>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;内容&quot;&gt;&lt;a href=&quot;#内容&quot; class=&quot;headerlink&quot; title=&quot;内容&quot;&gt;&lt;/a&gt;内容&lt;/h1&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    <category term="unity" scheme="http://example.com/categories/unity/"/>
+    
+    
+    <category term="极世界" scheme="http://example.com/tags/%E6%9E%81%E4%B8%96%E7%95%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>网络编程</title>
+    <link href="http://example.com/2022/12/04/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
+    <id>http://example.com/2022/12/04/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/</id>
+    <published>2022-12-04T03:12:29.000Z</published>
+    <updated>2022-12-04T03:42:26.079Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure><span id="more"></span>]]></content>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;内容&quot;&gt;&lt;a href=&quot;#内容&quot; class=&quot;headerlink&quot; title=&quot;内容&quot;&gt;&lt;/a&gt;内容&lt;/h1&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    <category term="网络" scheme="http://example.com/categories/%E7%BD%91%E7%BB%9C/"/>
+    
+    
+    <category term="网络编程" scheme="http://example.com/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
     <title>极世界03</title>
     <link href="http://example.com/2022/12/03/%E6%9E%81%E4%B8%96%E7%95%8C03/"/>
     <id>http://example.com/2022/12/03/%E6%9E%81%E4%B8%96%E7%95%8C03/</id>
     <published>2022-12-03T04:35:49.000Z</published>
-    <updated>2022-12-03T14:44:49.109Z</updated>
+    <updated>2022-12-04T03:43:55.326Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">游戏框架设计</span><br><span class="line">层划分</span><br><span class="line">服务端功能</span><br><span class="line"></span><br><span class="line">协议文件位置  E:\极世界MMORPG\Art\mmorpg\Src\Lib\proto</span><br><span class="line"></span><br><span class="line">网络添加协议 发送消息</span><br></pre></td></tr></table></figure><span id="more"></span><h1 id="层"><a href="#层" class="headerlink" title="层"></a>层</h1><p><img src="/../images/image-20221203133427907.png" alt="image-20221203133427907"></p><h2 id="服务层"><a href="#服务层" class="headerlink" title="服务层"></a>服务层</h2><p>客户端与服务层的直接接口</p><p>服务端代码处理客户端提出的请求并进行响应</p><h1 id="服务"><a href="#服务" class="headerlink" title="服务"></a>服务</h1><p><img src="/../images/image-20221203133433932.png" alt="image-20221203133433932"></p><h1 id="网络添加协议-发送消息"><a href="#网络添加协议-发送消息" class="headerlink" title="网络添加协议 发送消息"></a>网络添加协议 发送消息</h1><h2 id="添加测试消息"><a href="#添加测试消息" class="headerlink" title="添加测试消息"></a>添加测试消息</h2><p><img src="/../images/image-20221203204422609.png" alt="image-20221203204422609"></p><h2 id="设定message"><a href="#设定message" class="headerlink" title="设定message"></a>设定message</h2><p><img src="/../images/image-20221203204439886.png" alt="image-20221203204439886"></p><h2 id="点击生成协议工具"><a href="#点击生成协议工具" class="headerlink" title="点击生成协议工具"></a>点击生成协议工具</h2><p><img src="/../images/image-20221203204556312.png" alt="image-20221203204556312"></p><h2 id="到服务器解决方案生成解决方案"><a href="#到服务器解决方案生成解决方案" class="headerlink" title="到服务器解决方案生成解决方案"></a>到服务器解决方案生成解决方案</h2><p><img src="/../images/image-20221203204838581.png" alt="image-20221203204838581"></p><h2 id="protocal-x2F-bin-x2F-debug下四个文件替换到Client-Assets-References目录下"><a href="#protocal-x2F-bin-x2F-debug下四个文件替换到Client-Assets-References目录下" class="headerlink" title="protocal&#x2F;bin&#x2F;debug下四个文件替换到Client\Assets\References目录下"></a>protocal&#x2F;bin&#x2F;debug下四个文件替换到Client\Assets\References目录下</h2><p><img src="/../images/image-20221203205318882.png" alt="image-20221203205318882"></p><p>可以配置E:\极世界MMORPG\mymmo\Src\Lib\Protocol\Protocol.csproj</p><p>来省去此步操作</p><h2 id="发送消息"><a href="#发送消息" class="headerlink" title="发送消息"></a>发送消息</h2><p><img src="/../images/image-20221203215303487.png" alt="image-20221203215303487"></p><h2 id="在services目录下建立HelloWorldService"><a href="#在services目录下建立HelloWorldService" class="headerlink" title="在services目录下建立HelloWorldService"></a>在services目录下建立HelloWorldService</h2><p><img src="/../images/image-20221203224208351.png" alt="image-20221203224208351"></p><h2 id="在gameserver下加入hellowordservice的init和stare"><a href="#在gameserver下加入hellowordservice的init和stare" class="headerlink" title="在gameserver下加入hellowordservice的init和stare"></a>在gameserver下加入hellowordservice的init和stare</h2><p><img src="/../images/image-20221203224302850.png" alt="image-20221203224302850"></p><h2 id="在Network-MessageDispatch-cs中加入消息分发"><a href="#在Network-MessageDispatch-cs中加入消息分发" class="headerlink" title="在Network\MessageDispatch.cs中加入消息分发"></a>在Network\MessageDispatch.cs中加入消息分发</h2><p><img src="/../images/image-20221203224402922.png" alt="image-20221203224402922"></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">游戏框架设计</span><br><span class="line">层划分</span><br><span class="line">服务端功能</span><br><span class="line"></span><br><span class="line">协议文件位置  E:\极世界MMORPG\Art\mmorpg\Src\Lib\proto</span><br><span class="line"></span><br><span class="line">网络添加协议 发送消息</span><br></pre></td></tr></table></figure><h1 id="层"><a href="#层" class="headerlink" title="层"></a>层</h1><p><img src="/../images/image-20221203133427907.png" alt="image-20221203133427907"></p><h2 id="服务层"><a href="#服务层" class="headerlink" title="服务层"></a>服务层</h2><p>客户端与服务层的直接接口</p><p>服务端代码处理客户端提出的请求并进行响应</p><h1 id="服务"><a href="#服务" class="headerlink" title="服务"></a>服务</h1><p><img src="/../images/image-20221203133433932.png" alt="image-20221203133433932"></p><h1 id="网络添加协议-发送消息"><a href="#网络添加协议-发送消息" class="headerlink" title="网络添加协议 发送消息"></a>网络添加协议 发送消息</h1><h2 id="协议中添加测试消息"><a href="#协议中添加测试消息" class="headerlink" title="协议中添加测试消息"></a>协议中添加测试消息</h2><p><img src="/../images/image-20221203204422609.png" alt="image-20221203204422609"></p><h2 id="设定message"><a href="#设定message" class="headerlink" title="设定message"></a>设定message</h2><p><img src="/../images/image-20221203204439886.png" alt="image-20221203204439886"></p><h2 id="点击生成协议工具"><a href="#点击生成协议工具" class="headerlink" title="点击生成协议工具"></a>点击生成协议工具</h2><p><img src="/../images/image-20221203204556312.png" alt="image-20221203204556312"></p><h2 id="到服务器解决方案生成解决方案"><a href="#到服务器解决方案生成解决方案" class="headerlink" title="到服务器解决方案生成解决方案"></a>到服务器解决方案生成解决方案</h2><p><img src="/../images/image-20221203204838581.png" alt="image-20221203204838581"></p><h2 id="protocal-x2F-bin-x2F-debug下四个文件替换到Client-Assets-References目录下"><a href="#protocal-x2F-bin-x2F-debug下四个文件替换到Client-Assets-References目录下" class="headerlink" title="protocal&#x2F;bin&#x2F;debug下四个文件替换到Client\Assets\References目录下"></a>protocal&#x2F;bin&#x2F;debug下四个文件替换到Client\Assets\References目录下</h2><p><img src="/../images/image-20221203205318882.png" alt="image-20221203205318882"></p><p>可以配置E:\极世界MMORPG\mymmo\Src\Lib\Protocol\Protocol.csproj</p><p>来省去此步操作</p><h2 id="发送消息"><a href="#发送消息" class="headerlink" title="发送消息"></a>发送消息</h2><p><img src="/../images/image-20221203215303487.png" alt="image-20221203215303487"></p><h2 id="在services目录下建立HelloWorldService"><a href="#在services目录下建立HelloWorldService" class="headerlink" title="在services目录下建立HelloWorldService"></a>在services目录下建立HelloWorldService</h2><p><img src="/../images/image-20221203224208351.png" alt="image-20221203224208351"></p><h2 id="在gameserver下加入hellowordservice的init和stare"><a href="#在gameserver下加入hellowordservice的init和stare" class="headerlink" title="在gameserver下加入hellowordservice的init和stare"></a>在gameserver下加入hellowordservice的init和stare</h2><p><img src="/../images/image-20221203224302850.png" alt="image-20221203224302850"></p><h2 id="在Network-MessageDispatch-cs中加入消息分发"><a href="#在Network-MessageDispatch-cs中加入消息分发" class="headerlink" title="在Network\MessageDispatch.cs中加入消息分发"></a>在Network\MessageDispatch.cs中加入消息分发</h2><p><img src="/../images/image-20221203224402922.png" alt="image-20221203224402922"></p>]]></content>
     
     
-    <summary type="html">&lt;h1 id=&quot;内容&quot;&gt;&lt;a href=&quot;#内容&quot; class=&quot;headerlink&quot; title=&quot;内容&quot;&gt;&lt;/a&gt;内容&lt;/h1&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;游戏框架设计&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;层划分&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;服务端功能&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;协议文件位置  E:\极世界MMORPG\Art\mmorpg\Src\Lib\proto&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;网络添加协议 发送消息&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+      
+      
+    <summary type="html">&lt;h1 id=&quot;内容&quot;&gt;&lt;a href=&quot;#内容&quot; class=&quot;headerlink&quot; title=&quot;内容&quot;&gt;&lt;/a&gt;内容&lt;/h1&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;s</summary>
+      
     
     
     
@@ -389,56 +434,6 @@
     
     <category term="圣经" scheme="http://example.com/categories/%E5%9C%A3%E7%BB%8F/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>unity10-25</title>
-    <link href="http://example.com/2022/10/25/unity10-25/"/>
-    <id>http://example.com/2022/10/25/unity10-25/</id>
-    <published>2022-10-25T00:07:52.714Z</published>
-    <updated>2022-10-25T14:34:09.259Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="动画基础"><a href="#动画基础" class="headerlink" title="动画基础"></a>动画基础</h1><h2 id="动画面板"><a href="#动画面板" class="headerlink" title="动画面板"></a>动画面板</h2><p><img src="/../images/image-20221025081330434.png" alt="image-20221025081330434"></p><p>loop time循环时间</p><p>Loop Pose 循环姿势，使循环时更加流畅</p><p>cycle offset 偏移量，从哪来开始播放</p><span id="more"></span><p><img src="/../images/image-20221025081638244.png" alt="image-20221025081638244"></p><p>Back Into Pose 烘焙在姿势，勾选后将不在相应位置产生变化（锁定某属性）</p><p><img src="/../images/image-20221025082216295.png" alt="image-20221025082216295"></p><p>based upon 烘焙基准 </p><p>original 设置的中心， Center of Mass 质量的中心 真中心（对角线）</p><p>Feet 脚的位置</p><p><img src="/../images/image-20221025082632308.png" alt="image-20221025082632308"></p><p>mirror 镜像  动画将镜像播放</p><p><img src="/../images/image-20221025083339022.png" alt="image-20221025083339022"></p><p>Controller 动画控制器</p><p>Avatae 骨骼</p><p>Apply Root Motion 应用根文件 ，即是否应用动画的设置</p><h2 id="Animator-Controller"><a href="#Animator-Controller" class="headerlink" title="Animator Controller"></a>Animator Controller</h2><p><img src="/../images/image-20221025083821401.png" alt="image-20221025083821401"></p><p>set as Layer Default State 设置为本层默认动画</p><p><img src="/../images/image-20221025085441219.png" alt="image-20221025085441219"></p><p>Conditions 设置条件值 当条件满足时进行切换</p><p>Has Exit Time 是否等动画播放完才能进行切换</p><p>只需要执行一次的动画：设置Trigger触发，将Trigger设置为条件，设置触发的动画为有退出时间</p><h2 id="设置动画速度"><a href="#设置动画速度" class="headerlink" title="设置动画速度"></a>设置动画速度</h2><p><img src="/../images/image-20221025090800493.png" alt="image-20221025090800493"></p><p>勾选 parameter  设置参数  动画的播放速度就取决于参数的值</p><h2 id="脚本设置动画参数"><a href="#脚本设置动画参数" class="headerlink" title="脚本设置动画参数"></a>脚本设置动画参数</h2><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> Animator animator;</span><br><span class="line"><span class="comment">//动画参数名称可以转化为一个ID（int）</span></span><br><span class="line"><span class="built_in">int</span> id=Animator.StringYoHash(<span class="string">&quot;参数名称&quot;</span>);</span><br><span class="line">animation.SetBool(<span class="string">&quot;参数名称&quot;</span>||参数id,值);</span><br><span class="line"></span><br></pre></td></tr></table></figure><p><img src="/../images/image-20221025103540129.png" alt="image-20221025103540129"></p><p>设置插值变化，变化时间，变化速度</p><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">//获取第0层的当前动画状态信息</span></span><br><span class="line">AnimatorStateInfo info = ani.GetCurrentAnimatorStateInfo(<span class="number">0</span>);  <span class="comment">//动画层级 </span></span><br><span class="line"><span class="comment">//判断当前播放的动画状态是不是Idle</span></span><br><span class="line"><span class="keyword">if</span>(info.IsName(<span class="string">&quot;Idle&quot;</span>))【通过名字判断】</span><br><span class="line"><span class="keyword">if</span>(info.IsTag(<span class="string">&quot;Idle&quot;</span>))【通过标签判断】</span><br><span class="line"><span class="keyword">if</span>(info.shortNameHash == Animator.StringToHash(<span class="string">&quot;Idle&quot;</span>))【通过hashid判断】【更高效】</span><br></pre></td></tr></table></figure><p><img src="/../images/image-20221025122133310.png" alt="image-20221025122133310"></p><p>剪切好的动画会出现在模型下，可以放入动画机中使用</p><h1 id="声音组件"><a href="#声音组件" class="headerlink" title="声音组件"></a>声音组件</h1><p><img src="/../images/image-20221025173601920.png" alt="image-20221025173601920"></p><p><code>Audio Source </code>组件</p><p><code>AudioClip</code>  声音源</p><p><code>mute</code>静音</p><p><code>Play on awake</code> 在开始时播放</p><p><code>loop</code> 循环</p><p><img src="/../images/image-20221025175202116.png" alt="image-20221025175202116"></p><p><code>Volume</code>音量</p><p><code>Spatial Blend</code> 设置音量为2D 3D  音量为计算为2D+3D*（f（距离））</p><p>Audio Listener  听声音的组件，一个场景只能有一个 Audio Listener组件</p><h2 id="3D声音的设置"><a href="#3D声音的设置" class="headerlink" title="3D声音的设置"></a>3D声音的设置</h2><p><img src="/../images/image-20221025180408632.png" alt="image-20221025180408632"></p><h2 id="发声方式"><a href="#发声方式" class="headerlink" title="发声方式"></a>发声方式</h2><p><img src="/../images/image-20221025183302175.png" alt="image-20221025183302175"></p><p><img src="/../images/image-20221025201856446.png" alt="image-20221025201856446"></p><p>第一种方法当一种声音没有播放完就要播放下一声音时会出问题</p><p>第二种播放方法可以避免第一种方法的问题，但是会频繁创建销毁对象，消耗内存，不过可以使用对象池方法缓解</p><h1 id="间隔一段时间后执行函数"><a href="#间隔一段时间后执行函数" class="headerlink" title="间隔一段时间后执行函数"></a>间隔一段时间后执行函数</h1><p><img src="/../images/image-20221025201950366.png" alt="image-20221025201950366"></p><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Invoke(<span class="string">&quot;方法名&quot;</span>, 多长时间后执行)；</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;动画基础&quot;&gt;&lt;a href=&quot;#动画基础&quot; class=&quot;headerlink&quot; title=&quot;动画基础&quot;&gt;&lt;/a&gt;动画基础&lt;/h1&gt;&lt;h2 id=&quot;动画面板&quot;&gt;&lt;a href=&quot;#动画面板&quot; class=&quot;headerlink&quot; title=&quot;动画面板&quot;&gt;&lt;/a&gt;动画面板&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;/../images/image-20221025081330434.png&quot; alt=&quot;image-20221025081330434&quot;&gt;&lt;/p&gt;
-&lt;p&gt;loop time循环时间&lt;/p&gt;
-&lt;p&gt;Loop Pose 循环姿势，使循环时更加流畅&lt;/p&gt;
-&lt;p&gt;cycle offset 偏移量，从哪来开始播放&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="unity" scheme="http://example.com/categories/unity/"/>
-    
-    
-    <category term="动画" scheme="http://example.com/tags/%E5%8A%A8%E7%94%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>unity10-24</title>
-    <link href="http://example.com/2022/10/24/unity10-24/"/>
-    <id>http://example.com/2022/10/24/unity10-24/</id>
-    <published>2022-10-24T09:00:36.000Z</published>
-    <updated>2022-10-24T15:51:14.987Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="动画基础"><a href="#动画基础" class="headerlink" title="动画基础"></a>动画基础</h1><h2 id="创建动画"><a href="#创建动画" class="headerlink" title="创建动画"></a>创建动画</h2><p>选择需要设置动画的游戏对象，打开win-Animation-Animation，新建动画控制器，Animator Controller</p><p>创建动画片段Animator clip</p><p>任何属性都可以设置动画，如位置，颜色，精灵等</p><p>属性发生变化叫做动画</p><p>可以将模型拖动到动画中进行预览</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">None：不导入动画Animation Clip</span><br><span class="line">Legacy：用于早期动画设置，其不支持状态机Animator，无法对动画进行编辑，导入完后直接用Animation播放</span><br><span class="line">Generic：支持人形、非人形Model</span><br><span class="line">Humanoid：只支持人形Model，导入后用Animator播放（设置后Hirearchy模型里面自动添加Animator组件）Generic一样</span><br></pre></td></tr></table></figure><span id="more"></span><p><img src="/../images/image-20221024231718315.png" alt="image-20221024231718315"></p><h2 id="骨骼"><a href="#骨骼" class="headerlink" title="骨骼"></a>骨骼</h2><p><img src="/../images/image-20221024232840003.png" alt="image-20221024232840003"></p><p>人形骨骼，实线为必须骨骼，虚线为不必须骨骼</p><p>Muscles &amp; Settings  用测试骨骼做动作是否有问题</p>]]></content>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;动画基础&quot;&gt;&lt;a href=&quot;#动画基础&quot; class=&quot;headerlink&quot; title=&quot;动画基础&quot;&gt;&lt;/a&gt;动画基础&lt;/h1&gt;&lt;h2 id=&quot;创建动画&quot;&gt;&lt;a href=&quot;#创建动画&quot; class=&quot;headerlink&quot; title=&quot;创建动画&quot;&gt;&lt;/a&gt;创建动画&lt;/h2&gt;&lt;p&gt;选择需要设置动画的游戏对象，打开win-Animation-Animation，新建动画控制器，Animator Controller&lt;/p&gt;
-&lt;p&gt;创建动画片段Animator clip&lt;/p&gt;
-&lt;p&gt;任何属性都可以设置动画，如位置，颜色，精灵等&lt;/p&gt;
-&lt;p&gt;属性发生变化叫做动画&lt;/p&gt;
-&lt;p&gt;可以将模型拖动到动画中进行预览&lt;/p&gt;
-&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;None：不导入动画Animation Clip&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Legacy：用于早期动画设置，其不支持状态机Animator，无法对动画进行编辑，导入完后直接用Animation播放&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Generic：支持人形、非人形Model&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Humanoid：只支持人形Model，导入后用Animator播放（设置后Hirearchy模型里面自动添加Animator组件）Generic一样&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
-    
-    
-    
-    <category term="unity" scheme="http://example.com/categories/unity/"/>
-    
-    
-    <category term="动画" scheme="http://example.com/tags/%E5%8A%A8%E7%94%BB/"/>
     
   </entry>
   
