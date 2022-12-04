@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-12-04T03:43:59.584Z</updated>
+  <updated>2022-12-04T10:43:29.796Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,12 +21,12 @@
     <link href="http://example.com/2022/12/04/%E6%9E%81%E4%B8%96%E7%95%8C-%E5%9F%BA%E7%A1%80%E5%9C%BA%E6%99%AF%E4%B8%8EUI/"/>
     <id>http://example.com/2022/12/04/%E6%9E%81%E4%B8%96%E7%95%8C-%E5%9F%BA%E7%A1%80%E5%9C%BA%E6%99%AF%E4%B8%8EUI/</id>
     <published>2022-12-04T03:43:08.000Z</published>
-    <updated>2022-12-04T03:43:59.584Z</updated>
+    <updated>2022-12-04T10:43:29.796Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure><span id="more"></span>]]></content>
+    <content type="html"><![CDATA[<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">UI资源导入</span><br><span class="line">制作自定义字体</span><br></pre></td></tr></table></figure><span id="more"></span><h1 id="制作自定义字体"><a href="#制作自定义字体" class="headerlink" title="制作自定义字体"></a>制作自定义字体</h1><p>1.创建<code>custom Font</code></p><p><img src="/../images/image-20221204165906037.png" alt="image-20221204165906037"></p><p>2.新建材质，将字体图片放在材质上，将材质使用在custom Font上。</p><p><img src="/../images/image-20221204170111652.png" alt="image-20221204170111652"></p><p>3.逐个设置字体</p><p><img src="/../images/image-20221204170140005.png" alt="image-20221204170140005"></p><p>Index  为对应字符的ASCII</p><p>UV为对应字符在图片中的比例位置  切割方法如图：</p><p><img src="/../images/image-20221204170331738.png" alt="image-20221204170331738"></p><p>vert为在Text中的位置和大小</p><p>Advance为与下个字符之间的间距  一般设为字符长度即可</p>]]></content>
     
     
-    <summary type="html">&lt;h1 id=&quot;内容&quot;&gt;&lt;a href=&quot;#内容&quot; class=&quot;headerlink&quot; title=&quot;内容&quot;&gt;&lt;/a&gt;内容&lt;/h1&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    <summary type="html">&lt;h1 id=&quot;内容&quot;&gt;&lt;a href=&quot;#内容&quot; class=&quot;headerlink&quot; title=&quot;内容&quot;&gt;&lt;/a&gt;内容&lt;/h1&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;UI资源导入&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;制作自定义字体&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
     
     
     
