@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-12-04T11:03:23.866Z</updated>
+  <updated>2022-12-04T13:10:30.995Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,13 +17,34 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>极世界-用户登录</title>
+    <link href="http://example.com/2022/12/04/%E6%9E%81%E4%B8%96%E7%95%8C-%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95/"/>
+    <id>http://example.com/2022/12/04/%E6%9E%81%E4%B8%96%E7%95%8C-%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95/</id>
+    <published>2022-12-04T13:08:15.000Z</published>
+    <updated>2022-12-04T13:10:30.995Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">角色状态机</span><br><span class="line">游戏框架图</span><br></pre></td></tr></table></figure><span id="more"></span><p><img src="/../images/image-20221204210921665.png" alt="image-20221204210921665"></p><p><img src="/../images/image-20221204210928879.png" alt="image-20221204210928879"></p><h1 id="角色状态机"><a href="#角色状态机" class="headerlink" title="角色状态机"></a>角色状态机</h1><p><img src="/../images/image-20221204210947365.png" alt="image-20221204210947365"></p><h1 id="游戏框架图"><a href="#游戏框架图" class="headerlink" title="游戏框架图"></a>游戏框架图</h1><p><img src="/../images/image-20221204211012479.png" alt="image-20221204211012479"></p>]]></content>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;内容&quot;&gt;&lt;a href=&quot;#内容&quot; class=&quot;headerlink&quot; title=&quot;内容&quot;&gt;&lt;/a&gt;内容&lt;/h1&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;角色状态机&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;游戏框架图&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    <category term="unity" scheme="http://example.com/categories/unity/"/>
+    
+    
+    <category term="极世界" scheme="http://example.com/tags/%E6%9E%81%E4%B8%96%E7%95%8C/"/>
+    
+  </entry>
+  
+  <entry>
     <title>极世界-基础场景与UI</title>
     <link href="http://example.com/2022/12/04/%E6%9E%81%E4%B8%96%E7%95%8C-%E5%9F%BA%E7%A1%80%E5%9C%BA%E6%99%AF%E4%B8%8EUI/"/>
     <id>http://example.com/2022/12/04/%E6%9E%81%E4%B8%96%E7%95%8C-%E5%9F%BA%E7%A1%80%E5%9C%BA%E6%99%AF%E4%B8%8EUI/</id>
     <published>2022-12-04T03:43:08.000Z</published>
-    <updated>2022-12-04T11:03:23.866Z</updated>
+    <updated>2022-12-04T13:08:42.735Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">UI资源导入</span><br><span class="line">制作自定义字体</span><br></pre></td></tr></table></figure><span id="more"></span><h1 id="制作自定义字体"><a href="#制作自定义字体" class="headerlink" title="制作自定义字体"></a>制作自定义字体</h1><p>1.创建<code>custom Font</code></p><p><img src="/../images/image-20221204165906037.png" alt="image-20221204165906037"></p><p>2.新建材质，将字体图片放在材质上，将材质使用在custom Font上。</p><p><img src="/../images/image-20221204170111652.png" alt="image-20221204170111652"></p><p>3.逐个设置字体</p><p><img src="/../images/image-20221204170140005.png" alt="image-20221204170140005"></p><p>Index  为对应字符的ASCII</p><p>UV为对应字符在图片中的比例位置  切割方法如图：</p><p><img src="/../images/image-20221204170331738.png" alt="image-20221204170331738"></p><p>vert为在Text中的位置和大小</p><p>Advance为与下个字符之间的间距  一般设为字符长度即可</p><h2 id="具体数值"><a href="#具体数值" class="headerlink" title="具体数值"></a>具体数值</h2><p><img src="/../images/image-20221204190224487.png" alt="image-20221204190224487"></p><p><img src="/../images/image-20221204190248881.png" alt="image-20221204190248881"></p><p><img src="/../images/image-20221204190301865.png" alt="image-20221204190301865"></p><p><img src="/../images/image-20221204190314707.png" alt="image-20221204190314707"></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">UI资源导入</span><br><span class="line">制作自定义字体</span><br></pre></td></tr></table></figure><span id="more"></span><h1 id="制作自定义字体"><a href="#制作自定义字体" class="headerlink" title="制作自定义字体"></a>制作自定义字体</h1><p>1.创建<code>custom Font</code></p><p><img src="/../images/image-20221204165906037.png" alt="image-20221204165906037"></p><p>2.新建材质，将字体图片放在材质上，将材质使用在custom Font上。</p><p><img src="/../images/image-20221204170111652.png" alt="image-20221204170111652"></p><p>3.逐个设置字体</p><p><img src="/../images/image-20221204170140005.png" alt="image-20221204170140005"></p><p><img src="/../images/image-20221204210653824.png" alt="image-20221204210653824"></p><p>Index  为对应字符的ASCII</p><p>UV为对应字符在图片中的比例位置  切割方法如图：</p><p><img src="/../images/image-20221204170331738.png" alt="image-20221204170331738"></p><p>vert为在Text中的位置和大小</p><p>Advance为与下个字符之间的间距  一般设为字符长度即可</p><h2 id="具体数值"><a href="#具体数值" class="headerlink" title="具体数值"></a>具体数值</h2><p><img src="/../images/image-20221204190224487.png" alt="image-20221204190224487"></p><p><img src="/../images/image-20221204190248881.png" alt="image-20221204190248881"></p><p><img src="/../images/image-20221204190301865.png" alt="image-20221204190301865"></p><p><img src="/../images/image-20221204190314707.png" alt="image-20221204190314707"></p>]]></content>
     
     
     <summary type="html">&lt;h1 id=&quot;内容&quot;&gt;&lt;a href=&quot;#内容&quot; class=&quot;headerlink&quot; title=&quot;内容&quot;&gt;&lt;/a&gt;内容&lt;/h1&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;UI资源导入&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;制作自定义字体&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
@@ -415,25 +436,6 @@
     
     
     <category term="小鸟案例" scheme="http://example.com/tags/%E5%B0%8F%E9%B8%9F%E6%A1%88%E4%BE%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>圣经</title>
-    <link href="http://example.com/2022/10/25/%E5%9C%A3%E7%BB%8F/"/>
-    <id>http://example.com/2022/10/25/%E5%9C%A3%E7%BB%8F/</id>
-    <published>2022-10-25T14:34:54.367Z</published>
-    <updated>2022-10-26T06:33:24.117Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="团队四种人"><a href="#团队四种人" class="headerlink" title="团队四种人"></a>团队四种人</h1><p><img src="/../images/image-20221025223641429.png" alt="image-20221025223641429"></p><span id="more"></span><p>选择环境,获取信息，有知觉，选择角度，去做（专注）</p><p>入门：关注于过程  精通：关注于结果</p><h1 id="学习方式"><a href="#学习方式" class="headerlink" title="学习方式"></a>学习方式</h1><p><img src="/../images/image-20221026081620549.png" alt="image-20221026081620549"></p><p>学习是循序渐进放到过程，要有良好的心态</p><p><img src="/../images/image-20221026082020113.png" alt="image-20221026082020113"></p><p>经历跃迁的成长</p><p>于过去的自己进行对比</p>]]></content>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;团队四种人&quot;&gt;&lt;a href=&quot;#团队四种人&quot; class=&quot;headerlink&quot; title=&quot;团队四种人&quot;&gt;&lt;/a&gt;团队四种人&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;/../images/image-20221025223641429.png&quot; alt=&quot;image-20221025223641429&quot;&gt;&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="圣经" scheme="http://example.com/categories/%E5%9C%A3%E7%BB%8F/"/>
-    
     
   </entry>
   
