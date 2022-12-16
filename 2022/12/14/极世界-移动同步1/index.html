@@ -22,19 +22,21 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"manual"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="内容123帧同步状态同步状态帧同步">
+  <meta name="description" content="内容12345678910111213141516171819202122帧同步状态同步状态帧同步完善角色进入及离开处理CharacterManager（C&#x2F;S）EntityManager（C&#x2F;S）打包运行Win客户端遇到问题 ：返回角色选择后再次进入游戏，小地图角色transformm为null解决 ：角色创建为携程创建，创建完一个角色后就执行了小地图的start，导致User的角色gameob">
 <meta property="og:type" content="article">
 <meta property="og:title" content="极世界-移动同步1">
 <meta property="og:url" content="http://example.com/2022/12/14/%E6%9E%81%E4%B8%96%E7%95%8C-%E7%A7%BB%E5%8A%A8%E5%90%8C%E6%AD%A51/index.html">
 <meta property="og:site_name" content="心梦">
-<meta property="og:description" content="内容123帧同步状态同步状态帧同步">
+<meta property="og:description" content="内容12345678910111213141516171819202122帧同步状态同步状态帧同步完善角色进入及离开处理CharacterManager（C&#x2F;S）EntityManager（C&#x2F;S）打包运行Win客户端遇到问题 ：返回角色选择后再次进入游戏，小地图角色transformm为null解决 ：角色创建为携程创建，创建完一个角色后就执行了小地图的start，导致User的角色gameob">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/images/image-20221214204024923.png">
 <meta property="og:image" content="http://example.com/images/image-20221214204034956.png">
 <meta property="og:image" content="http://example.com/images/image-20221214204123586.png">
 <meta property="og:image" content="http://example.com/images/image-20221214204049216.png">
+<meta property="og:image" content="http://example.com/images/image-20221215161643638.png">
+<meta property="og:image" content="http://example.com/images/image-20221215164053593.png">
 <meta property="article:published_time" content="2022-12-14T12:19:14.000Z">
-<meta property="article:modified_time" content="2022-12-14T13:24:52.892Z">
+<meta property="article:modified_time" content="2022-12-15T15:37:51.074Z">
 <meta property="article:author" content="心梦">
 <meta property="article:tag" content="极世界">
 <meta name="twitter:card" content="summary">
@@ -199,10 +201,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2022-12-14 20:19:14 / 修改时间：21:24:52" itemprop="dateCreated datePublished" datetime="2022-12-14T20:19:14+08:00">2022-12-14</time>
+              <time title="创建时间：2022-12-14 20:19:14" itemprop="dateCreated datePublished" datetime="2022-12-14T20:19:14+08:00">2022-12-14</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-12-15 23:37:51" itemprop="dateModified" datetime="2022-12-15T23:37:51+08:00">2022-12-15</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -219,7 +227,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>115</span>
+              <span>622</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -238,7 +246,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">帧同步</span><br><span class="line">状态同步</span><br><span class="line">状态帧同步</span><br></pre></td></tr></table></figure>
+        <h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">帧同步</span><br><span class="line">状态同步</span><br><span class="line">状态帧同步</span><br><span class="line">完善角色进入及离开处理</span><br><span class="line"></span><br><span class="line">CharacterManager（C/S）</span><br><span class="line">EntityManager（C/S）</span><br><span class="line">打包运行Win客户端</span><br><span class="line"></span><br><span class="line">遇到问题 ：返回角色选择后再次进入游戏，小地图角色transformm为null</span><br><span class="line">解决 ：角色创建为携程创建，创建完一个角色后就执行了小地图的start，导致User的角色gameobject未赋值就使用，在User中创建事件即可</span><br><span class="line"></span><br><span class="line">Mono单例需要使用重载的start等回调函数</span><br><span class="line">游戏对象管理器 使用事件时， +=  -=</span><br><span class="line"></span><br><span class="line">ID类型</span><br><span class="line"></span><br><span class="line">DB_id，Entity_ID，Tid，ID</span><br><span class="line"></span><br><span class="line">将创建角色和销毁角色 使用的ID转为Entiy_Id;</span><br><span class="line"></span><br><span class="line">Entity中的删除通知： 在EntittController中实现接口，并将接口函数添加到字典中，角色需要删除血量条等</span><br></pre></td></tr></table></figure>
 
 <span id="more"></span>
 
@@ -249,6 +257,13 @@
 <h2 id="例子-1"><a href="#例子-1" class="headerlink" title="例子"></a>例子</h2><p><img src="/../images/image-20221214204123586.png" alt="image-20221214204123586"></p>
 <h1 id="状态帧同步"><a href="#状态帧同步" class="headerlink" title="状态帧同步"></a>状态帧同步</h1><h2 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h2><p>按固定的逻辑帧搜集变化的状态数据并进行网络同步</p>
 <h2 id="例子-2"><a href="#例子-2" class="headerlink" title="例子"></a>例子</h2><p><img src="/../images/image-20221214204049216.png" alt="image-20221214204049216"></p>
+<p><img src="/../images/image-20221215161643638.png" alt="image-20221215161643638"></p>
+<p><img src="/../images/image-20221215164053593.png" alt="image-20221215164053593"></p>
+<p>玩家进入： 客户端 UserService 发送玩家进入请求 服务端 响应，将进入的角色加入玩家管理器中 </p>
+<p>并加入相应地图中，地图存储进入此地图的玩家，玩家进入时，通知此地图其他所有玩家新玩家进入地图</p>
+<p>遍历创建角色，</p>
+<h1 id="打包运行Win客户端"><a href="#打包运行Win客户端" class="headerlink" title="打包运行Win客户端"></a>打包运行Win客户端</h1><p>将 log4net.xml 文件放到打包到的目录下</p>
+<p>将存放数据的Data目录放到打包文件下</p>
 
     </div>
 
@@ -270,7 +285,10 @@
     <a href="/2022/12/14/%E6%9E%81%E4%B8%96%E7%95%8C-%E5%B0%8F%E5%9C%B0%E5%9B%BE/" rel="prev" title="极世界-小地图">
       <i class="fa fa-chevron-left"></i> 极世界-小地图
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2022/12/16/%E6%9E%81%E4%B8%96%E7%95%8C-%E7%A7%BB%E5%8A%A8%E5%90%8C%E6%AD%A52/" rel="next" title="极世界-移动同步2">
+      极世界-移动同步2 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -329,7 +347,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%86%85%E5%AE%B9"><span class="nav-number">1.</span> <span class="nav-text">内容</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B8%A7%E5%90%8C%E6%AD%A5"><span class="nav-number">2.</span> <span class="nav-text">帧同步</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E5%BF%B5"><span class="nav-number">2.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%8B%E5%AD%90"><span class="nav-number">2.2.</span> <span class="nav-text">例子</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%8A%B6%E6%80%81%E5%90%8C%E6%AD%A5"><span class="nav-number">3.</span> <span class="nav-text">状态同步</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-number">3.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%8B%E5%AD%90-1"><span class="nav-number">3.2.</span> <span class="nav-text">例子</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%8A%B6%E6%80%81%E5%B8%A7%E5%90%8C%E6%AD%A5"><span class="nav-number">4.</span> <span class="nav-text">状态帧同步</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89-1"><span class="nav-number">4.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%8B%E5%AD%90-2"><span class="nav-number">4.2.</span> <span class="nav-text">例子</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%86%85%E5%AE%B9"><span class="nav-number">1.</span> <span class="nav-text">内容</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B8%A7%E5%90%8C%E6%AD%A5"><span class="nav-number">2.</span> <span class="nav-text">帧同步</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E5%BF%B5"><span class="nav-number">2.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%8B%E5%AD%90"><span class="nav-number">2.2.</span> <span class="nav-text">例子</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%8A%B6%E6%80%81%E5%90%8C%E6%AD%A5"><span class="nav-number">3.</span> <span class="nav-text">状态同步</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-number">3.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%8B%E5%AD%90-1"><span class="nav-number">3.2.</span> <span class="nav-text">例子</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%8A%B6%E6%80%81%E5%B8%A7%E5%90%8C%E6%AD%A5"><span class="nav-number">4.</span> <span class="nav-text">状态帧同步</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89-1"><span class="nav-number">4.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%8B%E5%AD%90-2"><span class="nav-number">4.2.</span> <span class="nav-text">例子</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%89%93%E5%8C%85%E8%BF%90%E8%A1%8CWin%E5%AE%A2%E6%88%B7%E7%AB%AF"><span class="nav-number">5.</span> <span class="nav-text">打包运行Win客户端</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -345,7 +363,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">43</span>
+          <span class="site-state-item-count">44</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -409,7 +427,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">116k</span>
+    <span title="站点总字数">117k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
