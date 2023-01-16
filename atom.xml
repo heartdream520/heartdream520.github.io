@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-12-22T15:37:52.496Z</updated>
+  <updated>2023-01-16T08:12:39.817Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,145 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>极世界-好友系统</title>
+    <link href="http://example.com/2023/01/16/%E6%9E%81%E4%B8%96%E7%95%8C-%E5%A5%BD%E5%8F%8B%E7%B3%BB%E7%BB%9F/"/>
+    <id>http://example.com/2023/01/16/%E6%9E%81%E4%B8%96%E7%95%8C-%E5%A5%BD%E5%8F%8B%E7%B3%BB%E7%BB%9F/</id>
+    <published>2023-01-16T08:12:09.000Z</published>
+    <updated>2023-01-16T08:12:39.817Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure><span id="more"></span>]]></content>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;内容&quot;&gt;&lt;a href=&quot;#内容&quot; class=&quot;headerlink&quot; title=&quot;内容&quot;&gt;&lt;/a&gt;内容&lt;/h1&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    <category term="unity" scheme="http://example.com/categories/unity/"/>
+    
+    
+    <category term="极世界" scheme="http://example.com/tags/%E6%9E%81%E4%B8%96%E7%95%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>极世界-刷怪系统</title>
+    <link href="http://example.com/2023/01/13/%E6%9E%81%E4%B8%96%E7%95%8C-%E5%88%B7%E6%80%AA%E7%B3%BB%E7%BB%9F/"/>
+    <id>http://example.com/2023/01/13/%E6%9E%81%E4%B8%96%E7%95%8C-%E5%88%B7%E6%80%AA%E7%B3%BB%E7%BB%9F/</id>
+    <published>2023-01-13T03:27:36.000Z</published>
+    <updated>2023-01-16T08:12:43.229Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">刷怪逻辑：</span><br><span class="line">地图创建刷怪管理，刷怪管理存储刷怪规则，刷怪规则每帧判断是否需要刷怪需要则，地图管理器刷怪，传递给地图通知地图中所有玩家</span><br></pre></td></tr></table></figure><span id="more"></span>]]></content>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;内容&quot;&gt;&lt;a href=&quot;#内容&quot; class=&quot;headerlink&quot; title=&quot;内容&quot;&gt;&lt;/a&gt;内容&lt;/h1&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;刷怪逻辑：&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;地图创建刷怪管理，刷怪管理存储刷怪规则，刷怪规则每帧判断是否需要刷怪需要则，地图管理器刷怪，传递给地图通知地图中所有玩家&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    <category term="unity" scheme="http://example.com/categories/unity/"/>
+    
+    
+    <category term="极世界" scheme="http://example.com/tags/%E6%9E%81%E4%B8%96%E7%95%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>极世界-任务系统</title>
+    <link href="http://example.com/2023/01/11/%E6%9E%81%E4%B8%96%E7%95%8C-%E4%BB%BB%E5%8A%A1%E7%B3%BB%E7%BB%9F/"/>
+    <id>http://example.com/2023/01/11/%E6%9E%81%E4%B8%96%E7%95%8C-%E4%BB%BB%E5%8A%A1%E7%B3%BB%E7%BB%9F/</id>
+    <published>2023-01-11T08:30:08.000Z</published>
+    <updated>2023-01-13T03:26:48.077Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure><span id="more"></span><p><img src="/../images/image-20230113112519212.png" alt="image-20230113112519212"></p><p><img src="/../images/image-20230113112533890.png" alt="image-20230113112533890"></p><p><img src="/../images/image-20230113112546424.png" alt="image-20230113112546424"></p><p><img src="/../images/image-20230113112556148.png" alt="image-20230113112556148"></p><p><img src="/../images/image-20230113112606055.png" alt="image-20230113112606055"></p><p><img src="/../images/image-20230113112615013.png" alt="image-20230113112615013"></p><p><img src="/../images/image-20230113112624099.png" alt="image-20230113112624099"></p>]]></content>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;内容&quot;&gt;&lt;a href=&quot;#内容&quot; class=&quot;headerlink&quot; title=&quot;内容&quot;&gt;&lt;/a&gt;内容&lt;/h1&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    <category term="unity" scheme="http://example.com/categories/unity/"/>
+    
+    
+    <category term="极世界" scheme="http://example.com/tags/%E6%9E%81%E4%B8%96%E7%95%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>极世界-装备系统</title>
+    <link href="http://example.com/2023/01/04/%E6%9E%81%E4%B8%96%E7%95%8C-%E8%A3%85%E5%A4%87%E7%B3%BB%E7%BB%9F-1/"/>
+    <id>http://example.com/2023/01/04/%E6%9E%81%E4%B8%96%E7%95%8C-%E8%A3%85%E5%A4%87%E7%B3%BB%E7%BB%9F-1/</id>
+    <published>2023-01-04T11:06:07.000Z</published>
+    <updated>2023-01-04T11:06:07.269Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>极世界-装备系统</title>
+    <link href="http://example.com/2023/01/03/%E6%9E%81%E4%B8%96%E7%95%8C-%E8%A3%85%E5%A4%87%E7%B3%BB%E7%BB%9F/"/>
+    <id>http://example.com/2023/01/03/%E6%9E%81%E4%B8%96%E7%95%8C-%E8%A3%85%E5%A4%87%E7%B3%BB%E7%BB%9F/</id>
+    <published>2023-01-03T03:33:05.000Z</published>
+    <updated>2023-01-05T03:53:04.593Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">接口 IPointerClickHandler</span><br></pre></td></tr></table></figure><span id="more"></span><p><img src="/../images/image-20230104190912135.png" alt="image-20230104190912135"></p><p><img src="/../images/image-20230104190925642.png" alt="image-20230104190925642"></p><p><img src="/../images/image-20230104190938466.png" alt="image-20230104190938466"></p>]]></content>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;内容&quot;&gt;&lt;a href=&quot;#内容&quot; class=&quot;headerlink&quot; title=&quot;内容&quot;&gt;&lt;/a&gt;内容&lt;/h1&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;接口 IPointerClickHandler&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    <category term="unity" scheme="http://example.com/categories/unity/"/>
+    
+    
+    <category term="极世界" scheme="http://example.com/tags/%E6%9E%81%E4%B8%96%E7%95%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>极世界-商店系统</title>
+    <link href="http://example.com/2022/12/30/%E6%9E%81%E4%B8%96%E7%95%8C-%E5%95%86%E5%BA%97%E7%B3%BB%E7%BB%9F/"/>
+    <id>http://example.com/2022/12/30/%E6%9E%81%E4%B8%96%E7%95%8C-%E5%95%86%E5%BA%97%E7%B3%BB%E7%BB%9F/</id>
+    <published>2022-12-30T02:11:09.000Z</published>
+    <updated>2023-01-03T03:36:41.243Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">选择时组件 Selectable</span><br><span class="line">当绑定组件后，继承 ISelectHandler 接口 实现 OnSelect函数，当选择时则执行此函数</span><br></pre></td></tr></table></figure><span id="more"></span><p><img src="/../images/image-20230103113612563.png" alt="image-20230103113612563"></p><p><img src="/../images/image-20230103113626905.png" alt="image-20230103113626905"></p><p><img src="/../images/image-20230103113635096.png" alt="image-20230103113635096"></p>]]></content>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;内容&quot;&gt;&lt;a href=&quot;#内容&quot; class=&quot;headerlink&quot; title=&quot;内容&quot;&gt;&lt;/a&gt;内容&lt;/h1&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;选择时组件 Selectable&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;当绑定组件后，继承 ISelectHandler 接口 实现 OnSelect函数，当选择时则执行此函数&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    <category term="unity" scheme="http://example.com/categories/unity/"/>
+    
+    
+    <category term="极世界" scheme="http://example.com/tags/%E6%9E%81%E4%B8%96%E7%95%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>极世界-背包系统</title>
+    <link href="http://example.com/2022/12/28/%E6%9E%81%E4%B8%96%E7%95%8C-%E8%83%8C%E5%8C%85%E7%B3%BB%E7%BB%9F/"/>
+    <id>http://example.com/2022/12/28/%E6%9E%81%E4%B8%96%E7%95%8C-%E8%83%8C%E5%8C%85%E7%B3%BB%E7%BB%9F/</id>
+    <published>2022-12-28T02:14:02.000Z</published>
+    <updated>2022-12-29T04:47:06.729Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">数据库用二进制存储</span><br><span class="line"></span><br><span class="line">更新协议 更新Define 制作背包UI 背包小格子脚本 背包数据库建立</span><br><span class="line"></span><br><span class="line">bagitem使用结构体，为了方便进行交换</span><br><span class="line"></span><br><span class="line">背包作用</span><br><span class="line">背包系统组成</span><br><span class="line"></span><br><span class="line">[StructLayout(LayoutKind.Sequential, Pack =1)]解释</span><br><span class="line"></span><br><span class="line">GetComponentsInChildren(); 使用方法</span><br><span class="line"></span><br><span class="line">通过二进制存储数据</span><br></pre></td></tr></table></figure><span id="more"></span><h1 id="背包作用"><a href="#背包作用" class="headerlink" title="背包作用"></a>背包作用</h1><p><img src="/../images/image-20221228162200670.png" alt="image-20221228162200670"></p><h1 id="背包系统组成"><a href="#背包系统组成" class="headerlink" title="背包系统组成"></a>背包系统组成</h1><p><img src="/../images/image-20221228162225821.png" alt="image-20221228162225821"></p><h1 id="StructLayout-LayoutKind-Sequential-Pack-x3D-1-解释"><a href="#StructLayout-LayoutKind-Sequential-Pack-x3D-1-解释" class="headerlink" title="[StructLayout(LayoutKind.Sequential, Pack &#x3D;1)]解释"></a>[StructLayout(LayoutKind.Sequential, Pack &#x3D;1)]解释</h1><p><code>[StructLayout(LayoutKind.Sequential)]</code></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">结构体是由若干成员组成的.布局有两种</span><br><span class="line">1.Sequential,顺序布局,比如</span><br><span class="line">struct S1</span><br><span class="line">&#123;</span><br><span class="line">  int a;</span><br><span class="line">  int b;</span><br><span class="line">&#125;</span><br><span class="line">那么默认情况下在内存里是先排a,再排b</span><br><span class="line">也就是如果能取到a的地址,和b的地址,则相差一个int类型的长度,4字节</span><br><span class="line">[StructLayout(LayoutKind.Sequential)] </span><br><span class="line">struct S1</span><br><span class="line">&#123;</span><br><span class="line">  int a;</span><br><span class="line">  int b;</span><br><span class="line">&#125;</span><br><span class="line">这样和上一个是一样的.因为默认的内存排列就是Sequential,也就是按成员的先后顺序排列.</span><br><span class="line">2.Explicit,精确布局</span><br><span class="line">需要用FieldOffset()设置每个成员的位置</span><br><span class="line">这样就可以实现类似c的公用体的功能</span><br><span class="line">[StructLayout(LayoutKind.Explicit)] </span><br><span class="line">struct S1</span><br><span class="line">&#123;</span><br><span class="line">  [FieldOffset(0)]</span><br><span class="line">  int a;</span><br><span class="line">  [FieldOffset(0)]</span><br><span class="line">  int b;</span><br><span class="line">&#125;</span><br><span class="line">这样a和b在内存中地址相同</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">StructLayout特性支持三种附加字段：CharSet、Pack、Size。     </span><br></pre></td></tr></table></figure><p>·  CharSet定义在结构中的字符串成员在结构被传给DLL时的排列方式。可以是Unicode、Ansi或Auto。<br> 默认为Auto，在WIN  NT&#x2F;2000&#x2F;XP中表示字符串按照Unicode字符串进行排列，在WIN  95&#x2F;98&#x2F;Me中则表示按照ANSI字符串进行排列。<br>·  Pack定义了结构的封装大小。可以是1、2、4、8、16、32、64、128或特殊值0。特殊值0表示当前操作平台默认的压缩大小。   </p><h1 id="c-GetComponentsInChildren-lt-组件-gt"><a href="#c-GetComponentsInChildren-lt-组件-gt" class="headerlink" title="c# GetComponentsInChildren&lt;组件&gt;();"></a>c# <code>GetComponentsInChildren</code>&lt;组件&gt;();</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">c# GetComponentsInChildren&lt;组件&gt;();</span><br><span class="line">这种方式是 大家经常用到的，这种是获取自己和它的孩子有同样的组件（比如 Rigidbody），返回一个数组，数组包括自己和它的孩子。如果他的孩子里面有的是不活跃SetActive(false);则获取不到。</span><br><span class="line">所以就会有第二个参数GetComponentsInChildren&lt;组件&gt;(true);</span><br><span class="line"></span><br><span class="line">includeInactive =true;</span><br><span class="line">原文链接：https://blog.csdn.net/microsoftMSDNNET/article/details/48522817</span><br></pre></td></tr></table></figure><h1 id="通过二进制存储数据"><a href="#通过二进制存储数据" class="headerlink" title="通过二进制存储数据"></a>通过二进制存储数据</h1><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> 分析获取背包</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;data&quot;&gt;</span><span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">unsafe</span> <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Analyze</span>(<span class="params"><span class="built_in">byte</span>[] data</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">fixed</span> (<span class="built_in">byte</span>* pt = data)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="built_in">int</span> i=<span class="number">0</span>;i&lt;<span class="keyword">this</span>.Unlocked;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            BagItem* item = (BagItem*)(pt + (i * <span class="keyword">sizeof</span>(BagItem)));</span><br><span class="line">            <span class="keyword">this</span>.items[i] = *item;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">unsafe</span> <span class="keyword">public</span> NBagInfo <span class="title">GetBagInfo</span>()</span></span><br><span class="line">&#123;</span><br><span class="line">    Debug.LogError(<span class="string">&quot;BagManager-&gt;NBagInfo&quot;</span>);</span><br><span class="line">    <span class="keyword">fixed</span> (<span class="built_in">byte</span>* pt = info.Items)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; <span class="keyword">this</span>.Unlocked; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            BagItem* item = (BagItem*)(pt + (i * <span class="keyword">sizeof</span>(BagItem)));</span><br><span class="line">            *item = items[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.info;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;内容&quot;&gt;&lt;a href=&quot;#内容&quot; class=&quot;headerlink&quot; title=&quot;内容&quot;&gt;&lt;/a&gt;内容&lt;/h1&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;数据库用二进制存储&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;更新协议 更新Define 制作背包UI 背包小格子脚本 背包数据库建立&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;bagitem使用结构体，为了方便进行交换&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;背包作用&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;背包系统组成&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;[StructLayout(LayoutKind.Sequential, Pack =1)]解释&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;GetComponentsInChildren(); 使用方法&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;通过二进制存储数据&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    <category term="unity" scheme="http://example.com/categories/unity/"/>
+    
+    
+    <category term="极世界" scheme="http://example.com/tags/%E6%9E%81%E4%B8%96%E7%95%8C/"/>
+    
+  </entry>
   
   <entry>
     <title>极世界-道具系统</title>
@@ -286,156 +425,6 @@
     
     
     <category term="极世界" scheme="http://example.com/tags/%E6%9E%81%E4%B8%96%E7%95%8C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>极世界-基础场景与UI</title>
-    <link href="http://example.com/2022/12/04/%E6%9E%81%E4%B8%96%E7%95%8C-%E5%9F%BA%E7%A1%80%E5%9C%BA%E6%99%AF%E4%B8%8EUI/"/>
-    <id>http://example.com/2022/12/04/%E6%9E%81%E4%B8%96%E7%95%8C-%E5%9F%BA%E7%A1%80%E5%9C%BA%E6%99%AF%E4%B8%8EUI/</id>
-    <published>2022-12-04T03:43:08.000Z</published>
-    <updated>2022-12-04T13:08:42.735Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">UI资源导入</span><br><span class="line">制作自定义字体</span><br></pre></td></tr></table></figure><span id="more"></span><h1 id="制作自定义字体"><a href="#制作自定义字体" class="headerlink" title="制作自定义字体"></a>制作自定义字体</h1><p>1.创建<code>custom Font</code></p><p><img src="/../images/image-20221204165906037.png" alt="image-20221204165906037"></p><p>2.新建材质，将字体图片放在材质上，将材质使用在custom Font上。</p><p><img src="/../images/image-20221204170111652.png" alt="image-20221204170111652"></p><p>3.逐个设置字体</p><p><img src="/../images/image-20221204170140005.png" alt="image-20221204170140005"></p><p><img src="/../images/image-20221204210653824.png" alt="image-20221204210653824"></p><p>Index  为对应字符的ASCII</p><p>UV为对应字符在图片中的比例位置  切割方法如图：</p><p><img src="/../images/image-20221204170331738.png" alt="image-20221204170331738"></p><p>vert为在Text中的位置和大小</p><p>Advance为与下个字符之间的间距  一般设为字符长度即可</p><h2 id="具体数值"><a href="#具体数值" class="headerlink" title="具体数值"></a>具体数值</h2><p><img src="/../images/image-20221204190224487.png" alt="image-20221204190224487"></p><p><img src="/../images/image-20221204190248881.png" alt="image-20221204190248881"></p><p><img src="/../images/image-20221204190301865.png" alt="image-20221204190301865"></p><p><img src="/../images/image-20221204190314707.png" alt="image-20221204190314707"></p>]]></content>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;内容&quot;&gt;&lt;a href=&quot;#内容&quot; class=&quot;headerlink&quot; title=&quot;内容&quot;&gt;&lt;/a&gt;内容&lt;/h1&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;UI资源导入&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;制作自定义字体&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
-    
-    
-    
-    <category term="unity" scheme="http://example.com/categories/unity/"/>
-    
-    
-    <category term="极世界" scheme="http://example.com/tags/%E6%9E%81%E4%B8%96%E7%95%8C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>网络编程</title>
-    <link href="http://example.com/2022/12/04/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
-    <id>http://example.com/2022/12/04/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/</id>
-    <published>2022-12-04T03:12:29.000Z</published>
-    <updated>2022-12-04T03:42:26.079Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure><span id="more"></span>]]></content>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;内容&quot;&gt;&lt;a href=&quot;#内容&quot; class=&quot;headerlink&quot; title=&quot;内容&quot;&gt;&lt;/a&gt;内容&lt;/h1&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
-    
-    
-    
-    <category term="网络" scheme="http://example.com/categories/%E7%BD%91%E7%BB%9C/"/>
-    
-    
-    <category term="网络编程" scheme="http://example.com/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>极世界03</title>
-    <link href="http://example.com/2022/12/03/%E6%9E%81%E4%B8%96%E7%95%8C03/"/>
-    <id>http://example.com/2022/12/03/%E6%9E%81%E4%B8%96%E7%95%8C03/</id>
-    <published>2022-12-03T04:35:49.000Z</published>
-    <updated>2022-12-04T03:43:55.326Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">游戏框架设计</span><br><span class="line">层划分</span><br><span class="line">服务端功能</span><br><span class="line"></span><br><span class="line">协议文件位置  E:\极世界MMORPG\Art\mmorpg\Src\Lib\proto</span><br><span class="line"></span><br><span class="line">网络添加协议 发送消息</span><br></pre></td></tr></table></figure><h1 id="层"><a href="#层" class="headerlink" title="层"></a>层</h1><p><img src="/../images/image-20221203133427907.png" alt="image-20221203133427907"></p><h2 id="服务层"><a href="#服务层" class="headerlink" title="服务层"></a>服务层</h2><p>客户端与服务层的直接接口</p><p>服务端代码处理客户端提出的请求并进行响应</p><h1 id="服务"><a href="#服务" class="headerlink" title="服务"></a>服务</h1><p><img src="/../images/image-20221203133433932.png" alt="image-20221203133433932"></p><h1 id="网络添加协议-发送消息"><a href="#网络添加协议-发送消息" class="headerlink" title="网络添加协议 发送消息"></a>网络添加协议 发送消息</h1><h2 id="协议中添加测试消息"><a href="#协议中添加测试消息" class="headerlink" title="协议中添加测试消息"></a>协议中添加测试消息</h2><p><img src="/../images/image-20221203204422609.png" alt="image-20221203204422609"></p><h2 id="设定message"><a href="#设定message" class="headerlink" title="设定message"></a>设定message</h2><p><img src="/../images/image-20221203204439886.png" alt="image-20221203204439886"></p><h2 id="点击生成协议工具"><a href="#点击生成协议工具" class="headerlink" title="点击生成协议工具"></a>点击生成协议工具</h2><p><img src="/../images/image-20221203204556312.png" alt="image-20221203204556312"></p><h2 id="到服务器解决方案生成解决方案"><a href="#到服务器解决方案生成解决方案" class="headerlink" title="到服务器解决方案生成解决方案"></a>到服务器解决方案生成解决方案</h2><p><img src="/../images/image-20221203204838581.png" alt="image-20221203204838581"></p><h2 id="protocal-x2F-bin-x2F-debug下四个文件替换到Client-Assets-References目录下"><a href="#protocal-x2F-bin-x2F-debug下四个文件替换到Client-Assets-References目录下" class="headerlink" title="protocal&#x2F;bin&#x2F;debug下四个文件替换到Client\Assets\References目录下"></a>protocal&#x2F;bin&#x2F;debug下四个文件替换到Client\Assets\References目录下</h2><p><img src="/../images/image-20221203205318882.png" alt="image-20221203205318882"></p><p>可以配置E:\极世界MMORPG\mymmo\Src\Lib\Protocol\Protocol.csproj</p><p>来省去此步操作</p><h2 id="发送消息"><a href="#发送消息" class="headerlink" title="发送消息"></a>发送消息</h2><p><img src="/../images/image-20221203215303487.png" alt="image-20221203215303487"></p><h2 id="在services目录下建立HelloWorldService"><a href="#在services目录下建立HelloWorldService" class="headerlink" title="在services目录下建立HelloWorldService"></a>在services目录下建立HelloWorldService</h2><p><img src="/../images/image-20221203224208351.png" alt="image-20221203224208351"></p><h2 id="在gameserver下加入hellowordservice的init和stare"><a href="#在gameserver下加入hellowordservice的init和stare" class="headerlink" title="在gameserver下加入hellowordservice的init和stare"></a>在gameserver下加入hellowordservice的init和stare</h2><p><img src="/../images/image-20221203224302850.png" alt="image-20221203224302850"></p><h2 id="在Network-MessageDispatch-cs中加入消息分发"><a href="#在Network-MessageDispatch-cs中加入消息分发" class="headerlink" title="在Network\MessageDispatch.cs中加入消息分发"></a>在Network\MessageDispatch.cs中加入消息分发</h2><p><img src="/../images/image-20221203224402922.png" alt="image-20221203224402922"></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;内容&quot;&gt;&lt;a href=&quot;#内容&quot; class=&quot;headerlink&quot; title=&quot;内容&quot;&gt;&lt;/a&gt;内容&lt;/h1&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;s</summary>
-      
-    
-    
-    
-    <category term="unity" scheme="http://example.com/categories/unity/"/>
-    
-    
-    <category term="极世界" scheme="http://example.com/tags/%E6%9E%81%E4%B8%96%E7%95%8C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>极世界02</title>
-    <link href="http://example.com/2022/11/23/%E6%9E%81%E4%B8%96%E7%95%8C02/"/>
-    <id>http://example.com/2022/11/23/%E6%9E%81%E4%B8%96%E7%95%8C02/</id>
-    <published>2022-11-23T08:27:08.000Z</published>
-    <updated>2022-12-03T06:59:22.053Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">策划文档  美术规范  技术文档</span><br><span class="line"></span><br><span class="line">untiy 2018 配套使用 vs2017</span><br><span class="line"></span><br><span class="line">配置表工具  excel</span><br><span class="line">协议工具   客户端与服务端的约定 为协议</span><br><span class="line">其他工具   </span><br><span class="line">框架  客户端    </span><br><span class="line">         日志  配置  数据加载  网络 </span><br><span class="line">框架  服务端</span><br><span class="line">         日志 配置 数据加载 网络 DB访问 基础组件</span><br><span class="line">   </span><br><span class="line">json 比较灵活 可以做嵌套 性能比较高</span><br><span class="line"></span><br><span class="line">Entity Framework</span><br></pre></td></tr></table></figure><span id="more"></span><h1 id="协议"><a href="#协议" class="headerlink" title="协议"></a>协议</h1><p>使用<code>Goodle Protobuf</code></p><h2 id="协议位置"><a href="#协议位置" class="headerlink" title="协议位置"></a>协议位置</h2><p><img src="/../images/image-20221203143312124.png" alt="image-20221203143312124"></p><h2 id="协议生成工具"><a href="#协议生成工具" class="headerlink" title="协议生成工具"></a>协议生成工具</h2><p><img src="/../images/image-20221202162413483.png" alt="image-20221202162413483"></p><h2 id="协议代码"><a href="#协议代码" class="headerlink" title="协议代码"></a>协议代码</h2><p><img src="/../images/image-20221203143215923.png" alt="image-20221203143215923"></p><p>[(36条消息) Netty指南（7）：Google protobuf 基本介绍_非常之观常在险远的博客-CSDN博客_google.protobuf](<a href="https://blog.csdn.net/m0_50275872/article/details/124601019?ops_request_misc=&amp;request_id=&amp;biz_id=102&amp;utm_term=Goodle">https://blog.csdn.net/m0_50275872/article/details/124601019?ops_request_misc=&amp;request_id=&amp;biz_id=102&amp;utm_term=Goodle</a> Protobuf&amp;utm_medium&#x3D;distribute.pc_search_result.none-task-blog-2<del>all</del>sobaiduweb~default-0-124601019.142^v67^pc_rank_34_queryrelevant25,201^v3^control_2,213^v2^t3_control2&amp;spm&#x3D;1018.2226.3001.4187)</p><p>[(36条消息) 谷歌protobuf(Protocol buffers)的使用_星辰1024的博客-CSDN博客_谷歌protobuf](<a href="https://blog.csdn.net/weixin_45491728/article/details/118682396?ops_request_misc=&amp;request_id=&amp;biz_id=102&amp;utm_term=Goodle">https://blog.csdn.net/weixin_45491728/article/details/118682396?ops_request_misc=&amp;request_id=&amp;biz_id=102&amp;utm_term=Goodle</a> Protobuf&amp;utm_medium&#x3D;distribute.pc_search_result.none-task-blog-2<del>all</del>sobaiduweb~default-1-118682396.142^v67^pc_rank_34_queryrelevant25,201^v3^control_2,213^v2^t3_control2&amp;spm&#x3D;1018.2226.3001.4187)</p><p>Protocol buffers 是 Google 的语言中立、平台中立、可扩展的结构化数据序列化机制——像 XML，但更小、更快、更简单。您可以定义一次数据的结构化方式，然后您可以使用特殊生成的源代码轻松地使用各种语言在各种数据流中写入和读取结构化数据。<br>Photocol buffers 是一种比json和xml等序列化工具更加轻量和高效的结构化数据存储格式，性能比json和xml真的强很多。<br>原理图：</p><p><img src="/../images/image-20221203142228448.png" alt="image-20221203142228448"></p><h1 id="json"><a href="#json" class="headerlink" title="json"></a>json</h1><p><code>JsonDotNet</code> 解析<code>json</code>用的类库</p><h1 id="Entity-Framework"><a href="#Entity-Framework" class="headerlink" title="Entity Framework"></a><strong>Entity Framework</strong></h1>]]></content>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;内容&quot;&gt;&lt;a href=&quot;#内容&quot; class=&quot;headerlink&quot; title=&quot;内容&quot;&gt;&lt;/a&gt;内容&lt;/h1&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;策划文档  美术规范  技术文档&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;untiy 2018 配套使用 vs2017&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;配置表工具  excel&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;协议工具   客户端与服务端的约定 为协议&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;其他工具   &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;框架  客户端    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         日志  配置  数据加载  网络 &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;框架  服务端&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         日志 配置 数据加载 网络 DB访问 基础组件&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;json 比较灵活 可以做嵌套 性能比较高&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Entity Framework&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
-    
-    
-    
-    <category term="unity" scheme="http://example.com/categories/unity/"/>
-    
-    
-    <category term="极世界" scheme="http://example.com/tags/%E6%9E%81%E4%B8%96%E7%95%8C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>极世界01</title>
-    <link href="http://example.com/2022/11/19/%E6%9E%81%E4%B8%96%E7%95%8C01/"/>
-    <id>http://example.com/2022/11/19/%E6%9E%81%E4%B8%96%E7%95%8C01/</id>
-    <published>2022-11-19T08:52:38.000Z</published>
-    <updated>2022-11-23T08:27:38.843Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">项目准备</span><br></pre></td></tr></table></figure><span id="more"></span><h1 id="项目准备"><a href="#项目准备" class="headerlink" title="项目准备"></a>项目准备</h1><h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p><img src="/../images/image-20221119165947100.png" alt="image-20221119165947100"></p><p>使用谷歌的协议工具<code>GooGle Protobuf</code></p><h2 id="框架客户端"><a href="#框架客户端" class="headerlink" title="框架客户端"></a>框架客户端</h2><p><img src="/../images/image-20221119170242452.png" alt="image-20221119170242452"></p><h2 id="协议"><a href="#协议" class="headerlink" title="协议"></a>协议</h2><p><img src="/../images/image-20221119170624554.png" alt="image-20221119170624554"></p><h2 id="两种单例"><a href="#两种单例" class="headerlink" title="两种单例"></a>两种单例</h2><h3 id="普通类单例"><a href="#普通类单例" class="headerlink" title="普通类单例"></a>普通类单例</h3><p><img src="/../images/image-20221119174528835.png" alt="image-20221119174528835"></p><h3 id="游戏对象单例"><a href="#游戏对象单例" class="headerlink" title="游戏对象单例"></a>游戏对象单例</h3><p><img src="/../images/image-20221119174607124.png" alt="image-20221119174607124"></p>]]></content>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;内容&quot;&gt;&lt;a href=&quot;#内容&quot; class=&quot;headerlink&quot; title=&quot;内容&quot;&gt;&lt;/a&gt;内容&lt;/h1&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;项目准备&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
-    
-    
-    
-    <category term="unity" scheme="http://example.com/categories/unity/"/>
-    
-    
-    <category term="极世界" scheme="http://example.com/tags/%E6%9E%81%E4%B8%96%E7%95%8C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>unity11-19</title>
-    <link href="http://example.com/2022/11/19/unity11-19/"/>
-    <id>http://example.com/2022/11/19/unity11-19/</id>
-    <published>2022-11-19T05:01:51.000Z</published>
-    <updated>2022-11-19T09:01:34.135Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">偷偷把项目做完了</span><br><span class="line">哔哩哔哩展示</span><br><span class="line">https://www.bilibili.com/video/BV1gd4y187rd</span><br><span class="line">还有晚上发工资的功能因为时长原因没有展示</span><br></pre></td></tr></table></figure><span id="more"></span>]]></content>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;内容&quot;&gt;&lt;a href=&quot;#内容&quot; class=&quot;headerlink&quot; title=&quot;内容&quot;&gt;&lt;/a&gt;内容&lt;/h1&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;偷偷把项目做完了&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;哔哩哔哩展示&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;https://www.bilibili.com/video/BV1gd4y187rd&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;还有晚上发工资的功能因为时长原因没有展示&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
-    
-    
-    
-    <category term="unity" scheme="http://example.com/categories/unity/"/>
-    
-    
-    <category term="美食梦物语" scheme="http://example.com/tags/%E7%BE%8E%E9%A3%9F%E6%A2%A6%E7%89%A9%E8%AF%AD/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>unity11-7</title>
-    <link href="http://example.com/2022/11/07/unity11-7/"/>
-    <id>http://example.com/2022/11/07/unity11-7/</id>
-    <published>2022-11-07T00:40:38.000Z</published>
-    <updated>2022-11-07T15:05:41.079Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">菜品属性查看</span><br><span class="line">菜品设置</span><br><span class="line">菜品开发</span><br><span class="line"></span><br><span class="line">2022年11月7日 舍友阳了  项目拖延了</span><br></pre></td></tr></table></figure><span id="more"></span><h1 id="菜品属性查看"><a href="#菜品属性查看" class="headerlink" title="菜品属性查看"></a>菜品属性查看</h1><p><img src="/../images/image-20221107211545129.png" alt="image-20221107211545129"></p><h1 id="菜品设置"><a href="#菜品设置" class="headerlink" title="菜品设置"></a>菜品设置</h1><p><img src="/../images/image-20221107211605068.png" alt="image-20221107211605068"></p><h1 id="菜品开发"><a href="#菜品开发" class="headerlink" title="菜品开发"></a>菜品开发</h1><p><img src="/../images/image-20221107211617752.png" alt="image-20221107211617752"></p>]]></content>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;内容&quot;&gt;&lt;a href=&quot;#内容&quot; class=&quot;headerlink&quot; title=&quot;内容&quot;&gt;&lt;/a&gt;内容&lt;/h1&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;菜品属性查看&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;菜品设置&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;菜品开发&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2022年11月7日 舍友阳了  项目拖延了&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
-    
-    
-    
-    <category term="unity" scheme="http://example.com/categories/unity/"/>
-    
-    
-    <category term="美食梦物语" scheme="http://example.com/tags/%E7%BE%8E%E9%A3%9F%E6%A2%A6%E7%89%A9%E8%AF%AD/"/>
     
   </entry>
   
