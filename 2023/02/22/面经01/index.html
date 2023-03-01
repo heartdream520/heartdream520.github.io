@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"manual"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="内容12unityGC  (49条消息) 2022年Unity 面试题 |五萬字 二佰道| Unity面试题大全，面试题总结【全网最全，收藏一篇足够面试】_呆呆敲代码的小Y的博客-CSDN博客 [TOC]">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面经01">
+<meta property="og:url" content="http://example.com/2023/02/22/%E9%9D%A2%E7%BB%8F01/index.html">
+<meta property="og:site_name" content="心梦">
+<meta property="og:description" content="内容12unityGC  (49条消息) 2022年Unity 面试题 |五萬字 二佰道| Unity面试题大全，面试题总结【全网最全，收藏一篇足够面试】_呆呆敲代码的小Y的博客-CSDN博客 [TOC]">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/images/image-20230301175833852.png">
+<meta property="og:image" content="http://example.com/images/image-20230301175922382.png">
+<meta property="article:published_time" content="2023-02-22T13:33:56.000Z">
+<meta property="article:modified_time" content="2023-03-01T13:57:29.130Z">
+<meta property="article:author" content="心梦">
+<meta property="article:tag" content="面经">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/image-20230301175833852.png">
+
+<link rel="canonical" href="http://example.com/2023/02/22/%E9%9D%A2%E7%BB%8F01/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>面经01 | 心梦</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="心梦" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">心梦</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-resources">
+
+    <a href="/resources/" rel="section"><i class="download fa-fw"></i>资源</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+
+  <a href="https://github.com/heartdream520" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/02/22/%E9%9D%A2%E7%BB%8F01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/ailulu.jpg">
+      <meta itemprop="name" content="心梦">
+      <meta itemprop="description" content="heart_dream">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="心梦">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          面经01
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-02-22 21:33:56" itemprop="dateCreated datePublished" datetime="2023-02-22T21:33:56+08:00">2023-02-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-03-01 21:57:29" itemprop="dateModified" datetime="2023-03-01T21:57:29+08:00">2023-03-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%9D%A2%E7%BB%8F/" itemprop="url" rel="index"><span itemprop="name">面经</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>8.9k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>8 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">unityGC</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/zhangay1998/article/details/122626334?ops_request_misc=%7B%22request_id%22:%22167758686016800213026456%22,%22scm%22:%2220140713.130102334..%22%7D&request_id=167758686016800213026456&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-1-122626334-null-null.142%5Ev73%5Einsert_down1,201%5Ev4%5Eadd_ask,239%5Ev2%5Einsert_chatgpt&utm_term=unity%E9%9D%A2%E8%AF%95%E9%A2%98&spm=1018.2226.3001.4187">(49条消息) 2022年Unity 面试题 |五萬字 二佰道| Unity面试题大全，面试题总结【全网最全，收藏一篇足够面试】_呆呆敲代码的小Y的博客-CSDN博客</a></p>
+<p>[TOC]</p>
+<span id="more"></span>
+
+
+
+<h1 id="泛型在unity的应用"><a href="#泛型在unity的应用" class="headerlink" title="泛型在unity的应用"></a>泛型在unity的应用</h1><p>1.单例模式</p>
+<p>2.判断游戏物体体是否存在某个组件</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> T <span class="title">GetAndAddComponent</span>&lt;<span class="title">T</span>&gt;(<span class="params">GameObject obj</span>) <span class="keyword">where</span> T:Component</span> </span><br><span class="line">   &#123;</span><br><span class="line">       <span class="keyword">if</span> (!obj.GetComponent&lt;T&gt;())<span class="comment">//检查该游戏物体是否还有T组件</span></span><br><span class="line">       &#123;</span><br><span class="line">           obj.AddComponent&lt;T&gt;();<span class="comment">//没有添加</span></span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">return</span> obj.GetComponent&lt;T&gt;();<span class="comment">//本身就有或者是添加之后的返回</span></span><br><span class="line">   &#125;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="title">List</span>&lt;<span class="title">Component</span>&gt; <span class="title">GetAndAddComponens</span>&lt;<span class="title">T</span>, <span class="title">K</span>&gt;(<span class="params">GameObject obj</span>) <span class="keyword">where</span> T : Component <span class="keyword">where</span> K : Component</span></span><br><span class="line">   &#123;</span><br><span class="line">       <span class="keyword">if</span> (obj.GetComponent&lt;T&gt;() == <span class="literal">null</span>)<span class="comment">//检查该游戏物体是否还有T组件</span></span><br><span class="line">       &#123;</span><br><span class="line">           com.Add(obj.AddComponent&lt;T&gt;());<span class="comment">//添加并且添加到list</span></span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">if</span> (obj.GetComponent&lt;K&gt;() == <span class="literal">null</span>)<span class="comment">//检查该游戏物体是否还有T组件</span></span><br><span class="line">       &#123;</span><br><span class="line">           com.Add(obj.AddComponent&lt;K&gt;());<span class="comment">// 添加并且添加List中</span></span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">return</span> com;<span class="comment">//返回list</span></span><br><span class="line">   &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="关于Unity3D的四种常用灯光"><a href="#关于Unity3D的四种常用灯光" class="headerlink" title="关于Unity3D的四种常用灯光"></a>关于Unity3D的四种常用灯光</h1><h2 id="定向光"><a href="#定向光" class="headerlink" title="定向光"></a>定向光</h2><p>Directional Light发出的光没有距离的限制且相互平行，所以无论放在什么位置（无穷远\近）都能照射到指定方向的区域，投射出来的阴影也都是一样的。</p>
+<h2 id="点光源"><a href="#点光源" class="headerlink" title="点光源"></a>点光源</h2><p>即空间中一个向所有方向均匀发光的点，类似于现实生活中的灯泡，光线强度和照射距离成反比（距离越远，光线越弱），阴影会随光源的位置而发生变化。</p>
+<h2 id="聚光灯"><a href="#聚光灯" class="headerlink" title="聚光灯"></a>聚光灯</h2><p>效果类似于舞台的聚光灯，光线从一个点发出，向着某个方向按锥形的范围进行照射。与点光源一样，光线会随着距离的增加而逐渐衰弱，阴影也会随光源的位置而发生变化。<br>可以通过调节位置来改变投射出的光圈的大小，也可以通过调节Spot Angle的参数来改变（数值越大，投射出的光圈越大）。</p>
+<h2 id="区域光"><a href="#区域光" class="headerlink" title="区域光"></a>区域光</h2><p>Area（baked only）区域光往Z方向照射且仅能用于光照贴图渲染，光线会随着距离的增加而逐渐衰弱，阴影也会随光源的位置而发生变化。</p>
+<h1 id="unity动画"><a href="#unity动画" class="headerlink" title="unity动画"></a>unity动画</h1><h2 id="IK"><a href="#IK" class="headerlink" title="IK"></a>IK</h2><p>与MatchTarget实现的效果类似，但是可以用在任意层的动画上<br>IK全称反向运动学，也就是根据子节点的位置推算出父节点的关节变化，而根据父节点的位置推算出子节点的关节变化称作正向运动学<br>使用IK动画首先动画类型必须是Humanoid类型并在Animator窗口设置中打开IK Pass</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> Transform trans1;</span><br><span class="line"><span class="keyword">public</span> Transform trans2;</span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">OnAnimatorIK</span>(<span class="params"><span class="built_in">int</span> layerIndex</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (ani.GetCurrentAnimatorStateInfo(<span class="number">1</span>).IsName(<span class="string">&quot;AniName&quot;</span>))</span><br><span class="line">    &#123;</span><br><span class="line">        ani.SetIKPosition(AvatarIKGoal.RightHand, trans1.position);</span><br><span class="line">        ani.SetIKPositionWeight(AvatarIKGoal.RightHand, <span class="number">1</span>);</span><br><span class="line">        ani.SetIKPosition(AvatarIKGoal.LeftHand, trans2.position);</span><br><span class="line">        ani.SetIKPositionWeight(AvatarIKGoal.LeftHand, <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="值类型和引用类型"><a href="#值类型和引用类型" class="headerlink" title="值类型和引用类型"></a>值类型和引用类型</h1><p>值类型：int,bool,float,char,struct,enum</p>
+<p>引用类型：string,object,委托,接口,类,数组</p>
+<p>区别：</p>
+<p>1.值类型直接存储在栈中，引用类型在栈中存储堆中数据的指针和引用，数据存储在堆中</p>
+<p>2.值类型存取快，引用类型存取慢</p>
+<p>3.值类型使用完自动释放，引用类型要等待GC来释放</p>
+<p>4.值类型继承自System.ValueType,引用类型继承自Sysetm.Object</p>
+<h1 id="C-修饰符"><a href="#C-修饰符" class="headerlink" title="C#修饰符"></a>C#修饰符</h1><p>public:无访问限制</p>
+<p>private：仅对该类开放</p>
+<p>protected：只对该类和其派生类公开</p>
+<p>internal：只能在包含该类的程序集中访问</p>
+<p>static ：静态类：无法实例化，只能通过 类名.访问</p>
+<p>​               静态方法：与实例化无关，只能通过类名.访问</p>
+<h1 id="ArrayList和List的区别"><a href="#ArrayList和List的区别" class="headerlink" title="ArrayList和List的区别"></a>ArrayList和List的区别</h1><p>1.ArrayList不带泛型，数据类型丢死，List带泛型数据类型不丢失</p>
+<p>2.ArrayList需要进行装箱拆箱操作，将数据类型转化为Object，List不需要装箱拆箱操作</p>
+<h1 id="简述GC产生的原因，如何避免GC"><a href="#简述GC产生的原因，如何避免GC" class="headerlink" title="简述GC产生的原因，如何避免GC"></a>简述GC产生的原因，如何避免GC</h1><p>GC是避免内存溢出二产生的垃圾回收机制</p>
+<p>当实例化一个对象并且内存不足时，就会触发GC</p>
+<h2 id="Unity的GC机制"><a href="#Unity的GC机制" class="headerlink" title="Unity的GC机制"></a>Unity的GC机制</h2><p>使用了Boehm GC算法（可以参考：<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Boehm_garbage_collector%EF%BC%89%EF%BC%8C%E6%98%AF%60%E9%9D%9E%E5%88%86%E4%BB%A3%60%EF%BC%88non-generational%EF%BC%89%E5%92%8C%60%E9%9D%9E%E5%8E%8B%E7%BC%A9%60%EF%BC%88non-compacting%EF%BC%89%E7%9A%84%E3%80%82">https://en.wikipedia.org/wiki/Boehm_garbage_collector），是`非分代`（non-generational）和`非压缩`（non-compacting）的。</a></p>
+<p>“非分代”是指GC执行清理操作时，必须遍历整个内存，去标记哪些没有被引用并且删除，随着内存的增长，它的性能就会降低。 目前2019版本的unity在实验分代GC算法<br>“非压缩”意味着内存中的对象不会被重新定位，去减小对象之间的内存空隙</p>
+<p>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/gghhb12/article/details/120782191">https://blog.csdn.net/gghhb12/article/details/120782191</a></p>
+<h2 id="四个步骤："><a href="#四个步骤：" class="headerlink" title="四个步骤："></a>四个步骤：</h2><p>1.首先搜素内存堆中所有的托管对象</p>
+<p>2.当这个对象或其子对象有任何引用是有效的时，将此对象标记为有效</p>
+<p>3.释放所有未被标记为有效的对象并收回内存</p>
+<p>4.最后整理内存将所有有效的对象移动到一起</p>
+<h2 id="对象代龄"><a href="#对象代龄" class="headerlink" title="对象代龄"></a>对象代龄</h2><p>CLR初始化后第一批创建的对象列为0代对象，CLR会为0代区域设置一个内存限制，当创建对象的大小 超过这个内存限制时，GC开始工作，清理垃圾并释放内存，GC结束时，幸存的对象会被列为一代对象，并进入一代区域，一代区域起初也会设定一个容量限制，当超出这个容量限制时，GC扩大战场，对一代对象也进行回收，幸存的对象被列为二代对象进入二代区域</p>
+<h2 id="避免GC"><a href="#避免GC" class="headerlink" title="避免GC"></a>避免GC</h2><p>1.减少new的使用</p>
+<p>2.使用公共的对象或静态成员</p>
+<p>3.在频繁操作字符串的场景中，使用stringBulider替换string，因为每次修改string时会新new一个string替换原来的string</p>
+<p>4.使用对象池，减少对象的创建和销毁</p>
+<p>5.减少foreach的使用</p>
+<p>减少GC造成的卡顿：在载入新场景的时候进行GC减少游戏进行中进行的卡顿</p>
+<h1 id="class和struct的区别"><a href="#class和struct的区别" class="headerlink" title="class和struct的区别"></a>class和struct的区别</h1><p>1.class为引用类型，struct为值类型</p>
+<p>2.class在堆上创建实例，struct在栈上创建实例</p>
+<p>3.class作为参数类型传递，传递为引用地址，struct传递的为值</p>
+<p>4.class没有默认的无参构造函数，struct有默认的无参构造函数</p>
+<p>5.class支持继承，struct不支持继承</p>
+<p>6.class很容易赋初始值，struct不容易赋初值</p>
+<p>7.class偏向与面向对象，用于复杂大型的数据，struct偏向于较为简单的数据</p>
+<p>8.class实例只能通过new SomeClass来创建，struct既可以通过new SomeStruct进行创建也可以通过 SomeStruct myStruct 进行创建</p>
+<h1 id="指针和引用的区别"><a href="#指针和引用的区别" class="headerlink" title="指针和引用的区别"></a>指针和引用的区别</h1><p>1.引用不能为空，不存在对空对象的引用，指针可以为空</p>
+<p>2.引用必须初始化引用对象，指针可以不初始化</p>
+<p>3.引用初始化后不能改变，指针可以改变</p>
+<p>4.引用访问对象为直接访问，指针访问对象为间接访问</p>
+<p>5.引用的大小为引用对象的大小，指针的大小为为指针本身，通常为四个字节</p>
+<p>6.引用对象不需要分配内存空间，指针访问对象需要分配空间</p>
+<h1 id="多态的意义"><a href="#多态的意义" class="headerlink" title="多态的意义"></a>多态的意义</h1><p>同一对象被造型为不同的类型时，有不同的功能</p>
+<p>同一类型的引用指向不同的类型时有不同的实现</p>
+<h1 id="不安全代码和非托管代码"><a href="#不安全代码和非托管代码" class="headerlink" title="不安全代码和非托管代码"></a>不安全代码和非托管代码</h1><p>托管代码：在公共语言运行时（CLR）控制下运行的代码</p>
+<p>非托管代码：不在公共语言运行时（CLR）控制下运行的代码</p>
+<p>不安全代码：不安全代码介于托管代码和非托管代码之间，不安全代码仍然在CLR控制下运行，但是但是允许直接通过指针访问内存</p>
+<p>unsafe：非托管代码需要用到这个关键字一般用在带指针的操作场所</p>
+<h1 id="Net和Mono的关系"><a href="#Net和Mono的关系" class="headerlink" title=".Net和Mono的关系"></a>.Net和Mono的关系</h1><p>.Net是一个语言平台，Mono为.Net提供了集成开发环境，集成并实现了.Net的编译器，CLR和基础类库，使Net既可以在windows上运行，也可以运行于 Linux 和 Os 等</p>
+<h1 id="接口和委托"><a href="#接口和委托" class="headerlink" title="接口和委托"></a>接口和委托</h1><p>接口约束了类应该具备的功能的集合，约束了类应该具备哪些功能，使类从千变万化的逻辑中解脱出来，方便类的管理和拓展，同时解决了类的单继承问题；</p>
+<h1 id="ref和out"><a href="#ref和out" class="headerlink" title="ref和out"></a>ref和out</h1><p>ref修饰引用参数，参数必须赋值，带返回值，又进又出</p>
+<p>out修饰输出参数，参数可以不赋值，在返回之前必须明确赋值</p>
+<h1 id="JIT和AOT的区别"><a href="#JIT和AOT的区别" class="headerlink" title="JIT和AOT的区别"></a>JIT和AOT的区别</h1><p>just-in-time 实时编译        	   执行慢安装快空间小</p>
+<p>ahead-of-time 预先编译      	执行快安装慢占用内存外存大</p>
+<h1 id="委托和事件的区别"><a href="#委托和事件的区别" class="headerlink" title="委托和事件的区别"></a>委托和事件的区别</h1><p>1.委托为一个类，可以进行实例化，可以通过委托的构造函数把方法赋值给委托实例</p>
+<p>2.事件为一个委托类型的变量</p>
+<p>3.事件可以通过+&#x3D;注册委托实例或方法 ；可以通过-&#x3D;注销委托实例或方法</p>
+<p>4.<code>EventHandler</code>就是一个委托</p>
+<p>5.委托可以在类内部和外部进行触发，而事件只能在内部触发</p>
+<p>6.观察者模式中被观察者可以在内部生成一个事件作为外部观察者注册的接口</p>
+<h1 id="c-EventArgs的使用（事件参数）"><a href="#c-EventArgs的使用（事件参数）" class="headerlink" title="c#EventArgs的使用（事件参数）"></a>c#EventArgs的使用（事件参数）</h1><p>如果有多个类要打印信息，如Student类，Teacher类，School类…如下代码。各类统一继承于EventArgs的话，那么传参就很方便了。</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="keyword">namespace</span> <span class="title">ConsoleTest</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">class</span> <span class="title">Program</span></span><br><span class="line">    &#123;</span><br><span class="line"> </span><br><span class="line">        <span class="comment">//把打印信息统一为一个函数，一个EventArgs参数。</span></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="built_in">string</span> <span class="title">ShowMessage</span>(<span class="params">EventArgs e</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (e <span class="keyword">is</span> Student)               <span class="comment">//判断参数类型</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">var</span> student = e <span class="keyword">as</span> Student; <span class="comment">//把参数转换为Student类</span></span><br><span class="line">                <span class="keyword">return</span> student.Name + <span class="string">&quot;, address = &quot;</span> + student.Address;</span><br><span class="line"> </span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (e <span class="keyword">is</span> Teacher)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">var</span> teacher = e <span class="keyword">as</span> Teacher;</span><br><span class="line">                <span class="keyword">return</span> teacher.Name + <span class="string">&quot;, course = &quot;</span> + teacher.Course;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                <span class="keyword">return</span> <span class="string">&quot;Not found&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="built_in">string</span>[] args</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line"> </span><br><span class="line">            Console.WriteLine(ShowMessage(<span class="keyword">new</span> Student(<span class="string">&quot;James&quot;</span>,<span class="string">&quot;杭州&quot;</span>)));</span><br><span class="line">            Console.WriteLine(ShowMessage(<span class="keyword">new</span> Teacher(<span class="string">&quot;Jack&quot;</span>, <span class="string">&quot;英语&quot;</span>)));</span><br><span class="line">            Console.ReadKey();</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">        <span class="comment">//继承于EventArgs，便于传参</span></span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Student</span> : <span class="title">EventArgs</span>    </span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">public</span> <span class="built_in">string</span> Name &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">            <span class="keyword">public</span> <span class="built_in">int</span> Age &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">            <span class="keyword">public</span> <span class="built_in">string</span> Address &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="title">Student</span>(<span class="params"><span class="built_in">string</span> name, <span class="built_in">string</span> address</span>)</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">this</span>.Name = name;</span><br><span class="line">                <span class="keyword">this</span>.Address = address;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        <span class="comment">//继承于EventArgs，便于传参</span></span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Teacher</span> : <span class="title">EventArgs</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">public</span> <span class="built_in">string</span> Name &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">            <span class="keyword">public</span> <span class="built_in">string</span> ClassId &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">            <span class="keyword">public</span> <span class="built_in">string</span> Course &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="title">Teacher</span>(<span class="params"><span class="built_in">string</span> name, <span class="built_in">string</span> course</span>)</span></span><br><span class="line">            &#123;<span class="number">0</span></span><br><span class="line">                <span class="keyword">this</span>.Name = name;</span><br><span class="line">                <span class="keyword">this</span>.Course = course;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">输出：</span></span><br><span class="line"><span class="comment">James, address = 杭州</span></span><br><span class="line"><span class="comment">Jack, course = 英语</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="string，stringBuilder，stringBuffer"><a href="#string，stringBuilder，stringBuffer" class="headerlink" title="string，stringBuilder，stringBuffer"></a>string，stringBuilder，stringBuffer</h1><p>String为不可变实体，当对String进行操作时，将开辟一个新的String实例并进行赋值，旧的String实例将等待GC在频繁修改字符串的场景下效能消耗比较大</p>
+<p>stringBuilder当进行修改时，在原字符串上进行操作，不会生成新的实例对象，为非线程安全，所以性能比较好点</p>
+<p>stringBuffer为线程安全，性能较差</p>
+<p>性能比较stringBulider&gt; stringBuffer&gt;string</p>
+<p>进行少量数据修改操作：string</p>
+<p>单线程操作字符串缓冲区下操作大量数据：stringBulider</p>
+<p>多线程操作字符串缓冲区下操作大量数据：stringBuffer</p>
+<h1 id="哈希表和字典的区别"><a href="#哈希表和字典的区别" class="headerlink" title="哈希表和字典的区别"></a>哈希表和字典的区别</h1><p>字典当试图寻找一个不存在的键时会返回&#x2F;抛出异常   哈希表会返回null</p>
+<p>字典的查找比哈希表快因为不需要进行装箱和拆箱的操作</p>
+<p>字典只有公共静态变量为线程安全的，哈希表所有成员都为安全的</p>
+<p>字典创建时必须指定键和值的类型，哈希表可以存放任何键值类型</p>
+<p>字典的遍历顺序为存入的顺序，哈希表的遍历顺序是乱序的</p>
+<h1 id="image和Rawimage"><a href="#image和Rawimage" class="headerlink" title="image和Rawimage"></a>image和Rawimage</h1><p>Image比<code>Rawimage</code>更消耗性能</p>
+<p>image只能放Sprite属性的图片<code>RawImage</code>可以放任何类型的图片</p>
+<p>Image适合放有操作的图片，<code>Rawimage</code>放单独展示的图片即可，性能较好</p>
+<h1 id="碰撞器触发器"><a href="#碰撞器触发器" class="headerlink" title="碰撞器触发器"></a>碰撞器触发器</h1><p>物体发生碰撞的必要条件：</p>
+<p>　　两个物体都必须带有碰撞器(Collider)，其中一个物体还必须带有Rigidbody刚体</p>
+<p>（1）触发器没有碰撞效果</p>
+<p>（2）IsTrigger&#x3D;true;</p>
+<p>触发信息检测：</p>
+<p>　　1.MonoBehaviour.OnTriggerEnter(Collider collider)当进入触发器</p>
+<p>　　2.MonoBehaviour.OnTriggerExit(Collider collider)当退出触发器</p>
+<p>　　3.MonoBehaviour.OnTriggerStay(Collider collider)当逗留触发器</p>
+<p>（1）碰撞器有碰撞效果</p>
+<p>（2）IsTrigger&#x3D;false</p>
+<p>碰撞信息检测：</p>
+<p>　　1.MonoBehaviour.OnCollisionEnter(Collision collision) 当进入碰撞器</p>
+<p>　　2.MonoBehaviour.OnCollisionExit(Collision collision) 当退出碰撞器</p>
+<p>　　3.MonoBehaviour.OnCollisionStay(Collision collision)  当逗留碰撞器</p>
+<p>拓展：发生碰撞的必要条件是什么？<br>1：两个物体都必须带有碰撞盒。<br>2：至少有一个物体带有Rigidbody组件。<br>3：两个物体要发生相对位移。</p>
+<h1 id="点乘叉乘"><a href="#点乘叉乘" class="headerlink" title="点乘叉乘"></a>点乘叉乘</h1><p><img src="/../images/image-20230301175833852.png" alt="image-20230301175833852"></p>
+<p><img src="/../images/image-20230301175922382.png" alt="image-20230301175922382"></p>
+<h1 id="什么是LightMap"><a href="#什么是LightMap" class="headerlink" title="什么是LightMap"></a>什么是LightMap</h1><p>LightMap就是在三维软件上打好光，然后渲染把场景各表面的光照输出到贴图上，然后通过引擎贴到贴图上，这样物体就有了光照的感觉</p>
+<h1 id="四元数对欧拉角的优点"><a href="#四元数对欧拉角的优点" class="headerlink" title="四元数对欧拉角的优点"></a>四元数对欧拉角的优点</h1><p>1.四元数可用于增量旋转</p>
+<p>2.可以避免万向锁</p>
+<p>3.有两种表达方式（互为负）欧拉角有无数种表达方式</p>
+<h1 id="Addcomponent后哪个生命周期函数会被调用"><a href="#Addcomponent后哪个生命周期函数会被调用" class="headerlink" title="Addcomponent后哪个生命周期函数会被调用"></a>Addcomponent后哪个生命周期函数会被调用</h1><h1 id="层剔除LayerMask（图层模板）"><a href="#层剔除LayerMask（图层模板）" class="headerlink" title="层剔除LayerMask（图层模板）"></a>层剔除LayerMask（图层模板）</h1><p>我们在使用Unity提供的物理系统的时候，经常需要发射射线或者检测碰撞体等等。<br>比如下面这个方法</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Collider[] <span class="title">OverlapBox</span> (<span class="params"></span></span></span><br><span class="line"><span class="params"><span class="function">			Vector3 center, Vector3 halfExtents, </span></span></span><br><span class="line"><span class="params"><span class="function">			Quaternion orientation= Quaternion.identity, <span class="built_in">int</span> layerMask= AllLayers, </span></span></span><br><span class="line"><span class="params"><span class="function">			QueryTriggerInteraction queryTriggerInteraction= QueryTriggerInteraction.UseGlobal</span></span></span><br><span class="line"><span class="params"><span class="function"></span>)</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>描述<br>查找与给定盒体接触或位于盒体内部的所有碰撞体。<br>创建一个您定义的不可见盒体，通过输出与该盒体发生接触的任何碰撞体来测试碰撞。</p>
+<p>这个方法的第四个参数是layerMask，意思是<br>你指定一些图层，让你的OverlapBox只能对于指定的layerMask做检查，如果该碰撞体的图层是你指定的图层，那么就加入到返回结果中；反之即使这个碰撞体符合要求，也不会加入到返回结果中</p>
+<h2 id="获取图层的方法"><a href="#获取图层的方法" class="headerlink" title="获取图层的方法"></a>获取图层的方法</h2><p>方法一<br>使用方法LayerMask.GetMask</p>
+<p>public LayerMask m_LayerMask &#x3D; LayerMask.GetMask(new string[]{“Default”, “Hit”});</p>
+<p>方法二<br>使用二进制位运算符按位或 : “|”</p>
+<p>public LayerMask m_LayerMask &#x3D; LayerMask.GetMask(“Default”) | LayerMask.GetMask(“Hit”);</p>
+<p>方法三<br>LayerMask.NameToLayer是获得该层的在列表中的索引，实际值通过GetMask获取，若想要把索引转换为实际值，可以通过移位操作获得</p>
+<p>上面这句话的意思是：LayerMask.NameToLayer获取的是所有，也就是你点击任意游戏对象的Layer，有很多图层供你选择，左边的数字就是索引。</p>
+<p>注意：但是实际的LayMask并不是按索引存储的，而是二进制存储。例如Hit的索引是2，那么它具体存的数值就是1 &lt;&lt; 2 &#x3D; 4，所以你LayerMask.NameToLayer(“Hit”)的值就是4而不是2 。所以在使用NameToLayer的时候需要移位。</p>
+<p>public LayerMask m_LayerMask &#x3D;<br>            (1 &lt;&lt; LayerMask.NameToLayer(“Default”)) | (1 &lt;&lt; LayerMask.NameToLayer(“Hit”));</p>
+<h2 id="层剔除"><a href="#层剔除" class="headerlink" title="层剔除"></a>层剔除</h2><p>int layer &#x3D; LayerMask.NameToLayer(“Ground”); &#x2F;&#x2F;假设&#x3D;10</p>
+<p>LayerMask.GetMask((“Ground”); &#x2F;&#x2F;相当于 1 &lt;&lt; 10</p>
+<p>其实很简单：</p>
+<p>1 &lt;&lt; 10 打开第10的层。 等价于【1 &lt;&lt; LayerMask.NameToLayer(“Ground”);】 也等价于【 LayerMask.GetMask((“Ground”);】</p>
+<p>~(1 &lt;&lt; 10) 打开除了第10之外的层。</p>
+<p>~(1 &lt;&lt; 0) 打开所有的层。</p>
+<p>(1 &lt;&lt; 10) | (1 &lt;&lt; 8) 打开第10和第8的层。等价于【 LayerMask.GetMask((“Ground”, “Wall”);】</p>
+<p>在代码中使用时如何开启某个Layers？<br>LayerMask mask &#x3D; 1 &lt;&lt; 你需要开启的Layers层。<br>LayerMask mask &#x3D; 0 &lt;&lt; 你需要关闭的Layers层。<br>举几个个栗子：</p>
+<p>LayerMask mask &#x3D; 1 &lt;&lt; 2; 表示开启Layer2。</p>
+<p>LayerMask mask &#x3D; 0 &lt;&lt; 5;表示关闭Layer5。</p>
+<p>LayerMask mask &#x3D; 1&lt;&lt;2|1&lt;&lt;8;表示开启Layer2和Layer8。</p>
+<p>LayerMask mask &#x3D; 0&lt;&lt;3|0&lt;&lt;7;表示关闭Layer3和Layer7。</p>
+<p>上面也可以写成：</p>
+<p>LayerMask mask &#x3D; ~（1&lt;&lt;3|1&lt;&lt;7）;表示关闭Layer3和Layer7。</p>
+<p>LayerMask mask &#x3D; 1&lt;&lt;2|0&lt;&lt;4;表示开启Layer2并且同时关闭Layer4.</p>
+<h1 id="画布的三种模式"><a href="#画布的三种模式" class="headerlink" title="画布的三种模式"></a>画布的三种模式</h1><p>1.覆盖模式</p>
+<p>创建画布之后的默认模式，画布占满整个屏幕该模式和摄像机无关，始终显示在3D物体的上面；屏幕空间为二维空间</p>
+<p>2.摄像机模式</p>
+<p>设置成该模式时需要指定摄像机游戏物体，画布也是占满整个屏幕</p>
+<p>3.世界空间模式</p>
+<p>设置为该模式后画布就变为二维的正方形模式，可以在场景内任意移动，一般作为血条显示，玩家名称等和AR开发</p>
+<h1 id="CharacterController和ridebody的区别"><a href="#CharacterController和ridebody的区别" class="headerlink" title="CharacterController和ridebody的区别"></a>CharacterController和ridebody的区别</h1>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E9%9D%A2%E7%BB%8F/" rel="tag"># 面经</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/02/19/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="prev" title="设计模式">
+      <i class="fa fa-chevron-left"></i> 设计模式
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%86%85%E5%AE%B9"><span class="nav-number">1.</span> <span class="nav-text">内容</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B3%9B%E5%9E%8B%E5%9C%A8unity%E7%9A%84%E5%BA%94%E7%94%A8"><span class="nav-number">2.</span> <span class="nav-text">泛型在unity的应用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B3%E4%BA%8EUnity3D%E7%9A%84%E5%9B%9B%E7%A7%8D%E5%B8%B8%E7%94%A8%E7%81%AF%E5%85%89"><span class="nav-number">3.</span> <span class="nav-text">关于Unity3D的四种常用灯光</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E5%90%91%E5%85%89"><span class="nav-number">3.1.</span> <span class="nav-text">定向光</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%82%B9%E5%85%89%E6%BA%90"><span class="nav-number">3.2.</span> <span class="nav-text">点光源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%81%9A%E5%85%89%E7%81%AF"><span class="nav-number">3.3.</span> <span class="nav-text">聚光灯</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8C%BA%E5%9F%9F%E5%85%89"><span class="nav-number">3.4.</span> <span class="nav-text">区域光</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#unity%E5%8A%A8%E7%94%BB"><span class="nav-number">4.</span> <span class="nav-text">unity动画</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#IK"><span class="nav-number">4.1.</span> <span class="nav-text">IK</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%80%BC%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B"><span class="nav-number">5.</span> <span class="nav-text">值类型和引用类型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#C-%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="nav-number">6.</span> <span class="nav-text">C#修饰符</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ArrayList%E5%92%8CList%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">7.</span> <span class="nav-text">ArrayList和List的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AE%80%E8%BF%B0GC%E4%BA%A7%E7%94%9F%E7%9A%84%E5%8E%9F%E5%9B%A0%EF%BC%8C%E5%A6%82%E4%BD%95%E9%81%BF%E5%85%8DGC"><span class="nav-number">8.</span> <span class="nav-text">简述GC产生的原因，如何避免GC</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Unity%E7%9A%84GC%E6%9C%BA%E5%88%B6"><span class="nav-number">8.1.</span> <span class="nav-text">Unity的GC机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E4%B8%AA%E6%AD%A5%E9%AA%A4%EF%BC%9A"><span class="nav-number">8.2.</span> <span class="nav-text">四个步骤：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E8%B1%A1%E4%BB%A3%E9%BE%84"><span class="nav-number">8.3.</span> <span class="nav-text">对象代龄</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%81%BF%E5%85%8DGC"><span class="nav-number">8.4.</span> <span class="nav-text">避免GC</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#class%E5%92%8Cstruct%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">9.</span> <span class="nav-text">class和struct的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8C%87%E9%92%88%E5%92%8C%E5%BC%95%E7%94%A8%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">10.</span> <span class="nav-text">指针和引用的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A4%9A%E6%80%81%E7%9A%84%E6%84%8F%E4%B9%89"><span class="nav-number">11.</span> <span class="nav-text">多态的意义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%8D%E5%AE%89%E5%85%A8%E4%BB%A3%E7%A0%81%E5%92%8C%E9%9D%9E%E6%89%98%E7%AE%A1%E4%BB%A3%E7%A0%81"><span class="nav-number">12.</span> <span class="nav-text">不安全代码和非托管代码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Net%E5%92%8CMono%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="nav-number">13.</span> <span class="nav-text">.Net和Mono的关系</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8E%A5%E5%8F%A3%E5%92%8C%E5%A7%94%E6%89%98"><span class="nav-number">14.</span> <span class="nav-text">接口和委托</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ref%E5%92%8Cout"><span class="nav-number">15.</span> <span class="nav-text">ref和out</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JIT%E5%92%8CAOT%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">16.</span> <span class="nav-text">JIT和AOT的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A7%94%E6%89%98%E5%92%8C%E4%BA%8B%E4%BB%B6%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">17.</span> <span class="nav-text">委托和事件的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#c-EventArgs%E7%9A%84%E4%BD%BF%E7%94%A8%EF%BC%88%E4%BA%8B%E4%BB%B6%E5%8F%82%E6%95%B0%EF%BC%89"><span class="nav-number">18.</span> <span class="nav-text">c#EventArgs的使用（事件参数）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#string%EF%BC%8CstringBuilder%EF%BC%8CstringBuffer"><span class="nav-number">19.</span> <span class="nav-text">string，stringBuilder，stringBuffer</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%93%88%E5%B8%8C%E8%A1%A8%E5%92%8C%E5%AD%97%E5%85%B8%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">20.</span> <span class="nav-text">哈希表和字典的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#image%E5%92%8CRawimage"><span class="nav-number">21.</span> <span class="nav-text">image和Rawimage</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A2%B0%E6%92%9E%E5%99%A8%E8%A7%A6%E5%8F%91%E5%99%A8"><span class="nav-number">22.</span> <span class="nav-text">碰撞器触发器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%82%B9%E4%B9%98%E5%8F%89%E4%B9%98"><span class="nav-number">23.</span> <span class="nav-text">点乘叉乘</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFLightMap"><span class="nav-number">24.</span> <span class="nav-text">什么是LightMap</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%9B%E5%85%83%E6%95%B0%E5%AF%B9%E6%AC%A7%E6%8B%89%E8%A7%92%E7%9A%84%E4%BC%98%E7%82%B9"><span class="nav-number">25.</span> <span class="nav-text">四元数对欧拉角的优点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Addcomponent%E5%90%8E%E5%93%AA%E4%B8%AA%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%87%BD%E6%95%B0%E4%BC%9A%E8%A2%AB%E8%B0%83%E7%94%A8"><span class="nav-number">26.</span> <span class="nav-text">Addcomponent后哪个生命周期函数会被调用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B1%82%E5%89%94%E9%99%A4LayerMask%EF%BC%88%E5%9B%BE%E5%B1%82%E6%A8%A1%E6%9D%BF%EF%BC%89"><span class="nav-number">27.</span> <span class="nav-text">层剔除LayerMask（图层模板）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E5%9B%BE%E5%B1%82%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">27.1.</span> <span class="nav-text">获取图层的方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B1%82%E5%89%94%E9%99%A4"><span class="nav-number">27.2.</span> <span class="nav-text">层剔除</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%94%BB%E5%B8%83%E7%9A%84%E4%B8%89%E7%A7%8D%E6%A8%A1%E5%BC%8F"><span class="nav-number">28.</span> <span class="nav-text">画布的三种模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CharacterController%E5%92%8Cridebody%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">29.</span> <span class="nav-text">CharacterController和ridebody的区别</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="心梦"
+      src="/images/ailulu.jpg">
+  <p class="site-author-name" itemprop="name">心梦</p>
+  <div class="site-description" itemprop="description">heart_dream</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">61</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/heartdream520" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;heartdream520" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.acwing.com/user/myspace/index/60784/" title="Acwing → https:&#x2F;&#x2F;www.acwing.com&#x2F;user&#x2F;myspace&#x2F;index&#x2F;60784&#x2F;" rel="noopener" target="_blank"><i class="fab fa-Acwing fa-fw"></i>Acwing</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://codeforces.com/profile/Heart_dream" title="Codeforces → https:&#x2F;&#x2F;codeforces.com&#x2F;profile&#x2F;Heart_dream" rel="noopener" target="_blank"><i class="fab fa-codeforces fa-fw"></i>Codeforces</a>
+      </span>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">心梦</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">150k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">2:16</span>
+</div>
+
+
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
