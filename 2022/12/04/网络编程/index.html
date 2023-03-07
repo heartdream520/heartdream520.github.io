@@ -22,15 +22,15 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"manual"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="内容1">
+  <meta name="description" content="内容1TcpClient 类">
 <meta property="og:type" content="article">
 <meta property="og:title" content="网络编程">
 <meta property="og:url" content="http://example.com/2022/12/04/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/index.html">
 <meta property="og:site_name" content="心梦">
-<meta property="og:description" content="内容1">
+<meta property="og:description" content="内容1TcpClient 类">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-12-04T03:12:29.000Z">
-<meta property="article:modified_time" content="2022-12-04T03:42:26.079Z">
+<meta property="article:modified_time" content="2023-03-07T13:38:12.712Z">
 <meta property="article:author" content="心梦">
 <meta property="article:tag" content="网络编程">
 <meta name="twitter:card" content="summary">
@@ -194,10 +194,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2022-12-04 11:12:29 / 修改时间：11:42:26" itemprop="dateCreated datePublished" datetime="2022-12-04T11:12:29+08:00">2022-12-04</time>
+              <time title="创建时间：2022-12-04 11:12:29" itemprop="dateCreated datePublished" datetime="2022-12-04T11:12:29+08:00">2022-12-04</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-03-07 21:38:12" itemprop="dateModified" datetime="2023-03-07T21:38:12+08:00">2023-03-07</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -214,14 +220,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>3</span>
+              <span>10k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>9 分钟</span>
             </span>
 
         </div>
@@ -233,9 +239,255 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+        <h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">TcpClient 类</span><br></pre></td></tr></table></figure>
 
 <span id="more"></span>
+
+<h1 id="TcpClient-类"><a href="#TcpClient-类" class="headerlink" title="TcpClient 类"></a>TcpClient 类</h1><ul>
+<li><p>命名空间:</p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/dotnet/api/system.net.sockets?view=net-6.0">System.Net.Sockets</a></p>
+</li>
+<li><p>程序集:</p>
+<p>System.Net.Sockets.dll</p>
+</li>
+</ul>
+<p>为 TCP 网络服务提供客户端连接。</p>
+<p>C#复制</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">TcpClient</span> : <span class="title">IDisposable</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>继承</p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/dotnet/api/system.object?view=net-6.0">Object</a>TcpClient</p>
+</li>
+<li><p>实现</p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/dotnet/api/system.idisposable?view=net-6.0">IDisposable</a></p>
+<p>下面的代码示例建立 <code>TcpClient</code> 连接。</p>
+</li>
+</ul>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Connect</span>(<span class="params">String server, String message</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">try</span></span><br><span class="line">  &#123;</span><br><span class="line">    <span class="comment">// Create a TcpClient.</span></span><br><span class="line">    <span class="comment">// Note, for this client to work you need to have a TcpServer</span></span><br><span class="line">    <span class="comment">// connected to the same address as specified by the server, port</span></span><br><span class="line">    <span class="comment">// combination.</span></span><br><span class="line">    <span class="comment">//创建一个网络连接注意，要使这个客户端工作，您需要有一个TcpServer连接到服务器指定的相同地址，端口组		合。</span></span><br><span class="line">    Int32 port = <span class="number">13000</span>;</span><br><span class="line">    TcpClient client = <span class="keyword">new</span> TcpClient(server, port);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 将传递的消息转换为ASCII并将其存储为Byte数组</span></span><br><span class="line">    Byte[] data = System.Text.Encoding.ASCII.GetBytes(message);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 获取一个用于读写的客户端流。</span></span><br><span class="line">    <span class="comment">// Stream stream = client.GetStream();</span></span><br><span class="line"></span><br><span class="line">    NetworkStream stream = client.GetStream();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 将消息发送到连接的TcpServer。</span></span><br><span class="line">    stream.Write(data, <span class="number">0</span>, data.Length);</span><br><span class="line"></span><br><span class="line">    Console.WriteLine(<span class="string">&quot;Sent: &#123;0&#125;&quot;</span>, message);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 接收TcpServer.response。</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 缓冲区来存储响应字节。</span></span><br><span class="line">    data = <span class="keyword">new</span> Byte[<span class="number">256</span>];</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 字符串来存储响应ASCII表示。</span></span><br><span class="line">    String responseData = String.Empty;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 读取第一批TcpServer响应字节。</span></span><br><span class="line">    Int32 bytes = stream.Read(data, <span class="number">0</span>, data.Length);</span><br><span class="line">    responseData = System.Text.Encoding.ASCII.GetString(data, <span class="number">0</span>, bytes);</span><br><span class="line">    Console.WriteLine(<span class="string">&quot;Received: &#123;0&#125;&quot;</span>, responseData);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Close everything.</span></span><br><span class="line">    stream.Close();</span><br><span class="line">    client.Close();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">catch</span> (ArgumentNullException e)</span><br><span class="line">  &#123;</span><br><span class="line">    Console.WriteLine(<span class="string">&quot;ArgumentNullException: &#123;0&#125;&quot;</span>, e);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">catch</span> (SocketException e)</span><br><span class="line">  &#123;</span><br><span class="line">    Console.WriteLine(<span class="string">&quot;SocketException: &#123;0&#125;&quot;</span>, e);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  Console.WriteLine(<span class="string">&quot;\n Press Enter to continue...&quot;</span>);</span><br><span class="line">  Console.Read();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="MemoryStream类"><a href="#MemoryStream类" class="headerlink" title="MemoryStream类"></a>MemoryStream类</h1><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/kissdodog/archive/2013/01/20/2868864.html">MemoryStream类 - 逆心 - 博客园 (cnblogs.com)</a></p>
+<p>MemoryStream 是一个特例，MemoryStream中没有任何非托管资源，所以它的Dispose不调用也没关系。托管资源.Net会自动回收</p>
+<p>MemoryStream继承自Stream类。内存流的好处是指针可以晃来晃去，也就是支CanSeek，Position,Seek()。任意读其中一段。</p>
+<p>在内存流中有必要了解一下SeekOrigin枚举</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">枚举成员    成员值        描述</span><br><span class="line"></span><br><span class="line">Begin         0        指定流的开头。</span><br><span class="line">Current       1        指定流内的当前位置。</span><br><span class="line">End           2        指定流的结尾。</span><br></pre></td></tr></table></figure>
+
+<h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">CanRead 　　　　已重写。获取一个值，该值指示当前流是否支持读取。</span><br><span class="line">CanSeek 　　　　已重写。获取一个值，该值指示当前流是否支持查找。</span><br><span class="line">CanTimeout 　　 获取一个值，该值确定当前流是否可以超时。（从 Stream 继承。）</span><br><span class="line">CanWrite 　　　  已重写。获取一个值，该值指示当前流是否支持写入。</span><br><span class="line">Capacity 　　　　获取或设置分配给该流的字节数。 这个是分配的字节数</span><br><span class="line">Length 　　　　  已重写。获取用字节表示的流长度。这个是真正占用的字节数。</span><br><span class="line">Position 　　　　 已重写。获取或设置流中的当前位置。</span><br><span class="line">ReadTimeout 　  获取或设置一个值，该值确定流在超时前尝试读取多长时间。 （从 Stream 继承。）</span><br><span class="line">WriteTimeout 　  获取或设置一个值，该值确定流在超时前尝试写入多长时间。 （从 Stream 继承。）</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">BeginRead 　　　　开始异步读操作。 （从 Stream 继承。）</span><br><span class="line">BeginWrite　　　　开始异步写操作。 （从 Stream 继承。）</span><br><span class="line">Close 　　　　　　 关闭当前流并释放与之关联的所有资源（如套接字和文件句柄）。 （从 Stream 继承。）</span><br><span class="line">CreateObjRef　　 创建一个对象，该对象包含生成用于与远程对象进行通信的代理所需的全部相关信息。 （从 MarshalByRefObject 继承。）</span><br><span class="line">Dispose　　　　　 已重载。</span><br><span class="line">EndRead　　　　　等待挂起的异步读取完成。 （从 Stream 继承。）</span><br><span class="line">EndWrite 　　　　 结束异步写操作。 （从 Stream 继承。）</span><br><span class="line">Flush 　　　　　　 已重写。 重写 Stream.Flush 以便不执行任何操作。</span><br><span class="line">GetBuffer 　　　　返回从其创建此流的无符号字节数组。 是会返回所有分配的字节，不管用没用到。</span><br><span class="line">GetLifetimeService 　　　　 检索控制此实例的生存期策略的当前生存期服务对象。 （从 MarshalByRefObject 继承。）</span><br><span class="line">InitializeLifetimeService 　　获取控制此实例的生存期策略的生存期服务对象。 （从 MarshalByRefObject 继承。）</span><br><span class="line">Read　　　　　　　　　　　 已重写。 从当前流中读取字节块并将数据写入 buffer 中。 搞了好久才弄明白Read()方法的含义，第一个参数，是读取到的内容要输出到的字节数组，第二个参数是放在第一个参数即要输出的数组的位置的偏移量，第三个参数是，要读取的字符数。 用这个方法你可以任意读取一段需要的内存。注意，Read()方法是从当前流的Position属性的位置开始读，这就是为什么很多人测试的时候，刚刚写入内存的数据，Read()方法无法读取到内容的原因，因为刚刚写入内存之后，位置恰好是在最后一位了。Read()方法当然读不到。此方法强大之处在于，你可以从一个内存流中读出你想要的一个片段。</span><br><span class="line">ReadByte 　　　　　　　　  已重写。 从当前流中读取一个字节。</span><br><span class="line">Seek 　　　　　　　　　　　已重写。 将当前流中的位置设置为指定值。</span><br><span class="line">SetLength 　　　　　　　　 已重写。 将当前流的长度设为指定值。</span><br><span class="line">Synchronized 　　　　　　 在指定的 Stream 对象周围创建线程安全（同步）包装。 （从 Stream 继承。）</span><br><span class="line">ToArray　　　　　　　　　  将整个流内容写入字节数组，而与 Position 属性无关。</span><br><span class="line">Write 　　　　　　　　　　 已重写。 使用从缓冲区读取的数据将字节块写入当前流。 同样注意下，第二个参数是第一个参数数组的偏移量就可以了。</span><br><span class="line">WriteByte 　　　　　　　　已重写。 将一个字节写入当前流中的当前位置。</span><br><span class="line">WriteTo 　　　　　　　　　将此内存流的整个内容写入另一个流中。</span><br></pre></td></tr></table></figure>
+
+<h2 id="使用示例代码"><a href="#使用示例代码" class="headerlink" title="使用示例代码"></a>使用示例代码</h2><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="built_in">string</span>[] args</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">//属性测试</span></span><br><span class="line">            MemoryStream ms = <span class="keyword">new</span> MemoryStream();</span><br><span class="line">            Console.WriteLine(ms.CanRead);      <span class="comment">//True  内存流可读</span></span><br><span class="line">            Console.WriteLine(ms.CanSeek);      <span class="comment">//True  内存流支持查找，指针移来移去的查找</span></span><br><span class="line">            Console.WriteLine(ms.CanTimeout);   <span class="comment">//False 内存流不支持超时</span></span><br><span class="line">            Console.WriteLine(ms.CanWrite);     <span class="comment">//True  内存流可写</span></span><br><span class="line"></span><br><span class="line">            Console.WriteLine(ms.Capacity);     <span class="comment">//0     分配给该流的字节数</span></span><br><span class="line">            <span class="built_in">byte</span>[] bytes = Encoding.UTF8.GetBytes(<span class="string">&quot;abcdedcba&quot;</span>);</span><br><span class="line">            ms.Write(bytes, <span class="number">0</span>, bytes.Length);   <span class="comment">//已将一段文本写入内存</span></span><br><span class="line">            Console.WriteLine(ms.Capacity);     <span class="comment">//256   再次读取为文本流分配的字节数已经变成了256，看来内存流是根据需要的多少来分配的</span></span><br><span class="line">            Console.WriteLine(ms.Length);       <span class="comment">//9    这个是流长度，通常与英文的字符数一样，真正占用的字节数。</span></span><br><span class="line"></span><br><span class="line">            Console.WriteLine(ms.Position);     <span class="comment">//9    流当前的位置，该属性可读可设置</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">//Console.WriteLine(ms.ReadTimeout);    由于流不支持超时，此属性如果读取或者设置的话会报错</span></span><br><span class="line">            <span class="comment">//Console.WriteLine(ms.WriteTimeout);   由于流不支持超时，此属性如果读取或者设置的话会报错</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">//方法测试</span></span><br><span class="line">            <span class="built_in">byte</span>[] byte1 = ms.GetBuffer();          <span class="comment">//返回无符号字节数组 差点被忽悠了，无符号字节数组 其实就是byte(0~255),有符号字节sbyte(-128~127)</span></span><br><span class="line">            <span class="built_in">string</span> str1 = Encoding.UTF8.GetString(byte1);</span><br><span class="line">            Console.WriteLine(str1);    <span class="comment">//输出    abcdedcba</span></span><br><span class="line"></span><br><span class="line">            ms.Seek(<span class="number">2</span>, SeekOrigin.Current);    <span class="comment">//设置当前流正在读取的位置 为开始位置即从0开始</span></span><br><span class="line">            <span class="comment">//从内存中读取一个字节</span></span><br><span class="line">            <span class="built_in">int</span> i = ms.ReadByte();</span><br><span class="line">            Console.WriteLine(i);                   <span class="comment">//输出99</span></span><br><span class="line">            <span class="built_in">byte</span>[] bytes3 = ms.ToArray();</span><br><span class="line">            <span class="keyword">foreach</span> (<span class="built_in">byte</span> b <span class="keyword">in</span> bytes3)</span><br><span class="line">            &#123;</span><br><span class="line">                Console.Write(b + <span class="string">&quot;-&quot;</span>);<span class="comment">//用于对比   输出 97-98-99-100-101-100-99-98-97-   可以看到    0,1,2第二位刚好是99</span></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            MemoryStream ms2 = <span class="keyword">new</span> MemoryStream();</span><br><span class="line">            <span class="built_in">byte</span>[] bytes6 = Encoding.UTF8.GetBytes(<span class="string">&quot;abcde&quot;</span>);</span><br><span class="line">            ms2.Write(bytes6, <span class="number">0</span>, bytes6.Length);</span><br><span class="line">            Console.WriteLine(ms2.Position);    <span class="comment">//输出5 写完之后流的位置就到了最后，因此想用read读取必须加下面这一行代码。 </span></span><br><span class="line"></span><br><span class="line">            <span class="comment">//ms2.Seek(0, SeekOrigin.Begin);    //想要用Read方法读取完整的流，必须设置当前位置,Read是从Position的位置开始读。</span></span><br><span class="line">            ms2.Position = <span class="number">0</span>;                   <span class="comment">//Read是从当前位置开始读，这行代码和上面一行意义一样。</span></span><br><span class="line">            <span class="built_in">byte</span>[] byteArray = <span class="keyword">new</span> <span class="built_in">byte</span>[<span class="number">5</span>] &#123; <span class="number">110</span>, <span class="number">110</span>, <span class="number">110</span>, <span class="number">110</span>, <span class="number">110</span> &#125;; <span class="comment">//99是经过YTF8解码之后是 n</span></span><br><span class="line">            ms2.Read(byteArray, <span class="number">2</span>, <span class="number">1</span>);   <span class="comment">//读取一个字节，byteArray的第一个元素中，(注意从0开始)</span></span><br><span class="line">            Console.WriteLine(Encoding.UTF8.GetString(byteArray)); <span class="comment">//nnann</span></span><br><span class="line">            <span class="comment">//ms2.Read(byteArray, 2, 2);</span></span><br><span class="line">            <span class="comment">//Console.WriteLine(Encoding.UTF8.GetString(byteArray)); //nnabn    //当超出接收数组总长度的时候，后面的元素会被移开</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            <span class="comment">//设置当前流的长度</span></span><br><span class="line">            Console.WriteLine(ms.Length);   <span class="comment">//输出9   当前流的长度是9</span></span><br><span class="line">            ms.SetLength(<span class="number">20</span>);</span><br><span class="line">            Console.WriteLine(ms.Length);   <span class="comment">//输出20</span></span><br><span class="line">            <span class="keyword">foreach</span> (<span class="built_in">byte</span> b <span class="keyword">in</span> ms.ToArray())    <span class="comment">//将流的内容也就是内存中的内容转换字节数组</span></span><br><span class="line">            &#123;</span><br><span class="line">                Console.Write(b + <span class="string">&quot;-&quot;</span>);     <span class="comment">//输出 97-98-99-100-101-100-99-98-97-0-0-0-0-0-0-0-0-0 由于设置了长度，因此空的自动补0</span></span><br><span class="line">            &#125;</span><br><span class="line">            Console.WriteLine(Encoding.UTF8.GetString(ms.ToArray()));   <span class="comment">//输出    abcdedcba   虽然长度变长了，但是没影响读取数据</span></span><br><span class="line"></span><br><span class="line">            MemoryStream ms1 = <span class="keyword">new</span> MemoryStream();</span><br><span class="line">            <span class="built_in">byte</span>[] bytes4 = ms1.ToArray();</span><br><span class="line">            Console.WriteLine(<span class="string">&quot;此内存流并没有写入数据(Write)&quot;</span> + Encoding.UTF8.GetString(bytes4));<span class="comment">//输出    此内存流并没有写入数据(Write)  因为内存为空</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            <span class="comment">//下面来一个指定位置的写入</span></span><br><span class="line">            MemoryStream ms3 = <span class="keyword">new</span> MemoryStream();</span><br><span class="line">            <span class="built_in">byte</span>[] bytesArr = Encoding.ASCII.GetBytes(<span class="string">&quot;abcdefg&quot;</span>);</span><br><span class="line">            ms3.Write(bytesArr, <span class="number">0</span>, bytesArr.Length);</span><br><span class="line">            ms3.Position = <span class="number">2</span>;</span><br><span class="line">            ms3.WriteByte(<span class="number">97</span>);  <span class="comment">//97代表的是a   这段代码的意思是，将原先第二个的c替换为a</span></span><br><span class="line">            <span class="built_in">string</span> str = Encoding.ASCII.GetString(ms3.ToArray());</span><br><span class="line">            Console.WriteLine(str); <span class="comment">//输出 abacdefg</span></span><br><span class="line">            </span><br><span class="line">            <span class="built_in">byte</span>[] byteArr1 = Encoding.ASCII.GetBytes(<span class="string">&quot;kk&quot;</span>);</span><br><span class="line">            ms3.Position = <span class="number">4</span>;</span><br><span class="line">            ms3.Write(byteArr1, <span class="number">0</span>, byteArr1.Length);</span><br><span class="line">            Console.WriteLine(Encoding.UTF8.GetString(ms3.ToArray()));  <span class="comment">//abadkkg   //从第4位替换掉了两个字节为KK</span></span><br><span class="line"></span><br><span class="line">            Console.ReadKey();</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="BinaryReader-类"><a href="#BinaryReader-类" class="headerlink" title="BinaryReader 类"></a>BinaryReader 类</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><ul>
+<li><p>命名空间:</p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/dotnet/api/system.io?view=net-6.0">System.IO</a></p>
+</li>
+<li><p>程序集:</p>
+<p>System.Runtime.dll</p>
+</li>
+</ul>
+<p>用特定的编码将基元数据类型读作二进制值。</p>
+<p>C#复制</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">BinaryReader</span> : <span class="title">IDisposable</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>继承</p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/dotnet/api/system.object?view=net-6.0">Object</a>BinaryReader</p>
+</li>
+<li><p>实现</p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/dotnet/api/system.idisposable?view=net-6.0">IDisposable</a></p>
+</li>
+</ul>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><p>下面的代码示例演示如何在文件中存储和检索应用程序设置。</p>
+<p>C#复制</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.IO;</span><br><span class="line"><span class="keyword">using</span> System.Text;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title">ConsoleApplication</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">const</span> <span class="built_in">string</span> fileName = <span class="string">&quot;AppSettings.dat&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        WriteDefaultValues();</span><br><span class="line">        DisplayValues();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">WriteDefaultValues</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">using</span> (<span class="keyword">var</span> stream = File.Open(fileName, FileMode.Create))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">using</span> (<span class="keyword">var</span> writer = <span class="keyword">new</span> BinaryWriter(stream, Encoding.UTF8, <span class="literal">false</span>))</span><br><span class="line">            &#123;</span><br><span class="line">                writer.Write(<span class="number">1.250F</span>);</span><br><span class="line">                writer.Write(<span class="string">@&quot;c:\Temp&quot;</span>);</span><br><span class="line">                writer.Write(<span class="number">10</span>);</span><br><span class="line">                writer.Write(<span class="literal">true</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">DisplayValues</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">float</span> aspectRatio;</span><br><span class="line">        <span class="built_in">string</span> tempDirectory;</span><br><span class="line">        <span class="built_in">int</span> autoSaveTime;</span><br><span class="line">        <span class="built_in">bool</span> showStatusBar;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (File.Exists(fileName))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">using</span> (<span class="keyword">var</span> stream = File.Open(fileName, FileMode.Open))</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">using</span> (<span class="keyword">var</span> reader = <span class="keyword">new</span> BinaryReader(stream, Encoding.UTF8, <span class="literal">false</span>))</span><br><span class="line">                &#123;</span><br><span class="line">                    aspectRatio = reader.ReadSingle();</span><br><span class="line">                    tempDirectory = reader.ReadString();</span><br><span class="line">                    autoSaveTime = reader.ReadInt32();</span><br><span class="line">                    showStatusBar = reader.ReadBoolean();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            Console.WriteLine(<span class="string">&quot;Aspect ratio set to: &quot;</span> + aspectRatio);</span><br><span class="line">            Console.WriteLine(<span class="string">&quot;Temp directory is: &quot;</span> + tempDirectory);</span><br><span class="line">            Console.WriteLine(<span class="string">&quot;Auto save time set to: &quot;</span> + autoSaveTime);</span><br><span class="line">            Console.WriteLine(<span class="string">&quot;Show status bar: &quot;</span> + showStatusBar);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h2><table>
+<thead>
+<tr>
+<th><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/dotnet/api/system.io.binaryreader.-ctor?view=net-6.0#system-io-binaryreader-ctor(system-io-stream)">BinaryReader(Stream)</a></th>
+<th>基于所指定的流和特定的 UTF-8 编码，初始化 <a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/dotnet/api/system.io.binaryreader?view=net-6.0">BinaryReader</a> 类的新实例。</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/dotnet/api/system.io.binaryreader.-ctor?view=net-6.0#system-io-binaryreader-ctor(system-io-stream-system-text-encoding)">BinaryReader(Stream, Encoding)</a></td>
+<td>基于所指定的流和特定的字符编码，初始化 <a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/dotnet/api/system.io.binaryreader?view=net-6.0">BinaryReader</a> 类的新实例。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/dotnet/api/system.io.binaryreader.-ctor?view=net-6.0#system-io-binaryreader-ctor(system-io-stream-system-text-encoding-system-boolean)">BinaryReader(Stream, Encoding, Boolean)</a></td>
+<td>基于所提供的流和特定的字符编码，初始化 <a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/dotnet/api/system.io.binaryreader?view=net-6.0">BinaryReader</a> 类的新实例，有选择性的打开流。</td>
+</tr>
+</tbody></table>
+<h2 id="属性-1"><a href="#属性-1" class="headerlink" title="属性"></a>属性</h2><table>
+<thead>
+<tr>
+<th><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/dotnet/api/system.io.binaryreader.basestream?view=net-6.0#system-io-binaryreader-basestream">BaseStream</a></th>
+<th>公开对 <a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/dotnet/api/system.io.binaryreader?view=net-6.0">BinaryReader</a> 的基础流的访问。</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="方法-1"><a href="#方法-1" class="headerlink" title="方法"></a>方法</h2><table>
+<thead>
+<tr>
+<th><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/dotnet/api/system.io.binaryreader.close?view=net-6.0#system-io-binaryreader-close">Close()</a></th>
+<th>关闭当前阅读器及基础流。</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/dotnet/api/system.io.binaryreader.dispose?view=net-6.0#system-io-binaryreader-dispose">Dispose()</a></td>
+<td>释放 <a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/dotnet/api/system.io.binaryreader?view=net-6.0">BinaryReader</a> 类的当前实例所使用的所有资源。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/dotnet/api/system.io.binaryreader.dispose?view=net-6.0#system-io-binaryreader-dispose(system-boolean)">Dispose(Boolean)</a></td>
+<td>释放 <a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/dotnet/api/system.io.binaryreader?view=net-6.0">BinaryReader</a> 类使用的非托管资源，并可以选择释放托管资源。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/dotnet/api/system.object.equals?view=net-6.0#system-object-equals(system-object)">Equals(Object)</a></td>
+<td>确定指定对象是否等于当前对象。(继承自 <a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/dotnet/api/system.object?view=net-6.0">Object</a>)</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/dotnet/api/system.io.binaryreader.fillbuffer?view=net-6.0#system-io-binaryreader-fillbuffer(system-int32)">FillBuffer(Int32)</a></td>
+<td>用从流中读取的指定字节数填充内部缓冲区。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/dotnet/api/system.object.gethashcode?view=net-6.0#system-object-gethashcode">GetHashCode()</a></td>
+<td>作为默认哈希函数。(继承自 <a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/dotnet/api/system.object?view=net-6.0">Object</a>)</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/dotnet/api/system.object.gettype?view=net-6.0#system-object-gettype">GetType()</a></td>
+<td>获取当前实例的 <a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/dotnet/api/system.type?view=net-6.0">Type</a>。(继承自 <a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/dotnet/api/system.object?view=net-6.0">Object</a>)</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/dotnet/api/system.object.memberwiseclone?view=net-6.0#system-object-memberwiseclone">MemberwiseClone()</a></td>
+<td>创建当前 <a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/dotnet/api/system.object?view=net-6.0">Object</a> 的浅表副本。(继承自 <a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/dotnet/api/system.object?view=net-6.0">Object</a>)</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/dotnet/api/system.io.binaryreader.peekchar?view=net-6.0#system-io-binaryreader-peekchar">PeekChar()</a></td>
+<td>返回下一个可用的字符，并且不提升字节或字符的位置。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/dotnet/api/system.io.binaryreader.read?view=net-6.0#system-io-binaryreader-read">Read()</a></td>
+<td>从基础流中读取字符，并根据所使用的 <code>Encoding</code> 和从流中读取的特定字符，提升流的当前位置。</td>
+</tr>
+<tr>
+<td>[Read(Byte<a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/dotnet/api/system.io.binaryreader.read?view=net-6.0#system-io-binaryreader-read(system-byte()-system-int32-system-int32)">], Int32, Int32)</a></td>
+<td>从字节数组中的指定点开始，从流中读取指定的字节数。</td>
+</tr>
+<tr>
+<td>[Read(Char<a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/dotnet/api/system.io.binaryreader.read?view=net-6.0#system-io-binaryreader-read(system-char()-system-int32-system-int32)">], Int32, Int32)</a></td>
+<td>从字符数组中的指定点开始，从流中读取指定的字符数。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/dotnet/api/system.io.binaryreader.read?view=net-6.0#system-io-binaryreader-read(system-span((system-byte)))">Read(Span)</a></td>
+<td>从当前流读取字节序列，并将流中的位置向前移动读取的字节数。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/dotnet/api/system.io.binaryreader.read?view=net-6.0#system-io-binaryreader-read(system-span((system-char)))">Read(Span)</a></td>
+<td>从当前流中读取与提供的缓冲区长度相同的字符数，将其写入提供的缓冲区，然后根据所使用的 <code>Encoding</code> 和从流中读取的特定字符，将当前位置前移。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/dotnet/api/system.io.binaryreader.read7bitencodedint?view=net-6.0#system-io-binaryreader-read7bitencodedint">Read7BitEncodedInt()</a></td>
+<td>以压缩格式读入 32 位整数。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/dotnet/api/system.io.binaryreader.read7bitencodedint64?view=net-6.0#system-io-binaryreader-read7bitencodedint64">Read7BitEncodedInt64()</a></td>
+<td>一次读取一个 7 位数字。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/dotnet/api/system.io.binaryreader.readboolean?view=net-6.0#system-io-binaryreader-readboolean">ReadBoolean()</a></td>
+<td>从当前流中读取 <code>Boolean</code> 值，并使该流的当前位置提升 1 个字节。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/dotnet/api/system.io.binaryreader.readbyte?view=net-6.0#system-io-binaryreader-readbyte">ReadByte()</a></td>
+<td>从当前流中读取下一个字节，并使流的当前位置提升 1 个字节。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/dotnet/api/system.io.binaryreader.readbytes?view=net-6.0#system-io-binaryreader-readbytes(system-int32)">ReadBytes(Int32)</a></td>
+<td>从当前流中读取指定的字节数以写入字节数组中，并将当前位置前移相应的字节数。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/dotnet/api/system.io.binaryreader.readchar?view=net-6.0#system-io-binaryreader-readchar">ReadChar()</a></td>
+<td>从当前流中读取下一个字符，并根据所使用的 <code>Encoding</code> 和从流中读取的特定字符，提升流的当前位置。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/dotnet/api/system.io.binaryreader.readchars?view=net-6.0#system-io-binaryreader-readchars(system-int32)">ReadChars(Int32)</a></td>
+<td>从当前流中读取指定的字符数，并以字符数组的形式返回数据，然后根据所使用的 <code>Encoding</code> 和从流中读取的特定字符，将当前位置前移。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/dotnet/api/system.io.binaryreader.readdecimal?view=net-6.0#system-io-binaryreader-readdecimal">ReadDecimal()</a></td>
+<td>从当前流中读取十进制数值，并将该流的当前位置提升十六个字节。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/dotnet/api/system.io.binaryreader.readdouble?view=net-6.0#system-io-binaryreader-readdouble">ReadDouble()</a></td>
+<td>从当前流中读取 8 字节浮点值，并使流的当前位置提升 8 个字节。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/dotnet/api/system.io.binaryreader.readhalf?view=net-6.0#system-io-binaryreader-readhalf">ReadHalf()</a></td>
+<td>从当前流中读取 2 字节浮点值，并将流的当前位置提升两个字节。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/dotnet/api/system.io.binaryreader.readint16?view=net-6.0#system-io-binaryreader-readint16">ReadInt16()</a></td>
+<td>从当前流中读取 2 字节有符号整数，并使流的当前位置提升 2 个字节。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/dotnet/api/system.io.binaryreader.readint32?view=net-6.0#system-io-binaryreader-readint32">ReadInt32()</a></td>
+<td>从当前流中读取 4 字节有符号整数，并使流的当前位置提升 4 个字节。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/dotnet/api/system.io.binaryreader.readint64?view=net-6.0#system-io-binaryreader-readint64">ReadInt64()</a></td>
+<td>从当前流中读取 8 字节有符号整数，并使流的当前位置提升 8 个字节。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/dotnet/api/system.io.binaryreader.readsbyte?view=net-6.0#system-io-binaryreader-readsbyte">ReadSByte()</a></td>
+<td>从此流中读取 1 个有符号字节，并使流的当前位置提升 1 个字节。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/dotnet/api/system.io.binaryreader.readsingle?view=net-6.0#system-io-binaryreader-readsingle">ReadSingle()</a></td>
+<td>从当前流中读取 4 字节浮点值，并使流的当前位置提升 4 个字节。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/dotnet/api/system.io.binaryreader.readstring?view=net-6.0#system-io-binaryreader-readstring">ReadString()</a></td>
+<td>从当前流中读取一个字符串。 字符串有长度前缀，一次 7 位地被编码为整数。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/dotnet/api/system.io.binaryreader.readuint16?view=net-6.0#system-io-binaryreader-readuint16">ReadUInt16()</a></td>
+<td>使用 Little-Endian 编码从当前流中读取 2 字节无符号整数，并将流的位置提升 2 个字节。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/dotnet/api/system.io.binaryreader.readuint32?view=net-6.0#system-io-binaryreader-readuint32">ReadUInt32()</a></td>
+<td>从当前流中读取 4 字节无符号整数并使流的当前位置提升 4 个字节。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/dotnet/api/system.io.binaryreader.readuint64?view=net-6.0#system-io-binaryreader-readuint64">ReadUInt64()</a></td>
+<td>从当前流中读取 8 字节无符号整数并使流的当前位置提升 8 个字节。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/dotnet/api/system.object.tostring?view=net-6.0#system-object-tostring">ToString()</a></td>
+<td>返回表示当前对象的字符串。(继承自 <a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/dotnet/api/system.object?view=net-6.0">Object</a>)</td>
+</tr>
+</tbody></table>
+<h1 id="IPAddress类"><a href="#IPAddress类" class="headerlink" title="IPAddress类"></a>IPAddress类</h1><p>IPAddress类提供了对IP地址的转换、处理等功能。其Parse方法可将IP地址字符串转换为IPAddress实例。</p>
+<p>如：IPAddress ip &#x3D; IPAddress.Parse(“192.168.1.1”); </p>
+<p>IPAddress   类提供了7个只读字段:</p>
+<p>Any        表示本地系统可用的任何IP地址</p>
+<p>Broadcast   表示本地网络的IP广播地址</p>
+<p>IPv6Any    Socket.Bind方法用此字段指出本地系统可用的IP地址</p>
+<p>IPv6Loopback    表示系统的回送地址</p>
+<p>IPv6None     表示系统上没有可用的网络接口</p>
+<p>Loopback    表示系统的回送地址</p>
+<p>None   表示系统上没有可用的网络接口</p>
+<p>备注：</p>
+<p>.Parse方法就是将String转换成int,char,double….等,也就是*.Parse(string) 括号中的一定要是string类型。</p>
+<p>Int.Parse()：只支持将string类型转成int，Parse就是把String类型转换成int,char,double…等,也就是*.Parse(string) 括号中的一定要是string类型</p>
+<h1 id="C-NET中Dns类域名系统"><a href="#C-NET中Dns类域名系统" class="headerlink" title="C#.NET中Dns类域名系统"></a>C#.NET中Dns类域名系统</h1><p>原文链接：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/1996jiwei/p/6636130.html">https://www.cnblogs.com/1996jiwei/p/6636130.html</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">名称	                      说明</span><br><span class="line">BeginGetHostAddresses	异步返回指定主机的Internet 协议 (IP) 地址</span><br><span class="line">BeginGetHostByName	    开始异步请求关于指定DNS主机名的IPHostEntry信息</span><br><span class="line">BeginGetHostEntry   	已重载。 将主机名或IP地址异步解析为IPHostEntry实例</span><br><span class="line">BeginResolve	 		开始异步请求将DNS主机名或IP地址解析为IPAddress实例</span><br><span class="line">EndGetHostAddresses		结束对DNS信息的异步请求</span><br><span class="line">EndGetHostByName		结束对DNS信息的异步请求</span><br><span class="line">EndGetHostEntry			结束对DNS信息的异步请求</span><br><span class="line">EndResolve				结束对DNS信息的异步请求</span><br><span class="line">GetHostAddresses		返回指定主机的Internet协议（IP）地址</span><br><span class="line">GetHostByAddress		已重载。 获取IP地址的DNS主机信息</span><br><span class="line">GetHostByName			获取指定DNS主机名的DNS信息</span><br><span class="line">GetHostName				获取本地计算机的主机名</span><br><span class="line">GetType					获取当前实例的类型</span><br><span class="line">GetHostEntry			已重载。 将主机名或IP地址解析为IPHostEntry实例</span><br><span class="line">Resolve					将DNS主机名或IP地址解析为IPHostEntry实例</span><br></pre></td></tr></table></figure>
+
 
     </div>
 
@@ -319,7 +571,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%86%85%E5%AE%B9"><span class="nav-number">1.</span> <span class="nav-text">内容</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%86%85%E5%AE%B9"><span class="nav-number">1.</span> <span class="nav-text">内容</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TcpClient-%E7%B1%BB"><span class="nav-number">2.</span> <span class="nav-text">TcpClient 类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MemoryStream%E7%B1%BB"><span class="nav-number">3.</span> <span class="nav-text">MemoryStream类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B1%9E%E6%80%A7"><span class="nav-number">3.1.</span> <span class="nav-text">属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B9%E6%B3%95"><span class="nav-number">3.2.</span> <span class="nav-text">方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81"><span class="nav-number">3.3.</span> <span class="nav-text">使用示例代码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#BinaryReader-%E7%B1%BB"><span class="nav-number">4.</span> <span class="nav-text">BinaryReader 类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-number">4.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A4%BA%E4%BE%8B"><span class="nav-number">4.2.</span> <span class="nav-text">示例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0"><span class="nav-number">4.3.</span> <span class="nav-text">构造函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B1%9E%E6%80%A7-1"><span class="nav-number">4.4.</span> <span class="nav-text">属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B9%E6%B3%95-1"><span class="nav-number">4.5.</span> <span class="nav-text">方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#IPAddress%E7%B1%BB"><span class="nav-number">5.</span> <span class="nav-text">IPAddress类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#C-NET%E4%B8%ADDns%E7%B1%BB%E5%9F%9F%E5%90%8D%E7%B3%BB%E7%BB%9F"><span class="nav-number">6.</span> <span class="nav-text">C#.NET中Dns类域名系统</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -399,12 +651,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">153k</span>
+    <span title="站点总字数">172k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">2:19</span>
+    <span title="站点阅读时长">2:37</span>
 </div>
 
 
