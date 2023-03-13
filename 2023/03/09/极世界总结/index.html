@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"manual"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="内容123数据库使用EF  EntityFrameworkCorejson使用JsonDotNet协议使用protobuf">
+<meta property="og:type" content="article">
+<meta property="og:title" content="极世界总结">
+<meta property="og:url" content="http://example.com/2023/03/09/%E6%9E%81%E4%B8%96%E7%95%8C%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:site_name" content="心梦">
+<meta property="og:description" content="内容123数据库使用EF  EntityFrameworkCorejson使用JsonDotNet协议使用protobuf">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/images/image-20230309164609843.png">
+<meta property="og:image" content="http://example.com/images/image-20230309173927503.png">
+<meta property="og:image" content="http://example.com/images/image-20230309193730446.png">
+<meta property="og:image" content="http://example.com/images/image-20230309193806915.png">
+<meta property="og:image" content="http://example.com/images/image-20230309193822003.png">
+<meta property="og:image" content="http://example.com/images/image-20230309214508125.png">
+<meta property="og:image" content="http://example.com/images/image-20230309214534406.png">
+<meta property="og:image" content="http://example.com/images/image-20230309214610229.png">
+<meta property="og:image" content="http://example.com/images/image-20230310104415170.png">
+<meta property="og:image" content="http://example.com/images/image-20230309215104920.png">
+<meta property="og:image" content="http://example.com/images/image-20230309215304550.png">
+<meta property="og:image" content="http://example.com/images/image-20230310094618412.png">
+<meta property="og:image" content="http://example.com/images/image-20230310124801702.png">
+<meta property="og:image" content="http://example.com/images/image-20230310125242134.png">
+<meta property="og:image" content="http://example.com/images/image-20230310162913414.png">
+<meta property="og:image" content="http://example.com/images/image-20230310154623187.png">
+<meta property="og:image" content="http://example.com/images/image-20230310154733951.png">
+<meta property="og:image" content="http://example.com/images/image-20230310203937011.png">
+<meta property="og:image" content="http://example.com/images/image-20230310204013376.png">
+<meta property="og:image" content="http://example.com/images/image-20230310204123047.png">
+<meta property="og:image" content="http://example.com/images/image-20230310175947702.png">
+<meta property="og:image" content="http://example.com/images/image-20230310184912202.png">
+<meta property="og:image" content="http://example.com/images/image-20230310171652229.png">
+<meta property="og:image" content="http://example.com/images/image-20230310170736984.png">
+<meta property="og:image" content="http://example.com/images/image-20230311155530000.png">
+<meta property="og:image" content="http://example.com/images/image-20230311165630218.png">
+<meta property="og:image" content="http://example.com/images/image-20230311165758292.png">
+<meta property="og:image" content="http://example.com/images/image-20230311172807240.png">
+<meta property="og:image" content="http://example.com/images/image-20230311172906272.png">
+<meta property="og:image" content="http://example.com/images/image-20230311185440220.png">
+<meta property="og:image" content="http://example.com/images/image-20230311190121581.png">
+<meta property="og:image" content="http://example.com/images/image-20230311205905929.png">
+<meta property="og:image" content="http://example.com/images/image-20230311205202000.png">
+<meta property="og:image" content="http://example.com/images/image-20230311205214351.png">
+<meta property="og:image" content="http://example.com/images/image-20230311205444873.png">
+<meta property="og:image" content="http://example.com/images/image-20230313094940506.png">
+<meta property="og:image" content="http://example.com/images/image-20230312203326499.png">
+<meta property="og:image" content="http://example.com/images/image-20230312214154467.png">
+<meta property="og:image" content="http://example.com/images/image-20230312201736476.png">
+<meta property="og:image" content="http://example.com/images/image-20230312202532473.png">
+<meta property="og:image" content="http://example.com/images/image-20230312202635646.png">
+<meta property="og:image" content="http://example.com/images/image-20230313115022480.png">
+<meta property="og:image" content="http://example.com/images/image-20230313115133549.png">
+<meta property="og:image" content="http://example.com/images/image-20230313115744519.png">
+<meta property="og:image" content="http://example.com/images/image-20230313181043980.png">
+<meta property="og:image" content="http://example.com/images/image-20230313181212353.png">
+<meta property="og:image" content="http://example.com/images/image-20230313174130021.png">
+<meta property="og:image" content="http://example.com/images/image-20230313174424756.png">
+<meta property="og:image" content="http://example.com/images/image-20230313175450086.png">
+<meta property="og:image" content="http://example.com/images/image-20230313180036397.png">
+<meta property="og:image" content="http://example.com/images/image-20230313180616625.png">
+<meta property="og:image" content="http://example.com/images/image-20230313205806928.png">
+<meta property="article:published_time" content="2023-03-09T04:43:52.000Z">
+<meta property="article:modified_time" content="2023-03-13T14:01:45.109Z">
+<meta property="article:author" content="心梦">
+<meta property="article:tag" content="极世界">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/image-20230309164609843.png">
+
+<link rel="canonical" href="http://example.com/2023/03/09/%E6%9E%81%E4%B8%96%E7%95%8C%E6%80%BB%E7%BB%93/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>极世界总结 | 心梦</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="心梦" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">心梦</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-resources">
+
+    <a href="/resources/" rel="section"><i class="download fa-fw"></i>资源</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+
+  <a href="https://github.com/heartdream520" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/09/%E6%9E%81%E4%B8%96%E7%95%8C%E6%80%BB%E7%BB%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/ailulu.jpg">
+      <meta itemprop="name" content="心梦">
+      <meta itemprop="description" content="heart_dream">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="心梦">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          极世界总结
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-03-09 12:43:52" itemprop="dateCreated datePublished" datetime="2023-03-09T12:43:52+08:00">2023-03-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-03-13 22:01:45" itemprop="dateModified" datetime="2023-03-13T22:01:45+08:00">2023-03-13</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/unity/" itemprop="url" rel="index"><span itemprop="name">unity</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>15k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>14 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">数据库使用EF  EntityFrameworkCore</span><br><span class="line">json使用JsonDotNet</span><br><span class="line">协议使用protobuf</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<h1 id="EF数据库EntityFrameworkCore"><a href="#EF数据库EntityFrameworkCore" class="headerlink" title="EF数据库EntityFrameworkCore"></a><code>EF</code>数据库<code>EntityFrameworkCore</code></h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_43024228/article/details/108568621">(12条消息) EntityFrameworkCore生成数据库方法_entity生成数据库_Danny_hi的博客-CSDN博客</a></p>
+<h1 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h1><p>使用<code>protobuf</code> 协议 使用Socket编程</p>
+<p>进行了粘包处理 </p>
+<p>消息分发器</p>
+<p><img src="/../images/image-20230309164609843.png" alt="image-20230309164609843"></p>
+<p>服务器分发线程池多线程服务器的分发</p>
+<h1 id="用户系统"><a href="#用户系统" class="headerlink" title="用户系统"></a>用户系统</h1><p><img src="/../images/image-20230309173927503.png" alt="image-20230309173927503"></p>
+<h2 id="过程："><a href="#过程：" class="headerlink" title="过程："></a>过程：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">从 UI 读取出注册/登录信息，由 UserService 进行信息发送，由于用户登录为第一次向服务器发送信息，并且向服务端的连接是异步的，所以需要判断是否已经连接，如果没有连接先进行连接在进行信息发送.</span><br><span class="line"></span><br><span class="line">当服务器收到信息时，进行信息校验。</span><br><span class="line"></span><br><span class="line">登录判断用户名密码是否正确，判断玩家是否已经登录，如正确则初始化玩家信息，并将玩家信息返回给客户端；</span><br><span class="line"></span><br><span class="line">注册则判断该用户名是否已经注册，校验完成则初始化玩家信息，并将玩家信息读入数据库；</span><br><span class="line"></span><br><span class="line">注册时客户端向服务端发送密码信息之前可以进行一次加密，保证信息安全</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="角色选择"><a href="#角色选择" class="headerlink" title="角色选择"></a>角色选择</h1><p>角色创建流程</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">角色创建</span><br><span class="line"></span><br><span class="line">选择要创建的角色类型，输入角色名，向服务端发送信息进行创建，服务端进行校验，校验成功将新创建的角色信息读入数据库中，并返回新的当前User的角色列表，客户端接受到新的角色列表后进行角色列表的更新</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Render-Texture"><a href="#Render-Texture" class="headerlink" title="Render Texture"></a>Render Texture</h2><p>创建Render Texture。</p>
+<p><img src="/../images/image-20230309193730446.png" alt="image-20230309193730446"></p>
+<p>Render Texture赋值给顶视角摄像机的Target Texture。</p>
+<p><img src="/../images/image-20230309193806915.png" alt="image-20230309193806915"></p>
+<p>3、使用Raw Image显示<br>创建一个RawImage</p>
+<p>将RenderTexture赋值给RawImage的Texture属性</p>
+<p><img src="/../images/image-20230309193822003.png" alt="image-20230309193822003">原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/linxinfa/article/details/108865127">https://blog.csdn.net/linxinfa/article/details/108865127</a></p>
+<h2 id="服务配置"><a href="#服务配置" class="headerlink" title="服务配置"></a>服务配置</h2><p><img src="/../images/image-20230309214508125.png" alt="image-20230309214508125"></p>
+<p>通过配置获取Port</p>
+<p><img src="/../images/image-20230309214534406.png" alt="image-20230309214534406"></p>
+<p><img src="/../images/image-20230309214610229.png" alt="image-20230309214610229"></p>
+<h1 id="进入主城"><a href="#进入主城" class="headerlink" title="进入主城"></a>进入主城</h1><h2 id="进入主城流程"><a href="#进入主城流程" class="headerlink" title="进入主城流程"></a>进入主城流程</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">选择角色进入主城时，传入的角色Id为当前玩家角色列表的Id，因为服务器中存了与只对应的列表，可以确定哪个角色进入地图，服务端 Mapserver 传递给地图将玩家进入信息传递给当前地图中的所有玩家</span><br><span class="line"></span><br><span class="line">角色进入信息传递到客户端MapServer中，判断是否为当前角色，是的话更新当前地图Id，将角色添加到CharacterManager中，添加到字典，并通过GameObjectManager创建角色实体，判断角色是否为当前角色，来确定是否添加CharacterInputControler 和 CameraControl </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">在客户端和服务端之间使用自定义vector进行传输，可以在一定程度上减少浮点数运算产生的误差</span><br><span class="line"></span><br><span class="line">Character继承自Entity实体，Entity负责位置 速度 NEntity 数据用于信息传递</span><br><span class="line">Character设置 name NCharacterInfo</span><br><span class="line">EntityControler 控制角色实体的状态更新</span><br><span class="line"></span><br><span class="line">左上角角色信息更新：当User当前角色更新时，更新左上角角色信息</span><br><span class="line"></span><br><span class="line">角色血条：创建世界空间的UI</span><br></pre></td></tr></table></figure>
+
+<h2 id="离开游戏流程"><a href="#离开游戏流程" class="headerlink" title="离开游戏流程"></a>离开游戏流程</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">向服务端发送角色离开信息，服务端在CharacterManager去除角色，MapManager去除角色，并通知角色所在地图中的所有玩家角色离开的信息，发送到客户端；客户端接收到信息，判断是否为当前角色，不为当前角色，将离开的角色在CharacterManager中删除，并删除角色实体，否则删除所有角色，并返回选择角色界面</span><br></pre></td></tr></table></figure>
+
+<p><img src="/../images/image-20230310104415170.png" alt="image-20230310104415170"></p>
+<h2 id="对象关系"><a href="#对象关系" class="headerlink" title="对象关系"></a>对象关系</h2><p>Entity ： 位置方向速度 NEntity 用于信息传递</p>
+<p>CharacterBase ： characterDefine 存放配置表中的信息， NCharacterInfo用于信息传递，角色类型</p>
+<p>Character： DCharacter 存放数据库中的信息  和当前角色的背包信息，队伍信息等</p>
+<p><img src="/../images/image-20230309215104920.png" alt="image-20230309215104920"></p>
+<p><img src="/../images/image-20230309215304550.png" alt="image-20230309215304550"></p>
+<h2 id="this索引器"><a href="#this索引器" class="headerlink" title="this索引器"></a>this索引器</h2><p>MapManager   This索引器</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="built_in">string</span> <span class="keyword">this</span>[<span class="built_in">int</span> index]</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">get</span>&#123;&#125;</span><br><span class="line">    <span class="keyword">set</span>&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/../images/image-20230310094618412.png" alt="image-20230310094618412"></p>
+<h2 id="血条面向摄像机"><a href="#血条面向摄像机" class="headerlink" title="血条面向摄像机"></a>血条面向摄像机</h2><p>lookAt</p>
+<p><img src="/../images/image-20230310124801702.png" alt="image-20230310124801702"></p>
+<p>forword</p>
+<p><img src="/../images/image-20230310125242134.png" alt="image-20230310125242134"></p>
+<h1 id="小地图"><a href="#小地图" class="headerlink" title="小地图"></a>小地图</h1><h2 id="流程："><a href="#流程：" class="headerlink" title="流程："></a>流程：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">进入一个新地图时，更新User中的CurrentMap，当角色创建时，更新MinMapManager中的玩家实体，当进入新的场景的时候，更新地图的包围盒，并更新当前的地图图片；当玩家移动时，计算出玩家的位置，将玩家的位置设为小地图图片的中心位置，当玩家转动时，更新小地图上的指针方向为玩家的朝向</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p>更新朝向</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.arrow.transform.eulerAngles = <span class="keyword">new</span> Vector3(<span class="number">0</span>, <span class="number">0</span>, -playerTransform.eulerAngles.y);</span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="/../images/image-20230310162913414.png" alt="image-20230310162913414"></p>
+<p><img src="/../images/image-20230310154623187.png" alt="image-20230310154623187"></p>
+<h2 id="地图制作方案"><a href="#地图制作方案" class="headerlink" title="地图制作方案"></a>地图制作方案</h2><p><img src="/../images/image-20230310154733951.png" alt="image-20230310154733951"></p>
+<h1 id="移动同步"><a href="#移动同步" class="headerlink" title="移动同步"></a>移动同步</h1><h2 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">使用Entity进行角色的状态同步，CharacterInputController接受玩家输入发生Entity状态改变 ，向服务端发送EntitySync信息，服务端接受后传到MapServer中玩家对应Map对Entity进行更新，并发送消息给地图中的其他玩家，其他玩家客户端收到同步信息后，在EntityManager中找到对应EntityController同步Entity信息，并更新角色实体的状态</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>定义NEntiy和同步事件</p>
+<p><img src="/../images/image-20230310203937011.png" alt="image-20230310203937011"></p>
+<p><img src="/../images/image-20230310204013376.png" alt="image-20230310204013376"></p>
+<p>同步请求和响应</p>
+<p><img src="/../images/image-20230310204123047.png" alt="image-20230310204123047"></p>
+<p><img src="/../images/image-20230310175947702.png" alt="image-20230310175947702"></p>
+<p><img src="/../images/image-20230310184912202.png" alt="image-20230310184912202"></p>
+<p>同步的变量</p>
+<p><img src="/../images/image-20230310171652229.png" alt="image-20230310171652229"></p>
+<h2 id="状态同步和帧同步"><a href="#状态同步和帧同步" class="headerlink" title="状态同步和帧同步"></a>状态同步和帧同步</h2><p><img src="/../images/image-20230310170736984.png" alt="image-20230310170736984"></p>
+<h1 id="地图传送"><a href="#地图传送" class="headerlink" title="地图传送"></a>地图传送</h1><h1 id="流程-1"><a href="#流程-1" class="headerlink" title="流程"></a>流程</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在配置表中配置传送点，传送点Id和传入的地方，在地图中设置传送Object，通过编译器拓展方法像配置表中读入传送点的位置和朝向信息，用于设置玩家传入地图时的位置和朝向，使用触发器进行触发，，当有物体进行触发时，判断对象身上是否带有Charactercontroller，当带有是说明对象为当前玩家，向服务端发送地图传送信息，服务端进行校验：传送点是否存在，传送到地点是否存在等，然后再MapManager中退出现在所在地图，设置玩家位置为传送点配置中的位置和宣战后加入传送到的地图，并通知地图中的其他玩家完成地图传送，并更新小地图资源</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="画模型边界"><a href="#画模型边界" class="headerlink" title="画模型边界"></a>画模型边界</h2><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">if</span> UNITY_EDITOR</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">OnDrawGizmos</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        Gizmos.color = Color.blue;</span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">this</span>.mesh!=<span class="literal">null</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            Gizmos.DrawWireMesh(<span class="keyword">this</span>.mesh, </span><br><span class="line">                <span class="keyword">this</span>.transform.position + Vector3.up * <span class="keyword">this</span>.transform.localPosition.y * <span class="number">.5</span>f, </span><br><span class="line">                <span class="keyword">this</span>.transform.rotation, <span class="keyword">this</span>.transform.localScale);</span><br><span class="line">        &#125;</span><br><span class="line">        UnityEditor.Handles.color = Color.red;</span><br><span class="line">        UnityEditor.Handles.ArrowHandleCap(<span class="number">0</span>, <span class="keyword">this</span>.transform.position, <span class="keyword">this</span>.transform.rotation, <span class="number">1f</span>, EventType.Repaint);</span><br><span class="line">    &#125;</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br></pre></td></tr></table></figure>
+
+<h2 id="导出传送点"><a href="#导出传送点" class="headerlink" title="导出传送点"></a>导出传送点</h2><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">[<span class="meta">MenuItem(<span class="string">&quot;Map Tools/Export Teleporters&quot;</span>)</span>]</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">ExportTeleporters</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        DataManager.Instance.Load();</span><br><span class="line"></span><br><span class="line">        Scene scene = EditorSceneManager.GetActiveScene();</span><br><span class="line"></span><br><span class="line">        <span class="built_in">string</span> currentScene = scene.name;</span><br><span class="line">        <span class="keyword">if</span>(scene.isDirty)</span><br><span class="line">        &#123;</span><br><span class="line">            EditorUtility.DisplayDialog(<span class="string">&quot;提示&quot;</span>, <span class="string">&quot;请先保存当前场景&quot;</span>, <span class="string">&quot;确定&quot;</span>);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        List&lt;TeleportObject&gt; allteleportObjects = <span class="keyword">new</span> List&lt;TeleportObject&gt;();</span><br><span class="line">        <span class="keyword">foreach</span>(<span class="keyword">var</span> map <span class="keyword">in</span> DataManager.Instance.Maps)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">//获取地图所在位置</span></span><br><span class="line">            <span class="built_in">string</span> sceneFile = <span class="string">&quot;Assets/Scenes/&quot;</span> + map.Value.Resource + <span class="string">&quot;.unity&quot;</span>;</span><br><span class="line">            <span class="keyword">if</span>(!System.IO.File.Exists(sceneFile))</span><br><span class="line">            &#123;</span><br><span class="line">                Debug.LogErrorFormat(<span class="string">&quot;Scene :&#123;0&#125; not existed!&quot;</span>, sceneFile);</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            EditorSceneManager.OpenScene(sceneFile, OpenSceneMode.Single);</span><br><span class="line"></span><br><span class="line">            TeleportObject[] teleports = FindObjectsOfType&lt;TeleportObject&gt;();</span><br><span class="line">            <span class="keyword">foreach</span>(<span class="keyword">var</span> teleporter <span class="keyword">in</span> teleports)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span>(!DataManager.Instance.Teleporters.ContainsKey(teleporter.ID))</span><br><span class="line">                &#123;</span><br><span class="line">                    EditorUtility.DisplayDialog(<span class="string">&quot;错误&quot;</span>,</span><br><span class="line">                        <span class="built_in">string</span>.Format(<span class="string">&quot;地图：&#123;0&#125;中配置的 TeleportID：&#123;1&#125;不存在！&quot;</span>, map.Value.ID, teleporter.ID),</span><br><span class="line">                        <span class="string">&quot; 确定&quot;</span>);</span><br><span class="line">                    <span class="keyword">return</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                TeleporterDefine teleporter_Define = DataManager.Instance.Teleporters[teleporter.ID];</span><br><span class="line">                <span class="keyword">if</span>(teleporter_Define.MapID!=map.Value.ID)</span><br><span class="line">                &#123;</span><br><span class="line">                    EditorUtility.DisplayDialog(<span class="string">&quot;错误&quot;</span>,</span><br><span class="line">                        <span class="built_in">string</span>.Format(<span class="string">&quot;地图：&#123;0&#125;中不应存在的 TeleportID：&#123;1&#125;！&quot;</span>, map.Value.ID, teleporter.ID),</span><br><span class="line">                          <span class="string">&quot;确定&quot;</span>);</span><br><span class="line">                &#125;</span><br><span class="line">                teleporter_Define.Position = GameObjectTool.WorldToLogicN(teleporter.transform.position);</span><br><span class="line">                teleporter_Define.Direction = GameObjectTool.WorldToLogicN(teleporter.transform.forward);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        DataManager.Instance.SaveTeleporters();</span><br><span class="line">        EditorSceneManager.OpenScene(<span class="string">&quot;Assets/Scenes/&quot;</span> + currentScene + <span class="string">&quot;.unity&quot;</span>);</span><br><span class="line">        EditorUtility.DisplayDialog(<span class="string">&quot;提示&quot;</span>, <span class="string">&quot;传送点导出完毕&quot;</span>, <span class="string">&quot;确定&quot;</span>);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>保存json</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">if</span> UNITY_EDITOR</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">SaveTeleporters</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">string</span> json = JsonConvert.SerializeObject(<span class="keyword">this</span>.Teleporters, Formatting.Indented);</span><br><span class="line">        File.WriteAllText(<span class="keyword">this</span>.DataPath + <span class="string">&quot;TeleporterDefine.txt&quot;</span>, json);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">SaveSpawnPoints</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">string</span> json = JsonConvert.SerializeObject(<span class="keyword">this</span>.SpawnPoints, Formatting.Indented);</span><br><span class="line">        File.WriteAllText(<span class="keyword">this</span>.DataPath + <span class="string">&quot;SpawnPointDefine.txt&quot;</span>, json);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/../images/image-20230311155530000.png" alt="image-20230311155530000"></p>
+<h1 id="UI框架"><a href="#UI框架" class="headerlink" title="UI框架"></a>UI框架</h1><h2 id="设计"><a href="#设计" class="headerlink" title="设计"></a>设计</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">UI先在UIMain中进行UI注册，包括UI所需要的资源，是否为全局变量等，UIMain提供注册和关闭函数；</span><br><span class="line">所有的UI继承自UIWindow，UIWindow提供关闭带有关闭类型的关闭函数，和关闭事件</span><br></pre></td></tr></table></figure>
+
+<p>UIManager</p>
+<figure class="highlight cc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">using</span> Assets.Scripts.UI.Set;</span><br><span class="line"><span class="keyword">using</span> Assets.Scripts.UI.UIQuest;</span><br><span class="line"><span class="keyword">using</span> Models;</span><br><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> UnityEngine;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">UIManager</span> : Singleton&lt;UIManager&gt;&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">UIElement</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//资源所在地</span></span><br><span class="line">        <span class="keyword">public</span> string Resources;</span><br><span class="line">        <span class="comment">//是否全局</span></span><br><span class="line">        <span class="keyword">public</span> <span class="type">bool</span> Cache;</span><br><span class="line">        <span class="comment">//对象实例</span></span><br><span class="line">        <span class="keyword">public</span> GameObject Instance;</span><br><span class="line">        <span class="keyword">public</span> <span class="type">bool</span> is_shop;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> UIcnt;</span><br><span class="line">    <span class="keyword">public</span> Dictionary&lt;Type, UIElement&gt; UIResources = <span class="keyword">new</span> <span class="built_in">Dictionary</span>&lt;Type, UIElement&gt;();</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">UIManager</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.UIResources.<span class="built_in">Add</span>(<span class="built_in">typeof</span>(UITest), <span class="keyword">new</span> <span class="built_in">UIElement</span>() &#123; Resources = <span class="string">&quot;UI/UITest&quot;</span>, Cache = <span class="literal">true</span>, is_shop=<span class="literal">true</span>&#125;);</span><br><span class="line">        User.Instance.CurrentCharacter_Set_Action += () =&gt;</span><br><span class="line">          &#123;</span><br><span class="line">              <span class="keyword">this</span>.UIcnt = <span class="number">0</span>;</span><br><span class="line">          &#125;;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> T <span class="built_in">Show</span>&lt;T&gt;()</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//SoundManager.Instance.PlaySound(&quot;ui_open&quot;);</span></span><br><span class="line">        Type type = <span class="built_in">typeof</span>(T);</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">this</span>.UIResources.<span class="built_in">ContainsKey</span>(type))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (UIResources[type].is_shop)</span><br><span class="line">                UIcnt++;</span><br><span class="line">            UIElement info = <span class="keyword">this</span>.UIResources[type];</span><br><span class="line">            <span class="keyword">if</span>(info.Instance!=null)</span><br><span class="line">            &#123;</span><br><span class="line">                info.Instance.<span class="built_in">SetActive</span>(<span class="literal">true</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                UnityEngine.Object prefab = Resources.<span class="built_in">Load</span>(info.Resources);</span><br><span class="line">                <span class="keyword">if</span>(prefab==null)</span><br><span class="line">                &#123;</span><br><span class="line">                    Debug.<span class="built_in">LogErrorFormat</span>(<span class="string">&quot;UIManager-&gt;Show&lt;T&gt; Type:&#123;0&#125; Resources:&#123;1&#125; not exist&quot;</span>, type.Name,info.Resources);</span><br><span class="line">                    <span class="keyword">return</span> <span class="built_in">default</span>(T);</span><br><span class="line">                &#125;</span><br><span class="line">                info.Instance = (GameObject)GameObject.<span class="built_in">Instantiate</span>(prefab);</span><br><span class="line">            &#125;</span><br><span class="line">            SoundManager.Instance.<span class="built_in">PlayerSound</span>(SoundDefine.UI_Win_Open);</span><br><span class="line">            <span class="keyword">return</span> info.Instance.<span class="built_in">GetComponent</span>&lt;T&gt;();</span><br><span class="line">        &#125;</span><br><span class="line">        Debug.<span class="built_in">LogErrorFormat</span>(<span class="string">&quot;UIManager-&gt;Show&lt;T&gt; Type:&#123;0&#125; not exist&quot;</span>, type.Name);</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">default</span>(T);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="type">void</span> <span class="title">Close</span><span class="params">(Type type)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (UIResources[type].is_shop)</span><br><span class="line">            UIcnt--;</span><br><span class="line">        <span class="comment">//SoundManager.Instance.PlaySound(&quot;ui_close&quot;);</span></span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span>.UIResources.<span class="built_in">ContainsKey</span>(type))</span><br><span class="line">        &#123;</span><br><span class="line">            SoundManager.Instance.<span class="built_in">PlayerSound</span>(SoundDefine.UI_Win_Close);</span><br><span class="line">            UIElement info = <span class="keyword">this</span>.UIResources[type];</span><br><span class="line">            <span class="keyword">if</span>(info.Cache)</span><br><span class="line">            &#123;</span><br><span class="line">                info.Instance.<span class="built_in">SetActive</span>(<span class="literal">false</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                GameObject.<span class="built_in">Destroy</span>(info.Instance);</span><br><span class="line">                info.Instance = null;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>UIWindow</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> Assets.Scripts.Managers;</span><br><span class="line"><span class="keyword">using</span> System.Collections;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> UnityEngine;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class</span> <span class="title">UIWindow</span> : <span class="title">MonoBehaviour</span> &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="built_in">delegate</span> <span class="keyword">void</span> <span class="title">CloseHandler</span>(<span class="params">UIWindow sender, WindowResult result</span>)</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">event</span> CloseHandler Onclose;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//根节点</span></span><br><span class="line">    [<span class="meta">HideInInspector</span>]</span><br><span class="line">    <span class="keyword">public</span> GameObject Root;</span><br><span class="line">    <span class="keyword">public</span>  <span class="keyword">virtual</span> System.Type Type &#123; <span class="keyword">get</span> &#123; <span class="keyword">return</span> <span class="keyword">this</span>.GetType()</span><br><span class="line">; &#125; &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">enum</span> WindowResult</span><br><span class="line">    &#123;</span><br><span class="line">        None,Yes,No</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Close</span> (<span class="params">WindowResult result= WindowResult.None</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        UIManager.Instance.Close(<span class="keyword">this</span>.Type);</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span>.Onclose != <span class="literal">null</span>)</span><br><span class="line">            <span class="keyword">this</span>.Onclose(<span class="keyword">this</span>,result);</span><br><span class="line">        <span class="keyword">this</span>.Onclose = <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">OnClick_Close</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">this</span>.Close();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">OnClick_Yes</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">this</span>.Close(WindowResult.Yes);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">OnClick_No</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">this</span>.Close(WindowResult.No);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">OnDisable</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        InDisable();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">InDisable</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="UI分类"><a href="#UI分类" class="headerlink" title="UI分类"></a>UI分类</h2><p><img src="/../images/image-20230311165630218.png" alt="image-20230311165630218"></p>
+<p><img src="/../images/image-20230311165758292.png" alt="image-20230311165758292"></p>
+<h2 id="粒子特效"><a href="#粒子特效" class="headerlink" title="粒子特效"></a>粒子特效</h2><p><img src="/../images/image-20230311172807240.png" alt="image-20230311172807240"></p>
+<p>特效类型不应该为UI</p>
+<p><img src="/../images/image-20230311172906272.png" alt="image-20230311172906272"></p>
+<h1 id="Npc系统"><a href="#Npc系统" class="headerlink" title="Npc系统"></a>Npc系统</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">配置表：Npc配置Npc类型，功能和参数</span><br><span class="line">Npc分类：分为任务型Npc和功能型Npc，再NpcManager中设置事件字典，用于其他模块注册功能型Npc的功能</span><br><span class="line">启动Npc：再Npc身上添加碰撞器，使用回调 OnMouseDown() 等</span><br><span class="line">当玩家点击时，先让Npc面向玩家，然后转到NPcManager调用对用Npc的功能</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">OnMouseDown</span>()</span></span><br><span class="line">  &#123;</span><br><span class="line">      <span class="keyword">if</span> (!MouseManager.Instance.Mouse_Is_Display) <span class="keyword">return</span>;</span><br><span class="line">      Interactive();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">OnMouseOver</span>()</span></span><br><span class="line">  &#123;</span><br><span class="line">      Highlight(<span class="literal">true</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">OnMouseEnter</span>()</span></span><br><span class="line">  &#123;</span><br><span class="line">      Highlight(<span class="literal">true</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">OnMouseExit</span>()</span></span><br><span class="line">  &#123;</span><br><span class="line">      Highlight(<span class="literal">false</span>);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="/../images/image-20230311185440220.png" alt="image-20230311185440220"></p>
+<p>Npc配置表</p>
+<p><img src="/../images/image-20230311190121581.png" alt="image-20230311190121581"></p>
+<h1 id="道具系统"><a href="#道具系统" class="headerlink" title="道具系统"></a>道具系统</h1><h2 id="流程-2"><a href="#流程-2" class="headerlink" title="流程"></a>流程</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">配置表：需要类型类别，出售价格，功能和一些参数</span><br><span class="line">数据库方面：建立玩家-道具表，为一对多关系</span><br><span class="line">每当角色进入游戏时，将对应角色的道具信息再服务端进行初始化返回客户端进行初始化</span><br><span class="line">客户端通过IteamManager管理所有道具，ItemManager存储实体Item，当道具增加，减少使用时，对背包进行更新，向服务端发送信息，交由服务端对应玩家的ItemManager进行处理，并更新数据库</span><br></pre></td></tr></table></figure>
+
+<p>配置表</p>
+<p><img src="/../images/image-20230311205905929.png" alt="image-20230311205905929"></p>
+<p><img src="/../images/image-20230311205202000.png" alt="image-20230311205202000"></p>
+<p><img src="/../images/image-20230311205214351.png" alt="image-20230311205214351"></p>
+<p><img src="/../images/image-20230311205444873.png" alt="image-20230311205444873"></p>
+<h1 id="背包系统"><a href="#背包系统" class="headerlink" title="背包系统"></a>背包系统</h1><h2 id="设计流程"><a href="#设计流程" class="headerlink" title="设计流程"></a>设计流程</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">数据库：数据库建立背包表，背包和玩家的关系为一对一，背包表中存储背包信息为Binary（二进制）类型</span><br><span class="line">背包的数据结结构：DB中存储二进制文件，背包物体的数据结构为结构体，方便对背包中的物体进行交换，也方便解析二进制文件</span><br><span class="line">玩家进行注册时初始化数据库中的玩家背包表</span><br><span class="line">当玩家登录时，将数据库中的数据读入服务端玩家中，传回客户端，客户端判断背包是否为空，为空则根据玩家物品重新配置背包，否则根据数据库数据进行读取背包，分析获取背包和读取背包都使用在unsafe下运行的指针操作进行</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">   <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">   <span class="comment"><span class="doctag">///</span> 分析获取背包</span></span><br><span class="line">   <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">   <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;data&quot;&gt;</span><span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line">   <span class="function"><span class="keyword">unsafe</span> <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Analyze</span>(<span class="params"><span class="built_in">byte</span>[] data</span>)</span></span><br><span class="line">   &#123;</span><br><span class="line">       <span class="keyword">fixed</span> (<span class="built_in">byte</span>* pt = data)</span><br><span class="line">       &#123;</span><br><span class="line">           <span class="keyword">for</span>(<span class="built_in">int</span> i=<span class="number">0</span>;i&lt;<span class="keyword">this</span>.Unlocked;i++)</span><br><span class="line">           &#123;</span><br><span class="line">               BagItem* item = (BagItem*)(pt + (i * <span class="keyword">sizeof</span>(BagItem)));</span><br><span class="line">               <span class="keyword">this</span>.items[i] = *item;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//获取背包信息</span></span><br><span class="line">   <span class="function"><span class="keyword">unsafe</span> <span class="keyword">public</span> NBagInfo <span class="title">GetBagInfo</span>()</span></span><br><span class="line">   &#123;</span><br><span class="line">       <span class="comment">//Debug.LogError(&quot;BagManager-&gt;NBagInfo&quot;);</span></span><br><span class="line">       <span class="keyword">fixed</span> (<span class="built_in">byte</span>* pt = info.Items)</span><br><span class="line">       &#123;</span><br><span class="line">           <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; <span class="keyword">this</span>.Unlocked; i++)</span><br><span class="line">           &#123;</span><br><span class="line">               BagItem* item = (BagItem*)(pt + (i * <span class="keyword">sizeof</span>(BagItem)));</span><br><span class="line">               *item = items[i];</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">return</span> <span class="keyword">this</span>.info;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="TabView-TabButton"><a href="#TabView-TabButton" class="headerlink" title="TabView  TabButton"></a>TabView  TabButton</h2><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> Assets.Scripts.UI.Set;</span><br><span class="line"><span class="keyword">using</span> System.Collections;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> UnityEngine;</span><br><span class="line"><span class="keyword">using</span> UnityEngine.UI;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">TabButton</span> : <span class="title">MonoBehaviour</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> Sprite activeImage;</span><br><span class="line">    <span class="keyword">private</span> Sprite normalImage;</span><br><span class="line"></span><br><span class="line">    [<span class="meta">HideInInspector</span>]</span><br><span class="line">    <span class="keyword">public</span> TabView tabView;</span><br><span class="line"></span><br><span class="line">    [<span class="meta">HideInInspector</span>]</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">int</span> tabIndex = <span class="number">0</span>;</span><br><span class="line">    [<span class="meta">HideInInspector</span>]</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">bool</span> selected = <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Image tabImage;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// Use this for initialization</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">Start</span> ()</span> &#123;</span><br><span class="line">        tabImage = <span class="keyword">this</span>.GetComponent&lt;Image&gt;();</span><br><span class="line">        normalImage = tabImage.sprite;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">this</span>.GetComponent&lt;Button&gt;().onClick.AddListener(OnClick);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Select</span>(<span class="params"><span class="built_in">bool</span> <span class="keyword">select</span></span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        tabImage.overrideSprite = <span class="keyword">select</span> ? activeImage : normalImage;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">OnClick</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        SoundManager.Instance.PlayerSound(SoundDefine.UI_Click);</span><br><span class="line">        <span class="keyword">this</span>.tabView.SelectTab(<span class="keyword">this</span>.tabIndex);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> Assets.Scripts.UI.Set;</span><br><span class="line"><span class="keyword">using</span> System.Collections;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> UnityEngine;</span><br><span class="line"><span class="keyword">using</span> UnityEngine.Events;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">TabView</span> : <span class="title">MonoBehaviour</span></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> TabButton[] tabButtons;</span><br><span class="line">    <span class="keyword">public</span> GameObject[] tabPages;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> UnityAction&lt;<span class="built_in">int</span>&gt; OnTabSelect;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">int</span> index = <span class="number">-1</span>;</span><br><span class="line">    <span class="comment">// Use this for initialization</span></span><br><span class="line">    <span class="function">IEnumerator <span class="title">Start</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; tabButtons.Length; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            tabButtons[i].tabView = <span class="keyword">this</span>;</span><br><span class="line">            tabButtons[i].tabIndex = i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">yield</span> <span class="keyword">return</span> <span class="keyword">new</span> <span class="title">WaitForEndOfFrame</span>()</span>;</span><br><span class="line">        SelectTab(<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="built_in">int</span> selected_Idx = <span class="number">-1</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">SelectTab</span>(<span class="params"><span class="built_in">int</span> index, <span class="built_in">bool</span> action = <span class="literal">true</span></span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span>.index != index)</span><br><span class="line">        &#123;</span><br><span class="line">            </span><br><span class="line">            selected_Idx = index;</span><br><span class="line">            <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; tabButtons.Length; i++)</span><br><span class="line">            &#123;</span><br><span class="line">                tabButtons[i].Select(i == index);</span><br><span class="line"></span><br><span class="line">                <span class="keyword">if</span> (<span class="keyword">this</span>.tabPages.Length == <span class="number">1</span>)</span><br><span class="line">                    <span class="keyword">this</span>.tabPages[<span class="number">0</span>].SetActive(<span class="literal">true</span>);</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                    <span class="keyword">if</span> (i &lt; tabPages.Length)</span><br><span class="line">                    tabPages[i].SetActive(i == index);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (action)</span><br><span class="line">                <span class="keyword">if</span> (OnTabSelect != <span class="literal">null</span>)</span><br><span class="line">                    OnTabSelect(index);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="/../images/image-20230313094940506.png" alt="image-20230313094940506"></p>
+<h1 id="商店系统"><a href="#商店系统" class="headerlink" title="商店系统"></a>商店系统</h1><h2 id="设计流程-1"><a href="#设计流程-1" class="headerlink" title="设计流程"></a>设计流程</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">配置表：商店表，商店道具表</span><br><span class="line">UI实现点击：添加组件Selected，脚本继承 ISelectHandler 实现  public void OnSelect(BaseEventData eventData)</span><br><span class="line"></span><br><span class="line">通过NPC系统调用商店，在npc系统上注册事件，当点击对应Npc时展示通过Npc的参数，读取对应商店信息，展示商店UI，点击购买向服务端发送物品购买信息，服务端进行校验，id和价格是否正确，金币是否足够等，如购买成功在IteamManager上进行添加物品，并同步状态同步信息返回；</span><br><span class="line">状态同步：状态行为（增加删除还是更新），更新状态的类型，更新的id和值</span><br><span class="line">每当发送信息时，判断状态同步信息是否为空，不为空则一并发送</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p><img src="/../images/image-20230312203326499.png" alt="image-20230312203326499"></p>
+<p>状态同步</p>
+<p><img src="/../images/image-20230312214154467.png" alt="image-20230312214154467"></p>
+<p><img src="/../images/image-20230312201736476.png" alt="image-20230312201736476"></p>
+<p><img src="/../images/image-20230312202532473.png" alt="image-20230312202532473"></p>
+<p><img src="/../images/image-20230312202635646.png" alt="image-20230312202635646"></p>
+<h1 id="装备系统"><a href="#装备系统" class="headerlink" title="装备系统"></a>装备系统</h1><h2 id="设计流程-2"><a href="#设计流程-2" class="headerlink" title="设计流程"></a>设计流程</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">配置：配置表 ：在物品表中添加装备，物品类型为装备，并添加装备表来存储装备的具体信息</span><br><span class="line">数据库中使用二进制文件来存储装备信息</span><br><span class="line">玩家创建时初始化数据库中的装备信息，玩家进入时服务端传入装备信息，客户端接收后在EquipManager中初始化装备信息，当打开装备UI时，根据EquipManager中的装备信息进行初始化，当发出穿戴/脱下请求，并记录下穿/脱和对哪件装备进行的操作；服务端进行一系列校验，装备是否存在等，校验成功返回成功并更新玩家数据库中的装备信息，返回客户端客户端根据提前记录的数据和服务器返回的结果进行操作</span><br><span class="line"></span><br><span class="line">UI的点击使用IPointerClickHandler</span><br><span class="line"> public void O nPointerClick(PointerEventData eventData)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"> <span class="comment"><span class="doctag">///</span> 根据装备数据更新装备</span></span><br><span class="line"> <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"> <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;data&quot;&gt;</span>装备数据<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line"> <span class="function"><span class="keyword">unsafe</span> <span class="keyword">private</span> <span class="keyword">void</span> <span class="title">ParseEquipData</span>(<span class="params"><span class="built_in">byte</span>[] data</span>)</span></span><br><span class="line"> &#123;</span><br><span class="line">     <span class="keyword">fixed</span>(<span class="built_in">byte</span>* pt =<span class="keyword">this</span>.Data)</span><br><span class="line">     &#123;</span><br><span class="line">         <span class="keyword">for</span>(<span class="built_in">int</span> i=<span class="number">0</span>;i&lt;<span class="keyword">this</span>.Equips.Length;i++)</span><br><span class="line">         &#123;</span><br><span class="line">             <span class="built_in">int</span> itemId = *(<span class="built_in">int</span>*)(pt + (i * <span class="keyword">sizeof</span>(<span class="built_in">int</span>)));</span><br><span class="line">             <span class="keyword">if</span> (itemId &gt; <span class="number">0</span>)</span><br><span class="line">                 <span class="keyword">this</span>.Equips[i] = ItemManager.Instance.Items[itemId];</span><br><span class="line">             <span class="keyword">else</span> <span class="keyword">this</span>.Equips[i] = <span class="literal">null</span>;</span><br><span class="line">         &#125;</span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"> <span class="comment"><span class="doctag">///</span> 获取装备数据</span></span><br><span class="line"> <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"> <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;returns&gt;</span><span class="doctag">&lt;/returns&gt;</span></span></span><br><span class="line"> <span class="function"><span class="keyword">unsafe</span> <span class="keyword">public</span> <span class="built_in">byte</span>[] <span class="title">GetEquipData</span>()</span></span><br><span class="line"> &#123;</span><br><span class="line">     <span class="keyword">fixed</span> (<span class="built_in">byte</span>* pt = Data)</span><br><span class="line">     &#123;</span><br><span class="line">         <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; (<span class="built_in">int</span>)EquipSlot.SlotMax; i++)</span><br><span class="line">         &#123;</span><br><span class="line">             <span class="built_in">int</span>* itemId = (<span class="built_in">int</span>*)(pt + i * <span class="keyword">sizeof</span>(<span class="built_in">int</span>));</span><br><span class="line">             <span class="keyword">if</span> (<span class="keyword">this</span>.Equips[i] == <span class="literal">null</span>)</span><br><span class="line">                 *itemId = <span class="number">0</span>;</span><br><span class="line">             <span class="keyword">else</span> *itemId = <span class="keyword">this</span>.Equips[i].id;</span><br><span class="line">         &#125;</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="keyword">return</span> <span class="keyword">this</span>.Data;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<p><img src="/../images/image-20230313115022480.png" alt="image-20230313115022480"></p>
+<p>协议</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">装备为道具的一种类型，并定义装备的位置</span><br><span class="line">客户端与服务端通信使用槽位+Id加 穿还是脱</span><br></pre></td></tr></table></figure>
+
+<p><img src="/../images/image-20230313115133549.png" alt="image-20230313115133549"></p>
+<p><img src="/../images/image-20230313115744519.png" alt="image-20230313115744519"></p>
+<h1 id="任务系统"><a href="#任务系统" class="headerlink" title="任务系统"></a>任务系统</h1><h2 id="设计流程-3"><a href="#设计流程-3" class="headerlink" title="设计流程"></a>设计流程</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">任务的分类：分为主线任务，直线任务等；每种任务又分为 对话任务，杀怪任务，送信任务等</span><br><span class="line"></span><br><span class="line">数据库表：需要任务ID 目标 和 当前状态</span><br><span class="line"></span><br><span class="line">配置表：任务需要任务Id，任务名，任务类型，等级限制，职业限制，任务领取NPC，任务提交NPC，任务描述，任务对话，任务目标，任务奖励等</span><br><span class="line"></span><br><span class="line">Quest Modle：存储Define信息和NQuest信息</span><br><span class="line">任务没有接收时，在数据库中建立对应玩家-任务数据</span><br><span class="line">QuestManager设定 某个NPC具有某种类型的任务的 Dictionary</span><br><span class="line">当玩家进入游戏时，初始化玩家任务并将任务信息返回客户端，客户端根据服务端返回信息和配置信息初始化某种Npc具有某种类型的任务，当玩家点击Npc时，判断Npc是否有可接受的任务/可完成的任务/已接受未完成的任务，显示相应的UI，当玩家接受/提交任务时，向服务端发送信息，服务端进行校验（提交任务判断任务是否已经完成，已完成则发放奖励；接受任务则判断此任务是否可以接受，都需要判断任务是否存在，等级限制，职业限制等）客户端如接到成功回复，如任务成功完成，则调用事件，判断哪些任务可以接受了等</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="ListView-列表组件"><a href="#ListView-列表组件" class="headerlink" title="ListView 列表组件"></a>ListView 列表组件</h2><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> Assets.Scripts.UI.Set;</span><br><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.Linq;</span><br><span class="line"><span class="keyword">using</span> System.Text;</span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> UnityEngine;</span><br><span class="line"><span class="keyword">using</span> UnityEngine.Events;</span><br><span class="line"><span class="keyword">using</span> UnityEngine.EventSystems;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">ListView</span> : <span class="title">MonoBehaviour</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> UnityAction&lt;ListViewItem&gt; onItemSelected;</span><br><span class="line">    List&lt;ListViewItem&gt; items = <span class="keyword">new</span> List&lt;ListViewItem&gt;();</span><br><span class="line">    <span class="keyword">private</span> ListViewItem selectedItem = <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">public</span> ListViewItem SelectedItem</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">get</span> &#123; <span class="keyword">return</span> selectedItem; &#125;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">set</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (selectedItem!=<span class="literal">null</span> &amp;&amp; selectedItem != <span class="keyword">value</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                selectedItem.Selected = <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            SoundManager.Instance.PlayerSound(SoundDefine.UI_Click);</span><br><span class="line">            selectedItem = <span class="keyword">value</span>;</span><br><span class="line">            <span class="keyword">if</span> (onItemSelected != <span class="literal">null</span>)</span><br><span class="line">                onItemSelected.Invoke((ListViewItem)<span class="keyword">value</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">AddItem</span>(<span class="params">ListViewItem item</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        item.owner = <span class="keyword">this</span>;</span><br><span class="line">        <span class="keyword">this</span>.items.Add(item);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">RemoveAll</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">foreach</span>(<span class="keyword">var</span> it <span class="keyword">in</span> items)</span><br><span class="line">        &#123;</span><br><span class="line">            Destroy(it.gameObject);</span><br><span class="line">        &#125;</span><br><span class="line">        items.Clear();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">OnDisable</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">this</span>.selectedItem = <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">class</span> <span class="title">ListViewItem</span> : <span class="title">MonoBehaviour</span>, <span class="title">IPointerClickHandler</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">private</span> <span class="built_in">bool</span> selected;</span><br><span class="line">        <span class="keyword">public</span> <span class="built_in">bool</span> Selected</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">get</span> &#123; <span class="keyword">return</span> selected; &#125;</span><br><span class="line">            <span class="keyword">set</span></span><br><span class="line">            &#123;</span><br><span class="line">                selected = <span class="keyword">value</span>;</span><br><span class="line">                onSelected(selected);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">onSelected</span>(<span class="params"><span class="built_in">bool</span> selected</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        [<span class="meta">HideInInspector</span>]</span><br><span class="line">        <span class="keyword">public</span> ListView owner;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">OnPointerClick</span>(<span class="params">PointerEventData eventData</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (!<span class="keyword">this</span>.selected)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">this</span>.Selected = <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (owner != <span class="literal">null</span> &amp;&amp; owner.SelectedItem != <span class="keyword">this</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                owner.SelectedItem = <span class="keyword">this</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>协议</p>
+<p><img src="/../images/image-20230313181043980.png" alt="image-20230313181043980"></p>
+<p><img src="/../images/image-20230313181212353.png" alt="image-20230313181212353"></p>
+<p><img src="/../images/image-20230313174130021.png" alt="image-20230313174130021"></p>
+<p><img src="/../images/image-20230313174424756.png" alt="image-20230313174424756"></p>
+<p><img src="/../images/image-20230313175450086.png" alt="image-20230313175450086"></p>
+<p><img src="/../images/image-20230313180036397.png" alt="image-20230313180036397"></p>
+<p><img src="/../images/image-20230313180616625.png" alt="image-20230313180616625"></p>
+<p>强制布局</p>
+<p><img src="/../images/image-20230313205806928.png" alt="image-20230313205806928"></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%9E%81%E4%B8%96%E7%95%8C/" rel="tag"># 极世界</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/02/22/%E9%9D%A2%E7%BB%8F01/" rel="prev" title="面经01">
+      <i class="fa fa-chevron-left"></i> 面经01
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%86%85%E5%AE%B9"><span class="nav-number">1.</span> <span class="nav-text">内容</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#EF%E6%95%B0%E6%8D%AE%E5%BA%93EntityFrameworkCore"><span class="nav-number">2.</span> <span class="nav-text">EF数据库EntityFrameworkCore</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C"><span class="nav-number">3.</span> <span class="nav-text">网络</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%94%A8%E6%88%B7%E7%B3%BB%E7%BB%9F"><span class="nav-number">4.</span> <span class="nav-text">用户系统</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%87%E7%A8%8B%EF%BC%9A"><span class="nav-number">4.1.</span> <span class="nav-text">过程：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%92%E8%89%B2%E9%80%89%E6%8B%A9"><span class="nav-number">5.</span> <span class="nav-text">角色选择</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Render-Texture"><span class="nav-number">5.1.</span> <span class="nav-text">Render Texture</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%8D%E5%8A%A1%E9%85%8D%E7%BD%AE"><span class="nav-number">5.2.</span> <span class="nav-text">服务配置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%9B%E5%85%A5%E4%B8%BB%E5%9F%8E"><span class="nav-number">6.</span> <span class="nav-text">进入主城</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9B%E5%85%A5%E4%B8%BB%E5%9F%8E%E6%B5%81%E7%A8%8B"><span class="nav-number">6.1.</span> <span class="nav-text">进入主城流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A6%BB%E5%BC%80%E6%B8%B8%E6%88%8F%E6%B5%81%E7%A8%8B"><span class="nav-number">6.2.</span> <span class="nav-text">离开游戏流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E8%B1%A1%E5%85%B3%E7%B3%BB"><span class="nav-number">6.3.</span> <span class="nav-text">对象关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#this%E7%B4%A2%E5%BC%95%E5%99%A8"><span class="nav-number">6.4.</span> <span class="nav-text">this索引器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%80%E6%9D%A1%E9%9D%A2%E5%90%91%E6%91%84%E5%83%8F%E6%9C%BA"><span class="nav-number">6.5.</span> <span class="nav-text">血条面向摄像机</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B0%8F%E5%9C%B0%E5%9B%BE"><span class="nav-number">7.</span> <span class="nav-text">小地图</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%81%E7%A8%8B%EF%BC%9A"><span class="nav-number">7.1.</span> <span class="nav-text">流程：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%B0%E5%9B%BE%E5%88%B6%E4%BD%9C%E6%96%B9%E6%A1%88"><span class="nav-number">7.2.</span> <span class="nav-text">地图制作方案</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A7%BB%E5%8A%A8%E5%90%8C%E6%AD%A5"><span class="nav-number">8.</span> <span class="nav-text">移动同步</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%81%E7%A8%8B"><span class="nav-number">8.1.</span> <span class="nav-text">流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8A%B6%E6%80%81%E5%90%8C%E6%AD%A5%E5%92%8C%E5%B8%A7%E5%90%8C%E6%AD%A5"><span class="nav-number">8.2.</span> <span class="nav-text">状态同步和帧同步</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9C%B0%E5%9B%BE%E4%BC%A0%E9%80%81"><span class="nav-number">9.</span> <span class="nav-text">地图传送</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B5%81%E7%A8%8B-1"><span class="nav-number">10.</span> <span class="nav-text">流程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%BB%E6%A8%A1%E5%9E%8B%E8%BE%B9%E7%95%8C"><span class="nav-number">10.1.</span> <span class="nav-text">画模型边界</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%BC%E5%87%BA%E4%BC%A0%E9%80%81%E7%82%B9"><span class="nav-number">10.2.</span> <span class="nav-text">导出传送点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#UI%E6%A1%86%E6%9E%B6"><span class="nav-number">11.</span> <span class="nav-text">UI框架</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E8%AE%A1"><span class="nav-number">11.1.</span> <span class="nav-text">设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UI%E5%88%86%E7%B1%BB"><span class="nav-number">11.2.</span> <span class="nav-text">UI分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B2%92%E5%AD%90%E7%89%B9%E6%95%88"><span class="nav-number">11.3.</span> <span class="nav-text">粒子特效</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Npc%E7%B3%BB%E7%BB%9F"><span class="nav-number">12.</span> <span class="nav-text">Npc系统</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%81%93%E5%85%B7%E7%B3%BB%E7%BB%9F"><span class="nav-number">13.</span> <span class="nav-text">道具系统</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%81%E7%A8%8B-2"><span class="nav-number">13.1.</span> <span class="nav-text">流程</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%83%8C%E5%8C%85%E7%B3%BB%E7%BB%9F"><span class="nav-number">14.</span> <span class="nav-text">背包系统</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E8%AE%A1%E6%B5%81%E7%A8%8B"><span class="nav-number">14.1.</span> <span class="nav-text">设计流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TabView-TabButton"><span class="nav-number">14.2.</span> <span class="nav-text">TabView  TabButton</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%95%86%E5%BA%97%E7%B3%BB%E7%BB%9F"><span class="nav-number">15.</span> <span class="nav-text">商店系统</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E8%AE%A1%E6%B5%81%E7%A8%8B-1"><span class="nav-number">15.1.</span> <span class="nav-text">设计流程</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A3%85%E5%A4%87%E7%B3%BB%E7%BB%9F"><span class="nav-number">16.</span> <span class="nav-text">装备系统</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E8%AE%A1%E6%B5%81%E7%A8%8B-2"><span class="nav-number">16.1.</span> <span class="nav-text">设计流程</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%BB%E5%8A%A1%E7%B3%BB%E7%BB%9F"><span class="nav-number">17.</span> <span class="nav-text">任务系统</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E8%AE%A1%E6%B5%81%E7%A8%8B-3"><span class="nav-number">17.1.</span> <span class="nav-text">设计流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ListView-%E5%88%97%E8%A1%A8%E7%BB%84%E4%BB%B6"><span class="nav-number">17.2.</span> <span class="nav-text">ListView 列表组件</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="心梦"
+      src="/images/ailulu.jpg">
+  <p class="site-author-name" itemprop="name">心梦</p>
+  <div class="site-description" itemprop="description">heart_dream</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">62</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/heartdream520" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;heartdream520" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.acwing.com/user/myspace/index/60784/" title="Acwing → https:&#x2F;&#x2F;www.acwing.com&#x2F;user&#x2F;myspace&#x2F;index&#x2F;60784&#x2F;" rel="noopener" target="_blank"><i class="fab fa-Acwing fa-fw"></i>Acwing</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://codeforces.com/profile/Heart_dream" title="Codeforces → https:&#x2F;&#x2F;codeforces.com&#x2F;profile&#x2F;Heart_dream" rel="noopener" target="_blank"><i class="fab fa-codeforces fa-fw"></i>Codeforces</a>
+      </span>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">心梦</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">199k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">3:01</span>
+</div>
+
+
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
