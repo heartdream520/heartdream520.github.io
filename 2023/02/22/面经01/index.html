@@ -31,8 +31,11 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/images/image-20230301175833852.png">
 <meta property="og:image" content="http://example.com/images/image-20230301175922382.png">
+<meta property="og:image" content="http://example.com/images/image-20230314122317605.png">
+<meta property="og:image" content="http://example.com/images/image-20230314122923569.png">
+<meta property="og:image" content="http://example.com/images/image-20230314122937078.png">
 <meta property="article:published_time" content="2023-02-22T13:33:56.000Z">
-<meta property="article:modified_time" content="2023-03-02T14:05:05.880Z">
+<meta property="article:modified_time" content="2023-03-14T08:04:14.866Z">
 <meta property="article:author" content="心梦">
 <meta property="article:tag" content="面经">
 <meta name="twitter:card" content="summary">
@@ -205,7 +208,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-03-02 22:05:05" itemprop="dateModified" datetime="2023-03-02T22:05:05+08:00">2023-03-02</time>
+                <time title="修改时间：2023-03-14 16:04:14" itemprop="dateModified" datetime="2023-03-14T16:04:14+08:00">2023-03-14</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -223,14 +226,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>9.4k</span>
+              <span>16k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>9 分钟</span>
+              <span>14 分钟</span>
             </span>
 
         </div>
@@ -412,6 +415,168 @@
 
 <h1 id="动态加载资源的方式"><a href="#动态加载资源的方式" class="headerlink" title="动态加载资源的方式"></a>动态加载资源的方式</h1><p>instantiate：最简单的一种方式，以实例化的方式动态生成一个物体</p>
 <p>Assetsbundle：将资源打成 AssetBundle 放在服务器或者本地磁盘 ，然后使用WWW模板get下来，</p>
+<h1 id="协程"><a href="#协程" class="headerlink" title="协程"></a>协程</h1><p>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/Sea3752/article/details/127605488">https://blog.csdn.net/Sea3752/article/details/127605488</a></p>
+<h2 id="启动协程"><a href="#启动协程" class="headerlink" title="启动协程"></a>启动协程</h2><pre><code>    1. Startcoroutine (string methodName）:通过协程的方法名(字符串形式)启动。
+
+    2. StartCoroutine (string methodName，object values):带参数的通过方法名(字符串形式)进行调用。
+
+    3. Startcoroutine (IEnumerator routine）:通过调用方法的形式启动。
+</code></pre>
+<h2 id="停止携程"><a href="#停止携程" class="headerlink" title="停止携程"></a>停止携程</h2><pre><code>    1.stopcoroutine (string methodName):通过方法名（字符串）来关闭协程。
+
+    2.stopCoroutine(IEnumerator routine):通过调用方法的形式来关闭协程。
+
+    3.stopCoroutine(Coroutine routine):通过指定的协程来关闭。
+
+    4.stopAllCoroutine() 的作用是停止所有该脚本中启动的协程。
+</code></pre>
+<p>void StopTest()</p>
+<pre><code>&#123;
+ 
+    //第一种方式：通过调用方法的形式来关闭协程
+ 
+    StopCoroutine(Test1());
+
+
+
+
+    //第二种方式：通过方法名（字符串）来关闭协程
+ 
+    StopCoroutine(&quot;Test1&quot;);
+
+
+
+
+    //第三种方式：通过指定的协程来关闭
+ 
+    Coroutine a = StartCoroutine(Test1());
+ 
+    StopCoroutine(a);
+
+
+
+
+    //关闭该脚本中启动的所有协程！
+ 
+    StopAllCoroutines();
+ 
+&#125;
+</code></pre>
+<h2 id="底层原理"><a href="#底层原理" class="headerlink" title="底层原理"></a>底层原理</h2><p>协程是通过迭代器来实现功能的，通过关键字IEnumerator来定义一个迭代方法。</p>
+<p>注意：提起IEnumerator就会想到IEnumerable，可千万不能搞混了!</p>
+<p>StartCoroutine 接受到的是一个 IEnumerator ，这是个接口，并且是枚举器或迭代器的意思。</p>
+<p>yield 是 C#的一个关键字，也是一个语法糖，背后的原理会生成一个类，并且也是一个枚举器，而且不同于 return，yield 可以出现多次。</p>
+<p>yield 实际上就是返回一次结果，因为我们要一次一次枚举一个值出来，所以多个 yield 其实是个状态模式，第一个 yield 是状态 1，第二个 yield 是状态 2，每次访问时会基于状态知道当前应该执行哪一个 yield，取得哪一个值。</p>
+<p>从程序的角度讲，协程的核心就是迭代器。想要定义一个协程方法有两个因素，第一：方法的返回值为 IEnumerator 。第二，方法中有 yield关键字。当代码满足以上两个条件时，此方法的执行就具有了迭代器的特质，其核心就是 MoveNext方法。方法内的内容将会被分成两部分：yield 之前的代码和 yield 之后的代码。yield之前的代码会在第一次执行MoveNext时执行， yield之后的代码会在第二次执行MoveNext方法时执行。而在Unity中，MoveNext的执行时机是以帧为单位的，无论你是设置了延迟时间，还是通过按钮调用MoveNext，亦或是根本没有设置执行条件，Unity都会在每一帧的生命周期中判断当前帧是否满足当前协程所定义的条件，一旦满足，当前帧就会抽出CPU时间执行你所定义的协程迭代器的MoveNext。注意，只要方法中有yield语句，那么方法的返回值就必须是 IEnumerator ，不然无法通过编译。</p>
+<h1 id="yield-return"><a href="#yield-return" class="headerlink" title="yield return"></a>yield return</h1><p><img src="/../images/image-20230314122317605.png" alt="image-20230314122317605"></p>
+<h1 id=""><a href="#" class="headerlink" title=""></a></h1><h1 id="Invoke与InvokeRepeating"><a href="#Invoke与InvokeRepeating" class="headerlink" title="Invoke与InvokeRepeating"></a>Invoke与InvokeRepeating</h1><ol>
+<li><p>Invoke<br> Invoke() 方法是 Unity3D 的一种委托机制</p>
+<p> 如： Invoke(“Test”, 5);   它的意思是：5 秒之后调用 Test() 方法；</p>
+</li>
+</ol>
+<p> 使用 Invoke() 方法需要注意 3点：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1 ：它应该在 脚本的生命周期里的（Start、Update、OnGUI、FixedUpdate、LateUpdate）中被调用；</span><br><span class="line"></span><br><span class="line">2：Invoke(); 不能接受含有参数的方法；</span><br><span class="line"></span><br><span class="line">3：在 Time.ScaleTime = 0; 时， Invoke() 无效，因为它不会被调。</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li><p>InvokeRepeating<br> InvokeRepeating(“Test”, 2 , 3); </p>
+<p> 这个方法的意思是指：2 秒后调用 Test() 方法，并且之后每隔 3 秒调用一次 Test() 方法。</p>
+<p> 被激活时设置了，但是此时将引擎对象设置为false,还会被执行。</p>
+</li>
+</ol>
+<p>还有三个重要的方法：</p>
+<p>IsInvoking：用来判断某方法是否被延时，即将执行。<br>CancelInvoke()  : 停止当前脚本中所有的Invoke和InvokeRepeating方法。<br>CancelInvoke(“MethodName”) ： 停止当前脚本某个Invoke和InvokeRepeating方法。<br>    3. Invoke与协程的区别<br>        Invoke方法：执行没有被挂起，相当于设置完被调用函数的执行时间后即时向下执行。应用到每隔一段时间执行某个函数很方便。</p>
+<pre><code>    Coroutine方法：新开一条执行序列（跟新建线程差不多）并挂起，等待中断指令结束。开销不大。当需要挂起当前执行时使用。
+
+    协程的效率比Invoke高。
+
+4.  正在运行的脚本，隐藏物体与禁止脚本导致OnDisable，Invoke与coroutine是否正常运行？
+</code></pre>
+<p>代码：</p>
+<p><img src="/../images/image-20230314122923569.png" alt="image-20230314122923569"></p>
+<p><img src="/../images/image-20230314122937078.png" alt="image-20230314122937078"></p>
+<p>  原因：</p>
+<p>​    因为游戏物体隐藏了，一切与游戏物体相关的脚本生命周期都会停止，协程自然也会停止 ；    </p>
+<p>​    如果游戏对象没有隐藏，只是将脚本隐藏，游戏对象照样可以通过反射获取协程迭代器对象继续协程的执行。</p>
+<h1 id="对象的移动方式"><a href="#对象的移动方式" class="headerlink" title="对象的移动方式"></a>对象的移动方式</h1><h2 id="Transform"><a href="#Transform" class="headerlink" title="Transform"></a>Transform</h2><h3 id="transform-position"><a href="#transform-position" class="headerlink" title="transform.position"></a>transform.position</h3><p>直接<code>transform.position</code>向量相加</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">transform.position += transform.forward * Time.deltaTime * speed;  </span><br></pre></td></tr></table></figure>
+
+<h3 id="Transform-Translate"><a href="#Transform-Translate" class="headerlink" title="Transform.Translate"></a>Transform.Translate</h3><p>每秒向某个方向移动多长距离，但当需要坐标转换时，使用此方法可省略转换步骤。</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">transform.Translate(Vector3.forward * Time.deltaTime * speed);</span><br><span class="line"></span><br><span class="line">transform.Translate(transform.forward*Time.deltaTime*mMoveSpeed, Space.World)</span><br></pre></td></tr></table></figure>
+
+<h2 id="Vector3"><a href="#Vector3" class="headerlink" title="Vector3"></a>Vector3</h2><p> Vector3 类型可以存储物体的位置、方向。 V3 自带的类方法通过对位置的一些运算得到相对平滑的参数，其移动本质还是修改物体的 position。</p>
+<h3 id="Vector3-Lerp-插值移动"><a href="#Vector3-Lerp-插值移动" class="headerlink" title="Vector3.Lerp 插值移动"></a>Vector3.Lerp 插值移动</h3><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Vector3 lerp = Vector3.Lerp(transform.position, target.position, Time.deltaTime * speed);</span><br><span class="line"> </span><br><span class="line">transform.position = lerp;</span><br></pre></td></tr></table></figure>
+
+<h3 id="vector3-slerp"><a href="#vector3-slerp" class="headerlink" title="vector3.slerp"></a>vector3.slerp</h3><p> 两个向量之间的球形（弧线）差值适用于从某点移动到某点（或跟随某物体），缓动效果，当前位置与目标位置距离越远，效果越明显。非匀速。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Vector3 slerp =  Vector3.Slerp(transform.position, target.position, Time.deltaTime * speed);</span><br><span class="line"> </span><br><span class="line">transform.position = slerp;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Vector3-MoveTowards"><a href="#Vector3-MoveTowards" class="headerlink" title="Vector3.MoveTowards"></a>Vector3.MoveTowards</h3><p>向某物体以某速度匀速移动</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Vector3 movetowards = Vector3.MoveTowards(transform.position, target.position, Time.deltaTime * speed);</span><br><span class="line">transform.position = movetowards;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Vector3-SmoothDamp"><a href="#Vector3-SmoothDamp" class="headerlink" title="Vector3.SmoothDamp"></a>Vector3.SmoothDamp</h3><p>官方翻译为：“平滑阻尼”，无比丝滑的从 A 移动到 B 点，速度可控，比较适用于摄像机跟随，Lerp 也比较适用于摄像机跟随，这俩的区别在于</p>
+<p>SmoothDamp(当前位置(V3)，目标位置(V3)，当前速度(ref:V3)，所需时间(float)，最大速度(float，可选)，Time.deltaTime(默认)(可选))<br>        当前速度：一开始赋值为 0，每次调用该方法自动修改此参数，注意设为全局变量，且为 ref</p>
+<p>​    所需时间：该值越小，越快抵达目标。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Vector3 smoothdamp = Vector3.SmoothDamp(transform.position, target.position, ref currentVelocity, smoothTime);</span><br><span class="line"> </span><br><span class="line">transform.position = smoothdamp;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Rigidbody"><a href="#Rigidbody" class="headerlink" title="Rigidbody"></a>Rigidbody</h2><p> Rigidbody 组件通过物理模拟来控制一个物体的位置，当使用此组件控制物体移动时，应在 FixedUpdate 函数中更新数据，该方法会在每一次执行物理模拟前被调用，这样要比 Update 函数更加精确。</p>
+<h3 id="AddForce"><a href="#AddForce" class="headerlink" title="AddForce"></a>AddForce</h3><p> 添加一个方向的力到刚体，刚体将开始移动，这种方式适合模拟外力作用下的刚体运动，如子弹。但注意，此力是累加的，不适合重复施加力来模拟物体！</p>
+<p>AddForce(有方向的力(V3)，力的模式(ForceMode,默认：ForceMode.Force))</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ForceMode(力的模式):</span><br><span class="line">Force(可持续的力，受质量影响)</span><br><span class="line">Acceleration(可持续的加速度，不受质量影响)</span><br><span class="line">Impulse(一个瞬间冲击力，受质量影响)</span><br><span class="line">VelocityChange(一个瞬间速度变化，不受质量影响)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Vector3 force = <span class="keyword">new</span> Vector3(<span class="number">0</span>, <span class="number">0</span>, forceNumber);</span><br><span class="line"><span class="comment">//刚体组件添加力 </span></span><br><span class="line">rig.AddForce(force, ForceMode.Force);</span><br></pre></td></tr></table></figure>
+
+<p>让addforce后的物体立即停下：velocity.zero &#x3D; 0</p>
+<h3 id="MovePosition"><a href="#MovePosition" class="headerlink" title="MovePosition"></a>MovePosition</h3><p>将刚体移动到某个位置，受刚体的影响</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rig.MovePosition(transform.position + speed * Time.deltaTime);</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Velocity"><a href="#Velocity" class="headerlink" title="Velocity"></a>Velocity</h3><p> 瞬间给一个物体恒定的速度，将该物体提升到这个速度，保持。相比较 AddForce 更加适合跳跃功能。每次跳跃都是恒定高度。做跳跃的话：</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> Vector3 high = <span class="keyword">new</span> Vector3(<span class="number">0</span>, <span class="number">0</span>, <span class="number">10</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> Rigidbody rig; <span class="comment">//获取当前物体的刚体组件</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">FixedUpdate</span>()</span> &#123;</span><br><span class="line"></span><br><span class="line">    rig.velocity += high * Time.deltaTime;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Character-Controller"><a href="#Character-Controller" class="headerlink" title="Character Controller"></a>Character Controller</h2><p>  角色控制器顾名思义，是 Unity 推出的特别用于角色移动的组件，使用角色控制器的物体有刚体的效果，但不会翻滚（意思是运动仅受限于碰撞体，不受其他因素影响），很适合角色移动。还可以设置斜坡参数，一定坡度自动抬升，本身也是个碰撞体。</p>
+<h3 id="SimpleMove"><a href="#SimpleMove" class="headerlink" title="SimpleMove"></a>SimpleMove</h3><pre><code>以一定速度移动角色，以秒为单位，无需乘以时间，具备重力。
+</code></pre>
+<p>SimpleMove(有方向的力(V3))<br> public float speed &#x3D; 5;</p>
+<pre><code> public CharacterController cc; //获取当前物体的刚体组件
+ 
+ void Update() &#123;
+ 
+     cc.SimpleMove(transform.forward * speed);
+</code></pre>
+<p>}</p>
+<h3 id="Move"><a href="#Move" class="headerlink" title="Move"></a>Move</h3><pre><code>以一定速度移动角色,不具备重力，需要自行计算下落
+</code></pre>
+<p>Move(有方向的力(V3))<br>public float speed &#x3D; 5;</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> CharacterController cc; <span class="comment">//获取当前物体的刚体组件</span></span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Update</span>()</span> </span><br><span class="line">&#123;</span><br><span class="line">    cc.Move(transform.forward * speed * Time.deltaTime);</span><br><span class="line"><span class="comment">//按帧移动，用附加的CharacterController组件来提供游戏对象的移动。因为这里移动不受重力影响，所以加一个向下的移动来模拟重力。</span></span><br><span class="line"> 	mCharacterController.Move(-transform.up * Time.deltaTime *mMoveSpeed);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="获取游戏对象的方法"><a href="#获取游戏对象的方法" class="headerlink" title="获取游戏对象的方法"></a>获取游戏对象的方法</h1><h2 id="用Find查询"><a href="#用Find查询" class="headerlink" title="用Find查询"></a>用Find查询</h2><p>​        GameObject.Find()通过对象名称(Find方法)</p>
+<pre><code>    Transform.Find()通过对象名称(Find方法)
+
+    例子：
+</code></pre>
+<p>GameObejct go &#x3D; GameObject.Find(“对象名”).GetComponent&lt;获取对象上面的组件&gt;();</p>
+<h2 id="用标签-Tag"><a href="#用标签-Tag" class="headerlink" title="用标签 Tag"></a>用标签 Tag</h2><pre><code>    GameObject.FindWithTag 通过标签获取单个游戏对象(FindWithTag方法)。
+
+    GameObject.FindGameObjectWithTag()通过标签获取单个游戏对象（FindGameObjectWithTag方法)。
+
+    例子：
+</code></pre>
+<p>GameObejct go &#x3D; GameObject.FindGameObjectWithTag(“对象设置的tag值”).GetComponent&lt;获取对象上面的组件或者脚本&gt;();</p>
+<h2 id="用Type"><a href="#用Type" class="headerlink" title="用Type"></a>用Type</h2><pre><code>    GameObject.FindObjectOfType()通过类型获取单个游戏对象(FindObjectOfType方法)
+
+    GameObject.FindObjectsOfType()通过类型获取多个游戏对象(FindObjectsOfType方法)7. transform.GetChild()通过索引获取单个游戏对象
+
+    例子：
+</code></pre>
+<p>m_Palyer &#x3D; GameObject.FindObjectOfType&lt;直接获取类：class&gt;();</p>
+<h1 id="Ugui-x2F-Ngui渲染顺序"><a href="#Ugui-x2F-Ngui渲染顺序" class="headerlink" title="Ugui&#x2F;Ngui渲染顺序"></a>Ugui&#x2F;Ngui渲染顺序</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">不同的 Camera 的 Depth，值越大越后渲染</span><br><span class="line"></span><br><span class="line">相同 Camera 下的不同 SortingLayer</span><br><span class="line"></span><br><span class="line">相同 SortingLayer 下的不同 Z 轴/Order in Layer</span><br><span class="line"></span><br><span class="line">Camera 模式下渲染顺序：基于同 Layer 同 OrderInLayer，因为渲染顺序优先 级是：</span><br><span class="line"></span><br><span class="line">camera 的 depth&gt;Layer&gt;OrderInLayer&gt;Z 轴，注意 UI 的渲染顺序最后是OrderInLayer&gt;transform 的层级</span><br></pre></td></tr></table></figure>
+
+<h1 id="Mask"><a href="#Mask" class="headerlink" title="Mask"></a>Mask</h1><h2 id="Mask的实现原理："><a href="#Mask的实现原理：" class="headerlink" title="Mask的实现原理："></a>Mask的实现原理：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Mask会赋予Image一个特殊的材质，这个材质会给Image的每个像素点进行标记，将标记结果存放在一个缓存内（这个缓存叫做 Stencil Buffer）</span><br><span class="line">当子级UI进行渲染的时候会去检查这个 Stencil Buffer内的标记，如果当前覆盖的区域存在标记（即该区域在Image的覆盖范围内），进行渲染，否则不渲染。</span><br></pre></td></tr></table></figure>
+
+<p>​        详细请看：<br>【Unity源码学习】遮罩：Mask与Mask2D - 知乎<br>前言UGUI的裁切分为Mask和Mask2D两种目录Mask原理分析RectMask2D原理分析RectMask2D和Mask的性能区分 一、Mask原理分析 Mask：IMaskable，IMaterialModifier我们先来看Mask。它可以给Mask指定一张裁切图裁切子元素…<br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/136505882">https://zhuanlan.zhihu.com/p/136505882</a></p>
+<h1 id="动态加载资源的方式-1"><a href="#动态加载资源的方式-1" class="headerlink" title="动态加载资源的方式"></a>动态加载资源的方式</h1><h2 id="Assetsbundle"><a href="#Assetsbundle" class="headerlink" title="Assetsbundle"></a>Assetsbundle</h2><p>​    即将资源打成asset bundle放在服务器或本地磁盘，然后使用WWW模块get 下来，然后从这个bundle中load某个object,unity官方推荐也是绝大多数商业化项目使用的一种方式。</p>
+<h2 id="Resource-Load"><a href="#Resource-Load" class="headerlink" title="Resource.Load"></a>Resource.Load</h2><p>​    可以直接load并返回某个类型的Object，前提是要把这个资源放在Resource命名的文件夹下，Unity不管有没有场景引用，都会将其全部打入到安装包中</p>
+<h2 id="AssetDatabase-loadasset"><a href="#AssetDatabase-loadasset" class="headerlink" title="AssetDatabase.loadasset"></a>AssetDatabase.loadasset</h2><p>​    这种方式只在editor范围内有效，游戏运行时没有这个函数，它通常是在开发中调试用的。</p>
 
     </div>
 
@@ -495,7 +660,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%86%85%E5%AE%B9"><span class="nav-number">1.</span> <span class="nav-text">内容</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B3%9B%E5%9E%8B%E5%9C%A8unity%E7%9A%84%E5%BA%94%E7%94%A8"><span class="nav-number">2.</span> <span class="nav-text">泛型在unity的应用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B3%E4%BA%8EUnity3D%E7%9A%84%E5%9B%9B%E7%A7%8D%E5%B8%B8%E7%94%A8%E7%81%AF%E5%85%89"><span class="nav-number">3.</span> <span class="nav-text">关于Unity3D的四种常用灯光</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E5%90%91%E5%85%89"><span class="nav-number">3.1.</span> <span class="nav-text">定向光</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%82%B9%E5%85%89%E6%BA%90"><span class="nav-number">3.2.</span> <span class="nav-text">点光源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%81%9A%E5%85%89%E7%81%AF"><span class="nav-number">3.3.</span> <span class="nav-text">聚光灯</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8C%BA%E5%9F%9F%E5%85%89"><span class="nav-number">3.4.</span> <span class="nav-text">区域光</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#unity%E5%8A%A8%E7%94%BB"><span class="nav-number">4.</span> <span class="nav-text">unity动画</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#IK"><span class="nav-number">4.1.</span> <span class="nav-text">IK</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%80%BC%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B"><span class="nav-number">5.</span> <span class="nav-text">值类型和引用类型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#C-%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="nav-number">6.</span> <span class="nav-text">C#修饰符</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ArrayList%E5%92%8CList%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">7.</span> <span class="nav-text">ArrayList和List的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AE%80%E8%BF%B0GC%E4%BA%A7%E7%94%9F%E7%9A%84%E5%8E%9F%E5%9B%A0%EF%BC%8C%E5%A6%82%E4%BD%95%E9%81%BF%E5%85%8DGC"><span class="nav-number">8.</span> <span class="nav-text">简述GC产生的原因，如何避免GC</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Unity%E7%9A%84GC%E6%9C%BA%E5%88%B6"><span class="nav-number">8.1.</span> <span class="nav-text">Unity的GC机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E4%B8%AA%E6%AD%A5%E9%AA%A4%EF%BC%9A"><span class="nav-number">8.2.</span> <span class="nav-text">四个步骤：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E8%B1%A1%E4%BB%A3%E9%BE%84"><span class="nav-number">8.3.</span> <span class="nav-text">对象代龄</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%81%BF%E5%85%8DGC"><span class="nav-number">8.4.</span> <span class="nav-text">避免GC</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#class%E5%92%8Cstruct%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">9.</span> <span class="nav-text">class和struct的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8C%87%E9%92%88%E5%92%8C%E5%BC%95%E7%94%A8%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">10.</span> <span class="nav-text">指针和引用的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A4%9A%E6%80%81%E7%9A%84%E6%84%8F%E4%B9%89"><span class="nav-number">11.</span> <span class="nav-text">多态的意义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%8D%E5%AE%89%E5%85%A8%E4%BB%A3%E7%A0%81%E5%92%8C%E9%9D%9E%E6%89%98%E7%AE%A1%E4%BB%A3%E7%A0%81"><span class="nav-number">12.</span> <span class="nav-text">不安全代码和非托管代码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Net%E5%92%8CMono%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="nav-number">13.</span> <span class="nav-text">.Net和Mono的关系</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8E%A5%E5%8F%A3%E5%92%8C%E5%A7%94%E6%89%98"><span class="nav-number">14.</span> <span class="nav-text">接口和委托</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ref%E5%92%8Cout"><span class="nav-number">15.</span> <span class="nav-text">ref和out</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JIT%E5%92%8CAOT%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">16.</span> <span class="nav-text">JIT和AOT的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A7%94%E6%89%98%E5%92%8C%E4%BA%8B%E4%BB%B6%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">17.</span> <span class="nav-text">委托和事件的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#c-EventArgs%E7%9A%84%E4%BD%BF%E7%94%A8%EF%BC%88%E4%BA%8B%E4%BB%B6%E5%8F%82%E6%95%B0%EF%BC%89"><span class="nav-number">18.</span> <span class="nav-text">c#EventArgs的使用（事件参数）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#string%EF%BC%8CstringBuilder%EF%BC%8CstringBuffer"><span class="nav-number">19.</span> <span class="nav-text">string，stringBuilder，stringBuffer</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%93%88%E5%B8%8C%E8%A1%A8%E5%92%8C%E5%AD%97%E5%85%B8%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">20.</span> <span class="nav-text">哈希表和字典的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#image%E5%92%8CRawimage"><span class="nav-number">21.</span> <span class="nav-text">image和Rawimage</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A2%B0%E6%92%9E%E5%99%A8%E8%A7%A6%E5%8F%91%E5%99%A8"><span class="nav-number">22.</span> <span class="nav-text">碰撞器触发器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%82%B9%E4%B9%98%E5%8F%89%E4%B9%98"><span class="nav-number">23.</span> <span class="nav-text">点乘叉乘</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFLightMap"><span class="nav-number">24.</span> <span class="nav-text">什么是LightMap</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%9B%E5%85%83%E6%95%B0%E5%AF%B9%E6%AC%A7%E6%8B%89%E8%A7%92%E7%9A%84%E4%BC%98%E7%82%B9"><span class="nav-number">25.</span> <span class="nav-text">四元数对欧拉角的优点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Addcomponent%E5%90%8E%E5%93%AA%E4%B8%AA%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%87%BD%E6%95%B0%E4%BC%9A%E8%A2%AB%E8%B0%83%E7%94%A8"><span class="nav-number">26.</span> <span class="nav-text">Addcomponent后哪个生命周期函数会被调用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B1%82%E5%89%94%E9%99%A4LayerMask%EF%BC%88%E5%9B%BE%E5%B1%82%E6%A8%A1%E6%9D%BF%EF%BC%89"><span class="nav-number">27.</span> <span class="nav-text">层剔除LayerMask（图层模板）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E5%9B%BE%E5%B1%82%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">27.1.</span> <span class="nav-text">获取图层的方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B1%82%E5%89%94%E9%99%A4"><span class="nav-number">27.2.</span> <span class="nav-text">层剔除</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%94%BB%E5%B8%83%E7%9A%84%E4%B8%89%E7%A7%8D%E6%A8%A1%E5%BC%8F"><span class="nav-number">28.</span> <span class="nav-text">画布的三种模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CharacterController%E5%92%8Cridebody%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">29.</span> <span class="nav-text">CharacterController和ridebody的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%87%8D%E5%86%99%E5%92%8C%E9%87%8D%E8%BD%BD%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">30.</span> <span class="nav-text">重写和重载的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#unity%E5%B8%B8%E7%94%A8%E7%9A%84%E8%B5%84%E6%BA%90%E8%B7%AF%E5%BE%84"><span class="nav-number">31.</span> <span class="nav-text">unity常用的资源路径</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%AE%89%E5%85%A8%E7%9A%84%E5%9C%A8%E4%B8%8D%E5%90%8C%E7%9A%84%E5%B7%A5%E7%A8%8B%E4%B9%8B%E9%97%B4%E5%AE%89%E5%85%A8%E5%9C%B0%E8%BF%81%E7%A7%BBasset%E6%95%B0%E6%8D%AE"><span class="nav-number">32.</span> <span class="nav-text">如何安全的在不同的工程之间安全地迁移asset数据</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#unity-%E6%95%B0%E6%8D%AE%E4%BF%9D%E5%AD%98%E7%B1%BB-PlayerPrefabs"><span class="nav-number">33.</span> <span class="nav-text">unity 数据保存类 PlayerPrefabs</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E5%8A%A0%E8%BD%BD%E8%B5%84%E6%BA%90%E7%9A%84%E6%96%B9%E5%BC%8F"><span class="nav-number">34.</span> <span class="nav-text">动态加载资源的方式</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%86%85%E5%AE%B9"><span class="nav-number">1.</span> <span class="nav-text">内容</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B3%9B%E5%9E%8B%E5%9C%A8unity%E7%9A%84%E5%BA%94%E7%94%A8"><span class="nav-number">2.</span> <span class="nav-text">泛型在unity的应用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B3%E4%BA%8EUnity3D%E7%9A%84%E5%9B%9B%E7%A7%8D%E5%B8%B8%E7%94%A8%E7%81%AF%E5%85%89"><span class="nav-number">3.</span> <span class="nav-text">关于Unity3D的四种常用灯光</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E5%90%91%E5%85%89"><span class="nav-number">3.1.</span> <span class="nav-text">定向光</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%82%B9%E5%85%89%E6%BA%90"><span class="nav-number">3.2.</span> <span class="nav-text">点光源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%81%9A%E5%85%89%E7%81%AF"><span class="nav-number">3.3.</span> <span class="nav-text">聚光灯</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8C%BA%E5%9F%9F%E5%85%89"><span class="nav-number">3.4.</span> <span class="nav-text">区域光</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#unity%E5%8A%A8%E7%94%BB"><span class="nav-number">4.</span> <span class="nav-text">unity动画</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#IK"><span class="nav-number">4.1.</span> <span class="nav-text">IK</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%80%BC%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B"><span class="nav-number">5.</span> <span class="nav-text">值类型和引用类型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#C-%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="nav-number">6.</span> <span class="nav-text">C#修饰符</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ArrayList%E5%92%8CList%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">7.</span> <span class="nav-text">ArrayList和List的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AE%80%E8%BF%B0GC%E4%BA%A7%E7%94%9F%E7%9A%84%E5%8E%9F%E5%9B%A0%EF%BC%8C%E5%A6%82%E4%BD%95%E9%81%BF%E5%85%8DGC"><span class="nav-number">8.</span> <span class="nav-text">简述GC产生的原因，如何避免GC</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Unity%E7%9A%84GC%E6%9C%BA%E5%88%B6"><span class="nav-number">8.1.</span> <span class="nav-text">Unity的GC机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E4%B8%AA%E6%AD%A5%E9%AA%A4%EF%BC%9A"><span class="nav-number">8.2.</span> <span class="nav-text">四个步骤：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E8%B1%A1%E4%BB%A3%E9%BE%84"><span class="nav-number">8.3.</span> <span class="nav-text">对象代龄</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%81%BF%E5%85%8DGC"><span class="nav-number">8.4.</span> <span class="nav-text">避免GC</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#class%E5%92%8Cstruct%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">9.</span> <span class="nav-text">class和struct的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8C%87%E9%92%88%E5%92%8C%E5%BC%95%E7%94%A8%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">10.</span> <span class="nav-text">指针和引用的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A4%9A%E6%80%81%E7%9A%84%E6%84%8F%E4%B9%89"><span class="nav-number">11.</span> <span class="nav-text">多态的意义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%8D%E5%AE%89%E5%85%A8%E4%BB%A3%E7%A0%81%E5%92%8C%E9%9D%9E%E6%89%98%E7%AE%A1%E4%BB%A3%E7%A0%81"><span class="nav-number">12.</span> <span class="nav-text">不安全代码和非托管代码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Net%E5%92%8CMono%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="nav-number">13.</span> <span class="nav-text">.Net和Mono的关系</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8E%A5%E5%8F%A3%E5%92%8C%E5%A7%94%E6%89%98"><span class="nav-number">14.</span> <span class="nav-text">接口和委托</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ref%E5%92%8Cout"><span class="nav-number">15.</span> <span class="nav-text">ref和out</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JIT%E5%92%8CAOT%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">16.</span> <span class="nav-text">JIT和AOT的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A7%94%E6%89%98%E5%92%8C%E4%BA%8B%E4%BB%B6%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">17.</span> <span class="nav-text">委托和事件的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#c-EventArgs%E7%9A%84%E4%BD%BF%E7%94%A8%EF%BC%88%E4%BA%8B%E4%BB%B6%E5%8F%82%E6%95%B0%EF%BC%89"><span class="nav-number">18.</span> <span class="nav-text">c#EventArgs的使用（事件参数）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#string%EF%BC%8CstringBuilder%EF%BC%8CstringBuffer"><span class="nav-number">19.</span> <span class="nav-text">string，stringBuilder，stringBuffer</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%93%88%E5%B8%8C%E8%A1%A8%E5%92%8C%E5%AD%97%E5%85%B8%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">20.</span> <span class="nav-text">哈希表和字典的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#image%E5%92%8CRawimage"><span class="nav-number">21.</span> <span class="nav-text">image和Rawimage</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A2%B0%E6%92%9E%E5%99%A8%E8%A7%A6%E5%8F%91%E5%99%A8"><span class="nav-number">22.</span> <span class="nav-text">碰撞器触发器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%82%B9%E4%B9%98%E5%8F%89%E4%B9%98"><span class="nav-number">23.</span> <span class="nav-text">点乘叉乘</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFLightMap"><span class="nav-number">24.</span> <span class="nav-text">什么是LightMap</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%9B%E5%85%83%E6%95%B0%E5%AF%B9%E6%AC%A7%E6%8B%89%E8%A7%92%E7%9A%84%E4%BC%98%E7%82%B9"><span class="nav-number">25.</span> <span class="nav-text">四元数对欧拉角的优点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Addcomponent%E5%90%8E%E5%93%AA%E4%B8%AA%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%87%BD%E6%95%B0%E4%BC%9A%E8%A2%AB%E8%B0%83%E7%94%A8"><span class="nav-number">26.</span> <span class="nav-text">Addcomponent后哪个生命周期函数会被调用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B1%82%E5%89%94%E9%99%A4LayerMask%EF%BC%88%E5%9B%BE%E5%B1%82%E6%A8%A1%E6%9D%BF%EF%BC%89"><span class="nav-number">27.</span> <span class="nav-text">层剔除LayerMask（图层模板）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E5%9B%BE%E5%B1%82%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">27.1.</span> <span class="nav-text">获取图层的方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B1%82%E5%89%94%E9%99%A4"><span class="nav-number">27.2.</span> <span class="nav-text">层剔除</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%94%BB%E5%B8%83%E7%9A%84%E4%B8%89%E7%A7%8D%E6%A8%A1%E5%BC%8F"><span class="nav-number">28.</span> <span class="nav-text">画布的三种模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CharacterController%E5%92%8Cridebody%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">29.</span> <span class="nav-text">CharacterController和ridebody的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%87%8D%E5%86%99%E5%92%8C%E9%87%8D%E8%BD%BD%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">30.</span> <span class="nav-text">重写和重载的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#unity%E5%B8%B8%E7%94%A8%E7%9A%84%E8%B5%84%E6%BA%90%E8%B7%AF%E5%BE%84"><span class="nav-number">31.</span> <span class="nav-text">unity常用的资源路径</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%AE%89%E5%85%A8%E7%9A%84%E5%9C%A8%E4%B8%8D%E5%90%8C%E7%9A%84%E5%B7%A5%E7%A8%8B%E4%B9%8B%E9%97%B4%E5%AE%89%E5%85%A8%E5%9C%B0%E8%BF%81%E7%A7%BBasset%E6%95%B0%E6%8D%AE"><span class="nav-number">32.</span> <span class="nav-text">如何安全的在不同的工程之间安全地迁移asset数据</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#unity-%E6%95%B0%E6%8D%AE%E4%BF%9D%E5%AD%98%E7%B1%BB-PlayerPrefabs"><span class="nav-number">33.</span> <span class="nav-text">unity 数据保存类 PlayerPrefabs</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E5%8A%A0%E8%BD%BD%E8%B5%84%E6%BA%90%E7%9A%84%E6%96%B9%E5%BC%8F"><span class="nav-number">34.</span> <span class="nav-text">动态加载资源的方式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%8F%E7%A8%8B"><span class="nav-number">35.</span> <span class="nav-text">协程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8%E5%8D%8F%E7%A8%8B"><span class="nav-number">35.1.</span> <span class="nav-text">启动协程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%81%9C%E6%AD%A2%E6%90%BA%E7%A8%8B"><span class="nav-number">35.2.</span> <span class="nav-text">停止携程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86"><span class="nav-number">35.3.</span> <span class="nav-text">底层原理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#yield-return"><span class="nav-number">36.</span> <span class="nav-text">yield return</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">37.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Invoke%E4%B8%8EInvokeRepeating"><span class="nav-number">38.</span> <span class="nav-text">Invoke与InvokeRepeating</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%A7%BB%E5%8A%A8%E6%96%B9%E5%BC%8F"><span class="nav-number">39.</span> <span class="nav-text">对象的移动方式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Transform"><span class="nav-number">39.1.</span> <span class="nav-text">Transform</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#transform-position"><span class="nav-number">39.1.1.</span> <span class="nav-text">transform.position</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Transform-Translate"><span class="nav-number">39.1.2.</span> <span class="nav-text">Transform.Translate</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vector3"><span class="nav-number">39.2.</span> <span class="nav-text">Vector3</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Vector3-Lerp-%E6%8F%92%E5%80%BC%E7%A7%BB%E5%8A%A8"><span class="nav-number">39.2.1.</span> <span class="nav-text">Vector3.Lerp 插值移动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vector3-slerp"><span class="nav-number">39.2.2.</span> <span class="nav-text">vector3.slerp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Vector3-MoveTowards"><span class="nav-number">39.2.3.</span> <span class="nav-text">Vector3.MoveTowards</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Vector3-SmoothDamp"><span class="nav-number">39.2.4.</span> <span class="nav-text">Vector3.SmoothDamp</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Rigidbody"><span class="nav-number">39.3.</span> <span class="nav-text">Rigidbody</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#AddForce"><span class="nav-number">39.3.1.</span> <span class="nav-text">AddForce</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MovePosition"><span class="nav-number">39.3.2.</span> <span class="nav-text">MovePosition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Velocity"><span class="nav-number">39.3.3.</span> <span class="nav-text">Velocity</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Character-Controller"><span class="nav-number">39.4.</span> <span class="nav-text">Character Controller</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SimpleMove"><span class="nav-number">39.4.1.</span> <span class="nav-text">SimpleMove</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Move"><span class="nav-number">39.4.2.</span> <span class="nav-text">Move</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E6%B8%B8%E6%88%8F%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">40.</span> <span class="nav-text">获取游戏对象的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%A8Find%E6%9F%A5%E8%AF%A2"><span class="nav-number">40.1.</span> <span class="nav-text">用Find查询</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%A8%E6%A0%87%E7%AD%BE-Tag"><span class="nav-number">40.2.</span> <span class="nav-text">用标签 Tag</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%A8Type"><span class="nav-number">40.3.</span> <span class="nav-text">用Type</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Ugui-x2F-Ngui%E6%B8%B2%E6%9F%93%E9%A1%BA%E5%BA%8F"><span class="nav-number">41.</span> <span class="nav-text">Ugui&#x2F;Ngui渲染顺序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Mask"><span class="nav-number">42.</span> <span class="nav-text">Mask</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Mask%E7%9A%84%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86%EF%BC%9A"><span class="nav-number">42.1.</span> <span class="nav-text">Mask的实现原理：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E5%8A%A0%E8%BD%BD%E8%B5%84%E6%BA%90%E7%9A%84%E6%96%B9%E5%BC%8F-1"><span class="nav-number">43.</span> <span class="nav-text">动态加载资源的方式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Assetsbundle"><span class="nav-number">43.1.</span> <span class="nav-text">Assetsbundle</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Resource-Load"><span class="nav-number">43.2.</span> <span class="nav-text">Resource.Load</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AssetDatabase-loadasset"><span class="nav-number">43.3.</span> <span class="nav-text">AssetDatabase.loadasset</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -575,12 +740,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">199k</span>
+    <span title="站点总字数">205k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:01</span>
+    <span title="站点阅读时长">3:07</span>
 </div>
 
 
