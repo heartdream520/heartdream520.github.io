@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"manual"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="内容[TOC]">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网络编程02">
+<meta property="og:url" content="http://example.com/2023/04/07/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B02/index.html">
+<meta property="og:site_name" content="心梦">
+<meta property="og:description" content="内容[TOC]">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-04-07T12:32:40.000Z">
+<meta property="article:modified_time" content="2023-04-11T13:47:59.035Z">
+<meta property="article:author" content="心梦">
+<meta property="article:tag" content="网络编程">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2023/04/07/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B02/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>网络编程02 | 心梦</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="心梦" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">心梦</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-resources">
+
+    <a href="/resources/" rel="section"><i class="download fa-fw"></i>资源</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+
+  <a href="https://github.com/heartdream520" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/07/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B02/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/ailulu.jpg">
+      <meta itemprop="name" content="心梦">
+      <meta itemprop="description" content="heart_dream">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="心梦">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          网络编程02
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-04-07 20:32:40" itemprop="dateCreated datePublished" datetime="2023-04-07T20:32:40+08:00">2023-04-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-04-11 21:47:59" itemprop="dateModified" datetime="2023-04-11T21:47:59+08:00">2023-04-11</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BD%91%E7%BB%9C/" itemprop="url" rel="index"><span itemprop="name">网络</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>5k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>5 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><p>[TOC]</p>
+<span id="more"></span>
+
+<h1 id="ip类和端口类"><a href="#ip类和端口类" class="headerlink" title="ip类和端口类"></a>ip类和端口类</h1><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System.Collections;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> UnityEngine;</span><br><span class="line"><span class="keyword">using</span> System.Net;</span><br><span class="line"><span class="keyword">using</span> UnityEngine.UIElements;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Lesson01</span> : <span class="title">MonoBehaviour</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Start</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//在using System.Net命名空间下</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//ip类和端口类能够用来做什么</span></span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">         * 进行网络通信首先进行网络连接，</span></span><br><span class="line"><span class="comment">         * 要找到对应的设备，ip号和端口号是定位网络设备必不可少的</span></span><br><span class="line"><span class="comment">         * C#中提供了对应的IP和端口相关的类来声明对应的信息</span></span><br><span class="line"><span class="comment">         * 对于之后的网络通信是必不可少的内容</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="comment">//IPAddress类</span></span><br><span class="line">        <span class="built_in">byte</span>[] ip = <span class="keyword">new</span> <span class="built_in">byte</span>[] &#123; <span class="number">128</span>, <span class="number">210</span>, <span class="number">102</span>, <span class="number">22</span> &#125;;</span><br><span class="line">        <span class="comment">//使用byte数组进行初始化</span></span><br><span class="line">        IPAddress iP1=<span class="keyword">new</span> IPAddress(ip);</span><br><span class="line">        <span class="comment">//使用字符串转化进行初始化</span></span><br><span class="line">        IPAddress iP2 = IPAddress.Parse(<span class="string">&quot;128.210.102.22&quot;</span>);</span><br><span class="line">        <span class="comment">//特殊的IP地址</span></span><br><span class="line">        <span class="comment">//127.0.0.1为本机的IP地址;</span></span><br><span class="line">        <span class="comment">//获取可用的IPV6地址</span></span><br><span class="line">        Debug.Log(IPAddress.IPv6Any);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//IPEndPoint类</span></span><br><span class="line">        <span class="comment">//IPEndPoint类将网络端点表示为IP地址和端口号，表现为IP地址和端口号的结合</span></span><br><span class="line">        <span class="comment">//初始化</span></span><br><span class="line">        IPEndPoint endPoint = <span class="keyword">new</span> IPEndPoint(iP2, <span class="number">8080</span>);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="unity的IPAddress类"><a href="#unity的IPAddress类" class="headerlink" title="unity的IPAddress类"></a>unity的IPAddress类</h2><p>在Unity中，<code>IPAddress</code>类表示一个IPv4或IPv6地址。它包含了一系列静态方法，用于创建和解析IP地址。</p>
+<p>以下是<code>IPAddress</code>类的一些常用方法：</p>
+<ul>
+<li><code>Parse(string ipString)</code>：将字符串表示的IP地址解析为<code>IPAddress</code>实例。</li>
+<li><code>TryParse(string ipString, out IPAddress address)</code>：尝试将字符串表示的IP地址解析为<code>IPAddress</code>实例，如果解析成功，则返回<code>true</code>，并将解析结果赋值给<code>address</code>参数；否则返回<code>false</code>。</li>
+<li><code>TryParseExact(string ipString, string format, IFormatProvider provider, out IPAddress address)</code>：尝试将指定格式的字符串表示的IP地址解析为<code>IPAddress</code>实例，如果解析成功，则返回<code>true</code>，并将解析结果赋值给<code>address</code>参数；否则返回<code>false</code>。</li>
+<li><code>Any</code>：表示任意IPv4地址的常量。</li>
+<li><code>Broadcast</code>：表示IPv4广播地址的常量。</li>
+<li><code>IPv6Any</code>：表示任意IPv6地址的常量。</li>
+<li><code>IPv6Loopback</code>：表示IPv6环回地址的常量。</li>
+<li><code>IPv6None</code>：表示无效的IPv6地址的常量。</li>
+<li><code>IsLoopback(IPAddress address)</code>：判断指定的<code>IPAddress</code>实例是否是环回地址。</li>
+<li><code>ToString()</code>：将<code>IPAddress</code>实例转换为字符串。</li>
+</ul>
+<p>例如，可以通过以下方式创建一个IPv4地址的<code>IPAddress</code>实例：</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">csharpCopy code</span><br><span class="line">IPAddress ip = IPAddress.Parse(<span class="string">&quot;192.168.1.1&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>或者创建一个IPv6地址的<code>IPAddress</code>实例：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">csharpCopy code</span><br><span class="line">IPAddress ip = IPAddress.Parse(<span class="string">&quot;2001:0db8:85a3:0000:0000:8a2e:0370:7334&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>在Unity中，<code>IPAddress</code>类通常与<code>IPEndPoint</code>类一起使用，用于创建套接字的绑定地址和远程连接地址。例如：</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">csharpCopy code<span class="comment">// 创建一个UDP套接字并绑定到本地IP地址和端口号</span></span><br><span class="line">IPAddress localIp = IPAddress.Any;</span><br><span class="line">Port localPort = <span class="keyword">new</span> Port(<span class="number">1234</span>);</span><br><span class="line">IPEndPoint localEndpoint = <span class="keyword">new</span> IPEndPoint(localIp, localPort);</span><br><span class="line">Socket socket = <span class="keyword">new</span> Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);</span><br><span class="line">socket.Bind(localEndpoint);</span><br></pre></td></tr></table></figure>
+
+<h2 id="unity-的IPEndPoint类"><a href="#unity-的IPEndPoint类" class="headerlink" title="unity 的IPEndPoint类"></a>unity 的IPEndPoint类</h2><p>在Unity中，<code>IPEndPoint</code>类表示网络通信中的IP地址和端口号的组合。它继承自<code>EndPoint</code>类，可以表示一个IPv4或IPv6地址和对应的端口号。</p>
+<p><code>IPEndPoint</code>类有两个重载的构造函数，分别接受<code>IPAddress</code>和<code>Port</code>实例作为参数，用于创建一个IP地址和端口号的组合。例如：</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">csharpCopy code<span class="comment">// 创建一个IPv4的IPEndPoint实例</span></span><br><span class="line">IPAddress ip = IPAddress.Parse(<span class="string">&quot;192.168.1.1&quot;</span>);</span><br><span class="line">Port port = <span class="keyword">new</span> Port(<span class="number">1234</span>);</span><br><span class="line">IPEndPoint endpoint = <span class="keyword">new</span> IPEndPoint(ip, port);</span><br></pre></td></tr></table></figure>
+
+<p><code>IPEndPoint</code>类还有一些其他的属性和方法，例如：</p>
+<ul>
+<li><code>Address</code>：获取或设置<code>IPEndPoint</code>实例的IP地址。</li>
+<li><code>Port</code>：获取或设置<code>IPEndPoint</code>实例的端口号。</li>
+<li><code>ToString()</code>：返回一个字符串，包含<code>IPEndPoint</code>实例的IP地址和端口号。</li>
+<li><code>Equals(object obj)</code>：判断当前的<code>IPEndPoint</code>实例是否等于指定的对象。</li>
+<li><code>GetHashCode()</code>：获取当前<code>IPEndPoint</code>实例的哈希值。</li>
+</ul>
+<p>在Unity中，可以通过<code>IPEndPoint</code>类来表示套接字的本地绑定地址和远程连接地址，用于创建和连接套接字。例如：</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">csharpCopy code<span class="comment">// 创建一个TCP套接字并连接到远程服务器</span></span><br><span class="line">IPAddress serverIp = IPAddress.Parse(<span class="string">&quot;192.168.1.1&quot;</span>);</span><br><span class="line">Port serverPort = <span class="keyword">new</span> Port(<span class="number">1234</span>);</span><br><span class="line">IPEndPoint serverEndpoint = <span class="keyword">new</span> IPEndPoint(serverIp, serverPort);</span><br><span class="line">Socket socket = <span class="keyword">new</span> Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);</span><br><span class="line">socket.Connect(serverEndpoint);</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="域名解析"><a href="#域名解析" class="headerlink" title="域名解析"></a>域名解析</h1><h2 id="什么是域名解析"><a href="#什么是域名解析" class="headerlink" title="什么是域名解析"></a>什么是域名解析</h2><p>域名解析指的是将人类可读的域名（例如<a target="_blank" rel="noopener" href="http://www.example.com)转换为计算机可读的ip地址(例如192.0.2.1)的过程.由于计算机之间的通信都是通过ip地址进行的,因此当我们在浏览器中输入一个网址时,需要通过域名解析将其转换为对应的ip地址,才能和对应的服务器进行通信.域名解析通常是由域名解析服务商提供的,用户可以在dns服务器上设置自己的域名解析信息./">www.example.com）转换为计算机可读的IP地址（例如192.0.2.1）的过程。由于计算机之间的通信都是通过IP地址进行的，因此当我们在浏览器中输入一个网址时，需要通过域名解析将其转换为对应的IP地址，才能和对应的服务器进行通信。域名解析通常是由域名解析服务商提供的，用户可以在DNS服务器上设置自己的域名解析信息。</a></p>
+<h2 id="什么是DNS服务器"><a href="#什么是DNS服务器" class="headerlink" title="什么是DNS服务器"></a>什么是DNS服务器</h2><p>DNS服务器（Domain Name System Server）是一种特殊的服务器，它的作用是将域名解析为对应的IP地址。当我们在浏览器中输入一个网址时，浏览器会向DNS服务器发送查询请求，请求解析该域名对应的IP地址。DNS服务器会在自己的数据库中查找该域名对应的IP地址，并将结果返回给浏览器。通过这种方式，浏览器才能知道要访问哪个服务器并与其建立连接。</p>
+<p>DNS服务器通常由ISP（Internet Service Provider，互联网服务提供商）或其他机构提供，用户可以在网络设置中配置自己使用的DNS服务器地址。另外，由于DNS查询的速度会影响网页打开的速度，因此一些互联网公司也会部署自己的DNS服务器，以提高用户的网页加载速度和用户体验。</p>
+<h2 id="C-的IPhostentry类"><a href="#C-的IPhostentry类" class="headerlink" title="C#的IPhostentry类"></a>C#的IPhostentry类</h2><p>IPHostEntry类是.NET框架中用于存储主机名和相关的IP地址信息的类。它提供了一些方法来查询主机名和IP地址之间的映射关系。</p>
+<p>IPHostEntry类的主要属性和方法包括：</p>
+<ul>
+<li>AddressList：一个IPAddress数组，它包含了主机名对应的所有IP地址。</li>
+<li>Aliases：一个包含主机别名的字符串数组。</li>
+<li>HostName：包含主机名的字符串。</li>
+</ul>
+<p>使用IPHostEntry类可以轻松地查询主机名和IP地址之间的映射关系。下面是一个使用IPHostEntry类查询本机IP地址的示例：</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Net;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title">Program</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="built_in">string</span>[] args</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">string</span> hostname = <span class="string">&quot;www.google.com&quot;</span>;</span><br><span class="line">        IPHostEntry hostEntry = Dns.GetHostEntry(hostname);</span><br><span class="line">        Console.WriteLine(<span class="string">$&quot;Hostname: <span class="subst">&#123;hostEntry.HostName&#125;</span>&quot;</span>);</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;IP Addresses:&quot;</span>);</span><br><span class="line">        <span class="keyword">foreach</span> (IPAddress address <span class="keyword">in</span> hostEntry.AddressList)</span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(<span class="string">$&quot;- <span class="subst">&#123;address&#125;</span>&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;Aliases:&quot;</span>);</span><br><span class="line">        <span class="keyword">foreach</span> (<span class="built_in">string</span> <span class="keyword">alias</span> <span class="keyword">in</span> hostEntry.Aliases)</span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(<span class="string">$&quot;- <span class="subst">&#123;<span class="keyword">alias</span>&#125;</span>&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>在这个示例中，首先通过<code>Dns.GetHostName()</code>方法获取本机的主机名，然后使用<code>Dns.GetHostEntry()</code>方法查询主机名对应的IP地址信息，最后遍历<code>ipEntry.AddressList</code>数组输出所有IP地址。</p>
+<h2 id="DNS类"><a href="#DNS类" class="headerlink" title="DNS类"></a>DNS类</h2><p>Unity中的DNS类（Domain Name System）用于将域名解析为IP地址。DNS类提供了与域名解析相关的静态方法和属性。</p>
+<p>其中最常用的方法是<code>GetHostEntry(string hostNameOrAddress)</code>，它可以根据提供的域名或IP地址获取主机的详细信息。返回一个<code>IPHostEntry</code>对象，该对象包含了主机的IP地址列表、别名列表、主机名等信息。如果解析失败，则会抛出一个异常。</p>
+<p>以下是一个使用DNS类获取主机信息的例子：</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">csharpCopy codeusing System.Net;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title">Example</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">try</span> </span><br><span class="line">        &#123;</span><br><span class="line">            IPHostEntry host = Dns.GetHostEntry(<span class="string">&quot;www.example.com&quot;</span>);</span><br><span class="line">            Console.WriteLine(<span class="string">&quot;Host name: &quot;</span> + host.HostName);</span><br><span class="line">            Console.WriteLine(<span class="string">&quot;IP addresses:&quot;</span>);</span><br><span class="line">            <span class="keyword">foreach</span> (IPAddress ip <span class="keyword">in</span> host.AddressList)</span><br><span class="line">            &#123;</span><br><span class="line">                Console.WriteLine(<span class="string">&quot;  &quot;</span> + ip);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; </span><br><span class="line">        <span class="keyword">catch</span> (Exception ex) </span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(<span class="string">&quot;Could not resolve host: &quot;</span> + ex.Message);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在这个例子中，我们使用DNS类的<code>GetHostEntry</code>方法获取”<a target="_blank" rel="noopener" href="http://www.example.c椓梃o緁m琠"癎憪,柏憪蹟緁星氝i氋晁p硢ꇁ掤.如果解析失败,则会打印出错误信息./">www.example.com"主机的信息，并打印出主机名和IP地址列表。如果解析失败，则会打印出错误信息。</a></p>
+<h3 id="异步获取"><a href="#异步获取" class="headerlink" title="异步获取"></a>异步获取</h3><p>在Unity中，可以使用DNS类的异步方法来获取主机信息，这样可以避免在主线程中执行阻塞操作。异步方法有两种：<code>GetHostEntryAsync(string hostNameOrAddress)</code>和<code>GetHostAddressesAsync(string hostNameOrAddress)</code>。</p>
+<p><code>GetHostEntryAsync</code>方法返回一个<code>Task&lt;IPHostEntry&gt;</code>，表示获取主机信息的异步操作。可以使用<code>await</code>关键字来等待操作完成，然后访问<code>Result</code>属性获取返回结果。以下是一个使用<code>GetHostEntryAsync</code>方法的例子：</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">csharpCopy codeusing System.Net;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title">Example</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">async</span> Task <span class="title">GetHostInfoAsync</span>(<span class="params"><span class="built_in">string</span> hostname</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">try</span> </span><br><span class="line">        &#123;</span><br><span class="line">            IPHostEntry host = <span class="keyword">await</span> Dns.GetHostEntryAsync(hostname);</span><br><span class="line">            Console.WriteLine(<span class="string">&quot;Host name: &quot;</span> + host.HostName);</span><br><span class="line">            Console.WriteLine(<span class="string">&quot;IP addresses:&quot;</span>);</span><br><span class="line">            <span class="keyword">foreach</span> (IPAddress ip <span class="keyword">in</span> host.AddressList)</span><br><span class="line">            &#123;</span><br><span class="line">                Console.WriteLine(<span class="string">&quot;  &quot;</span> + ip);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; </span><br><span class="line">        <span class="keyword">catch</span> (Exception ex) </span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(<span class="string">&quot;Could not resolve host: &quot;</span> + ex.Message);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">async</span> Task <span class="title">Main</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">await</span> GetHostInfoAsync(<span class="string">&quot;www.example.com&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在这个例子中，我们定义了一个异步方法<code>GetHostInfoAsync</code>，它使用<code>GetHostEntryAsync</code>方法获取主机信息，并打印出主机名和IP地址列表。在<code>Main</code>方法中，我们使用<code>await</code>关键字等待<code>GetHostInfoAsync</code>方法完成。</p>
+<p>另外一个异步方法<code>GetHostAddressesAsync</code>返回一个<code>Task&lt;IPAddress[]&gt;</code>，表示获取IP地址列表的异步操作。可以使用<code>await</code>关键字来等待操作完成，然后访问<code>Result</code>属性获取返回结果。以下是一个使用<code>GetHostAddressesAsync</code>方法的例子：</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">csharpCopy codeusing System.Net;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title">Example</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">async</span> Task <span class="title">GetHostInfoAsync</span>(<span class="params"><span class="built_in">string</span> hostname</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">try</span> </span><br><span class="line">        &#123;</span><br><span class="line">            IPAddress[] addresses = <span class="keyword">await</span> Dns.GetHostAddressesAsync(hostname);</span><br><span class="line">            Console.WriteLine(<span class="string">&quot;IP addresses:&quot;</span>);</span><br><span class="line">            <span class="keyword">foreach</span> (IPAddress ip <span class="keyword">in</span> addresses)</span><br><span class="line">            &#123;</span><br><span class="line">                Console.WriteLine(<span class="string">&quot;  &quot;</span> + ip);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; </span><br><span class="line">        <span class="keyword">catch</span> (Exception ex) </span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(<span class="string">&quot;Could not resolve host: &quot;</span> + ex.Message);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">async</span> Task <span class="title">Main</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">await</span> GetHostInfoAsync(<span class="string">&quot;www.example.com&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在这个例子中，我们定义了一个异步方法<code>GetHostInfoAsync</code>，它使用<code>GetHostAddressesAsync</code>方法获取IP地址列表，并打印出IP地址列表。在<code>Main</code>方法中，我们使用<code>await</code>关键字等待<code>GetHostInfoAsync</code>方法完成。</p>
+<h1 id="序列化和反序列化二进制数据"><a href="#序列化和反序列化二进制数据" class="headerlink" title="序列化和反序列化二进制数据"></a>序列化和反序列化二进制数据</h1><h2 id="BitConverter类"><a href="#BitConverter类" class="headerlink" title="BitConverter类"></a>BitConverter类</h2><p>所处命名空间System</p>
+<p>Unity 的 <code>BitConverter</code> 类提供了一些静态方法，可以将基本数据类型（如整数、浮点数、布尔值等）与字节数组之间进行转换。其主要作用是将数据类型转换成字节数组，或者将字节数组转换成对应的数据类型。</p>
+<p><code>BitConverter</code> 类包含以下方法：</p>
+<ul>
+<li><code>GetBytes(bool value)</code>：将布尔值转换为字节数组。</li>
+<li><code>GetBytes(char value)</code>：将 Unicode 字符转换为字节数组。</li>
+<li><code>GetBytes(double value)</code>：将双精度浮点数转换为字节数组。</li>
+<li><code>GetBytes(float value)</code>：将单精度浮点数转换为字节数组。</li>
+<li><code>GetBytes(int value)</code>：将 32 位有符号整数转换为字节数组。</li>
+<li><code>GetBytes(long value)</code>：将 64 位有符号整数转换为字节数组。</li>
+<li><code>GetBytes(short value)</code>：将 16 位有符号整数转换为字节数组。</li>
+<li><code>ToBoolean(byte[] value, int startIndex)</code>：从指定字节数组的指定位置开始，将字节转换为布尔值。</li>
+<li><code>ToChar(byte[] value, int startIndex)</code>：从指定字节数组的指定位置开始，将两个字节转换为 Unicode 字符。</li>
+<li><code>ToDouble(byte[] value, int startIndex)</code>：从指定字节数组的指定位置开始，将八个字节转换为双精度浮点数。</li>
+<li><code>ToSingle(byte[] value, int startIndex)</code>：从指定字节数组的指定位置开始，将四个字节转换为单精度浮点数。</li>
+<li><code>ToInt32(byte[] value, int startIndex)</code>：从指定字节数组的指定位置开始，将四个字节转换为 32 位有符号整数。</li>
+<li><code>ToInt64(byte[] value, int startIndex)</code>：从指定字节数组的指定位置开始，将八个字节转换为 64 位有符号整数。</li>
+<li><code>ToInt16(byte[] value, int startIndex)</code>：从指定字节数组的指定位置开始，将两个字节转换为 16 位有符号整数。</li>
+</ul>
+<p>需要注意的是，字节数组的大小应该与要转换的数据类型的大小匹配，否则可能会导致转换失败。此外，字节数组的字节顺序（即大小端问题）也需要注意，需要根据实际情况进行转换。</p>
+<h2 id="Encoding类"><a href="#Encoding类" class="headerlink" title="Encoding类"></a>Encoding类</h2><p>所处命名空间System.Text</p>
+<p>在 Unity 中，<code>System.Text.Encoding</code> 类是用于实现字符编码和解码的类，它支持各种不同的编码方式，例如 ASCII、UTF8、UTF16 等。使用该类可以将字符串编码为字节数组或从字节数组解码为字符串。</p>
+<p>下面是 <code>Encoding</code> 类的一些常用方法：</p>
+<ul>
+<li><code>GetEncoding</code>：根据指定编码名称或编码的代码页获取编码实例。</li>
+<li><code>GetBytes</code>：将指定的字符串编码为字节数组。</li>
+<li><code>GetString</code>：将指定的字节数组解码为字符串。</li>
+<li><code>GetChars</code>：将指定的字节数组解码为字符数组。</li>
+<li><code>GetByteCount</code>：计算对指定字符串进行编码所产生的字节数。</li>
+<li><code>GetCharCount</code>：计算对指定字节数组进行解码所产生的字符数。</li>
+</ul>
+<p>例如，以下代码演示了如何使用 <code>Encoding</code> 类将一个字符串转换为字节数组：</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">csharpCopy codeusing System.Text;</span><br><span class="line"></span><br><span class="line"><span class="built_in">string</span> str = <span class="string">&quot;Hello, world!&quot;</span>;</span><br><span class="line"><span class="built_in">byte</span>[] bytes = Encoding.UTF8.GetBytes(str);</span><br></pre></td></tr></table></figure>
+
+<p>在上述代码中，我们使用 <code>Encoding.UTF8</code> 获取 UTF8 编码实例，并使用 <code>GetBytes</code> 方法将字符串 <code>str</code> 编码为一个字节数组 <code>bytes</code>。</p>
+<p>同样，以下代码演示了如何使用 <code>Encoding</code> 类将一个字节数组转换为字符串：</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">csharpCopy codeusing System.Text;</span><br><span class="line"></span><br><span class="line"><span class="built_in">byte</span>[] bytes = <span class="keyword">new</span> <span class="built_in">byte</span>[] &#123; <span class="number">72</span>, <span class="number">101</span>, <span class="number">108</span>, <span class="number">108</span>, <span class="number">111</span>, <span class="number">44</span>, <span class="number">32</span>, <span class="number">119</span>, <span class="number">111</span>, <span class="number">114</span>, <span class="number">108</span>, <span class="number">100</span>, <span class="number">33</span> &#125;;</span><br><span class="line"><span class="built_in">string</span> str = Encoding.UTF8.GetString(bytes);</span><br></pre></td></tr></table></figure>
+
+<p>在上述代码中，我们使用 <code>Encoding.UTF8</code> 获取 UTF8 编码实例，并使用 <code>GetString</code> 方法将字节数组 <code>bytes</code> 解码为一个字符串 <code>str</code>。</p>
+<h2 id="BinaryFormatter类"><a href="#BinaryFormatter类" class="headerlink" title="BinaryFormatter类"></a>BinaryFormatter类</h2><p>一般不使用，因为与其他平台存在兼容性问题</p>
+<p>Unity中的BinaryFormatter类是一个序列化和反序列化二进制数据的工具类。它可以将一个对象序列化成二进制流并保存到文件中，也可以将一个二进制流反序列化成对象。</p>
+<p>BinaryFormatter类通常与MemoryStream类一起使用。我们可以创建一个MemoryStream对象并使用BinaryFormatter将一个对象序列化到该流中，或者使用BinaryFormatter将一个从文件读取的二进制流反序列化为对象。</p>
+<p>下面是一个示例，演示如何使用BinaryFormatter序列化和反序列化一个自定义类对象：</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">csharpCopy codeusing System.IO;</span><br><span class="line"><span class="keyword">using</span> System.Runtime.Serialization.Formatters.Binary;</span><br><span class="line"><span class="keyword">using</span> UnityEngine;</span><br><span class="line"></span><br><span class="line">[<span class="meta">System.Serializable</span>]</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">MyData</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">int</span> value1;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">string</span> value2;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">float</span> value3;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">BinaryFormatterExample</span> : <span class="title">MonoBehaviour</span> &#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Start</span>()</span> &#123;</span><br><span class="line">        MyData data = <span class="keyword">new</span> MyData();</span><br><span class="line">        data.value1 = <span class="number">123</span>;</span><br><span class="line">        data.value2 = <span class="string">&quot;Hello, world!&quot;</span>;</span><br><span class="line">        data.value3 = <span class="number">3.14f</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Serialize the object to a file</span></span><br><span class="line">        BinaryFormatter formatter = <span class="keyword">new</span> BinaryFormatter();</span><br><span class="line">        <span class="keyword">using</span> (FileStream stream = <span class="keyword">new</span> FileStream(<span class="string">&quot;data.bin&quot;</span>, FileMode.Create)) &#123;</span><br><span class="line">            formatter.Serialize(stream, data);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Deserialize the object from the file</span></span><br><span class="line">        <span class="keyword">using</span> (FileStream stream = <span class="keyword">new</span> FileStream(<span class="string">&quot;data.bin&quot;</span>, FileMode.Open)) &#123;</span><br><span class="line">            MyData loadedData = (MyData)formatter.Deserialize(stream);</span><br><span class="line">            Debug.Log(loadedData.value1);</span><br><span class="line">            Debug.Log(loadedData.value2);</span><br><span class="line">            Debug.Log(loadedData.value3);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在这个示例中，我们创建了一个名为MyData的自定义类，并将它的三个字段值设置为一些随意的值。然后，我们使用BinaryFormatter将这个对象序列化到名为”data.bin”的文件中，并使用同样的方式反序列化它，最后在控制台输出序列化后的对象的字段值。</p>
+<h2 id="File类"><a href="#File类" class="headerlink" title="File类"></a>File类</h2><p>Unity中的File类提供了一系列静态方法，用于在磁盘上创建、读取、写入和删除文件。</p>
+<p>以下是一些常用的方法：</p>
+<ul>
+<li>File.Create(string path)：创建一个指定路径下的空文件，并返回一个FileStream对象，该对象可用于向文件中写入数据。</li>
+<li>File.Open(string path, FileMode mode)：打开一个指定路径的文件，可以读取或写入数据。mode参数指定打开文件的模式，例如，FileMode.Open表示以只读方式打开文件，FileMode.Create表示如果文件不存在则创建文件。</li>
+<li>File.ReadAllBytes(string path)：读取一个文件，并将其内容作为字节数组返回。</li>
+<li>File.ReadAllText(string path)：读取一个文件，并将其内容作为字符串返回。</li>
+<li>File.WriteAllBytes(string path, byte[] bytes)：将一个字节数组写入一个指定路径的文件中。</li>
+<li>File.WriteAllText(string path, string contents)：将一个字符串写入一个指定路径的文件中。</li>
+<li>File.Delete(string path)：删除一个指定路径的文件。</li>
+</ul>
+<p>需要注意的是，File类提供的方法都是同步方法，即执行文件操作时会阻塞当前线程，直到操作完成。如果需要进行异步操作，可以使用异步IO或协程等技术。此外，File类也不支持对Unity项目中StreamingAssets文件夹下的文件进行写入操作，只能读取其中的文件。</p>
+<h3 id="File类的异步操作"><a href="#File类的异步操作" class="headerlink" title="File类的异步操作"></a>File类的异步操作</h3><p>Unity的File类提供了异步读取和写入文件的功能，可以通过调用Async方法实现。其中，异步读取文件可以使用AsyncRead方法，异步写入文件可以使用AsyncWrite方法。</p>
+<p>以下是AsyncRead和AsyncWrite方法的详细说明：</p>
+<ol>
+<li>AsyncRead方法</li>
+</ol>
+<p>AsyncRead方法用于异步读取指定文件中的所有字节。该方法接受三个参数：</p>
+<ul>
+<li>文件路径：要读取的文件的路径。</li>
+<li>回调函数：读取完成后执行的回调函数。</li>
+<li>用户定义的对象：传递给回调函数的自定义数据。</li>
+</ul>
+<p>示例代码：</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">typescriptCopy codebyte[] bytes = <span class="literal">null</span>;</span><br><span class="line"><span class="built_in">string</span> path = <span class="string">&quot;FilePath&quot;</span>;</span><br><span class="line">File.AsyncRead(path, (result) =&gt; &#123;</span><br><span class="line">    bytes = result.bytes;</span><br><span class="line">    <span class="comment">// 处理读取到的字节</span></span><br><span class="line">&#125;, <span class="literal">null</span>);</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>AsyncWrite方法</li>
+</ol>
+<p>AsyncWrite方法用于异步写入指定字节到指定文件中。该方法接受四个参数：</p>
+<ul>
+<li>文件路径：要写入的文件的路径。</li>
+<li>写入的字节数组：要写入的字节数组。</li>
+<li>回调函数：写入完成后执行的回调函数。</li>
+<li>用户定义的对象：传递给回调函数的自定义数据。</li>
+</ul>
+<p>示例代码：</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">csharpCopy codebyte[] bytes = <span class="keyword">new</span> <span class="built_in">byte</span>[<span class="number">10</span>];</span><br><span class="line"><span class="built_in">string</span> path = <span class="string">&quot;FilePath&quot;</span>;</span><br><span class="line">File.AsyncWrite(path, bytes, (result) =&gt; &#123;</span><br><span class="line">    <span class="comment">// 处理写入完成后的操作</span></span><br><span class="line">&#125;, <span class="literal">null</span>);</span><br></pre></td></tr></table></figure>
+
+<p>需要注意的是，异步读取和写入文件的操作需要一定的时间，因此在执行异步操作期间，主线程仍然可以执行其他操作。当异步操作完成后，将通过回调函数通知主线程，然后可以在回调函数中继续处理数据。</p>
+<h2 id="FileStream类"><a href="#FileStream类" class="headerlink" title="FileStream类"></a>FileStream类</h2><p>Unity的FileStream类是用于读取和写入文件的类，它继承自System.IO.Stream类，支持同步和异步的读写操作。</p>
+<p>使用FileStream类可以实现更加灵活、高效的文件操作，可以读写任何类型的数据，包括字节、字符、文本和二进制文件等。</p>
+<p>下面是一些常用的FileStream类方法：</p>
+<ol>
+<li>构造函数：FileStream(string path, FileMode mode)。用于创建一个FileStream对象，并打开指定文件。path参数是文件路径，mode参数指定打开文件的方式，如Create、Open、Append等。</li>
+<li>Read(byte[] buffer, int offset, int count)：从当前FileStream对象读取指定数目的字节数据，并将其存储在缓冲区（byte数组）中。offset参数指定从缓冲区的哪个位置开始存储数据，count参数指定要读取的字节数。</li>
+<li>Write(byte[] buffer, int offset, int count)：将指定数目的字节数据从缓冲区（byte数组）写入到当前FileStream对象中。offset参数指定从缓冲区的哪个位置开始读取数据，count参数指定要写入的字节数。</li>
+<li>Seek(long offset, SeekOrigin origin)：将文件指针移动到指定位置。offset参数指定要移动的字节数，origin参数指定从哪里开始移动，如Begin、Current、End等。</li>
+<li>Flush()：将缓冲区的数据写入到文件中。</li>
+<li>Close()：关闭当前FileStream对象。</li>
+</ol>
+<p>FileStream类还支持异步操作，可以使用BeginRead、BeginWrite等方法进行异步读写。在异步读写完成后，可以通过调用EndRead、EndWrite方法来获取读写的结果。</p>
+<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> UnityEngine;</span><br><span class="line"><span class="keyword">using</span> System.IO;</span><br><span class="line"><span class="keyword">using</span> System.Text;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">FileReadWrite</span> : <span class="title">MonoBehaviour</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 文件名</span></span><br><span class="line">    <span class="keyword">private</span> <span class="built_in">string</span> fileName = <span class="string">&quot;test.txt&quot;</span>;</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">    <span class="comment">// 文件路径</span></span><br><span class="line">    <span class="keyword">private</span> <span class="built_in">string</span> filePath;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 文件内容</span></span><br><span class="line">    <span class="keyword">private</span> <span class="built_in">string</span> fileContent = <span class="string">&quot;Hello World!&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Start</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 获取文件路径</span></span><br><span class="line">        filePath = Application.persistentDataPath + <span class="string">&quot;/&quot;</span> + fileName;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 写入文件</span></span><br><span class="line">        WriteToFile();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 读取文件</span></span><br><span class="line">        ReadFromFile();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 写入文件</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">WriteToFile</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 创建FileStream对象</span></span><br><span class="line">        <span class="keyword">using</span> (FileStream fs = <span class="keyword">new</span> FileStream(filePath, FileMode.Create))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// 将字符串转换为字节数组</span></span><br><span class="line">            <span class="built_in">byte</span>[] data = Encoding.UTF8.GetBytes(fileContent);</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 写入数据到文件</span></span><br><span class="line">            fs.Write(data, <span class="number">0</span>, data.Length);</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 关闭文件流</span></span><br><span class="line">            fs.Close();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 读取文件</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">ReadFromFile</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 创建FileStream对象</span></span><br><span class="line">        <span class="keyword">using</span> (FileStream fs = <span class="keyword">new</span> FileStream(filePath, FileMode.Open))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// 创建字节数组，用于存储读取到的数据</span></span><br><span class="line">            <span class="built_in">byte</span>[] data = <span class="keyword">new</span> <span class="built_in">byte</span>[fs.Length];</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 从文件中读取数据</span></span><br><span class="line">            fs.Read(data, <span class="number">0</span>, data.Length);</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 将字节数组转换为字符串</span></span><br><span class="line">            <span class="built_in">string</span> content = Encoding.UTF8.GetString(data);</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 输出文件内容</span></span><br><span class="line">            Debug.Log(<span class="string">&quot;File content: &quot;</span> + content);</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 关闭文件流</span></span><br><span class="line">            fs.Close();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="MemoryStream类"><a href="#MemoryStream类" class="headerlink" title="MemoryStream类"></a>MemoryStream类</h2><p>在Unity中，MemoryStream类是一个流，用于读写内存中的数据，而不是将数据读写到磁盘文件中。它派生自Stream类，可以将byte数组读入内存中，并提供了对byte数组的访问方法。</p>
+<p>MemoryStream类有多个构造函数，其中最常用的一个是接受一个byte数组作为参数的构造函数，如下所示：</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">csharpCopy codebyte[] buffer = <span class="keyword">new</span> <span class="built_in">byte</span>[<span class="number">1024</span>];</span><br><span class="line">MemoryStream memoryStream = <span class="keyword">new</span> MemoryStream(buffer);</span><br></pre></td></tr></table></figure>
+
+<p>这样就可以将一个byte数组读入内存中，并使用MemoryStream类对其进行读写操作了。</p>
+<p>MemoryStream类提供了多个方法，用于读写内存中的数据，例如：</p>
+<ul>
+<li><code>Read(byte[] buffer, int offset, int count)</code>：从MemoryStream中读取数据并存储到指定的byte数组中，其中<code>offset</code>表示从数组中的哪个位置开始存储，<code>count</code>表示要读取的数据长度。</li>
+<li><code>Write(byte[] buffer, int offset, int count)</code>：将指定的byte数组写入MemoryStream中，其中<code>offset</code>表示从数组中的哪个位置开始读取，<code>count</code>表示要写入的数据长度。</li>
+<li><code>ToArray()</code>：将MemoryStream中的所有数据以byte数组的形式返回。</li>
+<li><code>GetBuffer()</code>：获取MemoryStream中的内部缓冲区。</li>
+</ul>
+<p>下面是一个使用MemoryStream类的简单例子：</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">csharpCopy codebyte[] buffer = <span class="keyword">new</span> <span class="built_in">byte</span>[] &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span> &#125;;</span><br><span class="line">MemoryStream memoryStream = <span class="keyword">new</span> MemoryStream(buffer);</span><br><span class="line"><span class="built_in">byte</span>[] readBuffer = <span class="keyword">new</span> <span class="built_in">byte</span>[<span class="number">3</span>];</span><br><span class="line">memoryStream.Read(readBuffer, <span class="number">0</span>, <span class="number">3</span>);</span><br><span class="line">Debug.Log(<span class="string">&quot;读取到的数据：&quot;</span> + <span class="built_in">string</span>.Join(<span class="string">&quot;,&quot;</span>, readBuffer)); <span class="comment">// 输出 读取到的数据：1,2,3</span></span><br></pre></td></tr></table></figure>
+
+<p>这段代码先创建了一个byte数组，然后使用MemoryStream将其读入内存中。接着使用Read方法从MemoryStream中读取前3个字节的数据，并将其存储到一个新的byte数组中，最后将读取到的数据以字符串的形式输出。</p>
+<h1 id="字符编码"><a href="#字符编码" class="headerlink" title="字符编码"></a>字符编码</h1><p>字符编码指的是将字符集中的字符编码为计算机可识别的数字表示形式的过程。常见的字符编码有ASCII码、Unicode和UTF-8等。下面简要介绍一下这些常见的字符编码：</p>
+<ol>
+<li>ASCII码：是一种基础字符编码，它使用7位二进制数来表示字符，一共可以表示128个字符，包括英文字母、数字、符号等。ASCII码是美国标准信息交换码，但是只能表示英语等西欧语言。</li>
+<li>Unicode：是一种国际化的字符集标准，可以表示全球范围内的所有字符，包括中文、日文、韩文等。Unicode编码有多种实现方式，其中比较常用的是UTF-8和UTF-16。</li>
+<li>UTF-8：是一种变长的Unicode编码，可以使用1到4个字节表示一个字符，根据不同的字符范围来选择使用不同长度的字节。UTF-8兼容ASCII码，可以使用ASCII码的方式表示英文字母、数字、符号等，因此在网络传输和存储中广泛使用。</li>
+<li>UTF-16：是一种定长的Unicode编码，使用2个字节表示一个字符，适用于处理较少字符但是需要快速访问的场景，如程序内部字符串操作。</li>
+</ol>
+<p>在实际编程中，需要根据具体场景和需求选择合适的字符编码。</p>
+<h1 id="序列化"><a href="#序列化" class="headerlink" title="序列化"></a>序列化</h1><p>序列化对象</p>
+<p>1.确定字节数字的长度</p>
+<p>2.创建容器</p>
+<p>3.将对象中的元素依次加入容器中</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System.Collections;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.Text;</span><br><span class="line"><span class="keyword">using</span> UnityEngine;</span><br><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> 序列化 : <span class="title">MonoBehaviour</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">class</span> <span class="title">PlayesrInfo</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">public</span> <span class="built_in">int</span> lev;</span><br><span class="line">        <span class="keyword">public</span> <span class="built_in">string</span> name;</span><br><span class="line">        <span class="keyword">public</span> <span class="built_in">short</span> atk;</span><br><span class="line">        <span class="keyword">public</span> <span class="built_in">bool</span> sex;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Start</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        PlayesrInfo info = <span class="keyword">new</span> PlayesrInfo();</span><br><span class="line">        info.lev = <span class="number">10</span>;</span><br><span class="line">        info.name = <span class="string">&quot;dsf&quot;</span>;</span><br><span class="line">        info.atk = <span class="number">100</span>;</span><br><span class="line">        info.sex = <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">int</span> indexNum = <span class="keyword">sizeof</span>(<span class="built_in">int</span>) + <span class="comment">//lev int 类型</span></span><br><span class="line">                      <span class="keyword">sizeof</span>(<span class="built_in">int</span>) +  <span class="comment">//name字符串的长度</span></span><br><span class="line">                      Encoding.UTF8.GetBytes(info.name).Length +<span class="comment">//字符串具体字节长度</span></span><br><span class="line">                      <span class="keyword">sizeof</span>(<span class="built_in">short</span>) +<span class="comment">//atk short类型</span></span><br><span class="line">                      <span class="keyword">sizeof</span>(<span class="built_in">bool</span>);  <span class="comment">//sex bool 类型</span></span><br><span class="line">        <span class="built_in">byte</span>[] playerBytes=<span class="keyword">new</span> <span class="built_in">byte</span>[indexNum];</span><br><span class="line">        <span class="comment">//已经占用的字节</span></span><br><span class="line">        <span class="built_in">int</span> index = <span class="number">0</span>;</span><br><span class="line">        <span class="comment">//等级</span></span><br><span class="line">        BitConverter.GetBytes(info.lev).CopyTo(playerBytes, index);</span><br><span class="line">        index += <span class="keyword">sizeof</span>(<span class="built_in">int</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//姓名</span></span><br><span class="line">        <span class="built_in">byte</span>[] strBytes=Encoding.UTF8.GetBytes(info.name);</span><br><span class="line">        <span class="built_in">int</span> num=strBytes.Length; </span><br><span class="line">        <span class="comment">//姓名字节长度</span></span><br><span class="line">        BitConverter.GetBytes(num).CopyTo(playerBytes, index);</span><br><span class="line">        index += <span class="keyword">sizeof</span>(<span class="built_in">int</span>);</span><br><span class="line">        strBytes.CopyTo(playerBytes, index);</span><br><span class="line">        index += num;</span><br><span class="line"></span><br><span class="line">        BitConverter.GetBytes(info.atk).CopyTo(playerBytes, index);</span><br><span class="line">        index += <span class="keyword">sizeof</span>(<span class="built_in">short</span>);</span><br><span class="line"></span><br><span class="line">        BitConverter.GetBytes(info.sex).CopyTo(playerBytes, index);</span><br><span class="line">        index += <span class="keyword">sizeof</span>(<span class="built_in">bool</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="序列化BaseData基类"><a href="#序列化BaseData基类" class="headerlink" title="序列化BaseData基类"></a>序列化BaseData基类</h2><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System.Collections;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> UnityEngine;</span><br><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Text;</span><br><span class="line"><span class="keyword">using</span> UnityEngine.Rendering;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class</span> <span class="title">BaseData</span> </span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="built_in">int</span> <span class="title">GetBytesNum</span>()</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="built_in">byte</span>[] <span class="title">Writeing</span>()</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">WriteInt</span>(<span class="params"><span class="built_in">byte</span>[] bytes,<span class="built_in">int</span> <span class="keyword">value</span>,<span class="keyword">ref</span> <span class="built_in">int</span> index</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        BitConverter.GetBytes(<span class="keyword">value</span>).CopyTo(bytes, index);</span><br><span class="line">        index += <span class="keyword">sizeof</span>(<span class="built_in">int</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">WriteBool</span>(<span class="params"><span class="built_in">byte</span>[] bytes, <span class="built_in">bool</span> <span class="keyword">value</span>, <span class="keyword">ref</span> <span class="built_in">int</span> index</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        BitConverter.GetBytes(<span class="keyword">value</span>).CopyTo(bytes, index);</span><br><span class="line">        index += <span class="keyword">sizeof</span>(<span class="built_in">bool</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">WriteFloat</span>(<span class="params"><span class="built_in">byte</span>[] bytes, <span class="built_in">float</span> <span class="keyword">value</span>, <span class="keyword">ref</span> <span class="built_in">int</span> index</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        BitConverter.GetBytes(<span class="keyword">value</span>).CopyTo(bytes, index);</span><br><span class="line">        index += <span class="keyword">sizeof</span>(<span class="built_in">float</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">WriteChar</span>(<span class="params"><span class="built_in">byte</span>[] bytes, <span class="built_in">char</span> <span class="keyword">value</span>, <span class="keyword">ref</span> <span class="built_in">int</span> index</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        BitConverter.GetBytes(<span class="keyword">value</span>).CopyTo(bytes, index);</span><br><span class="line">        index += <span class="keyword">sizeof</span>(<span class="built_in">char</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">WriteDouble</span>(<span class="params"><span class="built_in">byte</span>[] bytes, <span class="built_in">double</span> <span class="keyword">value</span>, <span class="keyword">ref</span> <span class="built_in">int</span> index</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        BitConverter.GetBytes(<span class="keyword">value</span>).CopyTo(bytes, index);</span><br><span class="line">        index += <span class="keyword">sizeof</span>(<span class="built_in">double</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">WriteByte</span>(<span class="params"><span class="built_in">byte</span>[] bytes, <span class="built_in">byte</span> <span class="keyword">value</span>, <span class="keyword">ref</span> <span class="built_in">int</span> index</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        bytes[index] = <span class="keyword">value</span>;</span><br><span class="line">        index += <span class="keyword">sizeof</span>(<span class="built_in">byte</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">WriteString</span>(<span class="params"><span class="built_in">byte</span>[] bytes, <span class="built_in">string</span> <span class="keyword">value</span>, <span class="keyword">ref</span> <span class="built_in">int</span> index</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">byte</span>[] strBytes=Encoding.UTF8.GetBytes(<span class="keyword">value</span>);</span><br><span class="line">        WriteInt(bytes, strBytes.Length, <span class="keyword">ref</span> index);</span><br><span class="line">        strBytes.CopyTo(bytes, index);</span><br><span class="line">        index += strBytes.Length;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">WriteData</span>(<span class="params"><span class="built_in">byte</span>[] bytes ,BaseData data,<span class="keyword">ref</span> <span class="built_in">int</span> index</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">var</span> baseDataBytes = data.Writeing();</span><br><span class="line">        baseDataBytes.CopyTo(bytes, index);</span><br><span class="line">        index += baseDataBytes.Length;c</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="反序列化"><a href="#反序列化" class="headerlink" title="反序列化"></a>反序列化</h1><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System.Collections;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> UnityEngine;</span><br><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Text;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> 反序列化 : <span class="title">MonoBehaviour</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// Start is called before the first frame update</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Start</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//字节数组转化为非字符串</span></span><br><span class="line">        <span class="built_in">byte</span>[] bytes1=BitConverter.GetBytes(<span class="number">999</span>);</span><br><span class="line"></span><br><span class="line">        <span class="built_in">int</span> i=BitConverter.ToInt32(bytes1, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//字符数组转化为字符串</span></span><br><span class="line">        <span class="built_in">byte</span>[] bytes2 = Encoding.UTF8.GetBytes(<span class="string">&quot;1236sdf6asf&quot;</span>);</span><br><span class="line">        <span class="built_in">string</span> s=Encoding.UTF8.GetString(bytes2,<span class="number">0</span>,bytes2.Length);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="Socket"><a href="#Socket" class="headerlink" title="Socket"></a>Socket</h1><h2 id="Socket类的API"><a href="#Socket类的API" class="headerlink" title="Socket类的API"></a>Socket类的API</h2><p>Unity提供了Socket类来进行网络编程，该类封装了系统底层的套接字（socket）函数。可以通过该类的实例来建立网络连接、发送和接收数据等。下面是一些常用的Socket类的API：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#### Socket构造：</span><br><span class="line"></span><br><span class="line">Socket(AddressFamily, SocketType, ProtocolType)：</span><br><span class="line"></span><br><span class="line">构造函数，创建一个新的 Socket 对象。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">#### AddressFamily</span><br><span class="line"></span><br><span class="line">在C#中，`AddressFamily`是一个枚举类型，用于表示套接字的地址族，也就是用于表示IP地址的协议族。</span><br><span class="line"></span><br><span class="line">常用的几个值包括：</span><br><span class="line"></span><br><span class="line">`AddressFamily.InterNetwork`：表示IP版本4协议（IPv4）</span><br><span class="line"></span><br><span class="line">`AddressFamily.InterNetworkV6`：表示IP版本6协议（IPv6）</span><br><span class="line"></span><br><span class="line">`AddressFamily.Unix`：表示UNIX本地域套接字（Unix Domain Socket）</span><br><span class="line"></span><br><span class="line">`AddressFamily.IPX`：表示IPX协议</span><br><span class="line"></span><br><span class="line">`AddressFamily.NetBios`：表示NetBios协议</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#### SocketType</span><br><span class="line"></span><br><span class="line">在Socket编程中，SocketType是用于指定Socket实例的套接字类型，它通常用于创建Socket实例时的参数。SocketType常用的类型有：</span><br><span class="line"></span><br><span class="line">1. Stream：流套接字，提供面向连接、可靠的、基于字节流的传输，支持TCP协议。</span><br><span class="line">2. Dgram：数据报套接字，提供无连接、不可靠的、固定长度的消息传输，支持UDP协议。</span><br><span class="line">3. Raw：原始套接字，提供对原始网络协议的访问。</span><br><span class="line">4. Rdm：提供可靠的、面向连接的、固定长度的数据包传输。</span><br><span class="line">5. Seqpacket：提供可靠的、面向连接的、带序号的数据包传输。</span><br><span class="line"></span><br><span class="line">不同的SocketType类型适用于不同的网络通信场景，根据需要进行选择。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">#### ProtocolType</span><br><span class="line"></span><br><span class="line">在Socket编程中，ProtocolType表示所使用的协议类型。它是一个枚举类型，包含了许多协议类型的值，例如TCP、UDP、ICMP等。</span><br><span class="line"></span><br><span class="line">下面是一些常用的ProtocolType值：</span><br><span class="line"></span><br><span class="line">- TCP：TCP协议，提供面向连接的可靠数据传输。</span><br><span class="line">- UDP：UDP协议，提供无连接的不可靠数据传输。</span><br><span class="line">- ICMP：ICMP协议，用于控制IP数据报的发送和接收。常用于网络诊断和故障排除。</span><br><span class="line">- IGMP：IGMP协议，用于管理IP组播传输的成员关系。</span><br><span class="line">- IP：IP协议，是互联网协议族的核心协议之一，提供分组交换、寻址等基本功能。</span><br><span class="line"></span><br><span class="line">在使用Socket类时，需要根据具体的需求选择合适的ProtocolType值。例如，如果需要进行可靠的面向连接的数据传输，应该选择TCP协议；如果需要进行实时性要求不高的数据传输，可以选择UDP协议。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">### Connect(IPAddress, int) 或Connect(string, int)：</span><br><span class="line"></span><br><span class="line">连接到指定的远程主机和端口号。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">### Bind(EndPoint)：</span><br><span class="line">用于服务端</span><br><span class="line">将套接字绑定到本地 IP 地址和端口号。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">### Listen(int)：</span><br><span class="line">设置最大连接数</span><br><span class="line">开始侦听传入的连接请求。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">### Accept()：</span><br><span class="line"></span><br><span class="line">接受传入的连接请求。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">### SocketFlags</span><br><span class="line"></span><br><span class="line">在Socket编程中，SocketFlags是一个枚举类型，用于指定Socket操作的一些选项和标志，例如：</span><br><span class="line"></span><br><span class="line">- None：不指定任何标志。</span><br><span class="line">- OutOfBand：用于发送或接收带外数据。</span><br><span class="line">- Peek：接收数据但不从接收队列中删除。</span><br><span class="line">- DontRoute：不通过路由发送数据。</span><br><span class="line">- Truncated：表示接收的数据被截断。</span><br><span class="line">- ControlDataTruncated：表示接收的控制数据被截断。</span><br><span class="line"></span><br><span class="line">使用Socket.Send和Socket.Receive方法时，可以通过最后一个参数flags来指定SocketFlags中的一个或多个选项和标志。例如：</span><br><span class="line"></span><br><span class="line">```c#</span><br><span class="line">csharpCopy codebyte[] data = Encoding.UTF8.GetBytes(&quot;Hello, world!&quot;);</span><br><span class="line">int sent = socket.Send(data, SocketFlags.None);</span><br><span class="line">csharpCopy codebyte[] buffer = new byte[1024];</span><br><span class="line">int received = socket.Receive(buffer, SocketFlags.None);</span><br><span class="line">string message = Encoding.UTF8.GetString(buffer, 0, received);</span><br><span class="line">```</span><br><span class="line"></span><br><span class="line">这里的SocketFlags被设置为None，表示没有指定任何标志。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">### Receive(byte[]) 或 Receive(byte[], SocketFlags)：</span><br><span class="line"></span><br><span class="line">从套接字接收数据。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">### Send(byte[]) 或 Send(byte[], SocketFlags)：</span><br><span class="line"></span><br><span class="line">发送数据到远程主机。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">### Close()：</span><br><span class="line"></span><br><span class="line">关闭套接字连接。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">### Shutdown()：</span><br><span class="line">Unity中的Socket.Shutdown()方法用于禁用Socket对象的发送和接收，允许当前连接的一方（客户端或服务器端）单方面终止连接。</span><br><span class="line"></span><br><span class="line">该方法有一个参数，表示需要禁用的Socket对象的通信方式，其可能的取值如下：</span><br><span class="line"></span><br><span class="line">SocketShutdown.Send：禁用Socket对象的发送。</span><br><span class="line">SocketShutdown.Receive：禁用Socket对象的接收。</span><br><span class="line">SocketShutdown.Both：同时禁用Socket对象的发送和接收。</span><br><span class="line"></span><br><span class="line">该方法的使用示例：</span><br><span class="line">// 禁用Socket对象的发送和接收</span><br><span class="line">clientSocket.Shutdown(SocketShutdown.Both);</span><br><span class="line"></span><br><span class="line">// 关闭Socket连接</span><br><span class="line">clientSocket.Close();</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="创建Socket的TCP和UDP套接字"><a href="#创建Socket的TCP和UDP套接字" class="headerlink" title="创建Socket的TCP和UDP套接字"></a>创建Socket的TCP和UDP套接字</h2><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Socket socket_TCP=<span class="keyword">new</span> Socket(AddressFamily.InterNetwork,</span><br><span class="line">           SocketType.Stream, ProtocolType.Tcp);</span><br><span class="line">       Socket socket_UDP=<span class="keyword">new</span> Socket(AddressFamily.InterNetwork,</span><br><span class="line">           SocketType.Dgram, ProtocolType.Udp);</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="客户端和服务端常用方法"><a href="#客户端和服务端常用方法" class="headerlink" title="客户端和服务端常用方法"></a>客户端和服务端常用方法</h2><p>以下是 Socket 客户端和服务端常用的一些方法：</p>
+<p><strong>客户端：</strong></p>
+<ol>
+<li><code>Socket(IPAddress address, int port)</code>：创建一个套接字对象，用于连接指定的 IP 地址和端口。</li>
+<li><code>Connect(IPAddress address, int port)</code>：连接到指定的 IP 地址和端口。</li>
+<li><code>Send(byte[] buffer)</code>：将字节数组发送给服务器。</li>
+<li><code>Receive(byte[] buffer)</code>：从服务器接收数据到指定的字节数组中。</li>
+<li><code>Close()</code>：关闭套接字连接。</li>
+</ol>
+<p><strong>服务端：</strong></p>
+<ol>
+<li><code>Socket(AddressFamily addressFamily, SocketType socketType, ProtocolType protocolType)</code>：创建一个套接字对象，用于监听指定的地址族、套接字类型和协议类型。</li>
+<li><code>Bind(IPEndPoint localEP)</code>：将套接字绑定到指定的本地 IP 地址和端口。</li>
+<li><code>Listen(int backlog)</code>：开始监听传入的连接请求。</li>
+<li><code>Accept()</code>：接受一个传入的连接请求，并返回一个新的套接字对象，用于与客户端通信。</li>
+<li><code>Send(byte[] buffer)</code>：将字节数组发送给客户端。</li>
+<li><code>Receive(byte[] buffer)</code>：从客户端接收数据到指定的字节数组中。</li>
+<li><code>Close()</code>：关闭套接字连接。</li>
+</ol>
+<p>这些方法是 Socket 编程中常用的一些方法，但是实际上 Socket 类提供的方法非常多，可以根据具体的需求选择合适的方法。同时需要注意的是，在使用 Socket 类的过程中需要注意线程安全和异常处理等问题，以保证程序的可靠性和稳定性。</p>
+<h3 id="客户端方法："><a href="#客户端方法：" class="headerlink" title="客户端方法："></a>客户端方法：</h3><ol>
+<li><code>Socket(IPAddress addressFamily, SocketType socketType, ProtocolType protocolType)</code>：创建一个新的Socket实例，并指定其AddressFamily、SocketType和ProtocolType。</li>
+<li><code>Socket.Connect(IPEndPoint remoteEP)</code>：使用指定的远程终结点连接Socket。</li>
+<li><code>Socket.Connect(IPAddress address, int port)</code>：使用指定的IP地址和端口号连接Socket。</li>
+<li><code>Socket.BeginConnect(IPEndPoint remoteEP, AsyncCallback callback, object state)</code>：异步连接到远程终结点。</li>
+<li><code>Socket.BeginConnect(IPAddress address, int port, AsyncCallback callback, object state)</code>：异步连接到指定的IP地址和端口。</li>
+<li><code>Socket.Send(byte[] buffer, int offset, int size, SocketFlags socketFlags)</code>：将数据发送到已连接的Socket。</li>
+<li><code>Socket.BeginSend(byte[] buffer, int offset, int size, SocketFlags socketFlags, AsyncCallback callback, object state)</code>：异步将数据发送到已连接的Socket。</li>
+<li><code>Socket.Receive(byte[] buffer, int offset, int size, SocketFlags socketFlags)</code>：从已连接的Socket接收数据。</li>
+<li><code>Socket.BeginReceive(byte[] buffer, int offset, int size, SocketFlags socketFlags, AsyncCallback callback, object state)</code>：异步从已连接的Socket接收数据。</li>
+<li><code>Socket.Close()</code>：关闭Socket连接并释放所有相关资源。</li>
+<li><code>Socket.Shutdown(SocketShutdown how)</code>：禁用指定的Socket上的发送和&#x2F;或接收，并关闭连接。</li>
+<li><code>Socket.Disconnect(bool reuseSocket)</code>：断开与远程主机的连接。</li>
+<li><code>Socket.SetSocketOption(SocketOptionLevel optionLevel, SocketOptionName optionName, bool optionValue)</code>：设置Socket选项的布尔值。</li>
+<li><code>Socket.SetSocketOption(SocketOptionLevel optionLevel, SocketOptionName optionName, int optionValue)</code>：设置Socket选项的整数值。</li>
+<li><code>Socket.SetSocketOption(SocketOptionLevel optionLevel, SocketOptionName optionName, byte[] optionValue)</code>：设置Socket选项的字节数组值。</li>
+<li><code>Socket.GetSocketOption(SocketOptionLevel optionLevel, SocketOptionName optionName)</code>：获取Socket选项的值。</li>
+<li><code>Socket.Available</code>：获取已经被接收但还没有被读取的数据的字节数。</li>
+<li><code>Socket.RemoteEndPoint</code>：获取远程终结点的信息。</li>
+<li><code>Socket.LocalEndPoint</code>：获取本地终结点的信息。</li>
+</ol>
+<h3 id="服务端方法："><a href="#服务端方法：" class="headerlink" title="服务端方法："></a>服务端方法：</h3><ul>
+<li><code>Socket(AddressFamily, SocketType, ProtocolType)</code>：创建新的 <code>Socket</code> 对象，其中 <code>AddressFamily</code> 指定地址族（如 <code>AddressFamily.InterNetwork</code> 表示 IPv4），<code>SocketType</code> 指定套接字类型（如 <code>SocketType.Stream</code> 表示流式套接字），<code>ProtocolType</code> 指定协议类型（如 <code>ProtocolType.Tcp</code> 表示使用 TCP 协议）。</li>
+<li><code>Bind(EndPoint)</code>：将套接字绑定到指定的本地端点（如 <code>IPEndPoint</code> 对象）。</li>
+<li><code>Listen(int)</code>：开始在套接字上侦听传入的连接请求，并指定等待队列的最大长度。</li>
+<li><code>Accept()</code>：接受一个传入的连接请求，返回一个新的 <code>Socket</code> 对象来表示与客户端的通信。</li>
+<li><code>AcceptAsync(SocketAsyncEventArgs)</code>：异步接受一个传入的连接请求，当操作完成时调用指定的 <code>SocketAsyncEventArgs</code> 对象的完成回调。</li>
+<li><code>Receive(byte[])</code>：接收指定字节数的数据，返回实际接收到的字节数。</li>
+<li><code>Receive(byte[], SocketFlags)</code>：接收指定字节数的数据，可以指定附加的 <code>SocketFlags</code> 参数，返回实际接收到的字节数。</li>
+<li><code>Receive(byte[], int, int, SocketFlags)</code>：接收指定数量的数据，可以指定接收数据的偏移量和附加的 <code>SocketFlags</code> 参数，返回实际接收到的字节数。</li>
+<li><code>ReceiveAsync(SocketAsyncEventArgs)</code>：异步接收数据，当操作完成时调用指定的 <code>SocketAsyncEventArgs</code> 对象的完成回调。</li>
+<li><code>Send(byte[])</code>：发送指定的字节数组，返回实际发送的字节数。</li>
+<li><code>Send(byte[], SocketFlags)</code>：发送指定的字节数组，可以指定附加的 <code>SocketFlags</code> 参数，返回实际发送的字节数。</li>
+<li><code>Send(byte[], int, int, SocketFlags)</code>：发送指定数量的数据，可以指定发送数据的偏移量和附加的 <code>SocketFlags</code> 参数，返回实际发送的字节数。</li>
+<li><code>SendAsync(SocketAsyncEventArgs)</code>：异步发送数据，当操作完成时调用指定的 <code>SocketAsyncEventArgs</code> 对象的完成回调。</li>
+<li><code>Close()</code>：关闭套接字连接。</li>
+</ul>
+<h2 id="Socket编程客户端和服务端需要做什么"><a href="#Socket编程客户端和服务端需要做什么" class="headerlink" title="Socket编程客户端和服务端需要做什么"></a>Socket编程客户端和服务端需要做什么</h2><h2 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h2><p>1.创建套接字Socket</p>
+<p>2.使用Connect方法与服务端相连</p>
+<p>3.使用Send和Receive相关方法收发数据</p>
+<p>4.使用Shutdown方法释放连接</p>
+<p>5.关闭套接字</p>
+<h2 id="服务端"><a href="#服务端" class="headerlink" title="服务端"></a>服务端</h2><p>1.创建套接字Socket</p>
+<p>2.使用Bind方法将套接字和本地地址绑定</p>
+<p>3.使用Listen方法进行监听</p>
+<p>4.使用Accept方法等待客户端连接</p>
+<p>5.建立连接，Accept返回新的套接字</p>
+<p>6.使用Send和Receive相关方法收发数据</p>
+<p>7.使用Shutdown方法释放连接</p>
+<p>8.关闭套接字</p>
+<h2 id="TCP协议的三次握手在Scoket编程中的体现"><a href="#TCP协议的三次握手在Scoket编程中的体现" class="headerlink" title="TCP协议的三次握手在Scoket编程中的体现"></a>TCP协议的三次握手在Scoket编程中的体现</h2><p>在 Socket 编程中，TCP 协议三次握手是在客户端与服务端建立连接时的一个过程，可以通过以下步骤来体现：</p>
+<ol>
+<li>客户端调用 <code>Socket.Connect()</code> 方法向服务端发起连接请求，向服务端发送 SYN 包（同步包）；</li>
+<li>服务端接收到客户端的 SYN 包后，调用 <code>Socket.Accept()</code> 方法接受客户端的连接请求，并回复 SYN+ACK 包（同步+确认包）给客户端；</li>
+<li>客户端接收到服务端的 SYN+ACK 包后，回复 ACK 包（确认包）给服务端，建立起连接。</li>
+</ol>
+<p>这样，客户端与服务端之间就建立了一条可靠的 TCP 连接，并可以进行数据的传输。三次握手过程的目的是为了确保客户端和服务端都能够接收到对方的请求和回应，并建立起可靠的连接。</p>
+<h2 id="TCP协议四次挥手在Socket编程中的具体体现"><a href="#TCP协议四次挥手在Socket编程中的具体体现" class="headerlink" title="TCP协议四次挥手在Socket编程中的具体体现"></a>TCP协议四次挥手在Socket编程中的具体体现</h2><p>TCP协议四次挥手是指TCP连接的关闭过程，它的具体体现如下：</p>
+<ol>
+<li>客户端发送FIN包。客户端调用<code>Socket.Shutdown</code>方法，发送FIN包给服务端，表示客户端已经没有数据需要发送了。</li>
+<li>服务端收到FIN包。服务端收到客户端的FIN包后，返回一个ACK确认包，表示已经收到了客户端的FIN包。</li>
+<li>服务端发送FIN包。服务端发送FIN包给客户端，表示服务端已经没有数据需要发送了。</li>
+<li>客户端收到FIN包。客户端收到服务端的FIN包后，返回一个ACK确认包，表示已经收到了服务端的FIN包。此时客户端和服务端的连接关闭。</li>
+</ol>
+<p>在Socket编程中，客户端和服务端的关闭流程如下：</p>
+<p>客户端关闭：</p>
+<ol>
+<li>调用<code>Socket.Shutdown(SocketShutdown.Both)</code>方法，表示客户端已经没有数据需要发送了。</li>
+<li>调用<code>Socket.Close()</code>方法，关闭客户端连接。</li>
+</ol>
+<p>服务端关闭：</p>
+<ol>
+<li>调用<code>Socket.Shutdown(SocketShutdown.Both)</code>方法，表示服务端已经没有数据需要发送了。</li>
+<li>调用<code>Socket.Close()</code>方法，关闭服务端连接。</li>
+</ol>
+<p>在关闭连接的过程中，调用<code>Shutdown</code>方法是可选的，但是建议在关闭连接之前调用<code>Shutdown</code>方法发送FIN包，以保证连接的正确关闭。</p>
+<h1 id="Socket编程客户端服务端代码"><a href="#Socket编程客户端服务端代码" class="headerlink" title="Socket编程客户端服务端代码"></a>Socket编程客户端服务端代码</h1><h2 id="服务端-1"><a href="#服务端-1" class="headerlink" title="服务端"></a>服务端</h2><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.Linq;</span><br><span class="line"><span class="keyword">using</span> System.Text;</span><br><span class="line"><span class="keyword">using</span> System.Threading.Tasks;</span><br><span class="line"><span class="keyword">using</span> System.Net.Sockets;</span><br><span class="line"><span class="keyword">using</span> System.Net;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">Server.Sockets</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">class</span> <span class="title">SocketTest</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">DoTest</span>()</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">//1.创建套接字</span></span><br><span class="line">            Socket socketTcp = <span class="keyword">new</span> Socket</span><br><span class="line">               (AddressFamily.InterNetwork, SocketType.Stream</span><br><span class="line">                , ProtocolType.Tcp);</span><br><span class="line">            <span class="comment">//2.用Bind方法将套接字与本地地址进行绑定</span></span><br><span class="line">            <span class="keyword">try</span></span><br><span class="line">            &#123;</span><br><span class="line">                IPEndPoint iPEndPoint =<span class="keyword">new</span> IPEndPoint(IPAddress.Parse(<span class="string">&quot;127.0.0.1&quot;</span>), <span class="number">8080</span>);</span><br><span class="line">                socketTcp.Bind(iPEndPoint);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">catch</span> (Exception e)</span><br><span class="line">            &#123;</span><br><span class="line">                Console.WriteLine(<span class="string">&quot;绑定错误&quot;</span>+e.Message);</span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//3.用Listen方法进行监听</span></span><br><span class="line">            socketTcp.Listen(<span class="number">1024</span>);</span><br><span class="line">            Console.WriteLine(<span class="string">&quot;服务端绑定监听结束，等待客户端接入&quot;</span>);</span><br><span class="line">            <span class="comment">//4.用Accept方法等待客户端进行连接</span></span><br><span class="line">            <span class="comment">//5.建立连接Accept返回新的套接字</span></span><br><span class="line">            Socket socketClien=socketTcp.Accept();</span><br><span class="line">            Console.WriteLine(<span class="string">&quot;有客户端接入了&quot;</span>);</span><br><span class="line">            <span class="comment">//6.使用Send方法和Receive方法收发数据</span></span><br><span class="line">            <span class="comment">//发送</span></span><br><span class="line">            socketClien.Send(Encoding.UTF8.GetBytes(<span class="string">&quot;欢迎接入服务器&quot;</span>));</span><br><span class="line">            <span class="comment">//接受信息</span></span><br><span class="line">            <span class="built_in">byte</span>[] result = <span class="keyword">new</span> <span class="built_in">byte</span>[<span class="number">1024</span>];</span><br><span class="line">            <span class="comment">//接受信息会返回信息的长度</span></span><br><span class="line">            <span class="built_in">int</span> resceiveNum=socketClien.Receive(result);</span><br><span class="line">            Console.WriteLine(<span class="string">$&quot;接收到客户端<span class="subst">&#123;socketClien.RemoteEndPoint&#125;</span>&quot;</span> +</span><br><span class="line">                <span class="string">$&quot;发送的信息<span class="subst">&#123;Encoding.UTF8.GetString(result,<span class="number">0</span>,resceiveNum)&#125;</span>&quot;</span>);</span><br><span class="line">            <span class="comment">//7.使用Shutdown方法释放连接</span></span><br><span class="line">            socketClien.Shutdown(SocketShutdown.Both);</span><br><span class="line">            <span class="comment">//8.关闭套接字</span></span><br><span class="line">            socketClien.Close();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="客户端-1"><a href="#客户端-1" class="headerlink" title="客户端"></a>客户端</h2><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.Linq;</span><br><span class="line"><span class="keyword">using</span> System.Text;</span><br><span class="line"><span class="keyword">using</span> System.Threading.Tasks;</span><br><span class="line"><span class="keyword">using</span> System.Net.Sockets;</span><br><span class="line"><span class="keyword">using</span> System.Net;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">Server.Sockets</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">class</span> <span class="title">SocketTest</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">            1.创建套接字Socket</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">            2.使用Bind方法将套接字和本地地址绑定</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">            3.使用Listen方法进行监听</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">            4.使用Accept方法等待客户端连接(会进行阻塞等待)</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">            5.建立连接，Accept返回新的套接字</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">            6.使用Send和Receive相关方法收发数据</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">            7.使用Shutdown方法释放连接</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">            8.关闭套接字</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">DoTest</span>()</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">//1.创建套接字</span></span><br><span class="line">            Socket socketTcp = <span class="keyword">new</span> Socket</span><br><span class="line">               (AddressFamily.InterNetwork, SocketType.Stream</span><br><span class="line">                , ProtocolType.Tcp);</span><br><span class="line">            <span class="comment">//2.用Bind方法将套接字与本地地址进行绑定</span></span><br><span class="line">            <span class="keyword">try</span></span><br><span class="line">            &#123;</span><br><span class="line">                IPEndPoint iPEndPoint =<span class="keyword">new</span> IPEndPoint(IPAddress.Parse(<span class="string">&quot;127.0.0.1&quot;</span>), <span class="number">8080</span>);</span><br><span class="line">                socketTcp.Bind(iPEndPoint);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">catch</span> (Exception e)</span><br><span class="line">            &#123;</span><br><span class="line">                Console.WriteLine(<span class="string">&quot;绑定错误&quot;</span>+e.Message);</span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//3.用Listen方法进行监听</span></span><br><span class="line">            socketTcp.Listen(<span class="number">1024</span>);</span><br><span class="line">            Console.WriteLine(<span class="string">&quot;服务端绑定监听结束，等待客户端接入&quot;</span>);</span><br><span class="line">            <span class="comment">//4.用Accept方法等待客户端进行连接</span></span><br><span class="line">            <span class="comment">//5.建立连接Accept返回新的套接字</span></span><br><span class="line">            Socket socketClien=socketTcp.Accept();</span><br><span class="line">            Console.WriteLine(<span class="string">&quot;有客户端接入了&quot;</span>);</span><br><span class="line">            <span class="comment">//6.使用Send方法和Receive方法收发数据</span></span><br><span class="line">            <span class="comment">//发送</span></span><br><span class="line">            socketClien.Send(Encoding.UTF8.GetBytes(<span class="string">&quot;欢迎接入服务器&quot;</span>));</span><br><span class="line">            <span class="comment">//接受信息</span></span><br><span class="line">            <span class="built_in">byte</span>[] result = <span class="keyword">new</span> <span class="built_in">byte</span>[<span class="number">1024</span>];</span><br><span class="line">            <span class="comment">//接受信息会返回信息的长度</span></span><br><span class="line">            <span class="built_in">int</span> resceiveNum=socketClien.Receive(result);</span><br><span class="line">            Console.WriteLine(<span class="string">$&quot;接收到客户端<span class="subst">&#123;socketClien.RemoteEndPoint&#125;</span>&quot;</span> +</span><br><span class="line">                <span class="string">$&quot;发送的信息<span class="subst">&#123;Encoding.UTF8.GetString(result,<span class="number">0</span>,resceiveNum)&#125;</span>&quot;</span>);</span><br><span class="line">            <span class="comment">//7.使用Shutdown方法释放连接</span></span><br><span class="line">            socketClien.Shutdown(SocketShutdown.Both);</span><br><span class="line">            <span class="comment">//8.关闭套接字</span></span><br><span class="line">            socketClien.Close();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="服务端实现多客户端接入"><a href="#服务端实现多客户端接入" class="headerlink" title="服务端实现多客户端接入"></a>服务端实现多客户端接入</h2><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.Linq;</span><br><span class="line"><span class="keyword">using</span> System.Text;</span><br><span class="line"><span class="keyword">using</span> System.Threading.Tasks;</span><br><span class="line"><span class="keyword">using</span> System.Net.Sockets;</span><br><span class="line"><span class="keyword">using</span> System.Net;</span><br><span class="line"><span class="keyword">using</span> System.Data;</span><br><span class="line"><span class="keyword">using</span> System.Reflection.Metadata;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">Server.Sockets</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">class</span> <span class="title">SocketTest</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">            1.创建套接字Socket</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">            2.使用Bind方法将套接字和本地地址绑定</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">            3.使用Listen方法进行监听</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">            4.使用Accept方法等待客户端连接(会进行阻塞等待)</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">            5.建立连接，Accept返回新的套接字</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">            6.使用Send和Receive相关方法收发数据</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">            7.使用Shutdown方法释放连接</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">            8.关闭套接字</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">      </span><br><span class="line">        <span class="keyword">public</span> List&lt;Socket&gt; clientSocket = <span class="keyword">new</span> List&lt;Socket&gt;();</span><br><span class="line">        <span class="comment">//声明Socket</span></span><br><span class="line">        Socket Serversocket = <span class="keyword">new</span> Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);</span><br><span class="line">        <span class="built_in">bool</span> isColse = <span class="literal">false</span>;</span><br><span class="line">        <span class="comment">//使用多线程进行多连接</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">DoTest2</span>()</span></span><br><span class="line">        &#123; </span><br><span class="line">            <span class="comment">//绑定本地地址</span></span><br><span class="line">            IPEndPoint endPoint = <span class="keyword">new</span> IPEndPoint(IPAddress.Parse(<span class="string">&quot;127.0.0.1&quot;</span>), <span class="number">8080</span>);</span><br><span class="line"></span><br><span class="line">            Serversocket.Bind(endPoint);</span><br><span class="line">            <span class="comment">//监听</span></span><br><span class="line">            Serversocket.Listen(<span class="number">1024</span>);</span><br><span class="line">            <span class="comment">//连接</span></span><br><span class="line">            Thread Acceptthread = <span class="keyword">new</span> Thread(AcceptThread);</span><br><span class="line">            Acceptthread.Start();</span><br><span class="line">            <span class="comment">//收发信息</span></span><br><span class="line">            Thread Receivethread = <span class="keyword">new</span> Thread(ReceiveThread);</span><br><span class="line">            Receivethread.Start();</span><br><span class="line"></span><br><span class="line">            <span class="keyword">while</span>(<span class="literal">true</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="built_in">string</span> input = <span class="string">&quot;&quot;</span>;</span><br><span class="line">                 input=Console.ReadLine();</span><br><span class="line">                <span class="keyword">if</span>(input.Equals(<span class="string">&quot;quit&quot;</span>))</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">this</span>.isColse = <span class="literal">true</span>;</span><br><span class="line">                    <span class="keyword">for</span>(<span class="built_in">int</span> i=<span class="number">0</span>;i&lt;clientSocket.Count;i++)</span><br><span class="line">                    &#123;</span><br><span class="line">                        clientSocket[i].Shutdown(SocketShutdown.Both);</span><br><span class="line">                        clientSocket[i].Close();</span><br><span class="line">                    &#125;</span><br><span class="line">                    clientSocket.Clear();</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">AcceptThread</span>()</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">while</span>(!isColse) </span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">var</span> socket = Serversocket.Accept();</span><br><span class="line">                <span class="keyword">this</span>.clientSocket.Add(socket);</span><br><span class="line">                socket.Send(Encoding.UTF8.GetBytes(<span class="string">&quot;欢迎你来连入服务端&quot;</span>));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">ReceiveThread</span>()</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">byte</span>[] result = <span class="keyword">new</span> <span class="built_in">byte</span>[<span class="number">1024</span>*<span class="number">1024</span>];</span><br><span class="line">            <span class="built_in">int</span> i;</span><br><span class="line">            Socket socket;</span><br><span class="line">            <span class="built_in">int</span> receiveNum;</span><br><span class="line">            <span class="keyword">while</span>(!isColse) </span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;clientSocket.Count;i++)</span><br><span class="line">                &#123;</span><br><span class="line">                    socket = clientSocket[i];</span><br><span class="line">                    <span class="keyword">if</span>(socket.Available!=<span class="number">0</span>)</span><br><span class="line">                    &#123;</span><br><span class="line">                        receiveNum=socket.Receive(result);</span><br><span class="line">                        ThreadPool.QueueUserWorkItem(HandleReceive,(socket,Encoding.UTF8.GetString(result,<span class="number">0</span>, receiveNum)));</span><br><span class="line">                    &#125;</span><br><span class="line">                    </span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">HandleReceive</span>(<span class="params"><span class="built_in">object</span> obj</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            (Socket s,<span class="built_in">string</span> receive) info = ((Socket,<span class="built_in">string</span>))obj;</span><br><span class="line">            Console.WriteLine(<span class="string">$&quot;收到客户端：<span class="subst">&#123;info.s.RemoteEndPoint&#125;</span>的信息：<span class="subst">&#123;info.receive&#125;</span>&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" rel="tag"># 网络编程</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/04/03/%E5%8C%BB%E8%8D%AF%E9%97%AE%E7%AD%94%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" rel="prev" title="医药问答环境配置">
+      <i class="fa fa-chevron-left"></i> 医药问答环境配置
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2023/04/14/%E7%8E%B0%E4%BB%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%85%A5%E9%97%A801/" rel="next" title="现代计算机图形学入门01">
+      现代计算机图形学入门01 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%86%85%E5%AE%B9"><span class="nav-number">1.</span> <span class="nav-text">内容</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ip%E7%B1%BB%E5%92%8C%E7%AB%AF%E5%8F%A3%E7%B1%BB"><span class="nav-number">2.</span> <span class="nav-text">ip类和端口类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#unity%E7%9A%84IPAddress%E7%B1%BB"><span class="nav-number">2.1.</span> <span class="nav-text">unity的IPAddress类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unity-%E7%9A%84IPEndPoint%E7%B1%BB"><span class="nav-number">2.2.</span> <span class="nav-text">unity 的IPEndPoint类</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90"><span class="nav-number">3.</span> <span class="nav-text">域名解析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90"><span class="nav-number">3.1.</span> <span class="nav-text">什么是域名解析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFDNS%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="nav-number">3.2.</span> <span class="nav-text">什么是DNS服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C-%E7%9A%84IPhostentry%E7%B1%BB"><span class="nav-number">3.3.</span> <span class="nav-text">C#的IPhostentry类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DNS%E7%B1%BB"><span class="nav-number">3.4.</span> <span class="nav-text">DNS类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%82%E6%AD%A5%E8%8E%B7%E5%8F%96"><span class="nav-number">3.4.1.</span> <span class="nav-text">异步获取</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%95%B0%E6%8D%AE"><span class="nav-number">4.</span> <span class="nav-text">序列化和反序列化二进制数据</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#BitConverter%E7%B1%BB"><span class="nav-number">4.1.</span> <span class="nav-text">BitConverter类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Encoding%E7%B1%BB"><span class="nav-number">4.2.</span> <span class="nav-text">Encoding类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BinaryFormatter%E7%B1%BB"><span class="nav-number">4.3.</span> <span class="nav-text">BinaryFormatter类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#File%E7%B1%BB"><span class="nav-number">4.4.</span> <span class="nav-text">File类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#File%E7%B1%BB%E7%9A%84%E5%BC%82%E6%AD%A5%E6%93%8D%E4%BD%9C"><span class="nav-number">4.4.1.</span> <span class="nav-text">File类的异步操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FileStream%E7%B1%BB"><span class="nav-number">4.5.</span> <span class="nav-text">FileStream类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B%E5%AD%90"><span class="nav-number">4.5.1.</span> <span class="nav-text">例子</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MemoryStream%E7%B1%BB"><span class="nav-number">4.6.</span> <span class="nav-text">MemoryStream类</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81"><span class="nav-number">5.</span> <span class="nav-text">字符编码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BA%8F%E5%88%97%E5%8C%96"><span class="nav-number">6.</span> <span class="nav-text">序列化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BA%8F%E5%88%97%E5%8C%96BaseData%E5%9F%BA%E7%B1%BB"><span class="nav-number">6.1.</span> <span class="nav-text">序列化BaseData基类</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96"><span class="nav-number">7.</span> <span class="nav-text">反序列化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Socket"><span class="nav-number">8.</span> <span class="nav-text">Socket</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Socket%E7%B1%BB%E7%9A%84API"><span class="nav-number">8.1.</span> <span class="nav-text">Socket类的API</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BASocket%E7%9A%84TCP%E5%92%8CUDP%E5%A5%97%E6%8E%A5%E5%AD%97"><span class="nav-number">8.2.</span> <span class="nav-text">创建Socket的TCP和UDP套接字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%92%8C%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="nav-number">8.3.</span> <span class="nav-text">客户端和服务端常用方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="nav-number">8.3.1.</span> <span class="nav-text">客户端方法：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="nav-number">8.3.2.</span> <span class="nav-text">服务端方法：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Socket%E7%BC%96%E7%A8%8B%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%92%8C%E6%9C%8D%E5%8A%A1%E7%AB%AF%E9%9C%80%E8%A6%81%E5%81%9A%E4%BB%80%E4%B9%88"><span class="nav-number">8.4.</span> <span class="nav-text">Socket编程客户端和服务端需要做什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%A2%E6%88%B7%E7%AB%AF"><span class="nav-number">8.5.</span> <span class="nav-text">客户端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%8D%E5%8A%A1%E7%AB%AF"><span class="nav-number">8.6.</span> <span class="nav-text">服务端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP%E5%8D%8F%E8%AE%AE%E7%9A%84%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%E5%9C%A8Scoket%E7%BC%96%E7%A8%8B%E4%B8%AD%E7%9A%84%E4%BD%93%E7%8E%B0"><span class="nav-number">8.7.</span> <span class="nav-text">TCP协议的三次握手在Scoket编程中的体现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP%E5%8D%8F%E8%AE%AE%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B%E5%9C%A8Socket%E7%BC%96%E7%A8%8B%E4%B8%AD%E7%9A%84%E5%85%B7%E4%BD%93%E4%BD%93%E7%8E%B0"><span class="nav-number">8.8.</span> <span class="nav-text">TCP协议四次挥手在Socket编程中的具体体现</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Socket%E7%BC%96%E7%A8%8B%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%9C%8D%E5%8A%A1%E7%AB%AF%E4%BB%A3%E7%A0%81"><span class="nav-number">9.</span> <span class="nav-text">Socket编程客户端服务端代码</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%8D%E5%8A%A1%E7%AB%AF-1"><span class="nav-number">9.1.</span> <span class="nav-text">服务端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%A2%E6%88%B7%E7%AB%AF-1"><span class="nav-number">9.2.</span> <span class="nav-text">客户端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%AE%9E%E7%8E%B0%E5%A4%9A%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%8E%A5%E5%85%A5"><span class="nav-number">9.3.</span> <span class="nav-text">服务端实现多客户端接入</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="心梦"
+      src="/images/ailulu.jpg">
+  <p class="site-author-name" itemprop="name">心梦</p>
+  <div class="site-description" itemprop="description">heart_dream</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">66</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/heartdream520" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;heartdream520" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.acwing.com/user/myspace/index/60784/" title="Acwing → https:&#x2F;&#x2F;www.acwing.com&#x2F;user&#x2F;myspace&#x2F;index&#x2F;60784&#x2F;" rel="noopener" target="_blank"><i class="fab fa-Acwing fa-fw"></i>Acwing</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://codeforces.com/profile/Heart_dream" title="Codeforces → https:&#x2F;&#x2F;codeforces.com&#x2F;profile&#x2F;Heart_dream" rel="noopener" target="_blank"><i class="fab fa-codeforces fa-fw"></i>Codeforces</a>
+      </span>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">心梦</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">234k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">3:33</span>
+</div>
+
+
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

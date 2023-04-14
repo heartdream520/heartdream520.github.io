@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"manual"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="内容1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面经02">
+<meta property="og:url" content="http://example.com/2023/03/22/%E9%9D%A2%E7%BB%8F02/index.html">
+<meta property="og:site_name" content="心梦">
+<meta property="og:description" content="内容1">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/images/image-20230322211043241.png">
+<meta property="og:image" content="http://example.com/images/image-20230322213130302.png">
+<meta property="og:image" content="http://example.com/images/image-20230322213145954.png">
+<meta property="og:image" content="http://example.com/images/image-20230322213159742.png">
+<meta property="og:image" content="http://example.com/images/image-20230322212049728.png">
+<meta property="og:image" content="http://example.com/images/image-20230322213003249.png">
+<meta property="og:image" content="http://example.com/images/image-20230322213050149.png">
+<meta property="og:image" content="http://example.com/images/image-20230323170335414.png">
+<meta property="og:image" content="http://example.com/images/image-20230323170352429.png">
+<meta property="og:image" content="http://example.com/images/image-20230323170448727.png">
+<meta property="og:image" content="http://example.com/images/image-20230324153301653.png">
+<meta property="og:image" content="http://example.com/images/image-20230324153239628.png">
+<meta property="article:published_time" content="2023-03-22T08:45:11.000Z">
+<meta property="article:modified_time" content="2023-03-28T11:54:20.567Z">
+<meta property="article:author" content="心梦">
+<meta property="article:tag" content="面经">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/image-20230322211043241.png">
+
+<link rel="canonical" href="http://example.com/2023/03/22/%E9%9D%A2%E7%BB%8F02/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>面经02 | 心梦</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="心梦" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">心梦</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-resources">
+
+    <a href="/resources/" rel="section"><i class="download fa-fw"></i>资源</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+
+  <a href="https://github.com/heartdream520" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/22/%E9%9D%A2%E7%BB%8F02/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/ailulu.jpg">
+      <meta itemprop="name" content="心梦">
+      <meta itemprop="description" content="heart_dream">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="心梦">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          面经02
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-03-22 16:45:11" itemprop="dateCreated datePublished" datetime="2023-03-22T16:45:11+08:00">2023-03-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-03-28 19:54:20" itemprop="dateModified" datetime="2023-03-28T19:54:20+08:00">2023-03-28</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%9D%A2%E7%BB%8F/" itemprop="url" rel="index"><span itemprop="name">面经</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>5.3k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>5 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<span id="more"></span>
+
+<h1 id="混合树"><a href="#混合树" class="headerlink" title="混合树"></a>混合树</h1><p>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/zhenghongzhi6/article/details/106749398">https://blog.csdn.net/zhenghongzhi6/article/details/106749398</a></p>
+<p>2D混合树有三个选项，分别是：</p>
+<p><img src="/../images/image-20230322211043241.png" alt="image-20230322211043241"></p>
+<p>2D Simple Directional（2D简单方向）：当你的运动代表不同的方向，如“向前走”，“向后走”，“向左走”，“向右走”，或“向上瞄准”，“向下瞄准”，“左瞄“和”右瞄“。当然了，可以在(0,0)处包含一个默认动作类似“空闲站立”或“直线瞄准”。与1D混合树不同的是，2D Simple Directional不是在同一个方向上的多个动作，比如“走”和“跑”。</p>
+<p>2D Freeform Directional（2D自由方向）：动画运用有不同的方向时，也可以使用这种混合类型：可以在同一个方向上有多个运动，例如“走”和“跑”。在Freeform Directional类型中，(0，0)位置必须包含一个默认动作，如“空闲站立”。</p>
+<p>2D Freeform Cartesian（2D自由笛卡儿）：当混合的2个参数不代表不同的方向时使用。使用Freeform Cartesian，参数X和Y可以表示不同的概念类型，例如角速度和线速度。举个例子：“向前走不转向”，“向前跑不转向”，“向前走并右转”，“向前跑并右转”等动作。</p>
+<p>如果角色动画包含站立、走、跑和转向，非常符合2D Freeform Cartesian这种类型。后面以2D Freeform Cartesian举例说明。</p>
+<p>将Blend Type设置为2D Freeform Cartesian</p>
+<p>设置Blend Type之后，首先需要两个参数控制这个Blend Tree。</p>
+<p>在Animator中添加两个float参数：Turn和Forward分别代表转向速度和向前行进速度，然后将这两个值设置为混合树的参数（注意顺序）</p>
+<p><img src="/../images/image-20230322213130302.png" alt="image-20230322213130302"></p>
+<p><img src="/../images/image-20230322213145954.png" alt="image-20230322213145954"></p>
+<p><img src="/../images/image-20230322213159742.png" alt="image-20230322213159742"></p>
+<h1 id="动画层级"><a href="#动画层级" class="headerlink" title="动画层级"></a>动画层级</h1><p>Layer<br>Unity 使用“Layer”（动画层）来管理身体不同部位的复杂状态机。比如用户可以使用下半身动画层来管理走动 、 跑动动作；使用上半身动画层来控制投掷 、射击动作。</p>
+<p>动画层面板各项参数说明如下：</p>
+<p><img src="/../images/image-20230322212049728.png" alt="image-20230322212049728"></p>
+<h1 id="IK动画"><a href="#IK动画" class="headerlink" title="IK动画"></a>IK动画</h1><p><img src="/../images/image-20230322213003249.png" alt="image-20230322213003249"></p>
+<h1 id="MatchTarget"><a href="#MatchTarget" class="headerlink" title="MatchTarget"></a>MatchTarget</h1><p><img src="/../images/image-20230322213050149.png" alt="image-20230322213050149"></p>
+<h1 id="C-List的底层实现"><a href="#C-List的底层实现" class="headerlink" title="C#List的底层实现"></a>C#List的底层实现</h1><p>List为可变长数组，没有元素时长度为1，初始长度为4，之后每次空间不足时会创建一个新的List，长度为原List的二倍，原List被丢弃等待GC，所以如果知道List要使用的长度，创建时初始化长度可以提高性能</p>
+<p>List Add o1</p>
+<p>insert，remove操作会进行移位的处理，为o（n）</p>
+<h1 id="C-Dictionary实现原理"><a href="#C-Dictionary实现原理" class="headerlink" title="C# Dictionary实现原理"></a>C# Dictionary实现原理</h1><p>key-value是通过哈希算法（如Md5算法）来确定的</p>
+<p>为了节省哈希表的空间使用哈希桶算法</p>
+<p>使用拉链法处理冲突</p>
+<p>当数组满或碰撞次数过多时直接申请两倍两倍大小空间的哈希桶和entity数组，并将现有元素拷贝到现有数组中</p>
+<h1 id="C-string的底层实现"><a href="#C-string的底层实现" class="headerlink" title="C#string的底层实现"></a>C#string的底层实现</h1><p>在C#中，string是一种不可变的引用类型，它表示一个字符串对象。在底层实现上，string是由.NET Framework提供的一个封装了字符数组的对象，这个字符数组包含了字符串的实际内容。</p>
+<p>每个string对象都具有一个固定的长度和内容。当需要修改字符串时，由于string是不可变的，所以不能在原有的string对象上直接进行修改，而是需要创建一个新的string对象来存储修改后的字符串内容。</p>
+<p>由于字符串不可变，所以在进行字符串拼接、替换等操作时，C#编译器会在底层自动创建一个新的string对象来存储结果。这种不可变性保证了字符串在多线程环境下的安全性，同时也避免了由于字符串的修改导致的内存泄漏等问题。</p>
+<p>需要注意的是，由于string对象是不可变的，因此如果需要频繁进行字符串拼接等操作，会产生大量的临时string对象，从而导致内存分配和垃圾回收开销增加。为了避免这种问题，可以使用StringBuilder类来创建可变的字符串缓冲区，从而避免频繁的内存分配和垃圾回收。</p>
+<h1 id="C-StringBuilder的底层实现"><a href="#C-StringBuilder的底层实现" class="headerlink" title="C#StringBuilder的底层实现"></a>C#StringBuilder的底层实现</h1><p>C#中的StringBuilder类是用于创建可变字符串的类，其底层实现是由.NET Framework提供的。StringBuilder类实现可变字符串的方式是通过维护一个字符数组来存储字符串内容。当需要对字符串进行修改时，StringBuilder会在字符数组上直接修改字符串内容，而不是创建新的字符串对象。这样就避免了频繁创建和销毁字符串对象所产生的性能开销。</p>
+<p>StringBuilder类中主要包含以下几个成员变量和方法：</p>
+<ol>
+<li>char[] m_ChunkChars：用于存储字符串内容的字符数组。</li>
+<li>int m_ChunkLength：表示字符数组中已使用的长度。</li>
+<li>int m_MaxCapacity：表示字符数组的最大长度。</li>
+<li>void ExpandByABlock(int minBlockCharCount)：用于在字符数组末尾添加一个新块，以扩展字符数组的长度。</li>
+<li>void ReplaceBufferInternal(char[] newBuffer)：用于替换字符数组。</li>
+</ol>
+<p>StringBuilder类中主要的方法包括：</p>
+<ol>
+<li>Append：用于在字符串的末尾添加新的内容。</li>
+<li>Insert：用于在字符串的指定位置插入新的内容。</li>
+<li>Remove：用于从字符串中移除指定位置开始的指定长度的内容。</li>
+<li>Replace：用于替换字符串中的指定内容。</li>
+</ol>
+<p>需要注意的是，在C#中使用StringBuilder类进行字符串操作时，由于StringBuilder类是可变字符串，因此可以避免频繁创建和销毁字符串对象所产生的性能开销。因此，在需要频繁进行字符串拼接等操作时，建议使用StringBuilder类来提高程序的性能表现。</p>
+<h1 id="哈希算法"><a href="#哈希算法" class="headerlink" title="哈希算法"></a>哈希算法</h1><p>hash函数算法：hash桶算法，平方取中算法，随机数算法</p>
+<p>发生hash冲突算法：开放地址法，拉链法，再哈希法</p>
+<h1 id="程序集"><a href="#程序集" class="headerlink" title="程序集"></a>程序集</h1><p>为unity2017.3发布的新功能</p>
+<p>下面文中我们就简称<strong>ADF</strong>。<br>得益于此功能，开发者可以在一个文件夹中自定义程序集。定义明晰的依赖关系，可以确保脚本更改后，只会重新生成必需的程序集，减少编译时间。<br>项目越大脚本越多，编译时间必然会越长。在进行项目迭代时，这很容易制约效率，因此设置好程序集定义文件可以提高工作效率，减少脚本编译的时间。</p>
+<h2 id="使用程序集优点："><a href="#使用程序集优点：" class="headerlink" title="使用程序集优点："></a>使用程序集优点：</h2><p>1.减少修改脚本时的编译时间</p>
+<p>2.可以方便进行代码的复用</p>
+<p>3.可以在unity中使用C++编写的脚本</p>
+<h2 id="自定义程序集"><a href="#自定义程序集" class="headerlink" title="自定义程序集"></a>自定义程序集</h2><p><img src="/../images/image-20230323170335414.png" alt="image-20230323170335414"></p>
+<p><img src="/../images/image-20230323170352429.png" alt="image-20230323170352429"></p>
+<p><img src="/../images/image-20230323170448727.png" alt="image-20230323170448727"></p>
+<h1 id="Mono和IL2CPP的区别"><a href="#Mono和IL2CPP的区别" class="headerlink" title="Mono和IL2CPP的区别"></a>Mono和IL2CPP的区别</h1><p>C#是微软推出的基于.NET的高级面向对象语言，开始只能运行于window，后来引用mono，在各个平台实现了mono虚拟机，这个C#实现了跨平台</p>
+<p>mono的核心原理为将C#代码转化为IL（公共中间代码），然后通过各个平台的虚拟机解释执行，在运行解释过程中，转化为机器码</p>
+<p>il2cpp在各个平台，将C#转化为C++的代码，在各个平台的C++编辑器直接转化为机器码</p>
+<p>mono和il2cpp生成机器码的时机一个比较慢一个比较快，所以一个性能好一个性能差</p>
+<p>il2cpp生成的项目是不可以反编译的，mono是可以反编译出来的</p>
+<p>Mono 使用即时 (JIT) 编译，在运行时按需编译代码。执行慢，安装快，空间小</p>
+<p>IL2CPP 使用提前 (AOT) 编译，在运行之前编译整个应用程序。 执行快，安装慢，空间大</p>
+<h1 id="unity图集"><a href="#unity图集" class="headerlink" title="unity图集"></a>unity图集</h1><p>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/z2014z/article/details/119654256">https://blog.csdn.net/z2014z/article/details/119654256</a></p>
+<h2 id="Unity图集简介及使用"><a href="#Unity图集简介及使用" class="headerlink" title="Unity图集简介及使用"></a>Unity图集简介及使用</h2><p>定义<br>图集是将很多零碎的2D小图整合成一张大图，方便unity渲染合批，降低渲染消耗。</p>
+<p>优势<br>1.UI的合批处理，减少DrawCall</p>
+<p>多张图片需要多次DrawCall，合并成一张大图只需要调用一次DrawCall</p>
+<p>2.减少对内存的占用</p>
+<p>OpenGL每张贴图都需要设置为2的N次方才能使用，假设有宽高分别为100x100、10x10的两张图片，如果不合成大贴图，那么就需要分别使用128x128和16x16的图片，会浪费一部分内存空间。</p>
+<p>如果是使用一张大图的话，就可以将两张图片打到128x128的图集，进而减少内存的占用。</p>
+<p>3.提升效率</p>
+<p>图片尺寸为2的次幂时，GPU处理起来会快很多，小图不可能做不到每张图都是2的次幂的，但打成一张大图就可以。</p>
+<h2 id="图集的建立"><a href="#图集的建立" class="headerlink" title="图集的建立"></a>图集的建立</h2><p>在Unity中，可以使用Sprite Packer（精灵图集打包工具）来建立图集。Sprite Packer可以将多个小图片打包成一张大图，以减少内存占用和提高游戏性能。下面是使用Sprite Packer建立图集的步骤：</p>
+<ol>
+<li>将多个小图片导入到Unity中，并设置它们的Texture Type为Sprite（2D and UI）。</li>
+<li>在Unity菜单栏中选择Window &gt; 2D &gt; Sprite Packer，打开Sprite Packer窗口。</li>
+<li>在Sprite Packer窗口中，点击Add button，将需要打包的小图片添加到打包列表中。</li>
+<li>选择打包算法：在Sprite Packer窗口中，可以选择不同的打包算法，例如Max Rects和Basic等。可以根据实际需求来选择打包算法。</li>
+<li>点击打包按钮：在Sprite Packer窗口中，点击Pack按钮，Unity将会自动将小图片打包成一张大图。</li>
+<li>设置Sprite的Packing Tag：在小图片的Sprite Importer中，可以设置Packing Tag，将它们打包到同一个图集中。</li>
+<li>使用图集：在代码中，可以使用Resources.Load方法或AssetBundle来加载图集，并通过Sprite的名称来访问具体的Sprite。</li>
+</ol>
+<h2 id="注意事项："><a href="#注意事项：" class="headerlink" title="注意事项："></a>注意事项：</h2><ul>
+<li>在打包小图片之前，可以对它们进行一些优化处理，例如调整大小、压缩格式等，以减少内存占用。</li>
+<li>打包算法的选择会影响图集的质量和效率，需要根据实际需求进行选择。</li>
+<li>图集的大小和数量应该适度，避免过大或过多导致内存占用过高。</li>
+<li>图集的命名应该有意义，便于识别和管理。</li>
+</ul>
+<p><img src="/../images/image-20230324153301653.png" alt="image-20230324153301653"></p>
+<h1 id="DrawCall"><a href="#DrawCall" class="headerlink" title="DrawCall"></a>DrawCall</h1><p>每次cpu准备数据并通知Gpu的过程为Drawcall</p>
+<p>DrawCall为什么会影响运行效率：工作原理，为了CPU和GPU可以进行并行工作，就需要一个命令缓冲区，就是由CPU向其中添加命令，然后又GPU从中读取命令，这样就实现了通过CPU准备数据，通知GPU进行渲染。</p>
+<p>在每次调用DrawCall之前，CPU需要向GPU发送很多内容，主要是包括数据，渲染状态（就是设置对象需要的材质纹理等），命令等。</p>
+<h2 id="减少drawCall"><a href="#减少drawCall" class="headerlink" title="减少drawCall"></a>减少drawCall</h2><p>1.合批（Batching）</p>
+<p>合批是将多个网格或者物体合并成一个单独的网格或物体，从而减少Draw Call的数量。Unity支持两种类型的合批：静态合批和动态合批。静态合批适用于静态网格或物体，动态合批适用于动态或运行时生成的网格或物体。</p>
+<p>2.减少材质数量</p>
+<p>每个材质都需要一个Draw Call来进行渲染，因此减少材质的数量可以减少Draw Call的数量。如果一个物体有多个材质，可以将它们合并成一个材质来减少Draw Call。</p>
+<p>3.合并纹理</p>
+<p>如果多个物体使用的纹理相同，可以将它们合并成一个大的纹理来减少Draw Call的数量。</p>
+<p>4.减少使用透明度</p>
+<p>使用透明度的物体需要进行排序和混合，因此会增加Draw Call的数量。如果可以不使用透明度，尽量减少使用透明度的物体数量。</p>
+<p>5.减少动态光源</p>
+<p>动态光源需要计算阴影，因此会增加Draw Call的数量。如果可以，尽量减少动态光源的数量。</p>
+<p>6.使用LOD（Level of Detail）</p>
+<p>在远处的物体可以使用较低分辨率的模型来代替高分辨率的模型，从而减少Draw Call的数量。这个方法可以通过使用Unity的LOD功能来实现。</p>
+<h1 id="任务系统的实现"><a href="#任务系统的实现" class="headerlink" title="任务系统的实现"></a>任务系统的实现</h1><p>我的任务系统是根据MVC的设计思想来进行设计的；</p>
+<p>数据层：</p>
+<p>任务数据来源于服务器和配置表的数据。由服务器的任务数据，驱动客户端任务面板的显示，这块是通过观察者实现的。而对于其他UI业务系统，比如NPC头顶的任务状态的显示，也是通过观察者进行事件广播的，从而更新其他UI业务系统的显示。</p>
+<p>显示层和控制层：</p>
+<p>通过一个主任务面板，获取数据层的数据来显示当前任务明细，并且通过订阅任务数据层的事件，来对任务状态进行更新。界面的逻辑也是写在此处的。</p>
+<p>外设了个任务管理器：</p>
+<p>是该任务系统的入口，比如显示和关闭任务系统等；还有任务与对应NPC的绑定；以及提供一些公共的接口供外部访问，比如获取某任务的状态，任务的获取和交付等。</p>
+<h1 id="协程的底层实现"><a href="#协程的底层实现" class="headerlink" title="协程的底层实现"></a>协程的底层实现</h1><p><img src="/../images/image-20230324153239628.png" alt="image-20230324153239628"></p>
+<h1 id="awake和start的区别"><a href="#awake和start的区别" class="headerlink" title="awake和start的区别"></a>awake和start的区别</h1><p>awake用于处理组件的引用关系，或挂载组件，</p>
+<p>start在OnEnable之后执行</p>
+<p>awake、enable、start依照次顺序执行，awake会在一开始的时候就会执行，但start则是在被激活之后才会调用，因此在编写代码的时候在给脚本挂载的物体做初始化，就用awake，用于挂载组件或者处理引用关系，start是物体“可见”之后才会被调用即setActive(“true”)之后才会调用（当然一开始就是非隐藏的话会按照顺序执行），面试的时候有问过一个如果物体被遮挡了那么还会执行对应的脚本嘛？（答案是会执行，毕竟遮蔽不是不激活</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E9%9D%A2%E7%BB%8F/" rel="tag"># 面经</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/03/09/%E6%9E%81%E4%B8%96%E7%95%8C%E6%80%BB%E7%BB%93/" rel="prev" title="极世界总结">
+      <i class="fa fa-chevron-left"></i> 极世界总结
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2023/04/03/%E5%8C%BB%E8%8D%AF%E9%97%AE%E7%AD%94%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" rel="next" title="医药问答环境配置">
+      医药问答环境配置 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%86%85%E5%AE%B9"><span class="nav-number">1.</span> <span class="nav-text">内容</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B7%B7%E5%90%88%E6%A0%91"><span class="nav-number">2.</span> <span class="nav-text">混合树</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8A%A8%E7%94%BB%E5%B1%82%E7%BA%A7"><span class="nav-number">3.</span> <span class="nav-text">动画层级</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#IK%E5%8A%A8%E7%94%BB"><span class="nav-number">4.</span> <span class="nav-text">IK动画</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MatchTarget"><span class="nav-number">5.</span> <span class="nav-text">MatchTarget</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#C-List%E7%9A%84%E5%BA%95%E5%B1%82%E5%AE%9E%E7%8E%B0"><span class="nav-number">6.</span> <span class="nav-text">C#List的底层实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#C-Dictionary%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86"><span class="nav-number">7.</span> <span class="nav-text">C# Dictionary实现原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#C-string%E7%9A%84%E5%BA%95%E5%B1%82%E5%AE%9E%E7%8E%B0"><span class="nav-number">8.</span> <span class="nav-text">C#string的底层实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#C-StringBuilder%E7%9A%84%E5%BA%95%E5%B1%82%E5%AE%9E%E7%8E%B0"><span class="nav-number">9.</span> <span class="nav-text">C#StringBuilder的底层实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%93%88%E5%B8%8C%E7%AE%97%E6%B3%95"><span class="nav-number">10.</span> <span class="nav-text">哈希算法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E9%9B%86"><span class="nav-number">11.</span> <span class="nav-text">程序集</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E7%A8%8B%E5%BA%8F%E9%9B%86%E4%BC%98%E7%82%B9%EF%BC%9A"><span class="nav-number">11.1.</span> <span class="nav-text">使用程序集优点：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E7%A8%8B%E5%BA%8F%E9%9B%86"><span class="nav-number">11.2.</span> <span class="nav-text">自定义程序集</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Mono%E5%92%8CIL2CPP%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">12.</span> <span class="nav-text">Mono和IL2CPP的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#unity%E5%9B%BE%E9%9B%86"><span class="nav-number">13.</span> <span class="nav-text">unity图集</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Unity%E5%9B%BE%E9%9B%86%E7%AE%80%E4%BB%8B%E5%8F%8A%E4%BD%BF%E7%94%A8"><span class="nav-number">13.1.</span> <span class="nav-text">Unity图集简介及使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E9%9B%86%E7%9A%84%E5%BB%BA%E7%AB%8B"><span class="nav-number">13.2.</span> <span class="nav-text">图集的建立</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%EF%BC%9A"><span class="nav-number">13.3.</span> <span class="nav-text">注意事项：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#DrawCall"><span class="nav-number">14.</span> <span class="nav-text">DrawCall</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%8F%E5%B0%91drawCall"><span class="nav-number">14.1.</span> <span class="nav-text">减少drawCall</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%BB%E5%8A%A1%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="nav-number">15.</span> <span class="nav-text">任务系统的实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%8F%E7%A8%8B%E7%9A%84%E5%BA%95%E5%B1%82%E5%AE%9E%E7%8E%B0"><span class="nav-number">16.</span> <span class="nav-text">协程的底层实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#awake%E5%92%8Cstart%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">17.</span> <span class="nav-text">awake和start的区别</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="心梦"
+      src="/images/ailulu.jpg">
+  <p class="site-author-name" itemprop="name">心梦</p>
+  <div class="site-description" itemprop="description">heart_dream</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">66</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/heartdream520" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;heartdream520" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.acwing.com/user/myspace/index/60784/" title="Acwing → https:&#x2F;&#x2F;www.acwing.com&#x2F;user&#x2F;myspace&#x2F;index&#x2F;60784&#x2F;" rel="noopener" target="_blank"><i class="fab fa-Acwing fa-fw"></i>Acwing</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://codeforces.com/profile/Heart_dream" title="Codeforces → https:&#x2F;&#x2F;codeforces.com&#x2F;profile&#x2F;Heart_dream" rel="noopener" target="_blank"><i class="fab fa-codeforces fa-fw"></i>Codeforces</a>
+      </span>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">心梦</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">234k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">3:33</span>
+</div>
+
+
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
