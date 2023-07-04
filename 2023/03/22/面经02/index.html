@@ -42,7 +42,7 @@
 <meta property="og:image" content="http://example.com/images/image-20230324153301653.png">
 <meta property="og:image" content="http://example.com/images/image-20230324153239628.png">
 <meta property="article:published_time" content="2023-03-22T08:45:11.000Z">
-<meta property="article:modified_time" content="2023-03-28T11:54:20.567Z">
+<meta property="article:modified_time" content="2023-07-04T12:16:16.864Z">
 <meta property="article:author" content="心梦">
 <meta property="article:tag" content="面经">
 <meta name="twitter:card" content="summary">
@@ -215,7 +215,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-03-28 19:54:20" itemprop="dateModified" datetime="2023-03-28T19:54:20+08:00">2023-03-28</time>
+                <time title="修改时间：2023-07-04 20:16:16" itemprop="dateModified" datetime="2023-07-04T20:16:16+08:00">2023-07-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -233,14 +233,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>5.3k</span>
+              <span>7.2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>5 分钟</span>
+              <span>7 分钟</span>
             </span>
 
         </div>
@@ -375,6 +375,44 @@
 <h1 id="awake和start的区别"><a href="#awake和start的区别" class="headerlink" title="awake和start的区别"></a>awake和start的区别</h1><p>awake用于处理组件的引用关系，或挂载组件，</p>
 <p>start在OnEnable之后执行</p>
 <p>awake、enable、start依照次顺序执行，awake会在一开始的时候就会执行，但start则是在被激活之后才会调用，因此在编写代码的时候在给脚本挂载的物体做初始化，就用awake，用于挂载组件或者处理引用关系，start是物体“可见”之后才会被调用即setActive(“true”)之后才会调用（当然一开始就是非隐藏的话会按照顺序执行），面试的时候有问过一个如果物体被遮挡了那么还会执行对应的脚本嘛？（答案是会执行，毕竟遮蔽不是不激活</p>
+<h1 id="unity常用路径"><a href="#unity常用路径" class="headerlink" title="unity常用路径"></a>unity常用路径</h1><ul>
+<li><code>Application.dataPath</code>：项目的根路径。</li>
+<li><code>Application.streamingAssetsPath</code>：平台的 StreamingAssets 文件夹路径。</li>
+<li><code>Application.persistentDataPath</code>：可读写的持久化数据路径。</li>
+<li><code>Application.temporaryCachePath</code>：临时缓存数据路径。</li>
+</ul>
+<p><code>Application.streamingAssetsPath</code> 和 <code>Application.persistentDataPath</code> 是 Unity 中常用的路径常量，用于获取特定目录的路径。</p>
+<p>具体来说：</p>
+<ul>
+<li><code>Application.streamingAssetsPath</code> 表示平台的 StreamingAssets 文件夹路径。在不同平台上，该路径指向应用程序的只读文件夹，其中包含在构建应用程序时打包的资源。这些资源可以通过简单的文件读取操作来访问，但不能进行写入或修改。例如，可以将配置文件、初始数据等放在 StreamingAssets 文件夹中，并通过路径 <code>Application.streamingAssetsPath + &quot;/config.txt&quot;</code> 来访问。</li>
+<li><code>Application.persistentDataPath</code> 表示可读写的持久化数据路径。在不同平台上，该路径指向特定的可读写文件夹，用于存储应用程序的持久化数据，如用户设置、游戏进度等。这个路径下的数据可以被应用程序读取、写入和修改。例如，可以将玩家的游戏进度保存在 <code>Application.persistentDataPath + &quot;/save.dat&quot;</code> 文件中。</li>
+</ul>
+<p>需要注意的是，这两个路径常量在不同平台上的具体位置是不同的。例如：</p>
+<ul>
+<li>在 Windows 上，<code>Application.streamingAssetsPath</code> 默认指向应用程序的 “Assets&#x2F;StreamingAssets” 文件夹，<code>Application.persistentDataPath</code> 默认指向 “C:&#x2F;Users&#x2F;Username&#x2F;AppData&#x2F;Local&#x2F;CompanyName&#x2F;AppName” 文件夹。</li>
+<li>在 macOS 上，<code>Application.streamingAssetsPath</code> 默认指向应用程序的 “Contents&#x2F;StreamingAssets” 文件夹，<code>Application.persistentDataPath</code> 默认指向 “~&#x2F;Library&#x2F;Application Support&#x2F;CompanyName&#x2F;AppName” 文件夹。</li>
+<li>在 Android 上，<code>Application.streamingAssetsPath</code> 默认指向 APK 文件中的 “assets” 文件夹，<code>Application.persistentDataPath</code> 默认指向设备的持久化数据目录。</li>
+<li>在 iOS 上，<code>Application.streamingAssetsPath</code> 默认指向应用程序的 “Data&#x2F;Raw” 文件夹，<code>Application.persistentDataPath</code> 默认指向设备的持久化数据目录。</li>
+</ul>
+<p>总而言之，<code>Application.streamingAssetsPath</code> 是指向平台的只读资源文件夹路径，<code>Application.persistentDataPath</code> 是指向平台的可读写持久化数据文件夹路径。具体路径的细节和可访问性会根据不同的平台而有所变化。</p>
+<h1 id="前台线程-和-后台线程"><a href="#前台线程-和-后台线程" class="headerlink" title="前台线程 和 后台线程"></a>前台线程 和 后台线程</h1><p>一：线程有两种：前台线程和后台线程。</p>
+<pre><code>   区别是：应用程序必须运行完所有的前台线程才可以退出； 
+
+                 而对于后台线程，应用程序则可以不考虑其是否已经运行完毕而直接退出，所有的后台线程在应用程序退出时都会自动结束。
+</code></pre>
+<p>二：.net环境使用Thread建立的线程默认情况下是前台线程，即线程属性IsBackground&#x3D;false</p>
+<pre><code>    在进程中，只要有一个前台线程未退出，进程就不会终止。主线程就是一个前台线程。
+
+    而后台线程不管线程是否结束，只要所有的前台线程都退出（包括正常退出和异常退出）后，进程就会自动终止。
+</code></pre>
+<p>三：使用方法</p>
+<pre><code>   一般后台线程用于处理时间较短的任务，如在一个Web服务器中可以利用后台线程来处理客户端发过来的请求信息。
+
+   而前台线程一般用于处理需要长时间等待的任务，如在Web服务器中的监听客户端请求的程序，或是定时对某些系统资源进行扫描的程序。
+</code></pre>
+<p>四：注意</p>
+<pre><code>    在调用Start方法之前设置线程的类型，否则一但线程运行，将无法改变其类型。
+</code></pre>
 
     </div>
 
@@ -458,7 +496,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%86%85%E5%AE%B9"><span class="nav-number">1.</span> <span class="nav-text">内容</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B7%B7%E5%90%88%E6%A0%91"><span class="nav-number">2.</span> <span class="nav-text">混合树</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8A%A8%E7%94%BB%E5%B1%82%E7%BA%A7"><span class="nav-number">3.</span> <span class="nav-text">动画层级</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#IK%E5%8A%A8%E7%94%BB"><span class="nav-number">4.</span> <span class="nav-text">IK动画</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MatchTarget"><span class="nav-number">5.</span> <span class="nav-text">MatchTarget</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#C-List%E7%9A%84%E5%BA%95%E5%B1%82%E5%AE%9E%E7%8E%B0"><span class="nav-number">6.</span> <span class="nav-text">C#List的底层实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#C-Dictionary%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86"><span class="nav-number">7.</span> <span class="nav-text">C# Dictionary实现原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#C-string%E7%9A%84%E5%BA%95%E5%B1%82%E5%AE%9E%E7%8E%B0"><span class="nav-number">8.</span> <span class="nav-text">C#string的底层实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#C-StringBuilder%E7%9A%84%E5%BA%95%E5%B1%82%E5%AE%9E%E7%8E%B0"><span class="nav-number">9.</span> <span class="nav-text">C#StringBuilder的底层实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%93%88%E5%B8%8C%E7%AE%97%E6%B3%95"><span class="nav-number">10.</span> <span class="nav-text">哈希算法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E9%9B%86"><span class="nav-number">11.</span> <span class="nav-text">程序集</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E7%A8%8B%E5%BA%8F%E9%9B%86%E4%BC%98%E7%82%B9%EF%BC%9A"><span class="nav-number">11.1.</span> <span class="nav-text">使用程序集优点：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E7%A8%8B%E5%BA%8F%E9%9B%86"><span class="nav-number">11.2.</span> <span class="nav-text">自定义程序集</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Mono%E5%92%8CIL2CPP%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">12.</span> <span class="nav-text">Mono和IL2CPP的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#unity%E5%9B%BE%E9%9B%86"><span class="nav-number">13.</span> <span class="nav-text">unity图集</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Unity%E5%9B%BE%E9%9B%86%E7%AE%80%E4%BB%8B%E5%8F%8A%E4%BD%BF%E7%94%A8"><span class="nav-number">13.1.</span> <span class="nav-text">Unity图集简介及使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E9%9B%86%E7%9A%84%E5%BB%BA%E7%AB%8B"><span class="nav-number">13.2.</span> <span class="nav-text">图集的建立</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%EF%BC%9A"><span class="nav-number">13.3.</span> <span class="nav-text">注意事项：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#DrawCall"><span class="nav-number">14.</span> <span class="nav-text">DrawCall</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%8F%E5%B0%91drawCall"><span class="nav-number">14.1.</span> <span class="nav-text">减少drawCall</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%BB%E5%8A%A1%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="nav-number">15.</span> <span class="nav-text">任务系统的实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%8F%E7%A8%8B%E7%9A%84%E5%BA%95%E5%B1%82%E5%AE%9E%E7%8E%B0"><span class="nav-number">16.</span> <span class="nav-text">协程的底层实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#awake%E5%92%8Cstart%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">17.</span> <span class="nav-text">awake和start的区别</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%86%85%E5%AE%B9"><span class="nav-number">1.</span> <span class="nav-text">内容</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B7%B7%E5%90%88%E6%A0%91"><span class="nav-number">2.</span> <span class="nav-text">混合树</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8A%A8%E7%94%BB%E5%B1%82%E7%BA%A7"><span class="nav-number">3.</span> <span class="nav-text">动画层级</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#IK%E5%8A%A8%E7%94%BB"><span class="nav-number">4.</span> <span class="nav-text">IK动画</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MatchTarget"><span class="nav-number">5.</span> <span class="nav-text">MatchTarget</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#C-List%E7%9A%84%E5%BA%95%E5%B1%82%E5%AE%9E%E7%8E%B0"><span class="nav-number">6.</span> <span class="nav-text">C#List的底层实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#C-Dictionary%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86"><span class="nav-number">7.</span> <span class="nav-text">C# Dictionary实现原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#C-string%E7%9A%84%E5%BA%95%E5%B1%82%E5%AE%9E%E7%8E%B0"><span class="nav-number">8.</span> <span class="nav-text">C#string的底层实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#C-StringBuilder%E7%9A%84%E5%BA%95%E5%B1%82%E5%AE%9E%E7%8E%B0"><span class="nav-number">9.</span> <span class="nav-text">C#StringBuilder的底层实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%93%88%E5%B8%8C%E7%AE%97%E6%B3%95"><span class="nav-number">10.</span> <span class="nav-text">哈希算法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E9%9B%86"><span class="nav-number">11.</span> <span class="nav-text">程序集</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E7%A8%8B%E5%BA%8F%E9%9B%86%E4%BC%98%E7%82%B9%EF%BC%9A"><span class="nav-number">11.1.</span> <span class="nav-text">使用程序集优点：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E7%A8%8B%E5%BA%8F%E9%9B%86"><span class="nav-number">11.2.</span> <span class="nav-text">自定义程序集</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Mono%E5%92%8CIL2CPP%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">12.</span> <span class="nav-text">Mono和IL2CPP的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#unity%E5%9B%BE%E9%9B%86"><span class="nav-number">13.</span> <span class="nav-text">unity图集</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Unity%E5%9B%BE%E9%9B%86%E7%AE%80%E4%BB%8B%E5%8F%8A%E4%BD%BF%E7%94%A8"><span class="nav-number">13.1.</span> <span class="nav-text">Unity图集简介及使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E9%9B%86%E7%9A%84%E5%BB%BA%E7%AB%8B"><span class="nav-number">13.2.</span> <span class="nav-text">图集的建立</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%EF%BC%9A"><span class="nav-number">13.3.</span> <span class="nav-text">注意事项：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#DrawCall"><span class="nav-number">14.</span> <span class="nav-text">DrawCall</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%8F%E5%B0%91drawCall"><span class="nav-number">14.1.</span> <span class="nav-text">减少drawCall</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%BB%E5%8A%A1%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="nav-number">15.</span> <span class="nav-text">任务系统的实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%8F%E7%A8%8B%E7%9A%84%E5%BA%95%E5%B1%82%E5%AE%9E%E7%8E%B0"><span class="nav-number">16.</span> <span class="nav-text">协程的底层实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#awake%E5%92%8Cstart%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">17.</span> <span class="nav-text">awake和start的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#unity%E5%B8%B8%E7%94%A8%E8%B7%AF%E5%BE%84"><span class="nav-number">18.</span> <span class="nav-text">unity常用路径</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E5%8F%B0%E7%BA%BF%E7%A8%8B-%E5%92%8C-%E5%90%8E%E5%8F%B0%E7%BA%BF%E7%A8%8B"><span class="nav-number">19.</span> <span class="nav-text">前台线程 和 后台线程</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -474,7 +512,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">68</span>
+          <span class="site-state-item-count">69</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -538,12 +576,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">281k</span>
+    <span title="站点总字数">412k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">4:16</span>
+    <span title="站点阅读时长">6:15</span>
 </div>
 
 
