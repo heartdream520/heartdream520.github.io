@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-07-17T14:56:36.534Z</updated>
+  <updated>2023-07-18T15:05:51.767Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>UnityGraph01</title>
+    <link href="http://example.com/2023/07/18/UnityGraph01/"/>
+    <id>http://example.com/2023/07/18/UnityGraph01/</id>
+    <published>2023-07-18T12:26:19.000Z</published>
+    <updated>2023-07-18T15:05:51.767Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><p>[TOC]</p><span id="more"></span><h1 id="边缘光照"><a href="#边缘光照" class="headerlink" title="边缘光照"></a>边缘光照</h1><p>边缘光照的重要参数为power设置Rimpower参数对边缘光的强度进行控制</p><p>将边缘光照的输出连接到自发光上，但是应该和自发光照进行加法混合</p><p><img src="/../images/image-20230718204949799.png" alt="image-20230718204949799"></p><p><img src="/../images/image-20230718204226733.png" alt="image-20230718204226733"></p><h1 id="溶解效果"><a href="#溶解效果" class="headerlink" title="溶解效果"></a>溶解效果</h1><p>添加 AlphaClipping（透明度测试） 根据物体的透明度判断纹理的像素点是否存在</p><p><img src="/../images/image-20230718205825811.png" alt="image-20230718205825811"></p><p>对噪声图进行采样</p><p><img src="/../images/image-20230718224746119.png" alt="image-20230718224746119"></p><p>设置噪声图的比例</p><p><img src="/../images/image-20230718224848020.png" alt="image-20230718224848020"></p><p>设置一个宽度，宽度为0.05，将宽度和透明度裁剪值相加，放入step中的输入值，判定值为噪声图中的Alpha</p><p><img src="/../images/image-20230718225617350.png" alt="image-20230718225617350"></p><p>代码控制ShadeGreph中的参数   _Rate为参数</p><p><img src="/../images/image-20230718230450663.png" alt="image-20230718230450663"></p>]]></content>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;内容&quot;&gt;&lt;a href=&quot;#内容&quot; class=&quot;headerlink&quot; title=&quot;内容&quot;&gt;&lt;/a&gt;内容&lt;/h1&gt;&lt;p&gt;[TOC]&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="unityGrapth" scheme="http://example.com/categories/unityGrapth/"/>
+    
+    
+    <category term="unity" scheme="http://example.com/tags/unity/"/>
+    
+  </entry>
   
   <entry>
     <title>unity学习笔记01</title>
@@ -400,27 +421,6 @@
     
     
     <summary type="html">&lt;h1 id=&quot;内容&quot;&gt;&lt;a href=&quot;#内容&quot; class=&quot;headerlink&quot; title=&quot;内容&quot;&gt;&lt;/a&gt;内容&lt;/h1&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;接口 IPointerClickHandler&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
-    
-    
-    
-    <category term="unity" scheme="http://example.com/categories/unity/"/>
-    
-    
-    <category term="极世界" scheme="http://example.com/tags/%E6%9E%81%E4%B8%96%E7%95%8C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>极世界-商店系统</title>
-    <link href="http://example.com/2022/12/30/%E6%9E%81%E4%B8%96%E7%95%8C-%E5%95%86%E5%BA%97%E7%B3%BB%E7%BB%9F/"/>
-    <id>http://example.com/2022/12/30/%E6%9E%81%E4%B8%96%E7%95%8C-%E5%95%86%E5%BA%97%E7%B3%BB%E7%BB%9F/</id>
-    <published>2022-12-30T02:11:09.000Z</published>
-    <updated>2023-01-03T03:36:41.243Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">选择时组件 Selectable</span><br><span class="line">当绑定组件后，继承 ISelectHandler 接口 实现 OnSelect函数，当选择时则执行此函数</span><br></pre></td></tr></table></figure><span id="more"></span><p><img src="/../images/image-20230103113612563.png" alt="image-20230103113612563"></p><p><img src="/../images/image-20230103113626905.png" alt="image-20230103113626905"></p><p><img src="/../images/image-20230103113635096.png" alt="image-20230103113635096"></p>]]></content>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;内容&quot;&gt;&lt;a href=&quot;#内容&quot; class=&quot;headerlink&quot; title=&quot;内容&quot;&gt;&lt;/a&gt;内容&lt;/h1&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;选择时组件 Selectable&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;当绑定组件后，继承 ISelectHandler 接口 实现 OnSelect函数，当选择时则执行此函数&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
     
     
     
